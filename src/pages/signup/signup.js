@@ -7,17 +7,23 @@ import {
   ScrollView,
   SafeAreaView,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Input, Button} from 'react-native-elements';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {userLogin} from '../../redux/actions';
 import {TextInput} from 'react-native';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview'
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
+import {FloatingLabelInput} from 'react-native-floating-label-input';
+import * as Animatable from 'react-native-animatable';
 
 function Signup({navigation, userInfo, userLogin}) {
-  const [username, setUsername] = useState('');
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [phonenum, setPhonenum] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmpassword, setConfirmpassword] = useState('');
+  const [show, setShow] = useState(false);
 
   return (
     <View style={styles.MainContainer}>
@@ -27,51 +33,75 @@ function Signup({navigation, userInfo, userLogin}) {
         </Text>
       </View>
 
-      <KeyboardAwareScrollView style={styles.footer}>
-        <View style={styles.inputContainer}>
-          <Input
-            style={styles.inputText}
-            labelStyle={styles.inputLabel}
-            label="First Name"
-            placeholder="First Name"
-          />
-          <Input
-            style={styles.inputText}
-            labelStyle={styles.inputLabel}
-            label="Last Name"
-            placeholder="Last Name"
-            
-          />
+      <Animatable.View animation="fadeInUpBig" style={styles.footer}>
+        <ScrollView showVerticalScrollIndicator={false}>
+          <View style={styles.inputContainer}>
+            <FloatingLabelInput
+              label="First Name"
+              value={firstname}
+              containerStyles={styles.inputText}
+              inputStyles={{fontSize: 15, color:"#000"}}
+              onChangeText={value => setFirstname(value)}
+            />
+            <FloatingLabelInput
+              label="Last Name"
+              value={lastname}
+              containerStyles={styles.inputText}
+              inputStyles={{fontSize: 15, color:"#000"}}
+              onChangeText={value => setLastname(value)}
+            />
 
-          <Input
-            style={styles.inputText}
-            labelStyle={styles.inputLabel}
-            label="Phone No."
-            placeholder="Phone No."
-          />
-          <Input
-            style={styles.inputText}
-            labelStyle={styles.inputLabel}
-            label="Password"
-            placeholder="Password"
-            secureTextEntry={true}
-          />
-          <Input
-            style={styles.inputText}
-            labelStyle={styles.inputLabel}
-            label="Confirm Password"
-            placeholder="Confirm Password"
-            secureTextEntry={true}
-          />
+            <FloatingLabelInput
+              label="Phone No."
+              value={phonenum}
+              containerStyles={styles.inputText}
+              inputStyles={{fontSize: 15, color:"#000"}}
+              keyboardType="numeric"
+              onChangeText={value => setPhonenum(value)}
+            />
+            <FloatingLabelInput
+              label="Password"
+              value={password}
+              isPassword
+              togglePassword={show}
+              containerStyles={styles.inputText}
+              inputStyles={{fontSize: 15, color:"#000"}}
+              onChangeText={value => setPassword(value)}
+              customShowPasswordComponent={
+                <Text style={{fontSize: 12, marginRight: 8}}>Show</Text>
+              }
+              customHidePasswordComponent={
+                <Text style={{fontSize: 12, marginRight: 8}}>Hide</Text>
+              }
+            />
+            <FloatingLabelInput
+              label="Confirm Password"
+              value={confirmpassword}
+              isPassword
+              togglePassword={show}
+              containerStyles={styles.inputText}
+              inputStyles={{fontSize: 15, color:"#000"}}
+              onChangeText={value => setConfirmpassword(value)}
+              customShowPasswordComponent={
+                <Text style={{fontSize: 12, marginRight: 8}}>Show</Text>
+              }
+              customHidePasswordComponent={
+                <Text style={{fontSize: 12, marginRight: 8}}>Hide</Text>
+              }
+            />
+          </View>
 
           <View style={styles.ButtonContainer}>
             <TouchableOpacity activeOpacity={0.8} style={styles.LoginButton}>
               <Text style={styles.LoginButtonInside}>Sign Up</Text>
             </TouchableOpacity>
-            <Text style={{fontSize: 12}}>I have an account? <Text style={{fontSize: 12, color:'#5b53ff'}}>Login now</Text></Text>
+            <Text style={{fontSize: 12}}>
+              I have an account?{' '}
+              <Text style={{fontSize: 12, color: '#5b53ff'}}>Login now</Text>
+            </Text>
           </View>
-        </View>
-      </KeyboardAwareScrollView>
+        </ScrollView>
+      </Animatable.View>
     </View>
   );
 }
@@ -91,27 +121,29 @@ const styles = StyleSheet.create({
     backgroundColor: '#5b53ff',
   },
   header: {
-    flex: 0.3,
+    flex: 0.8,
     justifyContent: 'center',
     alignItems: 'center',
   },
   footer: {
     flex: 3,
     backgroundColor: '#ffffff',
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
     elevation: 10,
-  },
-  inputContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 10,
     paddingTop: 30,
   },
+  inputContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+
+  },
   inputText: {
-    paddingLeft: 20,
+    marginVertical: 5,
+    paddingLeft: 10,
     fontSize: 12,
+    borderBottomWidth: 0.8,
   },
   inputLabel: {
     color: '#5b6777',
@@ -125,15 +157,9 @@ const styles = StyleSheet.create({
     width: 320,
     padding: 18,
     borderRadius: 35,
-    marginBottom: 40,
-    elevation: 10,
-    // shadowColor: '#000',
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 2,
-    // },
-    // shadowOpacity: 10.5,
-    // shadowRadius: 5.84,
+    marginBottom: 30,
+    elevation: 4,
+   
   },
   LoginButtonInside: {
     color: '#ffffff',
@@ -143,6 +169,7 @@ const styles = StyleSheet.create({
   ButtonContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: 20,
+    marginVertical: 40,
   },
 });
+
