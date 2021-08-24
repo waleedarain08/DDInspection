@@ -80,7 +80,7 @@ function Signup({navigation, userInfo, userLogin}) {
               isPassword
               togglePassword={show}
               containerStyles={styles.inputText}
-              inputStyles={{fontSize: 15, color:"#000"}}
+              inputStyles={{fontSize: 15, color:"#000"}} 
               onChangeText={value => setConfirmpassword(value)}
               customShowPasswordComponent={
                 <Text style={{fontSize: 12, marginRight: 8}}>Show</Text>
