@@ -28,7 +28,7 @@ function Signup({navigation, userInfo, userLogin}) {
   return (
     <View style={styles.MainContainer}>
       <View style={styles.header}>
-        <Text style={{color: '#fff', fontSize: 20, fontWeight: 'bold'}}>
+        <Text style={{color: '#fff', fontSize: 20, fontWeight: "bold"}}>
           SIGN UP
         </Text>
       </View>
@@ -96,8 +96,8 @@ function Signup({navigation, userInfo, userLogin}) {
               <Text style={styles.LoginButtonInside}>Sign Up</Text>
             </TouchableOpacity>
             <Text style={{fontSize: 12}}>
-              I have an account?{' '}
-              <Text style={{fontSize: 12, color: '#5b53ff'}}>Login now</Text>
+              I have an account?
+              <TouchableOpacity  activeOpacity={0.8} onPress={() => navigation.goBack()} style={{fontSize: 12, color: '#5b53ff'}}>Login now</TouchableOpacity>
             </Text>
           </View>
         </ScrollView>
