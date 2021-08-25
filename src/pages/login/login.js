@@ -1,89 +1,71 @@
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
+import { Text, View, StyleSheet, Image, TouchableOpacity,KeyboardAvoidingView,Platform } from 'react-native';
+import React, { useState, useEffect } from 'react';
 import { Input, Button } from 'react-native-elements';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { userLogin } from '../../redux/actions';
+import { FloatingLabelInput } from 'react-native-floating-label-input';
+import * as Animatable from 'react-native-animatable';
 
-function Login({navigation, userInfo, userLogin }) {
+
+function Login({ navigation, userInfo, userLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [hide, setHide] = useState(false);
 
   return (
-    <View style={styles.MainContainer}>
-      <View style={styles.LogoContainer}>
-        <Image style={styles.TitleLogo} source={require("../../assets/juggling.png")} />
+    <KeyboardAvoidingView behavior={(Platform.OS === 'ios') ? "padding" : null} keyboardVerticalOffset={Platform.select({ ios: -250, android: -100 })}
+      style={styles.MainContainer}>
+      <View style={styles.header}>
+        <Image style={styles.logo} source={require('../../assets/juggling.png')} />
       </View>
-
-      <View style={styles.LoginText}>
-        <Text style={styles.Login1}>Login</Text>
-        <View style={styles.LoginLine}></View>
-      </View>
-
-      <View style={styles.Inputs}>
-        <View>
-          <Image style={styles.InputLogo} source={require("../../assets/user.png")} />
-          <Input style={styles.TextField} placeholder="Email Address" />
+      <Animatable.View animation="fadeInUpBig" style={styles.field}>
+        <View style={{ flex: 1.5, alignItems: "center", justifyContent: "flex-end" }}>
+          <Text style={styles.logintx}>Login</Text>
+          <View style={styles.borderline}></View>
         </View>
-        <View>
-          <Image style={styles.InputLogo} source={require("../../assets/lock.png")} />
-          <Input style={styles.TextField} placeholder="Password" secureTextEntry={true} />
+        <View style={{ flex: 2.5, paddingHorizontal: 30, }}>
+        <FloatingLabelInput
+        label="Email"
+        containerStyles={styles.email}
+        inputStyles={styles.inputText}
+        value={email}
+        onChangeText={value => setEmail(value)}
+      />
+              <FloatingLabelInput
+        label="Password"
+        containerStyles={styles.email}
+        inputStyles={styles.inputText}
+        value={password}
+        onChangeText={value => setPassword(value)}
+        isPassword
+        togglePassword={hide}
+      />
+        <View style={{ flexDirection: "row", justifyContent: "space-around",paddingHorizontal:10,paddingTop:10 }}>
+          <Text style={{ color: "#c2c2c2",fontSize:10 }}>Remember me</Text>
+          <Text style={{ color: "#c2c2c2",fontSize:10 }}>Forget Password</Text>
         </View>
-      </View>
-
-      <View style={styles.CheckBoxField}>
-        <View style={styles.remeberview}>
-          <Image style={styles.tick} source={require("../../assets/tick.png")} />
-          <Text style={styles.remember}>Remember</Text>
         </View>
-        <View style={styles.forgetview}>
-          <Text style={styles.forgettext}>Forget Password</Text>
-        </View>
-      </View>
-
-      <View style={styles.LoginButtonContainer}>
-        <View>
+        <View style={{ flex: 3,}}>
           <TouchableOpacity
             activeOpacity={0.8}
-            style={styles.LoginButton}
             onPress={() => userLogin(username, password)}
+            style={styles.LoginButton}
           >
-            <Text style={styles.LoginButtonInside}>LOGIN</Text>
+            <Text style={styles.LoginButtonInside}>Login</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Signup')}
+            activeOpacity={0.8}
+            style={styles.LoginButton2}
+          >
+            <Image style={styles.googlelogo} source={require("../../assets/google.png")} />
+            <Text style={styles.LoginButtonInside2}>Login with Google</Text>
           </TouchableOpacity>
         </View>
-      </View>
-      <View style={styles.orLoginContainer}>
-        <View style={styles.linedv}></View>
-        <Text style={{ paddingHorizontal: "1.5%", color: "#87888F",fontSize:12 }}>Or Login with</Text>
-        <View style={styles.linedv}></View>
-      </View>
-      <View style={styles.SocialButtons}>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={styles.Buttonfb}>
-          <Image style={styles.logo40} source={require("../../assets/facebook.png")} />
-          <Text style={styles.ButtonInfb}>FACEBOOK</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={styles.Buttongoogle}>
-          <Image style={styles.logo50} source={require("../../assets/google.png")} />
-          <Text style={styles.ButtonIngoogle}>GOOGLE</Text>
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.AccountContainer}>
-
-        <View style={{ flex: 1, justifyContent: "flex-end", alignItems: "center" }}>
-          <Text style={styles.account}>If you don't have an account</Text>
-          <Text onPress={()=>navigation.navigate("Signup")} style={styles.singup}>SIGNUP HERE</Text>
-        </View>
-        <View style={{ flex: 1, justifyContent: "flex-start", alignItems: "center" }}>
-          <View style={styles.singupline}></View>
-        </View>
-
-      </View>
-    </View >
+      </Animatable.View >
+    </KeyboardAvoidingView>
   );
 }
 
@@ -99,206 +81,101 @@ export default connect(mapStateToProps, mapDispatchToProps)(Login);
 
 const styles = StyleSheet.create({
   MainContainer: {
-    backgroundColor: "#0e101f",
     flex: 1,
+    backgroundColor: "#193250",
   },
-
-  LogoContainer: {
-    flex: 2.2,
-    alignItems: "center",
-    justifyContent: "center",
-    paddingTop: "15%"
-  },
-  BackArrow: {
-    height: 12,
-    width: 14,
-  },
-  TitleLogo: {
-    height: "50%",
-    width: "70%",
-    resizeMode: "contain"
-  },
-  fbbtn: {
+  header: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
-  LoginText: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+  logo: {
+    height: 100,
+    width: 200,
   },
-  Login1: {
-    fontSize: 13,
-    // paddingTop: 80,
-    fontWeight: "bold",
-    color: "white",
+  field: {
+    flex: 3,
+    backgroundColor: "#ffffff",
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    elevation: 5
   },
-  LoginLine: {
-    width: 15,
-    height: 1,
-    backgroundColor: "white",
-    marginTop: 5,
+  logintx: {
+    color: "#193250",
+    fontSize: 25,
+    fontWeight: "600"
   },
-  Inputs: {
-    paddingHorizontal: 27,
-    flex: 1.7,
-    justifyContent: "center",
-    //lineHeight: 12,
+  borderline: {
+    width: 34,
+    height: 2,
+    backgroundColor: "#5a6577",
+    marginTop: 10,
+    marginBottom: 0,
   },
-  TextField: {
-    paddingLeft: 35,
-    paddingTop: 12,
-    color: "white",
+  email: {
+    paddingLeft: 16,
     fontSize: 12,
+    color: "#193250",
+    borderBottomWidth:2,
+    borderColor:"#e3e4e8",
+    marginVertical: 20,
   },
-
-  InputLogo: {
-    position: "absolute",
-    top: 18,
-    left: 20,
-    height: 15,
-    width: 15,
-    resizeMode: "contain",
-  },
-  CheckBoxField: {
-
-    flex: .5,
-    flexDirection: "row",
-    marginHorizontal:"7%",
-
-  },
-  remeberview: {
-    flex: .8,
-    flexDirection: "row",
-    justifyContent: "flex-start",
-
-  },
-
-  remember: {
-    color: "#FFFFFF",
-    fontSize: 11,
-    flex: 1,
-
-  },
-  tick: {
-    width: 15,
-    height: 15,
-    flex: .3,
-    resizeMode: "contain",
-
-  },
-  forgetview: {
-    flex: .8,
-    alignItems: "flex-end",
-    paddingRight:"4%"
-  },
-  forgettext: {
-    color: "#FFFFFF",
-    fontSize: 11,
-  },
-  LoginButtonContainer: {
-    flex: .7,
+  inputText:{
+    fontSize:14,
+    color:"#000",
+    marginBottom:10
   },
   LoginButton: {
     alignItems: "center",
-    backgroundColor: "#1974ba",
-    padding: 16,
-    marginHorizontal: 40,
-    borderRadius: 3,
+    backgroundColor: "#193250",
+    padding: 18,
+    marginHorizontal: 30,
+    borderRadius: 35,
+    marginBottom:10,
+    shadowColor: "#000",
+shadowOffset: {
+	width: 0,
+	height: 2,
+},
+shadowOpacity: 0.25,
+shadowRadius: 3.84,
+
+elevation: 5,
   },
   LoginButtonInside: {
     color: "#ffffff",
     fontWeight: "bold",
-    fontSize: 12,
+    fontSize: 14,
   },
-
-  orLoginContainer: {
-
-    flex: .5,
-    flexDirection: "row",
-    justifyContent: "center",
+  LoginButton2: {
+    flexDirection:"row",
     alignItems: "center",
-    color: "#A5A6AB",
-  },
-  linedv: {
-
-    width: 25,
-    backgroundColor: "#87888F",
-    height: 1,
-  },
-
-  SocialButtons: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    marginHorizontal: 36
-  },
-  Buttonfb: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#3b5999",
-    borderRadius: 3,
-    marginHorizontal: 5,
-    height: 50
-  },
-  Buttongoogle: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent:"center",
     backgroundColor: "#ffffff",
-    borderRadius: 3,
-    marginHorizontal: 5,
-    height: 50
+    padding: 15,
+    marginHorizontal: 30,
+    borderRadius: 35,
+    borderWidth:1,
+    borderColor:"#193250",
+    shadowColor: "#000",
+shadowOffset: {
+	width: 0,
+	height: 2,
+},
+shadowOpacity: 0.25,
+shadowRadius: 3.84,
+
+elevation: 5,
   },
-  ButtonInfb: {
-    fontSize: 12,
-    color: "#ffffff",
+  LoginButtonInside2: {
+    color: "#193250",
     fontWeight: "bold",
-    paddingLeft: 10,
+    fontSize: 14,
+    paddingLeft:10
   },
-  ButtonIngoogle: {
-
-    fontSize: 12,
-    color: "#818284",
-    fontWeight: "bold",
-    paddingLeft: 10,
-
-  },
-  logo40: {
-    height: 20,
-    width: 20,
-    resizeMode: "contain",
-  },
-
-  logo50: {
-    height: 20,
-    width: 20,
-    resizeMode: "contain",
-  },
-
-  AccountContainer: {
-    flex: 1,
-    justifyContent: "flex-end"
-  },
-  account: {
-    textAlign: "center",
-    color: "#FEFEFC",
-    fontSize: 10,
-  },
-  singup: {
-    textAlign: "center",
-    color: "#17619C",
-    fontWeight: "bold",
-    fontSize: 12,
-  },
-  singupline: {
-    width: 80,
-    height: 1,
-    backgroundColor: "#17619C"
-  },
-
+  googlelogo:{
+    width:18,
+    height:18,
+    resizeMode:"contain"
+  }
 })

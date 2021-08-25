@@ -13,6 +13,7 @@ import React from 'react';
 import HomeScreen from './pages/home/HomeScreen';
 import DetailScreen from './pages/home/DetailScreen';
 import TabADetails from './pages/home/tabADetails';
+import CustomDrawer from'./CustomDrawer';
 import { connect } from 'react-redux';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -188,6 +189,7 @@ function HomeTab() {
           activeBackgroundColor: '#1a72b9',
           inactiveBackgroundColor: '#0e101f',
       }}
+      
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
@@ -253,29 +255,35 @@ function NotificationsStack() {
 }
 
 function RootContainer({ user }) {
-  if (user?.loggedin)
-    return (
-      <NavigationContainer>
-        <Drawer.Navigator    drawerContentOptions={{
-                activeTintColor: '#fff',
-                inactiveTintColor:'blue',
-                itemStyle: { marginVertical: 8, marginHorizontal: 8 },
-            }} initialRouteName="Home" drawerStyle={{
-          backgroundColor: '#0e101f',
-          width: 280,
-          color:"#fff",
-        }}>
-          <Drawer.Screen options={{ activeTintColor:"#fff" }} name="Home" component={HomeTab} />
-          <Drawer.Screen name="Notifications" component={NotificationsStack} />
-        </Drawer.Navigator>
-      </NavigationContainer>
-    );
-  else
-    return (
-      <NavigationContainer>
-        <LoginStack />
-      </NavigationContainer>
-    );
+
+  return (
+    <NavigationContainer >
+    <Drawer.Navigator
+      drawerContent={props => <CustomDrawer {...props} />}
+      drawerContentOptions={{
+        activeTintColor: '#fff',
+        inactiveTintColor: '#aeaeae',
+        itemStyle: { marginVertical: 8, marginHorizontal: 8 },
+      }}
+      initialRouteName="Home"
+      drawerStyle={{
+        backgroundColor: '#0e101f',
+        opacity: 0.9
+      }}
+      drawerType="front"
+    >
+      <Drawer.Screen name="main">
+        {() =>
+          user?.loggedin ? HomeTab() : (
+              <LoginStack />
+
+            )
+        }
+      </Drawer.Screen>
+    </Drawer.Navigator>
+    </NavigationContainer>
+  )
+
 }
 
 const mapStateToProps = state => {

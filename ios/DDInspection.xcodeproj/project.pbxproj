@@ -11,9 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		3869F00ED015C2158E4CAFEB /* libPods-DDInspection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F1A69B55B95D1957D80DDA /* libPods-DDInspection.a */; };
+		470A331344C8020167CD896F /* libPods-DDInspection-DDInspectionTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F100F2538F41B13558A990 /* libPods-DDInspection-DDInspectionTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		BDFB08246ACEFF78123653A4 /* libPods-JugglingWarehouse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D202B15A2FA0D296095B5D1A /* libPods-JugglingWarehouse.a */; };
-		ECCEE891A7B340595D96A3F3 /* libPods-JugglingWarehouse-JugglingWarehouseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 516C150158CB571CFE173677 /* libPods-JugglingWarehouse-JugglingWarehouseTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,12 +27,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* JugglingWarehouseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JugglingWarehouseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* DDInspectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DDInspectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* JugglingWarehouseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JugglingWarehouseTests.m; sourceTree = "<group>"; };
+		04DC94512F699705B4AC3AD8 /* Pods-DDInspection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDInspection.release.xcconfig"; path = "Target Support Files/Pods-DDInspection/Pods-DDInspection.release.xcconfig"; sourceTree = "<group>"; };
 		08FA3BE169EB4985AA5302AA /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		12257FA1711533C4BF554A72 /* Pods-JugglingWarehouse-JugglingWarehouseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JugglingWarehouse-JugglingWarehouseTests.release.xcconfig"; path = "Target Support Files/Pods-JugglingWarehouse-JugglingWarehouseTests/Pods-JugglingWarehouse-JugglingWarehouseTests.release.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* JugglingWarehouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JugglingWarehouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* DDInspection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDInspection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = JugglingWarehouse/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = JugglingWarehouse/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = JugglingWarehouse/Images.xcassets; sourceTree = "<group>"; };
@@ -41,11 +42,13 @@
 		1E72B5338D384641A23B922F /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		246A6A8F47B74CE09FFE208F /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		3062C71BB3724C8A90283FDE /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		42F1A69B55B95D1957D80DDA /* libPods-DDInspection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDInspection.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43FAFEFE86A6C9AA9785CD31 /* Pods-JugglingWarehouse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JugglingWarehouse.release.xcconfig"; path = "Target Support Files/Pods-JugglingWarehouse/Pods-JugglingWarehouse.release.xcconfig"; sourceTree = "<group>"; };
 		4742DCD2F7FC4DD98680B94E /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		4A6759D81A5D41BB8293B256 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		516C150158CB571CFE173677 /* libPods-JugglingWarehouse-JugglingWarehouseTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JugglingWarehouse-JugglingWarehouseTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D30D00C211BEB08DC07563E /* Pods-DDInspection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDInspection.debug.xcconfig"; path = "Target Support Files/Pods-DDInspection/Pods-DDInspection.debug.xcconfig"; sourceTree = "<group>"; };
 		69A0C6A4D12249D9A8229149 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		71F100F2538F41B13558A990 /* libPods-DDInspection-DDInspectionTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDInspection-DDInspectionTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD20EF88DBF4EC69FD3107F /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = JugglingWarehouse/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		997DA7E9CC1E437FBBF34B31 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
@@ -54,8 +57,9 @@
 		AA08D3D3583340DE87DE7A45 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		ABC1677028AE478AB714A8F4 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		AC08149F181E478B9758CF0A /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		BC20995422B44DFCCA58B353 /* Pods-DDInspection-DDInspectionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDInspection-DDInspectionTests.release.xcconfig"; path = "Target Support Files/Pods-DDInspection-DDInspectionTests/Pods-DDInspection-DDInspectionTests.release.xcconfig"; sourceTree = "<group>"; };
+		BC48ABCE31C24639A2F08A55 /* Pods-DDInspection-DDInspectionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDInspection-DDInspectionTests.debug.xcconfig"; path = "Target Support Files/Pods-DDInspection-DDInspectionTests/Pods-DDInspection-DDInspectionTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB9A8AB3A8BC4FE493CEFBD3 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		D202B15A2FA0D296095B5D1A /* libPods-JugglingWarehouse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JugglingWarehouse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D439E9D8B9B86863B256BB94 /* Pods-JugglingWarehouse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JugglingWarehouse.debug.xcconfig"; path = "Target Support Files/Pods-JugglingWarehouse/Pods-JugglingWarehouse.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F84D8115FAFB4B06B0934201 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
@@ -67,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECCEE891A7B340595D96A3F3 /* libPods-JugglingWarehouse-JugglingWarehouseTests.a in Frameworks */,
+				470A331344C8020167CD896F /* libPods-DDInspection-DDInspectionTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDFB08246ACEFF78123653A4 /* libPods-JugglingWarehouse.a in Frameworks */,
+				3869F00ED015C2158E4CAFEB /* libPods-DDInspection.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,8 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				D202B15A2FA0D296095B5D1A /* libPods-JugglingWarehouse.a */,
-				516C150158CB571CFE173677 /* libPods-JugglingWarehouse-JugglingWarehouseTests.a */,
+				42F1A69B55B95D1957D80DDA /* libPods-DDInspection.a */,
+				71F100F2538F41B13558A990 /* libPods-DDInspection-DDInspectionTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -171,8 +175,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* JugglingWarehouse.app */,
-				00E356EE1AD99517003FC87E /* JugglingWarehouseTests.xctest */,
+				13B07F961A680F5B00A75B9A /* DDInspection.app */,
+				00E356EE1AD99517003FC87E /* DDInspectionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,6 +188,10 @@
 				43FAFEFE86A6C9AA9785CD31 /* Pods-JugglingWarehouse.release.xcconfig */,
 				A5B0C0E6AB767F657B04B2F9 /* Pods-JugglingWarehouse-JugglingWarehouseTests.debug.xcconfig */,
 				12257FA1711533C4BF554A72 /* Pods-JugglingWarehouse-JugglingWarehouseTests.release.xcconfig */,
+				4D30D00C211BEB08DC07563E /* Pods-DDInspection.debug.xcconfig */,
+				04DC94512F699705B4AC3AD8 /* Pods-DDInspection.release.xcconfig */,
+				BC48ABCE31C24639A2F08A55 /* Pods-DDInspection-DDInspectionTests.debug.xcconfig */,
+				BC20995422B44DFCCA58B353 /* Pods-DDInspection-DDInspectionTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -191,9 +199,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* JugglingWarehouseTests */ = {
+		00E356ED1AD99517003FC87E /* DDInspectionTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "JugglingWarehouseTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "DDInspectionTests" */;
 			buildPhases = (
 				F37963688959AD7EFB5E4E6B /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -207,14 +215,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = JugglingWarehouseTests;
+			name = DDInspectionTests;
 			productName = JugglingWarehouseTests;
-			productReference = 00E356EE1AD99517003FC87E /* JugglingWarehouseTests.xctest */;
+			productReference = 00E356EE1AD99517003FC87E /* DDInspectionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* JugglingWarehouse */ = {
+		13B07F861A680F5B00A75B9A /* DDInspection */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "JugglingWarehouse" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "DDInspection" */;
 			buildPhases = (
 				263DB755ADD717EB581E65C2 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -229,9 +237,9 @@
 			);
 			dependencies = (
 			);
-			name = JugglingWarehouse;
+			name = DDInspection;
 			productName = JugglingWarehouse;
-			productReference = 13B07F961A680F5B00A75B9A /* JugglingWarehouse.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* DDInspection.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -251,7 +259,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "JugglingWarehouse" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "DDInspection" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -264,8 +272,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* JugglingWarehouse */,
-				00E356ED1AD99517003FC87E /* JugglingWarehouseTests */,
+				13B07F861A680F5B00A75B9A /* DDInspection */,
+				00E356ED1AD99517003FC87E /* DDInspectionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -310,15 +318,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JugglingWarehouse/Pods-JugglingWarehouse-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DDInspection/Pods-DDInspection-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JugglingWarehouse/Pods-JugglingWarehouse-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DDInspection/Pods-DDInspection-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JugglingWarehouse/Pods-JugglingWarehouse-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DDInspection/Pods-DDInspection-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		207D6449E741805A4CCCBD9C /* [CP] Embed Pods Frameworks */ = {
@@ -327,15 +335,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JugglingWarehouse/Pods-JugglingWarehouse-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DDInspection/Pods-DDInspection-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JugglingWarehouse/Pods-JugglingWarehouse-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DDInspection/Pods-DDInspection-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JugglingWarehouse/Pods-JugglingWarehouse-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DDInspection/Pods-DDInspection-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		263DB755ADD717EB581E65C2 /* [CP] Check Pods Manifest.lock */ = {
@@ -353,7 +361,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-JugglingWarehouse-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-DDInspection-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -366,15 +374,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JugglingWarehouse-JugglingWarehouseTests/Pods-JugglingWarehouse-JugglingWarehouseTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DDInspection-DDInspectionTests/Pods-DDInspection-DDInspectionTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JugglingWarehouse-JugglingWarehouseTests/Pods-JugglingWarehouse-JugglingWarehouseTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DDInspection-DDInspectionTests/Pods-DDInspection-DDInspectionTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JugglingWarehouse-JugglingWarehouseTests/Pods-JugglingWarehouse-JugglingWarehouseTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DDInspection-DDInspectionTests/Pods-DDInspection-DDInspectionTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F37963688959AD7EFB5E4E6B /* [CP] Check Pods Manifest.lock */ = {
@@ -392,7 +400,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-JugglingWarehouse-JugglingWarehouseTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-DDInspection-DDInspectionTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -405,15 +413,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JugglingWarehouse-JugglingWarehouseTests/Pods-JugglingWarehouse-JugglingWarehouseTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DDInspection-DDInspectionTests/Pods-DDInspection-DDInspectionTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JugglingWarehouse-JugglingWarehouseTests/Pods-JugglingWarehouse-JugglingWarehouseTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DDInspection-DDInspectionTests/Pods-DDInspection-DDInspectionTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JugglingWarehouse-JugglingWarehouseTests/Pods-JugglingWarehouse-JugglingWarehouseTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DDInspection-DDInspectionTests/Pods-DDInspection-DDInspectionTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -460,7 +468,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* JugglingWarehouse */;
+			target = 13B07F861A680F5B00A75B9A /* DDInspection */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -468,7 +476,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5B0C0E6AB767F657B04B2F9 /* Pods-JugglingWarehouse-JugglingWarehouseTests.debug.xcconfig */;
+			baseConfigurationReference = BC48ABCE31C24639A2F08A55 /* Pods-DDInspection-DDInspectionTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -489,13 +497,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JugglingWarehouse.app/JugglingWarehouse";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DDInspection.app/DDInspection";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12257FA1711533C4BF554A72 /* Pods-JugglingWarehouse-JugglingWarehouseTests.release.xcconfig */;
+			baseConfigurationReference = BC20995422B44DFCCA58B353 /* Pods-DDInspection-DDInspectionTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -513,13 +521,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JugglingWarehouse.app/JugglingWarehouse";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DDInspection.app/DDInspection";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D439E9D8B9B86863B256BB94 /* Pods-JugglingWarehouse.debug.xcconfig */;
+			baseConfigurationReference = 4D30D00C211BEB08DC07563E /* Pods-DDInspection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -537,8 +545,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appstirr.JugglingWarehouse;
-				PRODUCT_NAME = JugglingWarehouse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appstirr.DDInspection;
+				PRODUCT_NAME = DDInspection;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -547,7 +555,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43FAFEFE86A6C9AA9785CD31 /* Pods-JugglingWarehouse.release.xcconfig */;
+			baseConfigurationReference = 04DC94512F699705B4AC3AD8 /* Pods-DDInspection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -564,8 +572,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appstirr.JugglingWarehouse;
-				PRODUCT_NAME = JugglingWarehouse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appstirr.DDInspection;
+				PRODUCT_NAME = DDInspection;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -697,7 +705,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "JugglingWarehouseTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "DDInspectionTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -706,7 +714,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "JugglingWarehouse" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "DDInspection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -715,7 +723,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "JugglingWarehouse" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "DDInspection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

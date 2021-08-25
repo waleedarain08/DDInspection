@@ -8,11 +8,9 @@ import {
   SafeAreaView,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
-import {Input, Button} from 'react-native-elements';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {userLogin} from '../../redux/actions';
-import {TextInput} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
 import {FloatingLabelInput} from 'react-native-floating-label-input';
 import * as Animatable from 'react-native-animatable';
@@ -28,34 +26,34 @@ function Signup({navigation, userInfo, userLogin}) {
   return (
     <View style={styles.MainContainer}>
       <View style={styles.header}>
-        <Text style={{color: '#fff', fontSize: 20, fontWeight: 'bold'}}>
+        <Animatable.Text animation="fadeInDownBig" style={{color: '#fff', fontSize: 20, fontWeight: "bold"}}>
           SIGN UP
-        </Text>
+        </Animatable.Text>
       </View>
 
       <Animatable.View animation="fadeInUpBig" style={styles.footer}>
-        <ScrollView showVerticalScrollIndicator={false}>
-          <View style={styles.inputContainer}>
+        <KeyboardAwareScrollView showVerticalScrollIndicator={false}>
+          <View style={styles.formContainer}>
             <FloatingLabelInput
               label="First Name"
               value={firstname}
-              containerStyles={styles.inputText}
-              inputStyles={{fontSize: 15, color:"#000"}}
+              containerStyles={styles.inputContainer}
+              inputStyles={styles.inputText}
               onChangeText={value => setFirstname(value)}
             />
             <FloatingLabelInput
               label="Last Name"
               value={lastname}
-              containerStyles={styles.inputText}
-              inputStyles={{fontSize: 15, color:"#000"}}
+              containerStyles={styles.inputContainer}
+              inputStyles={styles.inputText}
               onChangeText={value => setLastname(value)}
             />
 
             <FloatingLabelInput
               label="Phone No."
               value={phonenum}
-              containerStyles={styles.inputText}
-              inputStyles={{fontSize: 15, color:"#000"}}
+              containerStyles={styles.inputContainer}
+              inputStyles={styles.inputText}
               keyboardType="numeric"
               onChangeText={value => setPhonenum(value)}
             />
@@ -64,8 +62,8 @@ function Signup({navigation, userInfo, userLogin}) {
               value={password}
               isPassword
               togglePassword={show}
-              containerStyles={styles.inputText}
-              inputStyles={{fontSize: 15, color:"#000"}}
+              containerStyles={styles.inputContainer}
+              inputStyles={styles.inputText}
               onChangeText={value => setPassword(value)}
               customShowPasswordComponent={
                 <Text style={{fontSize: 12, marginRight: 8}}>Show</Text>
@@ -79,8 +77,8 @@ function Signup({navigation, userInfo, userLogin}) {
               value={confirmpassword}
               isPassword
               togglePassword={show}
-              containerStyles={styles.inputText}
-              inputStyles={{fontSize: 15, color:"#000"}} 
+              containerStyles={styles.inputContainer}
+              inputStyles={styles.inputText} 
               onChangeText={value => setConfirmpassword(value)}
               customShowPasswordComponent={
                 <Text style={{fontSize: 12, marginRight: 8}}>Show</Text>
@@ -96,11 +94,11 @@ function Signup({navigation, userInfo, userLogin}) {
               <Text style={styles.LoginButtonInside}>Sign Up</Text>
             </TouchableOpacity>
             <Text style={{fontSize: 12}}>
-              I have an account?{' '}
-              <Text style={{fontSize: 12, color: '#5b53ff'}}>Login now</Text>
+              I have an account?
+              <Text onPress={() => navigation.goBack()} style={{fontSize: 12, color: '#5b53ff',paddingLeft:5,}}>Login now</Text>
             </Text>
           </View>
-        </ScrollView>
+        </KeyboardAwareScrollView>
       </Animatable.View>
     </View>
   );
@@ -128,27 +126,32 @@ const styles = StyleSheet.create({
   footer: {
     flex: 3,
     backgroundColor: '#ffffff',
-    borderTopLeftRadius: 25,
-    borderTopRightRadius: 25,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
     elevation: 10,
     paddingTop: 30,
   },
-  inputContainer: {
+  formContainer: {
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
 
   },
-  inputText: {
-    marginVertical: 5,
+  inputContainer: {
     paddingLeft: 10,
     fontSize: 12,
+    marginVertical: 20,
     borderBottomWidth: 0.8,
   },
   inputLabel: {
     color: '#5b6777',
     paddingLeft: 20,
     fontSize: 12,
+  },
+  inputText:{
+    fontSize:14,
+    color:"#000",
+    marginBottom:10
   },
 
   LoginButton: {
@@ -157,7 +160,7 @@ const styles = StyleSheet.create({
     width: 320,
     padding: 18,
     borderRadius: 35,
-    marginBottom: 30,
+    marginBottom: 80,
     elevation: 4,
    
   },
