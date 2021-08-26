@@ -1,11 +1,9 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { TabB, TabBDetails } from './pages/home/tabB';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Login from './pages/login/login';
 import Signup from './pages/signup/signup';
 import search, { Search } from './pages/search/search';
 // import profile from './pages/profile/profile';
-// import download from './pages/doenload/download';
 import list, { List } from './pages/list/list';
 import { NavigationContainer } from '@react-navigation/native';
 import NotificationsScreen from './pages/notificationsScreen/notificationScreen';
@@ -74,37 +72,6 @@ function HomeTabAStack() {
   );
 }
 
-const HomeTabBStackNav = createStackNavigator();
-function HomeTabBStack() {
-  return (
-    <HomeTabBStackNav.Navigator initialRouteName="TabB" screenOptions={{
-      headerStyle: {
-        backgroundColor: '#0e101f',
-        shadowOpacity: 0.85,
-        shadowRadius: 0,
-        shadowOffset: {
-          width: 0,
-          height: 0,
-        },
-      },
-      headerTintColor: '#fff',
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
-    }}>
-      
-      <HomeTabBStackNav.Screen
-        name="TabB"
-        component={TabB}
-        options={({ navigation }) => ({
-          headerLeft: () => drawerButton(navigation),
-        })}
-      />
-      <HomeTabBStackNav.Screen name="TabBDetails" component={TabBDetails} />
-    </HomeTabBStackNav.Navigator>
-  );
-}
-
 const HomeSearchStackNav = createStackNavigator();
 function HomeSearchStack() {
   return (
@@ -130,7 +97,6 @@ function HomeSearchStack() {
           headerLeft: () => drawerButton(navigation),
         })}
       />
-      <HomeSearchStackNav.Screen name="TabBDetails" component={TabBDetails} />
     </HomeSearchStackNav.Navigator>
   );
 }
@@ -165,6 +131,7 @@ function HomeListStack() {
 }
 
 
+
 const HomeTabNav = createBottomTabNavigator();
 
 function HomeTab() {
@@ -195,8 +162,6 @@ function HomeTab() {
           let iconName;
 
           switch (route.name) {
-            case 'Download':
-              return   <Image style={{height:18,width:18,resizeMode:"contain"}} source={require('./assets/downloadicon.png')} />
             case 'Search':
               return   <Image style={{height:18,width:18,resizeMode:"contain"}} source={require('./assets/search.png')} />
               break;
@@ -215,7 +180,6 @@ function HomeTab() {
           // return <Icon name={iconName} size={size} color={color} />;  
         },
       })}>
-      <HomeTabNav.Screen name="Download" component={HomeTabBStack} />
       <HomeTabNav.Screen name="Search" component={HomeSearchStack} />
       <HomeTabNav.Screen name="Home" component={HomeTabAStack} />
       <HomeTabNav.Screen name="List" component={HomeListStack} />

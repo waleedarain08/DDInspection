@@ -42,12 +42,15 @@ function CustomDrawer({navigation,userLogout}) {
                 </View>
                 <View style={{flex:1,}}>
                 <Text style={styles.home}>Setting</Text>
+                <View style={styles.borderline}></View>
                 </View>
                 <View style={{flex:1,}}>
                 <Text style={styles.home}>Account</Text>
+                <View style={styles.borderline}></View>
                 </View>
                 <View style={{flex:1,}}>
                 <Text style={styles.home}>About</Text>
+                <View style={styles.borderline}></View>
                 </View>
                 <View style={{flex:1,}}>
                 <Text onPress={()=>logout()} style={styles.home}>Logout</Text>
@@ -71,8 +74,9 @@ const styles = StyleSheet.create({
         fontWeight:"500"
     },
     borderline:{
-        backgroundColor:"#193250",
-        height:1
+        backgroundColor:"#e5e5e5",
+        height:1,
+        marginVertical:18
     }
 });
 
