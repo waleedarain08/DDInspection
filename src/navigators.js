@@ -6,7 +6,6 @@ import search, { Search } from './pages/search/search';
 // import profile from './pages/profile/profile';
 import list, { List } from './pages/list/list';
 import { NavigationContainer } from '@react-navigation/native';
-import NotificationsScreen from './pages/notificationsScreen/notificationScreen';
 import React from 'react';
 import HomeScreen from './pages/home/HomeScreen';
 import DetailScreen from './pages/home/DetailScreen';
@@ -125,7 +124,6 @@ function HomeListStack() {
           headerLeft: () => drawerButton(navigation),
         })}
       />
-      <HomeListStackNav.Screen name="TabBDetails" component={TabBDetails} />
     </HomeListStackNav.Navigator>
   );
 }
@@ -189,34 +187,7 @@ function HomeTab() {
   );
 }
 
-const NotificationStackNav = createStackNavigator();
-function NotificationsStack() {
-  return (
-    <NotificationStackNav.Navigator screenOptions={{
-      headerStyle: {
-        backgroundColor: '#0e101f',
-        shadowOpacity: 0.85,
-        shadowRadius: 0,
-        shadowOffset: {
-          width: 0,
-          height: 0,
-        },
-      },
-      headerTintColor: '#fff',
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
-    }}>
-      <NotificationStackNav.Screen
-        name="Notfications"
-        component={NotificationsScreen}
-        options={({ navigation }) => ({
-          headerLeft: () => drawerButton(navigation),
-        })}
-      />
-    </NotificationStackNav.Navigator>
-  );
-}
+
 
 function RootContainer({ user }) {
 
