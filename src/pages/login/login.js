@@ -18,7 +18,7 @@ function Login({ navigation, userInfo, userLogin }) {
     <KeyboardAvoidingView behavior={(Platform.OS === 'ios') ? "padding" : null} keyboardVerticalOffset={Platform.select({ ios: -250, android: -100 })}
       style={styles.MainContainer}>
       <View style={styles.header}>
-        <Image style={styles.logo} source={require('../../assets/juggling.png')} />
+        <Image style={styles.logo} source={require('../../assets/sylvanRoad.png')} />
       </View>
       <Animatable.View animation="fadeInUpBig" style={styles.field}>
         <View style={{ flex: 1.5, alignItems: "center", justifyContent: "flex-end" }}>
@@ -57,7 +57,7 @@ function Login({ navigation, userInfo, userLogin }) {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate('Signup')}
-            activeOpacity={0.8}
+            activeOpacity={0.9}
             style={styles.LoginButton2}
           >
             <Image style={styles.googlelogo} source={require("../../assets/google.png")} />
@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
   },
   logo: {
     height: 100,
-    width: 200,
+    width: 100,
+    resizeMode:"contain"
   },
   field: {
     flex: 3,

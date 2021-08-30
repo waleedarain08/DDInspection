@@ -3,12 +3,14 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Login from './pages/login/login';
 import Signup from './pages/signup/signup';
 import search, { Search } from './pages/search/search';
-// import profile from './pages/profile/profile';
+import profile,{Profile} from './pages/profile/profile';
 import list, { List } from './pages/list/list';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import HomeScreen from './pages/home/HomeScreen';
 import DetailScreen from './pages/home/DetailScreen';
+import CheckProperty from './pages/profile/CheckProperty';
+import CheckProperty2 from './pages/profile/CheckProperty2';
 import TabADetails from './pages/home/tabADetails';
 import CustomDrawer from'./CustomDrawer';
 import { connect } from 'react-redux';
@@ -76,7 +78,7 @@ function HomeSearchStack() {
   return (
     <HomeSearchStackNav.Navigator initialRouteName="search" screenOptions={{
       headerStyle: {
-        backgroundColor: '#0e101f',
+        backgroundColor: '#ffffff',
         shadowOpacity: 0.85,
         shadowRadius: 0,
         shadowOffset: {
@@ -84,19 +86,62 @@ function HomeSearchStack() {
           height: 0,
         },
       },
-      headerTintColor: '#fff',
+      headerTintColor: '#5a6778',
       headerTitleStyle: {
         fontWeight: 'bold',
+        fontSize:16
       },
     }}>
       <HomeSearchStackNav.Screen
-        name="search"
+        name="PRE-INPECTION CHECKLIST"
         component={Search}
         options={({ navigation }) => ({
           headerLeft: () => drawerButton(navigation),
         })}
       />
     </HomeSearchStackNav.Navigator>
+  );
+}
+const HomeProfileStackNav = createStackNavigator();
+function HomeProfileStack() {
+  return (
+    <HomeProfileStackNav.Navigator initialRouteName="profile" screenOptions={{
+      headerStyle: {
+        backgroundColor: '#ffffff',
+        shadowOpacity: 0.85,
+        shadowRadius: 0,
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+      },
+      headerTintColor: '#5a6778',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        fontSize:16
+      },
+    }}>
+      <HomeProfileStackNav.Screen
+        name="CONFIRM PROPERTY IS ACCESSIBLE "
+        component={Profile}
+        options={({ navigation }) => ({
+          headerLeft: () => drawerButton(navigation),
+        })}
+      />
+      <HomeProfileStackNav.Screen name="CheckProperty"
+      
+        component={CheckProperty}
+        options={({ navigation }) => ({
+          headerShown: false,
+        })} />
+            <HomeProfileStackNav.Screen name="CheckProperty2"
+      
+      component={CheckProperty2}
+      options={({ navigation }) => ({
+        headerShown: false,
+      })} />
+    </HomeProfileStackNav.Navigator>
+    
   );
 }
 const HomeListStackNav = createStackNavigator();
@@ -181,7 +226,7 @@ function HomeTab() {
       <HomeTabNav.Screen name="Search" component={HomeSearchStack} />
       <HomeTabNav.Screen name="Home" component={HomeTabAStack} />
       <HomeTabNav.Screen name="List" component={HomeListStack} />
-      <HomeTabNav.Screen name="Profile" component={HomeSearchStack} />
+      <HomeTabNav.Screen name="Profile" component={HomeProfileStack} />
 
     </HomeTabNav.Navigator>
   );

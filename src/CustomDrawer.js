@@ -34,7 +34,9 @@ function CustomDrawer({navigation,userLogout}) {
     const proileImage = 'react_logo.png';
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <View style={{flex:1,backgroundColor:"#193250"}}></View>
+            <View style={{flex:1,backgroundColor:"#193250",justifyContent:"center",alignItems:"center"}}>
+            <Image style={styles.logo} source={require('./assets/sylvanRoad.png')} />
+            </View>
             <View style={styles.manu}>
                 <View style={{flex:1,}}>
                 <Text style={styles.home}>Home</Text>
@@ -68,6 +70,11 @@ const styles = StyleSheet.create({
         paddingVertical:30,
         paddingHorizontal:20
     },
+    logo: {
+        height: 100,
+        width: 100,
+        resizeMode:"contain"
+      },
     home:{
         color:"#193250",
         fontSize:15,
@@ -77,7 +84,10 @@ const styles = StyleSheet.create({
         backgroundColor:"#e5e5e5",
         height:1,
         marginVertical:18
-    }
+    },
+    groupPng:{
+        width:20
+    },
 });
 
 const mapStateToProps = state => {
