@@ -31,7 +31,6 @@ function HomeScreen({navigation, user, userLogout}) {
               },
               shadowOpacity: 0.27,
               shadowRadius: 4.65,
-
               elevation: 10,
             }}>
             <Image
@@ -73,7 +72,7 @@ function HomeScreen({navigation, user, userLogout}) {
             <Text style={{color: '#8a8a8a'}}>John Snow</Text>
           </View>
           <View
-            style={{flex: 1, alignItems: 'flex-end', justifyContent: 'center'}}>
+            style={{flex: .5, alignItems: 'flex-end', justifyContent: 'center'}}>
             <Image
               source={require('../../assets/user.png')}
               style={{width: 16, height: 16, resizeMode: 'contain'}}
@@ -85,7 +84,7 @@ function HomeScreen({navigation, user, userLogout}) {
             <Text style={{color: '#8a8a8a'}}>johnsnow@gmail.com</Text>
           </View>
           <View
-            style={{flex: 1, alignItems: 'flex-end', justifyContent: 'center'}}>
+            style={{flex: .5, alignItems: 'flex-end', justifyContent: 'center'}}>
             <Image
               source={require('../../assets/email.png')}
               style={{width: 16, height: 16, resizeMode: 'contain'}}
@@ -97,7 +96,7 @@ function HomeScreen({navigation, user, userLogout}) {
             <Text style={{color: '#8a8a8a'}}>202-555-0186</Text>
           </View>
           <View
-            style={{flex: 1, alignItems: 'flex-end', justifyContent: 'center'}}>
+            style={{flex: .5, alignItems: 'flex-end', justifyContent: 'center'}}>
             <Image
               source={require('../../assets/phone.png')}
               style={{width: 16, height: 16, resizeMode: 'contain'}}
@@ -133,7 +132,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   ratingView: {
-    paddingHorizontal: '8%',
+    paddingHorizontal: '6%',
     paddingVertical: '2%',
     justifyContent: 'center',
     alignItems: 'center',

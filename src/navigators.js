@@ -3,7 +3,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Login from './pages/login/login';
 import Signup from './pages/signup/signup';
 import search, { Search } from './pages/search/search';
-import account, { Account } from './pages/Account/Account';
+import Account from './pages/Account/Account';
 import profile, { Profile } from './pages/profile/profile';
 import list, { List } from './pages/list/list';
 import { NavigationContainer } from '@react-navigation/native';
@@ -116,35 +116,35 @@ function HomeSearchStack() {
     </HomeSearchStackNav.Navigator>
   );
 }
-// const HomeAccountStackNav = createStackNavigator();
-// function HomeAccountStack() {
-//   return (
-//     <HomeAccountStackNav.Navigator initialRouteName="Account" screenOptions={{
-//       headerStyle: {
-//         backgroundColor: '#ffffff',
-//         shadowOpacity: 0.85,
-//         shadowRadius: 0,
-//         shadowOffset: {
-//           width: 0,
-//           height: 0,
-//         },
-//       },
-//       headerTintColor: '#5a6778',
-//       headerTitleStyle: {
-//         fontWeight: 'bold',
-//         fontSize: 16
-//       },
-//     }}>
-//       <HomeAccountStackNav.Screen
-//         name="Account"
-//         component={Account}
-//         options={({ navigation }) => ({
-//           headerLeft: () => drawerButton(navigation),
-//         })}
-//       />
-//     </HomeAccountStackNav.Navigator>
-//   );
-// }
+const HomeAccountStackNav = createStackNavigator();
+function HomeAccountStack() {
+  return (
+    <HomeAccountStackNav.Navigator initialRouteName="Account" screenOptions={{
+      headerStyle: {
+        backgroundColor: '#ffffff',
+        shadowOpacity: 0.85,
+        shadowRadius: 0,
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+      },
+      headerTintColor: '#5a6778',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        fontSize: 16
+      },
+    }}>
+      <HomeAccountStackNav.Screen
+        name="Account"
+        component={Account}
+        options={({ navigation }) => ({
+          headerLeft: () => drawerButton(navigation),
+        })}
+      />
+    </HomeAccountStackNav.Navigator>
+  );
+}
 const HomeProfileStackNav = createStackNavigator();
 function HomeProfileStack() {
   return (

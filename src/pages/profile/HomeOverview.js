@@ -25,7 +25,7 @@ export default function HomeOverview({ navigation }) {
             </TouchableOpacity>
             <Text style={styles.overview}>INSPECTION OVERVIEW</Text>
             </View>
-            <Text style={{color:"#4d525d",fontSize:22,fontWeight:"bold",paddingVertical:20,paddingHorizontal:20}}>Listing all rooms for the property. Rooms are added tu this as they are inspected.</Text>
+            <Text style={{color:"#4d525c",fontSize:18,fontWeight:"bold",paddingVertical:20,paddingHorizontal:20}}>Listing all rooms for the property. Rooms are added tu this as they are inspected.</Text>
             <FlatList
               keyExtractor={(item, index) => index}
               data={reason}
