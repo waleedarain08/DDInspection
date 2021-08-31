@@ -16,40 +16,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {TextInput} from 'react-native';
 
 function HomeScreen({navigation, user, userLogout}) {
-  const [reason, setReason] = useState([
-    {title: 'abc', image: require('../../assets/vedio.png')},
-    {title: 'def', image: require('../../assets/vedio.png')},
-    {title: 'ghi', image: require('../../assets/vedio.png')},
-  ]);
-  const [reason1, setReason1] = useState([
-    {title: 'abc', image: require('../../assets/01-tile.png')},
-    {title: 'abc', image: require('../../assets/02-tile.png')},
-    {title: 'abc', image: require('../../assets/03-tile.png')},
-    {title: 'abc', image: require('../../assets/01-tile.png')},
-    {title: 'abc', image: require('../../assets/02-tile.png')},
-    {title: 'abc', image: require('../../assets/03-tile.png')},
-  ]);
-  const [reason2, setReason2] = useState([
-    {title: 'abc', image: require('../../assets/01-tile.png')},
-    {title: 'abc', image: require('../../assets/02-tile.png')},
-    {title: 'abc', image: require('../../assets/03-tile.png')},
-    {title: 'abc', image: require('../../assets/01-tile.png')},
-    {title: 'abc', image: require('../../assets/02-tile.png')},
-    {title: 'abc', image: require('../../assets/03-tile.png')},
-    {title: 'abc', image: require('../../assets/01-tile.png')},
-    {title: 'abc', image: require('../../assets/02-tile.png')},
-    {title: 'abc', image: require('../../assets/03-tile.png')},
-  ]);
-  const [reason3, setReason3] = useState([
-    {title: 'abc', image: require('../../assets/serial1.jpg')},
-    {title: 'abc', image: require('../../assets/serial2.jpg')},
-    {title: 'abc', image: require('../../assets/serial1.jpg')},
-    {title: 'abc', image: require('../../assets/serial2.jpg')},
-  ]);
 
-  goNext = () => {
-    navigation.navigate('DetailScreen');
-  };
 
   return (
     <View style={styles.mainContainer}>
