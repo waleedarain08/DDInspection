@@ -1,4 +1,3 @@
-
 import React, {Component, useEffect, useState} from 'react';
 import {
   View,
@@ -62,8 +61,9 @@ export function List({navigation}) {
           </Text>
         </TouchableOpacity>
       </View>
-      <ScrollView contentContainerStyle={{paddingBottom: 40}}>
-
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{paddingBottom: 40}}>
         {/* SECTION==1 */}
 
         <View style={styles.sectionContainer}>
@@ -73,13 +73,13 @@ export function List({navigation}) {
               style={styles.sectionImage}
             />
           </View>
-          <View style={{flex: 2, marginLeft:"8%"}}>
+          <View style={{flex: 2, marginLeft: '8%'}}>
             <View
               style={{
                 backgroundColor: '#f26521',
                 flexDirection: 'row',
-                marginRight: "35%",
-                padding: "3%",
+                marginRight: '35%',
+                padding: '3%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
                 borderRadius: 20,
@@ -99,27 +99,26 @@ export function List({navigation}) {
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop: "4%",
+                paddingTop: '4%',
               }}>
               <Image
                 source={require('../../assets/location.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: "5%"}}>
+              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
                 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
               </Text>
             </View>
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop:"4%",
-
+                paddingTop: '4%',
               }}>
               <Image
                 source={require('../../assets/infoSquare.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: "5%"}}>
+              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
                 The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.
                 She will be there from 9-11AM on 1/26/21.
               </Text>
@@ -134,16 +133,19 @@ export function List({navigation}) {
             alignItems: 'center',
             justifyContent: 'space-evenly',
           }}>
-          <TouchableOpacity 
-           onPress={()=> navigation.navigate("EndInspection")}
-          activeOpacity={0.8} 
-          style={styles.resumeButton}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('EndInspection')}
+            activeOpacity={0.8}
+            style={styles.resumeButton}>
             <Text style={{color: '#193250', fontWeight: 'bold', fontSize: 12}}>
               Resume
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity  onPress={()=> navigation.navigate("DetailPage")} activeOpacity={0.8} style={styles.detailButton}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('DetailPage')}
+            activeOpacity={0.8}
+            style={styles.detailButton}>
             <Text style={{color: '#193250', fontWeight: 'bold', fontSize: 12}}>
               View Details
             </Text>
@@ -160,13 +162,13 @@ export function List({navigation}) {
               style={styles.sectionImage}
             />
           </View>
-          <View style={{flex: 2, marginLeft:"8%"}}>
+          <View style={{flex: 2, marginLeft: '8%'}}>
             <View
               style={{
                 backgroundColor: '#bd0000',
                 flexDirection: 'row',
-                marginRight: "35%",
-                padding: "3%",
+                marginRight: '35%',
+                padding: '3%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
                 borderRadius: 20,
@@ -179,34 +181,31 @@ export function List({navigation}) {
                   resizeMode: 'contain',
                 }}
               />
-              <Text style={{color: '#fff', fontSize: 10}}>
-              Mar 16 - 2:30PM
-              </Text>
+              <Text style={{color: '#fff', fontSize: 10}}>Mar 16 - 2:30PM</Text>
             </View>
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop: "4%",
+                paddingTop: '4%',
               }}>
               <Image
                 source={require('../../assets/location.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: "5%"}}>
+              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
                 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
               </Text>
             </View>
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop:"4%",
-
+                paddingTop: '4%',
               }}>
               <Image
                 source={require('../../assets/infoSquare.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: "5%"}}>
+              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
                 The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.
                 She will be there from 9-11AM on 1/26/21.
               </Text>
@@ -244,13 +243,13 @@ export function List({navigation}) {
               style={styles.sectionImage}
             />
           </View>
-          <View style={{flex: 2, marginLeft:"8%"}}>
+          <View style={{flex: 2, marginLeft: '8%'}}>
             <View
               style={{
                 backgroundColor: '#f26521',
                 flexDirection: 'row',
-                marginRight: "35%",
-                padding: "3%",
+                marginRight: '35%',
+                padding: '3%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
                 borderRadius: 20,
@@ -263,34 +262,31 @@ export function List({navigation}) {
                   resizeMode: 'contain',
                 }}
               />
-              <Text style={{color: '#fff', fontSize: 10}}>
-              Feb 17 - 9:00AM
-              </Text>
+              <Text style={{color: '#fff', fontSize: 10}}>Feb 17 - 9:00AM</Text>
             </View>
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop: "4%",
+                paddingTop: '4%',
               }}>
               <Image
                 source={require('../../assets/location.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: "5%"}}>
+              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
                 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
               </Text>
             </View>
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop:"4%",
-
+                paddingTop: '4%',
               }}>
               <Image
                 source={require('../../assets/infoSquare.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: "5%"}}>
+              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
                 The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.
                 She will be there from 9-11AM on 1/26/21.
               </Text>
@@ -307,7 +303,7 @@ export function List({navigation}) {
           }}>
           <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
-            Inspect Now
+              Inspect Now
             </Text>
           </TouchableOpacity>
 
@@ -321,20 +317,20 @@ export function List({navigation}) {
 
         {/* SECTION==4 */}
 
-       <View style={styles.sectionContainer}>
+        <View style={styles.sectionContainer}>
           <View style={styles.imageView}>
             <Image
               source={require('../../assets/house1.jpg')}
               style={styles.sectionImage}
             />
           </View>
-          <View style={{flex: 2, marginLeft:"8%"}}>
+          <View style={{flex: 2, marginLeft: '8%'}}>
             <View
               style={{
                 backgroundColor: '#f26521',
                 flexDirection: 'row',
-                marginRight: "35%",
-                padding: "3%",
+                marginRight: '35%',
+                padding: '3%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
                 borderRadius: 20,
@@ -354,27 +350,26 @@ export function List({navigation}) {
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop: "4%",
+                paddingTop: '4%',
               }}>
               <Image
                 source={require('../../assets/location.png')}
-                style={{height:14, width: 14, resizeMode: 'contain'}}
+                style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: "5%"}}>
+              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
                 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
               </Text>
             </View>
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop:"4%",
-
+                paddingTop: '4%',
               }}>
               <Image
                 source={require('../../assets/infoSquare.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: "5%"}}>
+              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
                 The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.
                 She will be there from 9-11AM on 1/26/21.
               </Text>
@@ -391,7 +386,7 @@ export function List({navigation}) {
           }}>
           <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
-            Inspect Now
+              Inspect Now
             </Text>
           </TouchableOpacity>
 
@@ -412,13 +407,13 @@ export function List({navigation}) {
               style={styles.sectionImage}
             />
           </View>
-          <View style={{flex: 2, marginLeft:"8%"}}>
+          <View style={{flex: 2, marginLeft: '8%'}}>
             <View
               style={{
                 backgroundColor: '#bd0000',
                 flexDirection: 'row',
-                marginRight: "35%",
-                padding: "3%",
+                marginRight: '35%',
+                padding: '3%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
                 borderRadius: 20,
@@ -431,34 +426,31 @@ export function List({navigation}) {
                   resizeMode: 'contain',
                 }}
               />
-              <Text style={{color: '#fff', fontSize: 10}}>
-              Mar 16 - 2:30PM
-              </Text>
+              <Text style={{color: '#fff', fontSize: 10}}>Mar 16 - 2:30PM</Text>
             </View>
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop: "4%",
+                paddingTop: '4%',
               }}>
               <Image
                 source={require('../../assets/location.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: "5%"}}>
+              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
                 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
               </Text>
             </View>
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop:"4%",
-
+                paddingTop: '4%',
               }}>
               <Image
                 source={require('../../assets/infoSquare.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: "5%"}}>
+              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
                 The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.
                 She will be there from 9-11AM on 1/26/21.
               </Text>
@@ -475,7 +467,7 @@ export function List({navigation}) {
           }}>
           <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
-            Inspect Now
+              Inspect Now
             </Text>
           </TouchableOpacity>
 
@@ -503,7 +495,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderBottomWidth: 3,
     borderBottomColor: '#193250',
-    paddingVertical: "5%",
+    paddingVertical: '5%',
   },
   topBar2: {
     flex: 1,
@@ -511,7 +503,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderBottomWidth: 1,
     borderBottomColor: '#e5eaf0',
-    paddingVertical: "5%",
+    paddingVertical: '5%',
   },
   topBarText: {
     color: '#193250',
@@ -525,7 +517,7 @@ const styles = StyleSheet.create({
   sectionContainer: {
     flex: 1,
     flexDirection: 'row',
-    padding: "5%",
+    padding: '5%',
   },
   imageView: {
     flex: 1.2,
@@ -533,10 +525,12 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 3,
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 20,
   },
   sectionImage: {
     height: 120,
@@ -544,8 +538,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   resumeButton: {
-    paddingHorizontal: "16%",
-    paddingVertical: "3%",
+    paddingHorizontal: '16%',
+    paddingVertical: '3%',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
@@ -553,8 +547,8 @@ const styles = StyleSheet.create({
   },
 
   inspectButton: {
-    paddingHorizontal: "12%",
-    paddingVertical: "3%",
+    paddingHorizontal: '12%',
+    paddingVertical: '3%',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
@@ -562,8 +556,8 @@ const styles = StyleSheet.create({
   },
 
   detailButton: {
-    paddingHorizontal: "12%",
-    paddingVertical: "2.5%",
+    paddingHorizontal: '12%',
+    paddingVertical: '2.5%',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
@@ -574,9 +568,7 @@ const styles = StyleSheet.create({
   sectionBorder: {
     borderBottomWidth: 3,
     borderBottomColor: '#e5eaf0',
-    marginTop: "5%",
-    marginBottom: "2%",
+    marginTop: '5%',
+    marginBottom: '2%',
   },
 });
-
-
