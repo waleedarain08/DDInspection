@@ -1,244 +1,192 @@
-import React, { Component, useState, useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList, Image, Dimensions, ScrollView } from 'react-native';
-import { Input, Button, Card } from 'react-native-elements';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { userLogout } from '../../redux/actions';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import React, {Component, useState, useEffect} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  Image,
+  Dimensions,
+  ScrollView,
+} from 'react-native';
+import {Input, Button, Card} from 'react-native-elements';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {userLogout} from '../../redux/actions';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import {TextInput} from 'react-native';
 
-
-function HomeScreen({ navigation, user, userLogout }) {
-  const [reason, setReason] = useState([{ title: "abc", image: require('../../assets/vedio.png') }, { title: "def", image: require('../../assets/vedio.png') }, { title: "ghi", image: require('../../assets/vedio.png') },]);
-  const [reason1, setReason1] = useState([{ title: "abc", image: require('../../assets/01-tile.png') }, { title: "abc", image: require('../../assets/02-tile.png') }, { title: "abc", image: require('../../assets/03-tile.png') }, { title: "abc", image: require('../../assets/01-tile.png') }, { title: "abc", image: require('../../assets/02-tile.png') }, { title: "abc", image: require('../../assets/03-tile.png') }]);
-  const [reason2, setReason2] = useState([{ title: "abc", image: require('../../assets/01-tile.png') }, { title: "abc", image: require('../../assets/02-tile.png') }, { title: "abc", image: require('../../assets/03-tile.png') }, { title: "abc", image: require('../../assets/01-tile.png') }, { title: "abc", image: require('../../assets/02-tile.png') }, { title: "abc", image: require('../../assets/03-tile.png') }, { title: "abc", image: require('../../assets/01-tile.png') }, { title: "abc", image: require('../../assets/02-tile.png') }, { title: "abc", image: require('../../assets/03-tile.png') }]);
-  const [reason3, setReason3] = useState([{ title: "abc", image: require('../../assets/serial1.jpg') }, { title: "abc", image: require('../../assets/serial2.jpg') }, { title: "abc", image: require('../../assets/serial1.jpg') }, { title: "abc", image: require('../../assets/serial2.jpg') }]);
+function HomeScreen({navigation, user, userLogout}) {
+  const [reason, setReason] = useState([
+    {title: 'abc', image: require('../../assets/vedio.png')},
+    {title: 'def', image: require('../../assets/vedio.png')},
+    {title: 'ghi', image: require('../../assets/vedio.png')},
+  ]);
+  const [reason1, setReason1] = useState([
+    {title: 'abc', image: require('../../assets/01-tile.png')},
+    {title: 'abc', image: require('../../assets/02-tile.png')},
+    {title: 'abc', image: require('../../assets/03-tile.png')},
+    {title: 'abc', image: require('../../assets/01-tile.png')},
+    {title: 'abc', image: require('../../assets/02-tile.png')},
+    {title: 'abc', image: require('../../assets/03-tile.png')},
+  ]);
+  const [reason2, setReason2] = useState([
+    {title: 'abc', image: require('../../assets/01-tile.png')},
+    {title: 'abc', image: require('../../assets/02-tile.png')},
+    {title: 'abc', image: require('../../assets/03-tile.png')},
+    {title: 'abc', image: require('../../assets/01-tile.png')},
+    {title: 'abc', image: require('../../assets/02-tile.png')},
+    {title: 'abc', image: require('../../assets/03-tile.png')},
+    {title: 'abc', image: require('../../assets/01-tile.png')},
+    {title: 'abc', image: require('../../assets/02-tile.png')},
+    {title: 'abc', image: require('../../assets/03-tile.png')},
+  ]);
+  const [reason3, setReason3] = useState([
+    {title: 'abc', image: require('../../assets/serial1.jpg')},
+    {title: 'abc', image: require('../../assets/serial2.jpg')},
+    {title: 'abc', image: require('../../assets/serial1.jpg')},
+    {title: 'abc', image: require('../../assets/serial2.jpg')},
+  ]);
 
   goNext = () => {
-    navigation.navigate("DetailScreen");
-  }
+    navigation.navigate('DetailScreen');
+  };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.cate}>
-        <Text style={styles.categores}>Livestreaming</Text>
-        <Text style={styles.categores}>Vlogs</Text>
-        <Text style={styles.categores}>Categories</Text>
-        <Image style={styles.drop} source={require('../../assets/drop-down.png')} />
-      </View>
+    <View style={styles.mainContainer}>
+      <View style={styles.profileLogoContainer}>
+        <View>
+          <View
+            style={{
+              shadowColor: '#000',
+              shadowOffset: {
+                width: 0,
+                height: 3,
+              },
+              shadowOpacity: 0.27,
+              shadowRadius: 4.65,
 
-      <ScrollView contentContainerStyle={{ height: 700 }}>
-        <View style={{ flex: 1, flexGrow: 1 }}>
-
-          <View style={styles.box2}>
-            <FlatList
-              keyExtractor={(item, index) => index}
-              data={reason}
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}
-              renderItem={({ item }) => {
-                return (
-                  <TouchableOpacity  activeOpacity={0.9} onPress={()=>goNext()} style={{ width: 290 }}>
-                    <Image style={styles.live} source={require('../../assets/live.png')} />
-                    <Image
-                      style={{ width: "100%", height: "100%", marginLeft: 0, resizeMode: "contain", }}
-                      source={item.image} />
-                  </TouchableOpacity>
-                )
-              }}>
-            </FlatList>
+              elevation: 10,
+            }}>
+            <Image
+              source={require('../../assets/group.png')}
+              style={{width: 120, height: 120, resizeMode: 'contain'}}
+            />
           </View>
-          <View style={styles.box3}>
-            <Text style={styles.trending}>Trending Now</Text>
-            <FlatList
-              data={reason1}
-              keyExtractor={(item, index) => index}
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}
-              renderItem={({ item }) => {
-                return (
-                  <View style={styles.carddv}>
-                    <View style={{ flex: 2 }}>
-                      <Image style={styles.tile} source={item.image} />
-                    </View>
-                    <View style={styles.rowdv}>
-                      <View style={{ flex: 2, flexDirection: "row", alignItems: "center" }}>
-                        <Image style={styles.mark} source={require('../../assets/ex-mark.png')} />
-                        <View style={{ width: 5 }}></View>
-                        <Text style={styles.worddv}>1h 56m</Text>
-                      </View>
-                      <Image style={styles.dots} source={require('../../assets/3-dots.png')} />
-                    </View>
-                  </View>
-                )
-              }}>
-            </FlatList>
-          </View>
-          <View style={styles.box4}>
-            <Text style={styles.top}>Top Searches</Text>
-            <FlatList
-              keyExtractor={(item, index) => index}
-              data={reason2}
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}
-              renderItem={({ item }) => {
-                return (
-                  <View style={{ width: 100 }}>
-                    <Image style={styles.search} source={item.image} />
-                  </View>
-                )
-              }}>
-            </FlatList>
-          </View>
-          <View style={styles.box5}>
-            <Text style={styles.recomend}>Recommended</Text>
-            <FlatList
-              data={reason3}
-              keyExtractor={(item, index) => index}
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}
-              renderItem={({ item }) => {
-                return (
-                  <View style={{ width: 240, position: "relative", padding: 0, }}>
-                    <Image
-                      style={styles.untitled}
-                      source={item.image} />
-                  </View>
-                )
-              }}>
-            </FlatList>
+          <View
+            style={{
+              paddingTop: 10,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Text style={{fontSize: 20, fontWeight: 'bold'}}>LUKE SHAW</Text>
           </View>
         </View>
-      </ScrollView>
+      </View>
+      <View style={styles.profileSection}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <View style={styles.ratingView}>
+            <Text style={{fontSize: 20, fontWeight: 'bold'}}>15</Text>
+            <Text style={{color: '#dddddd'}}>Job Posts</Text>
+          </View>
+          <View style={styles.ratingLineView}></View>
+          <View style={styles.ratingView}>
+            <Text style={{fontSize: 20, fontWeight: 'bold'}}>45</Text>
+            <Text style={{color: '#dddddd'}}>Completed</Text>
+          </View>
+          <View style={styles.ratingLineView}></View>
+          <View style={styles.ratingView}>
+            <Text style={{fontSize: 20, fontWeight: 'bold'}}>56</Text>
+            <Text style={{color: '#dddddd'}}>Remaining</Text>
+          </View>
+        </View>
+      </View>
+      <View style={styles.formContainer}>
+        <View style={styles.inputFields}>
+          <View style={{flex: 1, alignItems: 'flex-start'}}>
+            <Text style={{color: '#8a8a8a'}}>John Snow</Text>
+          </View>
+          <View
+            style={{flex: 1, alignItems: 'flex-end', justifyContent: 'center'}}>
+            <Image
+              source={require('../../assets/user.png')}
+              style={{width: 16, height: 16, resizeMode: 'contain'}}
+            />
+          </View>
+        </View>
+        <View style={styles.inputFields}>
+          <View style={{flex: 1, alignItems: 'flex-start'}}>
+            <Text style={{color: '#8a8a8a'}}>johnsnow@gmail.com</Text>
+          </View>
+          <View
+            style={{flex: 1, alignItems: 'flex-end', justifyContent: 'center'}}>
+            <Image
+              source={require('../../assets/email.png')}
+              style={{width: 16, height: 16, resizeMode: 'contain'}}
+            />
+          </View>
+        </View>
+        <View style={styles.inputFields}>
+          <View style={{flex: 1, alignItems: 'flex-start'}}>
+            <Text style={{color: '#8a8a8a'}}>202-555-0186</Text>
+          </View>
+          <View
+            style={{flex: 1, alignItems: 'flex-end', justifyContent: 'center'}}>
+            <Image
+              source={require('../../assets/phone.png')}
+              style={{width: 16, height: 16, resizeMode: 'contain'}}
+            />
+          </View>
+        </View>
+      </View>
     </View>
   );
 }
 
 const mapStateToProps = state => {
-  return { user: state?.user };
+  return {user: state?.user};
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ userLogout }, dispatch);
+  bindActionCreators({userLogout}, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
-    backgroundColor: "#0e101f",
-    paddingHorizontal: 10
+    backgroundColor: '#fff',
   },
-  drop: {
-    width: 10,
-    height: 20,
-    resizeMode: "contain"
+  profileLogoContainer: {
+    flex: 0.6,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  menupng: {
-    width: 14,
-    height: 12,
-    marginLeft: 16
+  profileSection: {
+    flex: 0.2,
+    alignItems: 'center',
   },
-  home: {
-    fontSize: 12,
-    fontWeight: '600',
-    color: "white",
-    paddingLeft: 20,
+  ratingView: {
+    paddingHorizontal: '8%',
+    paddingVertical: '2%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  cate: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-around",
-    paddingHorizontal: 10,
-    paddingBottom:"2%",
-  },
-  categores: {
-    color: "#fffffd",
-    fontSize: 14,
-    fontWeight: '500',
-  },
-  box2: {
-    flex: 4,
-  },
-  carddv: {
-    flex: 1,
-    backgroundColor: "#181a33",
-    marginLeft: 7,
+  ratingLineView: {
+    width: 2,
+    height: 45,
+    backgroundColor: '#dddddd',
     marginTop: 10,
   },
-  trending: {
-    paddingLeft: 8,
-    paddingTop: 4,
-    color: "#fffffd",
-    fontSize: 14,
-    fontWeight: '500',
+  formContainer: {
+    flex: 1,
+    paddingHorizontal: '5%',
+    paddingTop: 15,
   },
-  tile: {
-    width: 80,
-    height: 80,
-    resizeMode: "cover"
+  inputFields: {
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderBottomColor: '#dddddd',
+    padding: '3%',
+    marginVertical: '6%',
   },
-  mark: {
-    width: 12,
-    height: 12,
-    paddingLeft: 6,
-  },
-  worddv: {
-    color: "#fffffd",
-    paddingRight: 6,
-    fontSize: 10,
-
-  },
-  dots: {
-    width: 3,
-    height: 12,
-  },
-  rowdv: {
-    flex: 0,
-    padding: 10,
-    paddingHorizontal: 6,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  live: {
-    width: 65,
-    height: 65,
-    position: "absolute",
-    right: 18,
-    zIndex: 10,
-    resizeMode: 'contain'
-  },
-  box3: {
-    flex: 4,
-  },
-  box4: {
-    flex: 4,
-  },
-  top: {
-    paddingLeft: 6,
-    paddingVertical: 10,
-    color: "#fffffd",
-    fontSize: 14,
-    fontWeight: '500',
-  },
-  search: {
-    height: 100,
-    width: "80%",
-    resizeMode: "stretch",
-    marginLeft: 6,
-  },
-  box5: {
-    flex: 7,
-  },
-  untitled: {
-    width: 230,
-    height: 150,
-    marginLeft: 10,
-  },
-  recomend: {
-    color: "#fffffd",
-    fontSize: 14,
-    paddingLeft: 10,
-    paddingVertical: 12,
-  }
-})
+});
