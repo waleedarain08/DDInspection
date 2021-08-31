@@ -54,6 +54,7 @@ export default function CheckProperty2({ navigation }) {
                 <View style={{flex: 2,marginTop:20 }}>
                 <TouchableOpacity
                         activeOpacity={0.9}
+                        onPress={() => navigation.navigate("InspectionOverview")}
                         style={styles.continueButton}
                     >
                         <Text style={{color:"#e3e3e3"}}>Continue</Text>

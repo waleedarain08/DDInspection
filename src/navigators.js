@@ -12,6 +12,9 @@ import HomeScreen from './pages/home/HomeScreen';
 import DetailScreen from './pages/home/DetailScreen';
 import CheckProperty from './pages/profile/CheckProperty';
 import CheckProperty2 from './pages/profile/CheckProperty2';
+import InspectionOverview from './pages/profile/InspectionOverview';
+import HomeOverview from './pages/profile/HomeOverview';
+import EstimateScope from './pages/profile/EstimateScope';
 import DetailPage from './pages/list/DetailPage';
 import EndInspection from './pages/list/EndInspection';
 import EndInspection2 from './pages/list/EndInspection2';
@@ -72,6 +75,13 @@ function HomeTabAStack() {
           headerLeft: () => drawerButton(navigation)
         })}
       />
+      <HomeAccountStackNav.Screen
+        name="Account"
+        component={Account}
+        options={({ navigation }) => ({
+          headerLeft: () => drawerButton(navigation),
+        })}
+      />
       <HomeTabAStackNav.Screen name="DetailScreen" component={DetailScreen} />
     </HomeTabAStackNav.Navigator>
   );
@@ -106,35 +116,35 @@ function HomeSearchStack() {
     </HomeSearchStackNav.Navigator>
   );
 }
-const HomeAccountStackNav = createStackNavigator();
-function HomeAccountStack() {
-  return (
-    <HomeAccountStackNav.Navigator initialRouteName="Account" screenOptions={{
-      headerStyle: {
-        backgroundColor: '#ffffff',
-        shadowOpacity: 0.85,
-        shadowRadius: 0,
-        shadowOffset: {
-          width: 0,
-          height: 0,
-        },
-      },
-      headerTintColor: '#5a6778',
-      headerTitleStyle: {
-        fontWeight: 'bold',
-        fontSize: 16
-      },
-    }}>
-      <HomeAccountStackNav.Screen
-        name="Account"
-        component={Account}
-        options={({ navigation }) => ({
-          headerLeft: () => drawerButton(navigation),
-        })}
-      />
-    </HomeAccountStackNav.Navigator>
-  );
-}
+// const HomeAccountStackNav = createStackNavigator();
+// function HomeAccountStack() {
+//   return (
+//     <HomeAccountStackNav.Navigator initialRouteName="Account" screenOptions={{
+//       headerStyle: {
+//         backgroundColor: '#ffffff',
+//         shadowOpacity: 0.85,
+//         shadowRadius: 0,
+//         shadowOffset: {
+//           width: 0,
+//           height: 0,
+//         },
+//       },
+//       headerTintColor: '#5a6778',
+//       headerTitleStyle: {
+//         fontWeight: 'bold',
+//         fontSize: 16
+//       },
+//     }}>
+//       <HomeAccountStackNav.Screen
+//         name="Account"
+//         component={Account}
+//         options={({ navigation }) => ({
+//           headerLeft: () => drawerButton(navigation),
+//         })}
+//       />
+//     </HomeAccountStackNav.Navigator>
+//   );
+// }
 const HomeProfileStackNav = createStackNavigator();
 function HomeProfileStack() {
   return (
@@ -173,6 +183,25 @@ function HomeProfileStack() {
         options={({ navigation }) => ({
           headerShown: false,
         })} />
+      <HomeProfileStackNav.Screen name="InspectionOverview"
+
+        component={InspectionOverview}
+        options={({ navigation }) => ({
+          headerShown: false,
+        })} />
+      <HomeProfileStackNav.Screen name="HomeOverview"
+
+        component={HomeOverview}
+        options={({ navigation }) => ({
+          headerShown: false,
+        })} />
+      <HomeProfileStackNav.Screen name="EstimateScope"
+
+        component={EstimateScope}
+        options={({ navigation }) => ({
+          headerShown: false,
+        })} />
+
     </HomeProfileStackNav.Navigator>
 
   );
@@ -278,7 +307,6 @@ function HomeTab() {
       <HomeTabNav.Screen name="Home" component={HomeTabAStack} />
       <HomeTabNav.Screen name="List" component={HomeListStack} />
       <HomeTabNav.Screen name="Profile" component={HomeProfileStack} />
-      <HomeTabNav.Screen name="Account" component={HomeAccountStack} />
 
     </HomeTabNav.Navigator>
   );
@@ -313,6 +341,7 @@ function RootContainer({ user }) {
           }
         </Drawer.Screen>
       </Drawer.Navigator>
+
     </NavigationContainer>
   )
 

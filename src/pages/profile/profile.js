@@ -7,7 +7,7 @@ export function Profile({ navigation }) {
    
     return (
         // <View style={styles.container}>
-            <ScrollView style={{ flex:1,flexGrow:1,paddingHorizontal: 20,color:"#ffffff"}} showsVerticalScrollIndicator={false}>
+            <ScrollView style={{ flex:1,flexGrow:1,paddingHorizontal: 20,backgroundColor:"#ffffff"}} showsVerticalScrollIndicator={false}>
             <View style={{ flex: 1, flexGrow: 1 }}>
                 <View style={{ paddingVertical: 25 }}>
                     <Text style={{ fontSize: 10, color: "#989da3", paddingBottom: 2 }}>Thank you for handling the due diligance for this property.</Text>
@@ -129,11 +129,6 @@ export function Profile({ navigation }) {
 
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        color: "#ffffff",
-        paddingHorizontal: 20
-    },
     logo: {
         width: 30,
         height: 30,
