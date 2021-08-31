@@ -47,7 +47,7 @@ function CustomDrawer({navigation,userLogout}) {
                 <View style={styles.borderline}></View>
                 </View>
                 <View style={{flex:1,}}>
-                <Text style={styles.home}>Account</Text>
+                <Text onPress={()=> navigation.navigate("Account")} style={styles.home}>Account</Text>
                 <View style={styles.borderline}></View>
                 </View>
                 <View style={{flex:1,}}>

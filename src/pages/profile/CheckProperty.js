@@ -6,13 +6,18 @@ import { View, Text, StyleSheet, FlatList, Image, Modal, Button, Pressable, Dime
 export default function CheckProperty({ navigation }) {
     return (
         <View style={styles.container}>
-            <ScrollView contentContainerStyle={{ height: 700 }} showsVerticalScrollIndicator={false}>
-                <View style={{ paddingVertical: 10, flex: 0.9 }}>
+            <View style={styles.header}>
+               <Text style={styles.begin}>BEGIN INSPECTION</Text>
+               <View style={styles.buttonBuy}><Text style={{color:"#ffffff"}}>Do not buy</Text></View>
+            </View>
+            <ScrollView contentContainerStyle={{ height:700 }} showsVerticalScrollIndicator={false}>
+                <View style={{ paddingVertical: 10, flex: 1}}>
                     <Text style={{ color: "#8f949a" }}>Thank you for handling the due diligance the property</Text>
-                    <Text style={styles.confirmation}>Kindly confirm / do </Text>
-                    <Text style={styles.confirmation}>the following:</Text>
+                    <View style={{paddingVertical:10}}>
+                    <Text style={styles.confirmation}>Kindly confirm / do the following:</Text>
+                    </View>
                 </View>
-                <View style={{ flex: 4.7, }}>
+                <View style={{ flex: 4.3,paddingTop:30}}>
                     <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20 }}>
                         <View style={{ flex: 1 }}>
                             <Image style={styles.logo} source={require('../../assets/downloadded.png')} />
@@ -46,7 +51,7 @@ export default function CheckProperty({ navigation }) {
                         </View>
                     </View>
                 </View>
-                <View style={{ flex: 2, }}>
+                <View style={{ flex: 2,marginTop:20 }}>
                 <TouchableOpacity
                         activeOpacity={0.9}
                         style={styles.continueButton}
@@ -75,6 +80,22 @@ const styles = StyleSheet.create({
         flex: 1,
         color: "#ffffff",
         paddingHorizontal: 20,
+    },
+    header:{
+        flexDirection:"row",
+        paddingVertical:20,
+        justifyContent:"space-evenly"
+    },
+    buttonBuy:{
+        backgroundColor:"#be0000",
+        paddingHorizontal:24,
+        paddingVertical:12,
+        borderRadius:10
+    },
+    begin:{
+        color:"#5a6577",
+        paddingTop:12,
+        fontSize:16,
     },
     confirmation: {
         color: "#3c434d",

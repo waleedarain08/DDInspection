@@ -6,11 +6,12 @@ import * as Progress from 'react-native-progress';
 export function Profile({ navigation }) {
    
     return (
-        <View style={styles.container}>
-            <ScrollView contentContainerStyle={{ height: 950 }} showsVerticalScrollIndicator={false}>
+        // <View style={styles.container}>
+            <ScrollView style={{ flex:1,flexGrow:1,paddingHorizontal: 20,color:"#ffffff"}} showsVerticalScrollIndicator={false}>
+            <View style={{ flex: 1, flexGrow: 1 }}>
                 <View style={{ paddingVertical: 25 }}>
                     <Text style={{ fontSize: 10, color: "#989da3", paddingBottom: 2 }}>Thank you for handling the due diligance for this property.</Text>
-                    <Text style={{ fontSize: 18, fontWeight: "#3f434e", fontWeight: "bold" }}>Confirm Property Is Accessible / Ok To Inspect</Text>
+                    <Text style={{ fontSize: 18, fontWeight: "#3f434e", fontWeight: "bold", }}>Confirm Property Is Accessible / Ok To Inspect</Text>
                 </View>
                 <Text style={styles.textFollow}>Please Confirm The Following:</Text>
                 <View style={{ flexDirection: "row" }}>
@@ -103,15 +104,15 @@ export function Profile({ navigation }) {
                         </View>
                     </View>
                 </View>
-                <View style={{flexDirection:"row",paddingVertical:20}}>
-                    <View style={{flex:1,paddingHorizontal:10}}>
+                <View style={{paddingVertical:20}}>
+                    <View >
                     <TouchableOpacity
                         activeOpacity={0.9}
                         style={styles.pouseButton}>
-                        <Text>Pouse</Text>
+                        <Text>Cancel</Text>
                     </TouchableOpacity>
                     </View>
-                    <View style={{flex:1,paddingHorizontal:10}}>
+                    <View >
                     <TouchableOpacity
                        activeOpacity={0.9} activeOpacity={0.9} 
                        onPress={() => navigation.navigate("CheckProperty")}
@@ -120,8 +121,9 @@ export function Profile({ navigation }) {
                     </TouchableOpacity>
                     </View>
                 </View>
+                </View>
             </ScrollView>
-        </View>
+        // </View>
     );
 }
 
@@ -184,6 +186,7 @@ const styles = StyleSheet.create({
             backgroundColor: "#193250",
             marginBottom:10,
             paddingVertical:18,
+            marginVertical:14,
             borderRadius:30,
             shadowColor: "#000",
         shadowOffset: {
