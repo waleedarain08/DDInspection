@@ -16,6 +16,8 @@ import InspectionOverview from './pages/profile/InspectionOverview';
 import HomeOverview from './pages/profile/HomeOverview';
 import EstimateScope from './pages/profile/EstimateScope';
 import InteriorMain from './pages/profile/InteriorMain';
+import DoNotBuy from './pages/profile/DoNotBuy';
+import DoNotBuy2 from './pages/profile/DoNotBuy2';
 import DetailPage from './pages/list/DetailPage';
 import EndInspection from './pages/list/EndInspection';
 import EndInspection2 from './pages/list/EndInspection2';
@@ -208,6 +210,18 @@ function HomeProfileStack() {
         options={({ navigation }) => ({
           headerShown: false,
         })} />
+      <HomeProfileStackNav.Screen name="DoNotBuy"
+
+        component={DoNotBuy}
+        options={({ navigation }) => ({
+          headerShown: false,
+        })} />
+      <HomeProfileStackNav.Screen name="DoNotBuy2"
+
+        component={DoNotBuy2}
+        options={({ navigation }) => ({
+          headerShown: false,
+        })} />
 
     </HomeProfileStackNav.Navigator>
 
@@ -293,10 +307,10 @@ function HomeTab() {
 
           switch (route.name) {
             case 'Search':
-              return <Image style={{ height: 18, width: 18, resizeMode: "contain" }}  />
+              return <Image style={{ height: 18, width: 18, resizeMode: "contain" }} />
               break;
             case 'Home':
-              return <Image style={{ height: 18, width: 18, resizeMode: "contain" }}  />
+              return <Image style={{ height: 18, width: 18, resizeMode: "contain" }} />
               break;
             case 'List':
               return <Image style={{ height: 18, width: 18, resizeMode: "contain" }} />

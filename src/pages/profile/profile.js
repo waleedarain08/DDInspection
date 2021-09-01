@@ -223,7 +223,7 @@ export function Profile({navigation}) {
                 </TouchableOpacity>
                 <TouchableOpacity
                   activeOpacity={0.9}
-                  onPress={() => navigation.navigate('')}
+                  onPress={() => navigation.navigate('DoNotBuy')}
                   style={styles.modalButtons}>
                   <Text style={{color: '#fff'}}>Do Not Buy</Text>
                 </TouchableOpacity>
