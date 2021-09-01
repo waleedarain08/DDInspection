@@ -79,7 +79,7 @@ export function List({navigation}) {
                 backgroundColor: '#f26521',
                 flexDirection: 'row',
                 marginRight: '35%',
-                padding: '3%',
+                padding: '2.5%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
                 borderRadius: 20,
@@ -119,7 +119,7 @@ export function List({navigation}) {
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
               <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
-                The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.
+                The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
                 She will be there from 9-11AM on 1/26/21.
               </Text>
             </View>
@@ -168,7 +168,7 @@ export function List({navigation}) {
                 backgroundColor: '#bd0000',
                 flexDirection: 'row',
                 marginRight: '35%',
-                padding: '3%',
+                padding: '2.5%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
                 borderRadius: 20,
@@ -206,7 +206,7 @@ export function List({navigation}) {
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
               <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
-                The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.
+                The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
                 She will be there from 9-11AM on 1/26/21.
               </Text>
             </View>
@@ -249,7 +249,7 @@ export function List({navigation}) {
                 backgroundColor: '#f26521',
                 flexDirection: 'row',
                 marginRight: '35%',
-                padding: '3%',
+                padding: '2.5%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
                 borderRadius: 20,
@@ -287,7 +287,7 @@ export function List({navigation}) {
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
               <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
-                The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.
+                The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
                 She will be there from 9-11AM on 1/26/21.
               </Text>
             </View>
@@ -330,7 +330,7 @@ export function List({navigation}) {
                 backgroundColor: '#f26521',
                 flexDirection: 'row',
                 marginRight: '35%',
-                padding: '3%',
+                padding: '2.5%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
                 borderRadius: 20,
@@ -370,7 +370,7 @@ export function List({navigation}) {
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
               <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
-                The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.
+                The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
                 She will be there from 9-11AM on 1/26/21.
               </Text>
             </View>
@@ -413,7 +413,7 @@ export function List({navigation}) {
                 backgroundColor: '#bd0000',
                 flexDirection: 'row',
                 marginRight: '35%',
-                padding: '3%',
+                padding: '2.5%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
                 borderRadius: 20,
@@ -451,7 +451,7 @@ export function List({navigation}) {
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
               <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
-                The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.
+                The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
                 She will be there from 9-11AM on 1/26/21.
               </Text>
             </View>
@@ -530,12 +530,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.27,
     shadowRadius: 4.65,
 
-    elevation: 20,
+    elevation: 15,
   },
   sectionImage: {
     height: 120,
     width: 130,
-    borderRadius: 5,
+    borderRadius: 8,
   },
   resumeButton: {
     paddingHorizontal: '16%',

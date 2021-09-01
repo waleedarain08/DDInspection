@@ -15,12 +15,12 @@ import {Input, Button, Card, SearchBar} from 'react-native-elements';
 export default function EndInspection({navigation}) {
   return (
     <View style={styles.mainContainer}>
-      <View style={{padding: '5%', elevation: 5, backgroundColor: '#fff'}}>
-        <Text style={{color: '#7c8089'}}>
+      <View style={{padding: '5%', elevation: 5, paddingBottom: 30,backgroundColor: '#fff'}}>
+        <Text style={{color: '#7c8089', fontSize:12}}>
           Thank you for handling the due diligence for this property.
         </Text>
         <Text style={{fontSize: 25, fontWeight: 'bold'}}>
-          A couple of reminders as{' '}
+          A couple of reminders as
         </Text>
         <Text style={{fontSize: 25, fontWeight: 'bold'}}>
           you exit the property:
