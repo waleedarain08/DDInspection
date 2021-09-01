@@ -15,6 +15,7 @@ import CheckProperty2 from './pages/profile/CheckProperty2';
 import InspectionOverview from './pages/profile/InspectionOverview';
 import HomeOverview from './pages/profile/HomeOverview';
 import EstimateScope from './pages/profile/EstimateScope';
+import InteriorMain from './pages/profile/InteriorMain';
 import DetailPage from './pages/list/DetailPage';
 import EndInspection from './pages/list/EndInspection';
 import EndInspection2 from './pages/list/EndInspection2';
@@ -201,6 +202,12 @@ function HomeProfileStack() {
         options={({ navigation }) => ({
           headerShown: false,
         })} />
+      <HomeProfileStackNav.Screen name="InteriorMain"
+
+        component={InteriorMain}
+        options={({ navigation }) => ({
+          headerShown: false,
+        })} />
 
     </HomeProfileStackNav.Navigator>
 
@@ -286,16 +293,16 @@ function HomeTab() {
 
           switch (route.name) {
             case 'Search':
-              return <Image style={{ height: 18, width: 18, resizeMode: "contain" }} source={require('./assets/search.png')} />
+              return <Image style={{ height: 18, width: 18, resizeMode: "contain" }}  />
               break;
             case 'Home':
-              return <Image style={{ height: 18, width: 18, resizeMode: "contain" }} source={require('./assets/homeicon.png')} />
+              return <Image style={{ height: 18, width: 18, resizeMode: "contain" }}  />
               break;
             case 'List':
-              return <Image style={{ height: 18, width: 18, resizeMode: "contain" }} source={require('./assets/Play-List.png')} />
+              return <Image style={{ height: 18, width: 18, resizeMode: "contain" }} />
               break;
             case 'Profile':
-              return <Image style={{ height: 18, width: 18, resizeMode: "contain" }} source={require('./assets/Profile.png')} />
+              return <Image style={{ height: 18, width: 18, resizeMode: "contain" }} />
               break;
             default:
               break;

@@ -34,11 +34,11 @@ export default function HomeOverview({ navigation }) {
                     <View style={{ paddingHorizontal:20}}>
                         <View style={{flexDirection:"row",justifyContent:"space-between",paddingVertical:15}}>
                         <View >
-                        <Text >{item.title}</Text>
-                        <Text>Interior-Main Level</Text>
+                        <Text style={{color:"#2c3137"}}>{item.title}</Text>
+                        <Text style={{color:"#9ba0a6",fontSize:10}}>Interior-Main Level</Text>
                         </View>
                         <View style={styles.line}></View>
-                        <Text>100 sq</Text>
+                        <Text style={{color:"#4e4f61",fontWeight:"bold"}}>100 sq</Text>
                         </View>
                         <View style={styles.borderline}></View>
                     </View>

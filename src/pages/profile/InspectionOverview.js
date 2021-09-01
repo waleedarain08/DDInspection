@@ -25,15 +25,15 @@ export default function InspectionOverview({ navigation }) {
             <Text style={styles.overview}>INSPECTION OVERVIEW</Text>
             </View>
             <ScrollView contentContainerStyle={{height:800}} showsVerticalScrollIndicator={false}>
-            <View style={{flexDirection:"row",justifyContent:"space-between",paddingHorizontal:6,paddingBottom:"15%",paddingVertical:10}}>
+            <View style={{flexDirection:"row",justifyContent:"space-between",paddingHorizontal:4,paddingBottom:"15%",paddingVertical:10}}>
                 <View>
-                    <Text style={{color:"#4f5359",fontWeight:"bold",textAlign:"center"}}>Inspected</Text>
-                    <Text style={{color:"#c1c3c7",textAlign:"center"}}>Items</Text>
+                    <Text style={{color:"#4f5359",fontWeight:"700",textAlign:"center",fontSize:12}}>Inspected</Text>
+                    <Text style={{color:"#c1c3c7",textAlign:"center",fontSize:10}}>Items</Text>
                     <Text style={{fontSize:24,fontWeight:"bold",color:"#fb739b",textAlign:"center"}}>04</Text>
                 </View>
                 <View>
-                <Text  style={{color:"#4f5359",fontWeight:"bold",textAlign:"center"}}>Remaining</Text>
-                    <Text style={{color:"#c1c3c7",textAlign:"center"}}>Items</Text>
+                <Text  style={{color:"#4f5359",fontWeight:"700",textAlign:"center",fontSize:12}}>Remaining</Text>
+                    <Text style={{color:"#c1c3c7",textAlign:"center",fontSize:10}}>Items</Text>
                     <Text style={{fontSize:24,fontWeight:"bold",color:"#5bd2f3",textAlign:"center"}}>88</Text>
                 </View>
                 <View>
@@ -41,8 +41,8 @@ export default function InspectionOverview({ navigation }) {
                     activeOpacity={0.9}
                     onPress={()=> navigation.navigate("HomeOverview")}
                     >
-                <Text style={{color:"#4f5359",fontWeight:"bold",textAlign:"center"}}>Home</Text>
-                    <Text style={{color:"#c1c3c7",textAlign:"center"}}>Overview</Text>
+                <Text style={{color:"#4f5359",fontWeight:"700",textAlign:"center",fontSize:12}}>Home</Text>
+                    <Text style={{color:"#c1c3c7",textAlign:"center",fontSize:10}}>Overview</Text>
                     </TouchableOpacity>
                     <Image style={styles.homelogo} source={require("../../assets/home.png")} />
                 </View>
@@ -51,8 +51,8 @@ export default function InspectionOverview({ navigation }) {
                         activeOpacity={0.9}
                         onPress={()=> navigation.navigate("EstimateScope")}
                     >
-                <Text >Estimate</Text>
-                    <Text style={{color:"#c1c3c7",textAlign:"center"}}>Scope</Text>
+                <Text style={{color:"#4f5359",fontWeight:"700",textAlign:"center",fontSize:12}}>Estimate</Text>
+                    <Text style={{color:"#c1c3c7",textAlign:"center",fontSize:10}}>Scope</Text>
                     </TouchableOpacity>
                     <Image style={styles.homelogo} source={require("../../assets/chart.png")} />
                 </View>
@@ -68,7 +68,7 @@ export default function InspectionOverview({ navigation }) {
                 <Image style={styles.download} source={require('../../assets/downloadded.png')} />
                 </View>
                 <View style={styles.interior}>
-                    <Text style={{color:"#818387"}}>Interior Main</Text>
+                    <Text onPress={()=> navigation.navigate("InteriorMain")} style={{color:"#818387"}}>Interior Main</Text>
                 </View>
                 <View style={styles.interior}>
                     <Text style={{color:"#818387"}}>Interior 2nd Ievel</Text>
@@ -90,13 +90,13 @@ export default function InspectionOverview({ navigation }) {
                 activeOpacity={0.9}
                 style={styles.canelButton}
                 >
-                    <Text>Cancel</Text>
+                    <Text style={{color:"#193250"}}>Cancel</Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
                 activeOpacity={0.9}
                 style={styles.completeButton}
                 >
-                    <Text>Complete</Text>
+                    <Text style={{color:"#ffffff"}}>Complete</Text>
                 </TouchableOpacity>
             </View>
             </ScrollView>
@@ -162,18 +162,20 @@ const styles = StyleSheet.create ({
         justifyContent:"center",
         backgroundColor: "#ffffff",
         borderRadius: 35,
-        width:165,
-        height:55,
+        width:154,
+        height:54,
         borderWidth:1,
         borderColor:"#7c94b0",
+
     },
     completeButton:{
         flexDirection:"row",
         alignItems: "center",
         justifyContent:"center",
         backgroundColor: "#909090",
-        width:165,
-        height:55,
+        width:154,
+        height:52,
         borderRadius: 35,
+
     }
 })

@@ -14,62 +14,7 @@ function DetailScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
-             <ScrollView contentContainerStyl={{ height: 700 }}>
-                 {/* <View style={{ flexGrow: 1 }}> */}
-                    <View style={styles.box2}>
-                        <Image
-                            style={{width:"100%",height:200}}
-                            source={require('../../assets/vedio.png')} />
-                    </View>
-                    <View style={styles.box3}>
-                        <View style={styles.downsec}>
-                        <View style={{flex:2,}}>
-                            <Text style={styles.motivation2}>About Motivations</Text></View>
-                            <View style={{flex:1.5,alignItems:"flex-end",paddingLeft:1,}}>
-                            <Image style={styles.list} source={require('../../assets/list.png')} />
-                            </View>
-                            <View style={{flex:1,alignItems:"center",paddingLeft:3,}}>
-                            <Image style={styles.download} source={require('../../assets/download.png')} />
-                            </View>
-                        </View>
-                        <View style={styles.rating}>
-                            <Text style={styles.rats}>2021</Text>
-                            <Image style={styles.star} source={require('../../assets/rating.png')} />
-                            <Text style={styles.rats}>20.5</Text>
-                            <Image style={styles.star} source={require('../../assets/loading.png')} />
-                            <Text style={styles.rats}>152mins</Text>
-                            <Text style={styles.hdsc}>HD</Text>
-                        </View>
-                    </View>
-                    <View style={styles.box4}>
-                        <Text style={styles.para}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero nulla temporibus ratione doloremque. Vero cum esse blanditiis quisquam omnis repellendus recusandae distinctio.Vel, quasi dolores blanditiis delectus nihil, Lorem ipsum dolor</Text>
-                    </View>
-                    <View style={styles.box5}>
-                        <Button
-                            title="Watch Now"
-                        />
-                    </View>
-                    <View style={styles.box6}>
-                        <View style={styles.video}>
-                            <Text style={styles.related}>Related Videos</Text>
-                            <Text style={styles.viewall}>View All</Text>
-                        </View>
-                        <FlatList
-                            keyExtractor={(item, index) => index}
-                            data={reason}
-                            horizontal={true}
-                            showsHorizontalScrollIndicator={false}
-                            renderItem={({ item }) => {
-                                return (
-                                    <View style={{ height: 100, width: 100 }}>
-                                        <Image style={styles.tile} source={item.image} />
-                                    </View>
-                                )
-                            }}>
-                        </FlatList>
-                    </View>
-                 {/* </View> */}
-           </ScrollView>
+
         </View>
     );
 }
