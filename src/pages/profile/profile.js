@@ -23,13 +23,12 @@ export function Profile({navigation}) {
     <ScrollView
       style={{
         flex: 1,
-        flexGrow: 1,
-        paddingHorizontal: 20,
+        flexGrow: 1,        
         backgroundColor: '#ffffff',
       }}
       showsVerticalScrollIndicator={false}>
-      <View style={{flex: 1, flexGrow: 1}}>
-        <View style={{paddingVertical: 25}}>
+      <View style={{flex: 1, flexGrow: 1,}}>
+        <View style={{paddingVertical: 25,paddingHorizontal: 20,}}>
           <Text style={{fontSize: 10, color: '#989da3', paddingBottom: 2}}>
             Thank you for handling the due diligance for this property.
           </Text>
@@ -39,7 +38,7 @@ export function Profile({navigation}) {
           </Text>
         </View>
         <Text style={styles.textFollow}>Please Confirm The Following:</Text>
-        <View style={{flexDirection: 'row'}}>
+        <View style={{flexDirection: 'row', backgroundColor:"#f9f8fd", paddingVertical:12,paddingHorizontal: 20,}}>
           <View style={{flex: 1, justifyContent: 'center'}}>
             <Image
               style={styles.logo}
@@ -52,7 +51,7 @@ export function Profile({navigation}) {
             </Text>
           </View>
         </View>
-        <View style={{flexDirection: 'row', paddingVertical: 30}}>
+        <View style={{flexDirection: 'row', marginVertical:10,backgroundColor:"#f9f8fd", paddingVertical:12,paddingHorizontal: 20,}}>
           <View style={{flex: 1, justifyContent: 'center'}}>
             <Image
               style={styles.logo}
@@ -66,7 +65,7 @@ export function Profile({navigation}) {
             </Text>
           </View>
         </View>
-        <View style={{paddingVertical: 20}}>
+        <View style={{paddingVertical: 20, paddingHorizontal: 20}}>
           <Text style={styles.locationDetail}>
             This property is in an acceptable location and safe to inspect. if
             not,please use the "DoNot Buy" Button below. "Do Not Buy" reasons
@@ -133,9 +132,8 @@ export function Profile({navigation}) {
             </View>
           </View>
         </View>
-        <View style={{paddingVertical: 10}}>
+        <View style={{paddingVertical: 10, paddingHorizontal: 20}}>
           <Text style={{color: '#666b71'}}>
-            {' '}
             this property is accessible using the provided instructions. if it
             is not accessible please contact (in the order):
           </Text>
@@ -176,7 +174,7 @@ export function Profile({navigation}) {
             </View>
           </View>
         </View>
-        <View style={{paddingVertical: 20}}>
+        <View style={{paddingVertical: 20, paddingHorizontal: 20}}>
           <View>
             <TouchableOpacity
               activeOpacity={0.9}
@@ -198,6 +196,9 @@ export function Profile({navigation}) {
         animationType="slide"
         transparent={true}
         visible={modalVisible}
+        onRequestClose={() => {
+          setModalVisible(!modalVisible);
+        }}
         >
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
@@ -244,8 +245,8 @@ export function Profile({navigation}) {
 
 const styles = StyleSheet.create({
   logo: {
-    width: 30,
-    height: 30,
+    width: 22,
+    height: 22,
     resizeMode: 'contain',
   },
   textFollow: {
@@ -253,10 +254,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#5c626e',
     paddingBottom: 30,
+    paddingHorizontal: 20,
   },
   textProperty: {
     color: '#a8abb0',
-    fontSize: 11,
+
   },
   locationDetail: {
     color: '#676a71',
@@ -312,13 +314,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
     backgroundColor: '#59595990',
-    // marginTop: 22
   },
   modalView: {
     backgroundColor: '#fff',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    // paddingVertical: 30,
     alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: {
@@ -336,7 +336,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#193250',
-    paddingVertical: '3%',
+    paddingVertical: '3.5%',
     paddingHorizontal: '25%',
     margin: '3%',
     borderRadius: 25,

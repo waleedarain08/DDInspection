@@ -530,12 +530,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.27,
     shadowRadius: 4.65,
 
-    elevation: 20,
+    elevation: 15,
   },
   sectionImage: {
     height: 120,
     width: 130,
-    borderRadius: 5,
+    borderRadius: 8,
   },
   resumeButton: {
     paddingHorizontal: '16%',

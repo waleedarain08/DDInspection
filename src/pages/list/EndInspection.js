@@ -16,7 +16,7 @@ export default function EndInspection({navigation}) {
   return (
     <View style={styles.mainContainer}>
       <View style={{padding: '5%', elevation: 5, backgroundColor: '#fff'}}>
-        <Text style={{color: '#7c8089'}}>
+        <Text style={{color: '#7c8089', fontSize:12}}>
           Thank you for handling the due diligence for this property.
         </Text>
         <Text style={{fontSize: 25, fontWeight: 'bold'}}>
