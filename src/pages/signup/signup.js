@@ -116,7 +116,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Signup);
 const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
-    backgroundColor: '#5b53ff',
+    backgroundColor: '#193250',
   },
   header: {
     flex: 0.8,
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     paddingLeft: 10,
     fontSize: 12,
-    marginVertical: 20,
+    marginVertical: "4%",
     borderBottomWidth: 0.8,
   },
   inputLabel: {
@@ -156,14 +156,23 @@ const styles = StyleSheet.create({
 
   LoginButton: {
     alignItems: 'center',
-    backgroundColor: '#5b53ff',
+    backgroundColor: '#193250',
     width: 320,
     padding: 18,
     borderRadius: 35,
     marginBottom: 80,
-    elevation: 4,
-   
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 5,
   },
+   
+
   LoginButtonInside: {
     color: '#ffffff',
     fontWeight: 'bold',
