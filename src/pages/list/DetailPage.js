@@ -11,7 +11,7 @@ export default function CheckProperty({ navigation }) {
             </ImageBackground>
             </View>
             <View style={styles.detail}>
-                <ScrollView contentContainerStyle={{ height: 600 }} showsVerticalScrollIndicator={false}>
+                <ScrollView contentContainerStyle={{ height: 500 }} showsVerticalScrollIndicator={false}>
                 <View style={{ flex: 1, flexGrow: 1 }}>
                 <View style={{flex:0,alignItems:"center"}}>
                 <View style={styles.line}></View>
@@ -22,33 +22,53 @@ export default function CheckProperty({ navigation }) {
                     <Text style={{color:"#838d99"}}>4317 Masonic Drive Fort</Text>
                     </View>
                     <View style={styles.saleButton}>
-                        <Text style={{textAlign:"center",paddingTop:3,color:"#193250",fontWeight:"bold"}}>For Sale</Text>
+                        <Text style={{textAlign:"center",paddingTop:4,color:"#193250",fontWeight:"bold"}}>For Sale</Text>
                     </View>
                 </View>
                 <Text style={styles.read}>
                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <Text style={{color:"#193250"}}>Read more...</Text>
                 </Text>
                 <Text style={{color:"#37383d",fontSize:16,fontWeight:"bold"}}>Contact Person</Text>
-                <View style={{flexDirection:"row",paddingVertical:20}}>
+                <View style={{flexDirection:"row",paddingVertical:20,justifyContent:"space-between"}}>
                 <Image style={styles.logo} source={require('../../assets/group.png')} />
-                <View style={{paddingHorizontal:14,paddingVertical:5}}>
+                <View style={{paddingHorizontal:14,paddingVertical:5,flex:1}}>
                     <Text style={{color:"#596677"}}>Marty Mccormick</Text>
                     <Text style={{color:"#a7aeb8",fontSize:13}}>Owner</Text>
+                </View>
+                <View style={{flex:0.3}}>
+                <View style={styles.vector}>
+                <Image style={styles.vectorLogo} source={require('../../assets/vector1.png')} />
+                </View>
+                </View>
+                <View style={{flex:0}}>
+                <View style={styles.vector}>
+                <Image style={styles.vectorLogo} source={require('../../assets/call.png')} />
+                </View>
                 </View>
                 </View>
                 <Text style={{color:"#505357",paddingBottom:10}}>Specification</Text>
                 <View style={{flexDirection:"row",justifyContent:"space-between",paddingHorizontal:15}}>
-                <View>
-                    <Text style={{color:"#2d3238",fontSize:25,fontWeight:"bold"}}>03</Text>
-                    <Text  style={{color:"#a3adb9"}}>Bathrooms</Text>
+                 <View>
+                <View style={{flexDirection:"row",justifyContent:"space-between"}}>
+                <Image style={styles.frameLogo} source={require('../../assets/vector.png')} />
+                <Text style={{color:"#2d3238",fontSize:25,fontWeight:"bold"}}>03</Text>
+                </View>
+                <Text  style={{color:"#a3adb9",}}>Bathrooms</Text>
+                </View>
+                <View >
+                <View style={{flexDirection:"row",justifyContent:"space-between"}}>
+                <Image style={styles.frameLogo} source={require('../../assets/frame.png')} />
+                    <Text  style={{color:"#2d3238",fontSize:25,fontWeight:"bold"}}>05</Text>   
+                </View>
+                <Text  style={{color:"#a3adb9"}}>Badrooms</Text>
                 </View>
                 <View>
-                    <Text  style={{color:"#2d3238",fontSize:25,fontWeight:"bold"}}>05</Text>
-                    <Text  style={{color:"#a3adb9"}}>Badrooms</Text>
+                <View style={{flexDirection:"row",justifyContent:"space-between"}}>
+                <Image style={styles.frameLogo} source={require('../../assets/groupicon.png')} />
+                    <Text  style={{color:"#2d3238",fontSize:24,fontWeight:"bold",paddingLeft:6}}>350</Text>
+                    
                 </View>
-                <View>
-                    <Text  style={{color:"#2d3238",fontSize:25,fontWeight:"bold"}}>350</Text>
-                    <Text style={{color:"#a3adb9"}}>Squre feet</Text>
+                <Text style={{color:"#a3adb9"}}>Squre feet</Text>
                 </View>
                 </View>
                 <View style={{flexDirection:"row", paddingVertical:35,marginHorizontal:5}}>
@@ -126,5 +146,31 @@ const styles = StyleSheet.create ({
         height:45,
         borderRadius: 35,
         marginLeft:8
+    },
+    vector:{
+        backgroundColor:"#ffffff",
+        width:40,
+        height:40,
+        borderRadius:40,
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+    
+        elevation: 10,
+    },
+    vectorLogo:{
+        width:20,
+        height:20,
+        marginLeft:10,marginTop:10
+    },
+    frameLogo:{
+        width:24,
+        height:22,
+        resizeMode:"contain",
+        marginTop:10
     }
 })

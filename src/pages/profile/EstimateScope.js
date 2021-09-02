@@ -43,6 +43,7 @@ export default function EstimateScope({ navigation }) {
                         <Text style={{flex:1, color:"#4a4e59",fontWeight:"bold",paddingRight:8}}>$444.95</Text>
                         <View style={{flex:0}}>
                         <View style={styles.editButtom}>
+                        <Image  style={styles.editIcon} source={require("../../assets/edit.png")} />
                             <Text style={{color:"#33ae46",textAlign:"center",paddingTop:3}}>Edit</Text>
                         </View>
                         </View>
@@ -84,12 +85,19 @@ const styles = StyleSheet.create ({
     editButtom:{
         backgroundColor:"#ebf7ed",
         width:70,
-        height:26
+        height:26,
+        flexDirection:"row",
+        justifyContent:"space-evenly"
     },
     line2:{
         width:3,
         height:30,
         backgroundColor:"#dddddd",
         marginLeft:"30%"
+    },
+    editIcon:{
+        width:12,
+        height:12,
+        marginTop:5
     }
 })

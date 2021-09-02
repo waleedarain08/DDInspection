@@ -26,17 +26,17 @@ export default function InspectionOverview({ navigation }) {
             </View>
             <ScrollView contentContainerStyle={{height:800}} showsVerticalScrollIndicator={false}>
             <View style={{flexDirection:"row",justifyContent:"space-between",paddingHorizontal:4,paddingBottom:"15%",paddingVertical:10}}>
-                <View>
+                <View style={styles.card}>
                     <Text style={{color:"#4f5359",fontWeight:"700",textAlign:"center",fontSize:12}}>Inspected</Text>
                     <Text style={{color:"#c1c3c7",textAlign:"center",fontSize:10}}>Items</Text>
                     <Text style={{fontSize:24,fontWeight:"bold",color:"#fb739b",textAlign:"center"}}>04</Text>
                 </View>
-                <View>
+                <View style={styles.card2}>
                 <Text  style={{color:"#4f5359",fontWeight:"700",textAlign:"center",fontSize:12}}>Remaining</Text>
                     <Text style={{color:"#c1c3c7",textAlign:"center",fontSize:10}}>Items</Text>
                     <Text style={{fontSize:24,fontWeight:"bold",color:"#5bd2f3",textAlign:"center"}}>88</Text>
                 </View>
-                <View>
+                <View style={styles.card3}>
                     <TouchableOpacity 
                     activeOpacity={0.9}
                     onPress={()=> navigation.navigate("HomeOverview")}
@@ -46,7 +46,7 @@ export default function InspectionOverview({ navigation }) {
                     </TouchableOpacity>
                     <Image style={styles.homelogo} source={require("../../assets/home.png")} />
                 </View>
-                <View>
+                <View style={styles.card4}>
                     <TouchableOpacity 
                         activeOpacity={0.9}
                         onPress={()=> navigation.navigate("EstimateScope")}
@@ -126,6 +126,58 @@ const styles = StyleSheet.create ({
         height:22,
         marginTop:8,
         marginLeft:16
+    },
+    card:{
+        paddingVertical:8,
+        paddingHorizontal:8,
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+    
+        elevation: 2,
+    },
+    card2:{
+        paddingVertical:8,
+        paddingHorizontal:6,
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+    
+        elevation: 2,
+    },
+    card3:{
+        paddingVertical:8,
+        paddingHorizontal:14,
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+    
+        elevation: 2,
+    },
+    card4:{
+        paddingVertical:8,
+        paddingHorizontal:10,
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+    
+        elevation: 2,
     },
     location:{
         color:"#32373d",fontWeight:"bold",

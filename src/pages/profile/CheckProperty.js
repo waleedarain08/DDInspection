@@ -8,7 +8,6 @@ export default function CheckProperty({ navigation }) {
         <View style={styles.container}>
             <View style={styles.header}>
                <Text style={styles.begin}>BEGIN INSPECTION</Text>
-               <View style={styles.buttonBuy}><Text style={{color:"#ffffff"}}>Do not buy</Text></View>
             </View>
             <ScrollView contentContainerStyle={{ height:700 }} showsVerticalScrollIndicator={false}>
                 <View style={{ paddingVertical: 10, flex: 1}}>
@@ -28,7 +27,7 @@ export default function CheckProperty({ navigation }) {
                     </View>
                     <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20 }}>
                         <View style={{ flex: 1 }}>
-                            <Image style={styles.logo} source={require('../../assets/downloadded.png')} />
+                            <Image style={styles.logo} source={require('../../assets/arrow03.png')} />
                         </View>
                         <View style={{ flex: 6 }}>
                             <Text style={styles.textService}>water service is activated</Text>
@@ -36,7 +35,7 @@ export default function CheckProperty({ navigation }) {
                     </View>
                     <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20 }}>
                         <View style={{ flex: 1 }}>
-                            <Image style={styles.logo} source={require('../../assets/downloadded.png')} />
+                            <Image style={styles.logo} source={require('../../assets/arrow03.png')} />
                         </View>
                         <View style={{ flex: 6 }}>
                             <Text style={styles.textService}>Gas service is activated if aplicable</Text>
@@ -44,7 +43,7 @@ export default function CheckProperty({ navigation }) {
                     </View>
                     <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20 }}>
                         <View style={{ flex: 1 }}>
-                            <Image style={styles.logo} source={require('../../assets/downloadded.png')} />
+                            <Image style={styles.logo} source={require('../../assets/arrow03.png')} />
                         </View>
                         <View style={{ flex: 6 }}>
                             <Text style={styles.textService}>Turn on HVAC and leave it running during the inspection</Text>
@@ -85,12 +84,6 @@ const styles = StyleSheet.create({
         flexDirection:"row",
         paddingVertical:20,
         justifyContent:"space-evenly"
-    },
-    buttonBuy:{
-        backgroundColor:"#be0000",
-        paddingHorizontal:24,
-        paddingVertical:12,
-        borderRadius:10
     },
     begin:{
         color:"#5a6577",

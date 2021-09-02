@@ -8,7 +8,6 @@ export default function CheckProperty2({ navigation }) {
         <View style={styles.container}>
               <View style={styles.header}>
                <Text style={styles.begin}>BEGIN INSPECTION</Text>
-               <View style={styles.buttonBuy}><Text style={{color:"#ffffff"}}>Do not buy</Text></View>
             </View>
             <ScrollView contentContainerStyle={{ height: 700 }} showsVerticalScrollIndicator={false}>
                 <View style={{ paddingVertical: 10, flex: 1 }}>
@@ -90,12 +89,6 @@ const styles = StyleSheet.create({
         flexDirection:"row",
         paddingVertical:20,
         justifyContent:"space-evenly"
-    },
-    buttonBuy:{
-        backgroundColor:"#be0000",
-        paddingHorizontal:24,
-        paddingVertical:12,
-        borderRadius:10
     },
     begin:{
         color:"#5a6577",

@@ -34,6 +34,7 @@ export default function InteriorMain({ navigation }) {
                     <Text style={{ flex: 3.5, color: "#797b7f" }}>Suqure Footage</Text>
                     <Text style={{ flex: 1 }}>$0.00</Text>
                     <View style={styles.editButtom}>
+                    <Image  style={styles.editIcon} source={require("../../assets/edit.png")} />
                         <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3 }}>Edit</Text>
                     </View>
                 </View>
@@ -41,6 +42,7 @@ export default function InteriorMain({ navigation }) {
                     <Text style={{ flex: 3.5, color: "#797b7f" }}>Exhaust Fan</Text>
                     <Text style={{ flex: 1 }}>$0.00</Text>
                     <View style={styles.editButtom}>
+                    <Image  style={styles.editIcon} source={require("../../assets/edit.png")} />
                         <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3 }}>Edit</Text>
                     </View>
                 </View>
@@ -98,7 +100,9 @@ const styles = StyleSheet.create({
     editButtom: {
         backgroundColor: "#ebf7ed",
         width: 70,
-        height: 26
+        height: 26,
+        flexDirection:"row",
+        justifyContent:"space-evenly"
     },
     Kitchen: {
         backgroundColor: "#f8f9fb",
@@ -155,6 +159,11 @@ const styles = StyleSheet.create({
         shadowRadius: 4.65,
     
         elevation: 2,
+    },
+    editIcon:{
+        width:12,
+        height:12,
+        marginTop:5
     }
 
 })
