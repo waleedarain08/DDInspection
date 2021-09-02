@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 import {TouchableOpacity} from 'react-native';
 import {
   View,
@@ -9,26 +9,47 @@ import {
   Button,
   Pressable,
   Dimensions,
-  Modal,
   ScrollView,
+  BackHandler,
 } from 'react-native';
 import * as Progress from 'react-native-progress';
+import Modal from 'react-native-modal';
 
 export function Profile({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
 
+  // useEffect(() => {
+  //   const backAction = () => {
+  //     Alert.alert("Hold on!", "Are you sure you want to go back?", [
+  //       {
+  //         text: "Cancel",
+  //         onPress: () => null,
+  //         style: "cancel"
+  //       },
+  //       { text: "YES", onPress: () => BackHandler.exitApp() }
+  //     ]);
+  //     return true;
+  //   };
+
+  //   const backHandler = BackHandler.addEventListener(
+  //     "hardwareBackPress",
+  //     backAction
+  //   );
+
+  //   return () => backHandler.remove();
+  // }, []);
 
   return (
     // <View style={styles.container}>
     <ScrollView
       style={{
         flex: 1,
-        flexGrow: 1,        
+        flexGrow: 1,
         backgroundColor: '#ffffff',
       }}
       showsVerticalScrollIndicator={false}>
-      <View style={{flex: 1, flexGrow: 1,}}>
-        <View style={{paddingVertical: 25,paddingHorizontal: 20,}}>
+      <View style={{flex: 1, flexGrow: 1}}>
+        <View style={{paddingVertical: 25, paddingHorizontal: 20}}>
           <Text style={{fontSize: 10, color: '#989da3', paddingBottom: 2}}>
             Thank you for handling the due diligance for this property.
           </Text>
@@ -38,7 +59,13 @@ export function Profile({navigation}) {
           </Text>
         </View>
         <Text style={styles.textFollow}>Please Confirm The Following:</Text>
-        <View style={{flexDirection: 'row', backgroundColor:"#f9f8fd", paddingVertical:12,paddingHorizontal: 20,}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            backgroundColor: '#f9f8fd',
+            paddingVertical: 12,
+            paddingHorizontal: 20,
+          }}>
           <View style={{flex: 1, justifyContent: 'center'}}>
             <Image
               style={styles.logo}
@@ -51,7 +78,14 @@ export function Profile({navigation}) {
             </Text>
           </View>
         </View>
-        <View style={{flexDirection: 'row', marginVertical:10,backgroundColor:"#f9f8fd", paddingVertical:12,paddingHorizontal: 20,}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            marginVertical: 10,
+            backgroundColor: '#f9f8fd',
+            paddingVertical: 12,
+            paddingHorizontal: 20,
+          }}>
           <View style={{flex: 1, justifyContent: 'center'}}>
             <Image
               style={styles.logo}
@@ -193,53 +227,52 @@ export function Profile({navigation}) {
           </View>
         </View>
         <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(!modalVisible);
-        }}
-        >
-          <View style={styles.centeredView}>
-            <View style={styles.modalView}>
+          animationType="slideInUp"
+          transparent={true}
+          isVisible={modalVisible}
+          swipeDirection="down"
+          style={styles.view}
+          onSwipeComplete={() => setModalVisible(false)}
+          onBackButtonPress={() => setModalVisible(!modalVisible)}
+          onBackdropPress={() => setModalVisible(!modalVisible)}>
+          <View style={styles.modalView}>
+            <TouchableOpacity
+              activeOpacity={0.9}
+              hitSlop={{top: 20, bottom: 20, left: 40, right: 40}}>
+              {/* // onPress={() => setModalVisible(!modalVisible)}> */}
+              <View style={styles.modalLineView}></View>
+            </TouchableOpacity>
+
+            <View style={{marginVertical: 25}}>
               <TouchableOpacity
                 activeOpacity={0.9}
-                hitSlop={{top: 15, bottom: 15, left: 30, right: 30}}
-                onPress={() => setModalVisible(!modalVisible)}>
-                <View style={styles.modalLineView}></View>
+                onPress={() => navigation.navigate('')}
+                style={styles.modalButtons}>
+                <Text style={{color: '#fff'}}>Cannot Access Property</Text>
               </TouchableOpacity>
-              <View style={{marginVertical: 25}}>
-                <TouchableOpacity
-                  activeOpacity={0.9}
-                  onPress={() => navigation.navigate('')}
-                  style={styles.modalButtons}>
-                  <Text style={{color: '#fff'}}>Cannot Access Property</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  activeOpacity={0.9}
-                  onPress={() => navigation.navigate('')}
-                  style={styles.modalButtons}>
-                  <Text style={{color: '#fff'}}>Utilities Not Activated</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  activeOpacity={0.9}
-                  onPress={() => navigation.navigate('DoNotBuy')}
-                  style={styles.modalButtons}>
-                  <Text style={{color: '#fff'}}>Do Not Buy</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  activeOpacity={0.9}
-                  onPress={() => navigation.navigate('')}
-                  style={styles.modalButtons}>
-                  <Text style={{color: '#fff'}}>Pause Inspection</Text>
-                </TouchableOpacity>
-              </View>
+              <TouchableOpacity
+                activeOpacity={0.9}
+                onPress={() => navigation.navigate('')}
+                style={styles.modalButtons}>
+                <Text style={{color: '#fff'}}>Utilities Not Activated</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.9}
+                onPress={() => navigation.navigate('DoNotBuy')}
+                style={styles.modalButtons}>
+                <Text style={{color: '#fff'}}>Do Not Buy</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.9}
+                onPress={() => navigation.navigate('')}
+                style={styles.modalButtons}>
+                <Text style={{color: '#fff'}}>Pause Inspection</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </Modal>
       </View>
     </ScrollView>
-    // </View>
   );
 }
 
@@ -258,12 +291,12 @@ const styles = StyleSheet.create({
   },
   textProperty: {
     color: '#a8abb0',
-
   },
   locationDetail: {
     color: '#676a71',
     fontWeight: '600',
   },
+
   circle: {
     backgroundColor: '#183150',
     padding: 2,
@@ -307,13 +340,12 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-
     elevation: 5,
   },
-  centeredView: {
-    flex: 1,
+
+  view: {
     justifyContent: 'flex-end',
-    backgroundColor: '#59595990',
+    margin: 0,
   },
   modalView: {
     backgroundColor: '#fff',
@@ -329,14 +361,23 @@ const styles = StyleSheet.create({
   modalLineView: {
     width: 35,
     height: 2,
-    backgroundColor: '#95a1b0',
+    backgroundColor: '#8b98a8',
     marginTop: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 2,
   },
+
   modalButtons: {
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#193250',
-    paddingVertical: '3.5%',
+    paddingVertical: '4%',
     paddingHorizontal: '25%',
     margin: '3%',
     borderRadius: 25,

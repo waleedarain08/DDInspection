@@ -134,18 +134,18 @@ const styles = StyleSheet.create({
   formContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: "6%",
 
   },
   inputContainer: {
-    paddingLeft: 10,
+    paddingLeft: "3%",
     fontSize: 12,
-    marginVertical: "4%",
+    marginVertical: "3%",
     borderBottomWidth: 0.8,
   },
   inputLabel: {
     color: '#5b6777',
-    paddingLeft: 20,
+    paddingLeft: "5%",
     fontSize: 12,
   },
   inputText:{
