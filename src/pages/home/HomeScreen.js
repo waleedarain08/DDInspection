@@ -85,10 +85,10 @@ function HomeScreen({navigation, user, userLogout}) {
           </View>
           <View
             style={{flex: .5, alignItems: 'flex-end', justifyContent: 'center'}}>
-            {/* <Image
-              source={require('../../assets/email.png')}
+            <Image
+              source={require('../../assets/message.png')}
               style={{width: 16, height: 16, resizeMode: 'contain'}}
-            /> */}
+            />
           </View>
         </View>
         <View style={styles.inputFields}>
@@ -97,10 +97,10 @@ function HomeScreen({navigation, user, userLogout}) {
           </View>
           <View
             style={{flex: .5, alignItems: 'flex-end', justifyContent: 'center'}}>
-            {/* <Image
-              source={require('../../assets/phone.png')}
+            <Image
+              source={require('../../assets/calling.png')}
               style={{width: 16, height: 16, resizeMode: 'contain'}}
-            /> */}
+            />
           </View>
         </View>
       </View>

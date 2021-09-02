@@ -21,7 +21,7 @@ export default function ExteriorBack({ navigation }) {
                 <Text style={{color:"#a7abae",paddingHorizontal:20,paddingVertical:10}}>Note:repair-specific photos / video should be added in the estimate itself.</Text>
                 <View style={styles.imageCard}>
                     <Text>Top of deck, wide angle<Text style={{color:"#d91614"}}>*</Text></Text>
-                    <View style={{flexDirection:"row",justifyContent:"space-between",paddingVertical:10}}>
+                    <View style={{flexDirection:"row",justifyContent:"space-around",paddingVertical:10}}>
                     <View>
                     <Image  style={styles.cross} source={require("../../assets/group743.png")} />
                     <Image  style={styles.table} source={require("../../assets/table.jpg")} />
@@ -51,7 +51,7 @@ export default function ExteriorBack({ navigation }) {
                     </View>
                     </View>
                     <View>
-                    <View style={{borderStyle: 'dashed',borderRadius: 15,width:110, height:110,borderWidth: 1,borderColor:"#b0aeb9"}}>
+                    <View style={{borderStyle: 'dashed',borderRadius: 10,width:100, height:100,borderWidth: 1,borderColor:"#b0aeb9"}}>
                     <Image  style={styles.delete} source={require("../../assets/group740.png")} />
                     <Text style={{textAlign:"center",color:"#435971",fontSize:12,paddingVertical:4}}>Add Photo</Text>
                     </View> 
@@ -60,7 +60,7 @@ export default function ExteriorBack({ navigation }) {
                 </View>
                 <View style={styles.imageCard}>
                     <Text>Top of deck, wide angle<Text style={{color:"#d91614"}}>*</Text></Text>
-                    <View style={{flexDirection:"row",justifyContent:"space-between",paddingVertical:10}}>
+                    <View style={{flexDirection:"row",justifyContent:"space-around",paddingVertical:10}}>
                     <View>
                     <Image  style={styles.cross} source={require("../../assets/group743.png")} />
                     <Image  style={styles.table} source={require("../../assets/table.jpg")} />
@@ -90,7 +90,7 @@ export default function ExteriorBack({ navigation }) {
                     </View>
                     </View>
                     <View>
-                    <View style={{borderStyle: 'dashed',borderRadius: 15,width:110, height:110,borderWidth: 1,borderColor:"#cdccd2"}}>
+                    <View style={{borderStyle: 'dashed',borderRadius: 10,width:100, height:100,borderWidth: 1,borderColor:"#cdccd2"}}>
                     <Image  style={styles.delete} source={require("../../assets/group740.png")} />
                     <Text style={{textAlign:"center",color:"#435971",fontSize:12,paddingVertical:4}}>Add Photo</Text>
                     </View> 
@@ -163,14 +163,13 @@ export default function ExteriorBack({ navigation }) {
                 <View style={{backgroundColor:"#f4f4f4",paddingVertical:20,paddingHorizontal:20}}>
                 <Text style={{color:"#000000"}}>Note: <Text style={{color:"#8e9196"}}>Certain answer choices will promp you to add an estimate. As you add an estimate please pay close attention and added as needed</Text></Text>
                 </View>
-                <View style={{backgroundColor:"#f9f9f9",paddingVertical:10}}>
+                <View style={{backgroundColor:"#f9f9f9",paddingVertical:10,paddingHorizontal:10}}>
                     <Text>Dose the deck have rot which makes it unsafe</Text>
                     <View style={{flexDirection:"row"}}>
                     <View style={styles.circle}></View>
                         <Text>Yes (Add Dry Rot Repair</Text>
                     </View>
                 </View>
-                <Text style={{color:"#3c434d",fontWeight:"bold",fontSize:20,paddingHorizontal:15,paddingVertical:20}}>Dack / Porch</Text>
                 <Text style={{color:"#173250",fontWeight:"bold",paddingHorizontal:20}}>Photos / Video</Text>
                 <Text style={{color:"#a7abae",paddingHorizontal:20,paddingVertical:10}}>Note:repair-specific photos / video should be added in the estimate itself.</Text>
             </View>
@@ -189,16 +188,16 @@ const styles = StyleSheet.create ({
     imageCard:{
         backgroundColor:"#fcfcfe",
         borderColor:"#f2f3f5",
-        borderWidth:2,
+        borderWidth:1,
         paddingHorizontal:10,
         paddingVertical:10,
         marginVertical:10,
         marginHorizontal:10
     },
     table:{
-        width:110,
-        height:110,
-        borderRadius:15,
+        width:100,
+        height:100,
+        borderRadius:10,
     },
     delete:{
         width:12,
@@ -212,7 +211,7 @@ const styles = StyleSheet.create ({
         position:"absolute",
         zIndex: 10,
         top:10,
-        left:80
+        left:70
     },
     line:{
         backgroundColor:"#c3cad4",

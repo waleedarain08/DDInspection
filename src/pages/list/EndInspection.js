@@ -15,8 +15,14 @@ import {Input, Button, Card, SearchBar} from 'react-native-elements';
 export default function EndInspection({navigation}) {
   return (
     <View style={styles.mainContainer}>
-      <View style={{padding: '5%', elevation: 5, paddingBottom: 30,backgroundColor: '#fff'}}>
-        <Text style={{color: '#7c8089', fontSize:12}}>
+      <View
+        style={{
+          padding: '5%',
+          elevation: 5,
+          paddingBottom: 30,
+          backgroundColor: '#fff',
+        }}>
+        <Text style={{color: '#7c8089', fontSize: 12}}>
           Thank you for handling the due diligence for this property.
         </Text>
         <Text style={{fontSize: 25, fontWeight: 'bold'}}>
@@ -44,7 +50,7 @@ export default function EndInspection({navigation}) {
           </View>
         </View>
         <View style={styles.fieldsContainer}>
-          <View style={styles.fieldsLines}>
+          <View>
             <Image
               source={require('../../assets/downloadded.png')}
               style={{width: 22, height: 22, resizeMode: 'contain'}}
@@ -57,7 +63,7 @@ export default function EndInspection({navigation}) {
           </View>
         </View>
         <View style={styles.fieldsContainer}>
-          <View style={styles.fieldsLines}>
+          <View>
             <Image
               source={require('../../assets/downloadded.png')}
               style={{width: 22, height: 22, resizeMode: 'contain'}}
@@ -70,7 +76,7 @@ export default function EndInspection({navigation}) {
           </View>
         </View>
         <View style={styles.fieldsContainer}>
-          <View style={styles.fieldsLines}>
+          <View>
             <Image
               source={require('../../assets/downloadded.png')}
               style={{width: 22, height: 22, resizeMode: 'contain'}}
@@ -83,7 +89,7 @@ export default function EndInspection({navigation}) {
           </View>
         </View>
         <View style={styles.fieldsContainer}>
-          <View style={styles.fieldsLines}>
+          <View>
             <Image
               source={require('../../assets/downloadded.png')}
               style={{width: 22, height: 22, resizeMode: 'contain'}}
@@ -97,7 +103,7 @@ export default function EndInspection({navigation}) {
         </View>
 
         <View style={styles.fieldsContainer}>
-          <View style={styles.fieldsLines}>
+          <View>
             <Image
               source={require('../../assets/downloadded.png')}
               style={{width: 22, height: 22, resizeMode: 'contain'}}
@@ -111,7 +117,7 @@ export default function EndInspection({navigation}) {
           </View>
         </View>
         <View style={styles.fieldsContainer}>
-          <View style={styles.fieldsLines}>
+          <View>
             <Image
               source={require('../../assets/downloadded.png')}
               style={{width: 22, height: 22, resizeMode: 'contain'}}
@@ -125,7 +131,7 @@ export default function EndInspection({navigation}) {
           </View>
         </View>
         <View style={styles.fieldsContainer}>
-          <View style={styles.fieldsLines}>
+          <View>
             <Image
               source={require('../../assets/downloadded.png')}
               style={{width: 22, height: 22, resizeMode: 'contain'}}
@@ -139,7 +145,7 @@ export default function EndInspection({navigation}) {
           </View>
         </View>
         <View style={styles.fieldsContainer}>
-          <View style={styles.fieldsLines}>
+          <View>
             <Image
               source={require('../../assets/downloadded.png')}
               style={{width: 22, height: 22, resizeMode: 'contain'}}
