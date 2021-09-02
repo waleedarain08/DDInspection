@@ -24,34 +24,58 @@ export default function InteriorMain({ navigation }) {
             activeOpacity={0.8}
             onPress={() => setModalVisible(true)}>
             <View style={styles.bathroom}>
-                <Text style={{ color: "#2b3036", fontWeight: "bold" }}>Bathroom 1</Text>
-                <Text>+</Text>
+                <Text style={{ color: "#2b3036", fontWeight: "bold",flex:3 }}>Bathroom 1</Text>
+                <View style={{flex:1}}>
+                <Image  style={styles.delete} source={require("../../assets/group740.png")} />
+                </View>
+                <View style={{flex:0.5}}>
+                <View style={{backgroundColor:"#e8e9eb",width:1,height:25}}></View>
+                </View>
+                <Image  style={styles.delete} source={require("../../assets/delete.png")} />
             </View>
             </TouchableOpacity>
             <View style={styles.bathroom}>
-                <Text style={{ color: "#2b3036", fontWeight: "bold" }}>Bathroom 2</Text>
-                <Text>+</Text>
+                <Text style={{ color: "#2b3036", fontWeight: "bold",flex:3 }}>Bathroom 1</Text>
+                <View style={{flex:1}}>
+                <Image  style={styles.delete} source={require("../../assets/group740.png")} />
+                </View>
+                <View style={{flex:0.5}}>
+                <View style={{backgroundColor:"#e8e9eb",width:1,height:25}}></View>
+                </View>
+                <Image  style={styles.delete} source={require("../../assets/delete.png")} />
             </View>
             <View style={styles.Kitchen}>
                 <View style={{flexDirection:"row",justifyContent:"space-between"}}>
-                <Text style={{ color: "#2b3036", fontWeight: "bold" }} >Kitchen</Text>
-                <Text>+</Text>
+                <Text style={{ color: "#2b3036", fontWeight: "bold",flex:3 }} >Kitchen</Text>
+                <View style={{flex:1}}>
+                <Image  style={styles.delete} source={require("../../assets/group740.png")} />
+                </View>
+                <View style={{flex:0.5}}>
+                <View style={{backgroundColor:"#e8e9eb",width:1,height:25}}></View>
+                </View>
+                <Image  style={styles.delete} source={require("../../assets/delete.png")} />
                 </View>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", paddingVertical: 10, backgroundColor: "#ffffff" }}>
                     <Text style={{ flex: 3.5, color: "#797b7f" }}>Suqure Footage</Text>
                     <Text style={{ flex: 1 }}>$0.00</Text>
-                    <View style={styles.editButtom}>
+                    <TouchableOpacity 
+                    activeOpacity={0.9}
+                    onPress={()=> navigation.navigate("ExteriorBack")}
+                    style={styles.editButtom}>
                     <Image  style={styles.editIcon} source={require("../../assets/edit.png")} />
                         <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3 }}>Edit</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", paddingVertical: 10, backgroundColor: "#ffffff" }}>
                     <Text style={{ flex: 3.5, color: "#797b7f" }}>Exhaust Fan</Text>
                     <Text style={{ flex: 1 }}>$0.00</Text>
-                    <View style={styles.editButtom}>
+                    <TouchableOpacity
+                     activeOpacity={0.9}
+                    onPress={()=> navigation.navigate("ExteriorBack")}
+                    style={styles.editButtom}>
                     <Image  style={styles.editIcon} source={require("../../assets/edit.png")} />
                         <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3 }}>Edit</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", paddingVertical: 10, backgroundColor: "#ffffff" }}>
                     <Text style={{ flex: 3.5, color: "#797b7f" }}>Garbage Disposal</Text>
@@ -69,8 +93,14 @@ export default function InteriorMain({ navigation }) {
                 </View>
             </View>
             <View style={styles.bathroom}>
-                <Text style={{ color: "#2b3036", fontWeight: "bold" }}>Bathroom 2</Text>
-                <Text>+</Text>
+                <Text style={{ color: "#2b3036", fontWeight: "bold",flex:3 }}>Bathroom 1</Text>
+                <View style={{flex:1}}>
+                <Image  style={styles.delete} source={require("../../assets/group740.png")} />
+                </View>
+                <View style={{flex:0.5}}>
+                <View style={{backgroundColor:"#e8e9eb",width:1,height:25}}></View>
+                </View>
+                <Image  style={styles.delete} source={require("../../assets/delete.png")} />
             </View>
             <View style={styles.dotted}>
                 <Text style={{ textAlign: "center", color: "#17324f" }}>Add New Area +</Text>
@@ -164,6 +194,10 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         marginVertical: 8,
         borderWidth: 2, borderColor: "#eeedfb", borderRadius: 10,
+    },
+    delete:{
+        width:14,
+        height:14
     },
     inspectButtom: {
         backgroundColor: "#ffeeee",

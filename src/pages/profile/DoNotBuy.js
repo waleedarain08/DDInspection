@@ -29,8 +29,8 @@ export default function DoNotBuy({navigation}) {
               fontWeight: 'bold',
               lineHeight: 25,
             }}>
-            Please confirmthe property above, then {'\n'}select at least one do
-            buy reason and {'\n'}click on "Do Not Buy" to continue.
+            Please confirmthe property above, then select at least one do
+            buy reason and click on "Do Not Buy" to continue.
           </Text>
         </View>
 
