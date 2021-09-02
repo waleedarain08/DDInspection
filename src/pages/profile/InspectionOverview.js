@@ -222,6 +222,7 @@ export default function InspectionOverview({navigation}) {
             <View style={styles.modalButtons}>
               <TouchableOpacity
                 activeOpacity={0.8}
+                onPress={() => setModalVisible(!modalVisible)}
                 style={{
                   backgroundColor: '#193250',
                   paddingVertical: 10,

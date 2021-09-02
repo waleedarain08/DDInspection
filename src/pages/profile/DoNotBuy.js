@@ -13,7 +13,7 @@ import * as Animatable from 'react-native-animatable';
 import {Input, Button, Card, SearchBar} from 'react-native-elements';
 
 export default function DoNotBuy({navigation}) {
-  const [quality, setQuality] = useState(false);
+  const [quality, setQuality] = useState(true);
   const [quality2, setQuality2] = useState(false);
 
   return (

@@ -40,6 +40,7 @@ export default function InteriorMain({navigation}) {
         </View>
         <TouchableOpacity
           activeOpacity={0.8}
+          hitSlop={{top:15, bottom:15, right:20, left:20}}
           onPress={() => setModalVisible(true)}>
           <Image
             style={styles.delete}
@@ -63,6 +64,7 @@ export default function InteriorMain({navigation}) {
         </View>
         <TouchableOpacity
           activeOpacity={0.8}
+          hitSlop={{top:15, bottom:15, right:20, left:20}}
           onPress={() => setModalVisible(true)}>
           <Image
             style={styles.delete}
@@ -87,6 +89,7 @@ export default function InteriorMain({navigation}) {
           </View>
           <TouchableOpacity
           activeOpacity={0.8}
+          hitSlop={{top:15, bottom:15, right:20, left:20}}
           onPress={() => setModalVisible(true)}>
           <Image
             style={styles.delete}
@@ -189,6 +192,7 @@ export default function InteriorMain({navigation}) {
         </View>
         <TouchableOpacity
           activeOpacity={0.8}
+          hitSlop={{top:15, bottom:15, right:20, left:20}}
           onPress={() => setModalVisible(true)}>
           <Image
             style={styles.delete}
