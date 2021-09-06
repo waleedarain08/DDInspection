@@ -8,13 +8,89 @@ import {
   Dimensions,
   ScrollView,
   TouchableOpacity,
+  Flatlist,
 } from 'react-native';
-import * as Animatable from 'react-native-animatable';
-import {Input, Button, Card, SearchBar} from 'react-native-elements';
+import { CheckBox } from 'react-native-elements'
+//import SelectMultiple from 'react-native-select-multiple'
 
 export default function DoNotBuy({navigation}) {
-  const [quality, setQuality] = useState(false);
+  // const[alternateImage, setAlternateImage] = useState(true);
+  // const changeImage = () => {setAlternateImage (alternateImage => !alternateImage);}
+  const [checked, setChecked] = useState(true)
+  const [quality, setQuality] = useState(true);
   const [quality2, setQuality2] = useState(false);
+  const [selected, setSelected] = useState(false);
+  const [dataSource, setDataSource] = useState([
+
+    {id: 1, title: 'Adjacent to gas stations or automotive service', image: require('../../assets/arrow03.png'), image: require('../../assets/downloadded.png'),isSelected: 0},
+    {id: 2, title: 'Adjacent to dry cleaners or retail centers', image: require('../../assets/arrow03.png'), image: require('../../assets/downloadded.png'), isSelected: 0},
+    {id: 3, title: 'Adjacent to burned, dilapidated, boarded, abandoned or condemned housing stock', image: require('../../assets/arrow03.png'), image: require('../../assets/downloadded.png'), isSelected: 0},
+    {id: 4, title: 'Adjacent properties have asurplus of trash/debris covering the property/lotto an extent it will interfere with leasing', image: require('../../assets/arrow03.png'), image: require('../../assets/downloadded.png'), isSelected: 0},
+    {id: 5, title: 'Area is not safe enough to perform the diligence inspection', image: require('../../assets/arrow03.png'), image: require('../../assets/downloadded.png'), isSelected: 0},
+    {id: 6, title: 'Not Applicable', image: require('../../assets/arrow03.png'), image: require('../../assets/downloadded.png'), isSelected: 0},
+  ]);
+ 
+
+  const selectItem = data => {
+    data.item.isSelect = !data.item.isSelect;
+    data.item.selectedClass = data.item.isSelect
+      ? styles.selected
+      : styles.list;
+
+    const index = dataSource.findIndex(item => data.item.id === item.id);
+
+    dataSource[index] = data.item;
+
+    setDataSource(dataSource);
+    setSelected(!selected);
+    // this.setState({
+    //   dataSource: this.state.dataSource,
+    // });
+  };
+
+  const renderItem = data => {
+    return (
+      <View style={styles.fieldsContainer}>
+        <View>
+
+  
+
+
+        <CheckBox
+        style={[styles.list, data.item.selectedClass]}
+        onPress={() => selectItem(data)}
+        checkedIcon={<Image source={data.item.image} />}
+        uncheckedIcon={<Image source={data.item.image} />}
+        checked={checked}
+        // onPress={() => useState({checked: !useState.checked})}
+/>
+
+
+
+
+
+
+          
+          {/* <TouchableOpacity
+            activeOpacity={0.8}
+            style={[styles.list, data.item.selectedClass]}
+            onPress={() => selectItem(data)}>
+               
+            <Text style={styles.lightText}>
+             
+            </Text>
+      
+
+          </TouchableOpacity> */}
+        </View>
+        <View>
+          <Text style={styles.textFields}>
+            {data.item.title}
+          </Text>
+        </View>
+      </View>
+    );
+  };
 
   return (
     <ScrollView
@@ -29,7 +105,7 @@ export default function DoNotBuy({navigation}) {
               fontWeight: 'bold',
               lineHeight: 25,
             }}>
-            Please confirmthe property above, then {'\n'}select at least one do
+            Please confirm the property above, then {'\n'}select at least one do
             buy reason and {'\n'}click on "Do Not Buy" to continue.
           </Text>
         </View>
@@ -57,26 +133,41 @@ export default function DoNotBuy({navigation}) {
         </View>
         {quality && (
           <View style={{paddingVertical: 10, backgroundColor: '#f9f8fd'}}>
-            <View style={styles.fieldsContainer}>
+            <FlatList
+              data={dataSource}
+              //ItemSeparatorComponent={FlatListItemSeparator}
+              renderItem={item => renderItem(item)}
+              keyExtractor={item => item.id}
+              extraData={dataSource}
+            />
+            {/* <View style={styles.fieldsContainer}>
               <View>
-                <Image
-                  source={require('../../assets/downloadded.png')}
-                  style={{width: 18, height: 18, resizeMode: 'contain'}}
-                />
+                <TouchableOpacity activeOpacity={0.8} onPress={changeImage1} hitSlop={{top:15, bottom:15, right:20, left:20}}>
+                  {alternateImage1 && (
+                    <Image source={require('../../assets/arrow03.png')}
+                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
+                  {!alternateImage1 && (
+                    <Image source={require('../../assets/downloadded.png')}
+                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
+              </TouchableOpacity>
               </View>
               <View>
                 <Text style={styles.textFields}>
-                  Adjacent to gas stations orautomotive service
+                  Adjacent to gas stations or automotive service
                 </Text>
               </View>
             </View>
 
             <View style={styles.fieldsContainer}>
               <View>
-                <Image
-                  source={require('../../assets/arrow03.png')}
-                  style={{width: 18, height: 18, resizeMode: 'contain'}}
-                />
+              <TouchableOpacity activeOpacity={0.8} onPress={changeImage2} hitSlop={{top:15, bottom:15, right:20, left:20}}>
+                  {alternateImage2 && (
+                    <Image source={require('../../assets/arrow03.png')}
+                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
+                  {!alternateImage2 && (
+                    <Image source={require('../../assets/downloadded.png')}
+                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
+              </TouchableOpacity>
               </View>
               <View>
                 <Text style={styles.textFields}>
@@ -87,10 +178,14 @@ export default function DoNotBuy({navigation}) {
 
             <View style={styles.fieldsContainer}>
               <View>
-                <Image
-                  source={require('../../assets/arrow03.png')}
-                  style={{width: 18, height: 18, resizeMode: 'contain'}}
-                />
+              <TouchableOpacity activeOpacity={0.8} onPress={changeImage3} hitSlop={{top:15, bottom:15, right:20, left:20}}>
+                  {alternateImage3 && (
+                    <Image source={require('../../assets/arrow03.png')}
+                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
+                  {!alternateImage3 && (
+                    <Image source={require('../../assets/downloadded.png')}
+                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
+              </TouchableOpacity>
               </View>
               <View>
                 <Text style={styles.textFields}>
@@ -102,10 +197,14 @@ export default function DoNotBuy({navigation}) {
 
             <View style={styles.fieldsContainer}>
               <View>
-                <Image
-                  source={require('../../assets/arrow03.png')}
-                  style={{width: 18, height: 18, resizeMode: 'contain'}}
-                />
+              <TouchableOpacity activeOpacity={0.8} onPress={changeImage4} hitSlop={{top:15, bottom:15, right:20, left:20}}>
+                  {alternateImage4 && (
+                    <Image source={require('../../assets/arrow03.png')}
+                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
+                  {!alternateImage4 && (
+                    <Image source={require('../../assets/downloadded.png')}
+                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
+              </TouchableOpacity>
               </View>
               <View>
                 <Text style={styles.textFields}>
@@ -117,29 +216,37 @@ export default function DoNotBuy({navigation}) {
 
             <View style={styles.fieldsContainer}>
               <View>
-                <Image
-                  source={require('../../assets/arrow03.png')}
-                  style={{width: 18, height: 18, resizeMode: 'contain'}}
-                />
+              <TouchableOpacity activeOpacity={0.8} onPress={changeImage5} hitSlop={{top:15, bottom:15, right:20, left:20}}>
+                  {alternateImage5 && (
+                    <Image source={require('../../assets/arrow03.png')}
+                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
+                  {!alternateImage5 && (
+                    <Image source={require('../../assets/downloadded.png')}
+                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
+              </TouchableOpacity>
               </View>
               <View>
                 <Text style={styles.textFields}>
-                  Area is not safe enough toperform the diligence inspection
+                  Area is not safe enough to perform the diligence inspection
                 </Text>
               </View>
             </View>
 
             <View style={styles.fieldsContainer}>
               <View>
-                <Image
-                  source={require('../../assets/arrow03.png')}
-                  style={{width: 18, height: 18, resizeMode: 'contain'}}
-                />
+              <TouchableOpacity activeOpacity={0.8} onPress={changeImage6} hitSlop={{top:15, bottom:15, right:20, left:20}}>
+                  {alternateImage6 && (
+                    <Image source={require('../../assets/arrow03.png')}
+                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
+                  {!alternateImage6 && (
+                    <Image source={require('../../assets/downloadded.png')}
+                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
+              </TouchableOpacity>
               </View>
               <View>
                 <Text style={styles.textFields}>Not Applicable</Text>
               </View>
-            </View>
+            </View> */}
           </View>
         )}
 
@@ -168,24 +275,50 @@ export default function DoNotBuy({navigation}) {
           <View style={{paddingVertical: 10, backgroundColor: '#f9f8fd'}}>
             <View style={styles.fieldsContainer}>
               <View>
-                <Image
-                  source={require('../../assets/downloadded.png')}
-                  style={{width: 18, height: 18, resizeMode: 'contain'}}
-                />
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={changeImage1}
+                  hitSlop={{top: 15, bottom: 15, right: 20, left: 20}}>
+                  {alternateImage1 && (
+                    <Image
+                      source={require('../../assets/arrow03.png')}
+                      style={{width: 18, height: 18, resizeMode: 'contain'}}
+                    />
+                  )}
+                  {!alternateImage1 && (
+                    <Image
+                      source={require('../../assets/downloadded.png')}
+                      style={{width: 18, height: 18, resizeMode: 'contain'}}
+                    />
+                  )}
+                </TouchableOpacity>
               </View>
               <View>
                 <Text style={styles.textFields}>
-                  Adjacent to gas stations orautomotive service
+                  Adjacent to gas stations or automotive service
                 </Text>
               </View>
             </View>
 
             <View style={styles.fieldsContainer}>
               <View>
-                <Image
-                  source={require('../../assets/arrow03.png')}
-                  style={{width: 18, height: 18, resizeMode: 'contain'}}
-                />
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={changeImage2}
+                  hitSlop={{top: 15, bottom: 15, right: 20, left: 20}}>
+                  {alternateImage2 && (
+                    <Image
+                      source={require('../../assets/arrow03.png')}
+                      style={{width: 18, height: 18, resizeMode: 'contain'}}
+                    />
+                  )}
+                  {!alternateImage2 && (
+                    <Image
+                      source={require('../../assets/downloadded.png')}
+                      style={{width: 18, height: 18, resizeMode: 'contain'}}
+                    />
+                  )}
+                </TouchableOpacity>
               </View>
               <View>
                 <Text style={styles.textFields}>
@@ -196,10 +329,23 @@ export default function DoNotBuy({navigation}) {
 
             <View style={styles.fieldsContainer}>
               <View>
-                <Image
-                  source={require('../../assets/arrow03.png')}
-                  style={{width: 18, height: 18, resizeMode: 'contain'}}
-                />
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={changeImage3}
+                  hitSlop={{top: 15, bottom: 15, right: 20, left: 20}}>
+                  {alternateImage3 && (
+                    <Image
+                      source={require('../../assets/arrow03.png')}
+                      style={{width: 18, height: 18, resizeMode: 'contain'}}
+                    />
+                  )}
+                  {!alternateImage3 && (
+                    <Image
+                      source={require('../../assets/downloadded.png')}
+                      style={{width: 18, height: 18, resizeMode: 'contain'}}
+                    />
+                  )}
+                </TouchableOpacity>
               </View>
               <View>
                 <Text style={styles.textFields}>
@@ -211,10 +357,23 @@ export default function DoNotBuy({navigation}) {
 
             <View style={styles.fieldsContainer}>
               <View>
-                <Image
-                  source={require('../../assets/arrow03.png')}
-                  style={{width: 18, height: 18, resizeMode: 'contain'}}
-                />
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={changeImage4}
+                  hitSlop={{top: 15, bottom: 15, right: 20, left: 20}}>
+                  {alternateImage4 && (
+                    <Image
+                      source={require('../../assets/arrow03.png')}
+                      style={{width: 18, height: 18, resizeMode: 'contain'}}
+                    />
+                  )}
+                  {!alternateImage4 && (
+                    <Image
+                      source={require('../../assets/downloadded.png')}
+                      style={{width: 18, height: 18, resizeMode: 'contain'}}
+                    />
+                  )}
+                </TouchableOpacity>
               </View>
               <View>
                 <Text style={styles.textFields}>
@@ -226,24 +385,50 @@ export default function DoNotBuy({navigation}) {
 
             <View style={styles.fieldsContainer}>
               <View>
-                <Image
-                  source={require('../../assets/arrow03.png')}
-                  style={{width: 18, height: 18, resizeMode: 'contain'}}
-                />
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={changeImage5}
+                  hitSlop={{top: 15, bottom: 15, right: 20, left: 20}}>
+                  {alternateImage5 && (
+                    <Image
+                      source={require('../../assets/arrow03.png')}
+                      style={{width: 18, height: 18, resizeMode: 'contain'}}
+                    />
+                  )}
+                  {!alternateImage5 && (
+                    <Image
+                      source={require('../../assets/downloadded.png')}
+                      style={{width: 18, height: 18, resizeMode: 'contain'}}
+                    />
+                  )}
+                </TouchableOpacity>
               </View>
               <View>
                 <Text style={styles.textFields}>
-                  Area is not safe enough toperform the diligence inspection
+                  Area is not safe enough to perform the diligence inspection
                 </Text>
               </View>
             </View>
 
             <View style={styles.fieldsContainer}>
               <View>
-                <Image
-                  source={require('../../assets/arrow03.png')}
-                  style={{width: 18, height: 18, resizeMode: 'contain'}}
-                />
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={changeImage6}
+                  hitSlop={{top: 15, bottom: 15, right: 20, left: 20}}>
+                  {alternateImage6 && (
+                    <Image
+                      source={require('../../assets/arrow03.png')}
+                      style={{width: 18, height: 18, resizeMode: 'contain'}}
+                    />
+                  )}
+                  {!alternateImage6 && (
+                    <Image
+                      source={require('../../assets/downloadded.png')}
+                      style={{width: 18, height: 18, resizeMode: 'contain'}}
+                    />
+                  )}
+                </TouchableOpacity>
               </View>
               <View>
                 <Text style={styles.textFields}>Not Applicable</Text>
@@ -417,11 +602,11 @@ const styles = StyleSheet.create({
   fieldsContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: '5%',
-    paddingVertical: '2%',
+    // paddingHorizontal: '5%',
+    // paddingVertical: '2%',
   },
   textFields: {
-    paddingHorizontal: '5%',
+    // paddingHorizontal: '5%',
     color: '#7c8089',
     fontSize: 13,
   },
@@ -507,4 +692,21 @@ const styles = StyleSheet.create({
 
     elevation: 4,
   },
+  // // list: {
+  // //   // paddingVertical: 5,
+  // //   // margin: 3,
+  // //   // flexDirection: 'row',
+  // //   backgroundColor: '#cacacb',
+  // //   justifyContent: 'flex-start',
+  // //   alignItems: 'center',
+  // //   // zIndex: -1,
+
+  // // },
+  // // selected: {backgroundColor: '#32d24c',},
+  // lightText: {
+  //   color: '#f7f7f7',
+  //   width: 40,
+  //   paddingLeft: 15,
+  //   fontSize: 12,
+  // },
 });

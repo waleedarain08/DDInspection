@@ -13,7 +13,7 @@ import * as Animatable from 'react-native-animatable';
 import {Input, Button, Card, SearchBar} from 'react-native-elements';
 
 export default function DoNotBuy({navigation}) {
-  const [quality, setQuality] = useState(false);
+  const [quality, setQuality] = useState(true);
   const [quality2, setQuality2] = useState(false);
 
   return (
@@ -29,7 +29,7 @@ export default function DoNotBuy({navigation}) {
               fontWeight: 'bold',
               lineHeight: 25,
             }}>
-            Please confirmthe property above, then select at least one do
+            Please confirm the property above, then select at least one do
             buy reason and click on "Do Not Buy" to continue.
           </Text>
         </View>
@@ -66,7 +66,7 @@ export default function DoNotBuy({navigation}) {
               </View>
               <View>
                 <Text style={styles.textFields}>
-                  Adjacent to gas stations orautomotive service
+                  Adjacent to gas stations or automotive service
                 </Text>
               </View>
             </View>
@@ -124,7 +124,7 @@ export default function DoNotBuy({navigation}) {
               </View>
               <View>
                 <Text style={styles.textFields}>
-                  Area is not safe enough toperform the diligence inspection
+                  Area is not safe enough to perform the diligence inspection
                 </Text>
               </View>
             </View>
@@ -175,7 +175,7 @@ export default function DoNotBuy({navigation}) {
               </View>
               <View>
                 <Text style={styles.textFields}>
-                  Adjacent to gas stations orautomotive service
+                  Adjacent to gas stations or automotive service
                 </Text>
               </View>
             </View>
@@ -233,7 +233,7 @@ export default function DoNotBuy({navigation}) {
               </View>
               <View>
                 <Text style={styles.textFields}>
-                  Area is not safe enough toperform the diligence inspection
+                  Area is not safe enough to perform the diligence inspection
                 </Text>
               </View>
             </View>
