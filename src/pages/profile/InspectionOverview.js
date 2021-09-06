@@ -304,7 +304,8 @@ const styles = StyleSheet.create({
       width: 0,
       height: 3,
     },
-<<<<<<< HEAD
+  },
+
     canelButton:{
         flexDirection:"row",
         alignItems: "center",
@@ -315,10 +316,10 @@ const styles = StyleSheet.create({
         height:48,
         borderWidth:1,
         borderColor:"#7c94b0",
-=======
+
     shadowOpacity: 0.27,
     shadowRadius: 4.65,
->>>>>>> a36c34237aa53c893fbdd3f72085d13b961e06af
+
 
     elevation: 2,
   },
@@ -330,7 +331,7 @@ const styles = StyleSheet.create({
       width: 0,
       height: 3,
     },
-<<<<<<< HEAD
+   },
     completeButton:{
         flexDirection:"row",
         alignItems: "center",
@@ -339,7 +340,7 @@ const styles = StyleSheet.create({
         width:156,
         height:48,
         borderRadius: 35,
-=======
+
     shadowOpacity: 0.27,
     shadowRadius: 4.65,
 
@@ -410,7 +411,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     marginBottom: 10,
   },
->>>>>>> a36c34237aa53c893fbdd3f72085d13b961e06af
+
 
   modalButtons: {
     // backgroundColor:"red",
