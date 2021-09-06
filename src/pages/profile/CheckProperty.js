@@ -1,9 +1,10 @@
 import React, { Component, useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { View, Text, StyleSheet, FlatList, Image, Modal, Button, Pressable, Dimensions, ScrollView } from 'react-native';
-
+import {CheckBox} from 'react-native-elements';
 
 export default function CheckProperty({ navigation }) {
+    const [checked, setChecked] = useState(false);
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -17,15 +18,22 @@ export default function CheckProperty({ navigation }) {
                     </View>
                 </View>
                 <View style={{ flex: 4.3,paddingTop:30}}>
-                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20 }}>
+                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20,backgroundColor:"#f6f6f6" }}>
                         <View style={{ flex: 1 }}>
                             <Image style={styles.logo} source={require('../../assets/downloadded.png')} />
+                            {/* <CheckBox
+                            style={styles.logo} 
+  checkedIcon={<Image source={require('../../assets/downloadded.png')} />}
+  uncheckedIcon={<Image source={require('../../assets/arrow03.png')} />}
+  checked={checked}
+  onPress={() => setChecked({checked: !useState.checked})}
+/> */}
                         </View>
                         <View style={{ flex: 6 }}>
                             <Text style={styles.textService}>Electric service is activated</Text>
                         </View>
                     </View>
-                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20 }}>
+                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20,backgroundColor:"#f6f6f6" }}>
                         <View style={{ flex: 1 }}>
                             <Image style={styles.logo} source={require('../../assets/arrow03.png')} />
                         </View>
@@ -33,7 +41,7 @@ export default function CheckProperty({ navigation }) {
                             <Text style={styles.textService}>water service is activated</Text>
                         </View>
                     </View>
-                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20 }}>
+                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20,backgroundColor:"#f6f6f6" }}>
                         <View style={{ flex: 1 }}>
                             <Image style={styles.logo} source={require('../../assets/arrow03.png')} />
                         </View>
@@ -41,7 +49,7 @@ export default function CheckProperty({ navigation }) {
                             <Text style={styles.textService}>Gas service is activated if aplicable</Text>
                         </View>
                     </View>
-                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20 }}>
+                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20,backgroundColor:"#f6f6f6" }}>
                         <View style={{ flex: 1 }}>
                             <Image style={styles.logo} source={require('../../assets/arrow03.png')} />
                         </View>
@@ -77,7 +85,7 @@ export default function CheckProperty({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        color: "#ffffff",
+        backgroundColor: "#ffffff",
         paddingHorizontal: 20,
     },
     header:{
@@ -96,8 +104,8 @@ const styles = StyleSheet.create({
         fontSize: 24
     },
     logo: {
-        width: 30,
-        height: 30,
+        width: 20,
+        height: 20,
         resizeMode: "contain"
     },
     textService: {

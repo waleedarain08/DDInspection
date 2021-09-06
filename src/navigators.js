@@ -17,6 +17,7 @@ import HomeOverview from './pages/profile/HomeOverview';
 import EstimateScope from './pages/profile/EstimateScope';
 import InteriorMain from './pages/profile/InteriorMain';
 import ExteriorBack from './pages/profile/ExteriorBack';
+import EstimateItem from './pages/profile/EstimateItem';
 import DoNotBuy from './pages/profile/DoNotBuy';
 import DoNotBuy2 from './pages/profile/DoNotBuy2';
 import DetailPage from './pages/list/DetailPage';
@@ -226,6 +227,12 @@ function HomeProfileStack() {
       <HomeProfileStackNav.Screen name="ExteriorBack"
 
         component={ExteriorBack}
+        options={({ navigation }) => ({
+          headerShown: false,
+        })} />
+      <HomeProfileStackNav.Screen name="EstimateItem"
+
+        component={EstimateItem}
         options={({ navigation }) => ({
           headerShown: false,
         })} />

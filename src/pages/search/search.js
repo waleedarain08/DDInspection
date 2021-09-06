@@ -93,6 +93,9 @@ export function Search({ navigation }) {
             >
                 <View  style={styles.centeredView }>
                     <View style={styles.modalView}>
+                        <View style={{flex:0,justifyContent:"center",alignItems:"center"}}>
+                    <Image style={styles.upload} source={require("../../assets/upload.png")} />
+                    </View>
                         <Text style={styles.textdv}> Lorem Ipsum has been the industry's standard text   </Text>
                         <Text style={styles.dowm}>Downloading</Text>
                         <View style={{ flexDirection: "row",paddingHorizontal:12 }}>
@@ -219,5 +222,9 @@ const styles = StyleSheet.create({
         textAlign: "center",
         color: "#676570",
         fontSize: 18
+    },
+    upload:{
+        width:45,
+        height:45,
     }
 })

@@ -17,7 +17,7 @@ export default function CheckProperty2({ navigation }) {
                     </View>
                 </View>
                 <View style={{flex: 4.3,paddingTop:30 }}>
-                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20 }}>
+                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20,backgroundColor:"#f7f7f7"  }}>
                         <View style={{ flex: 1 }}>
                             <Image style={styles.logo} source={require('../../assets/downloadded.png')} />
                         </View>
@@ -25,7 +25,7 @@ export default function CheckProperty2({ navigation }) {
                             <Text style={styles.textService}>Electric service is activated</Text>
                         </View>
                     </View>
-                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20 }}>
+                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20,backgroundColor:"#f7f7f7"  }}>
                         <View style={{ flex: 1 }}>
                             <Image style={styles.logo} source={require('../../assets/downloadded.png')} />
                         </View>
@@ -33,7 +33,7 @@ export default function CheckProperty2({ navigation }) {
                             <Text style={styles.textService}>water service is activated</Text>
                         </View>
                     </View>
-                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20 }}>
+                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20,backgroundColor:"#f7f7f7"  }}>
                         <View style={{ flex: 1 }}>
                             <Image style={styles.logo} source={require('../../assets/downloadded.png')} />
                         </View>
@@ -41,7 +41,7 @@ export default function CheckProperty2({ navigation }) {
                             <Text style={styles.textService}>Gas service is activated if aplicable</Text>
                         </View>
                     </View>
-                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20 }}>
+                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20,backgroundColor:"#f7f7f7"  }}>
                         <View style={{ flex: 1 }}>
                             <Image style={styles.logo} source={require('../../assets/downloadded.png')} />
                         </View>
@@ -77,7 +77,7 @@ export default function CheckProperty2({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        color: "#ffffff",
+        backgroundColor: "#ffffff",
         paddingHorizontal: 20,
     },
     confirmation: {
@@ -96,8 +96,8 @@ const styles = StyleSheet.create({
         fontSize:16,
     },
     logo: {
-        width: 30,
-        height: 30,
+        width: 20,
+        height: 20,
         resizeMode: "contain"
     },
     textService: {

@@ -10,9 +10,12 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import {Input, Button, Card, SearchBar} from 'react-native-elements';
+import {Input, Button, Card, CheckBox} from 'react-native-elements';
 
 export default function ExteriorBack({ navigation }) {
+    const [quality, setQuality] = useState(false);
+    const [checked, setChecked] = useState(false);
+
     return(
         <ScrollView >
             <View style={styles.container}> 
@@ -111,7 +114,13 @@ export default function ExteriorBack({ navigation }) {
                 </View>
                 <View style={{flexDirection:"row",justifyContent:"space-between",paddingHorizontal:20,paddingVertical:20}}>
                     <Text style={{color:"#6a707c"}}>Wood</Text>
-                    <View style={styles.circle}></View>
+              
+<CheckBox
+checkedColor={"red"}
+  checkedIcon='dot-circle-o'
+  uncheckedIcon='circle-o'
+  checked={checked}
+/>
                 </View>
                 <View style={{flexDirection:"row",justifyContent:"space-between",paddingHorizontal:20,paddingVertical:20}}>
                     <Text style={{color:"#6a707c"}}>Vinyl</Text>
@@ -163,13 +172,85 @@ export default function ExteriorBack({ navigation }) {
                 <View style={{backgroundColor:"#f4f4f4",paddingVertical:20,paddingHorizontal:20}}>
                 <Text style={{color:"#000000"}}>Note: <Text style={{color:"#8e9196"}}>Certain answer choices will promp you to add an estimate. As you add an estimate please pay close attention and added as needed</Text></Text>
                 </View>
-                <View style={{backgroundColor:"#f9f9f9",paddingVertical:10,paddingHorizontal:10}}>
-                    <Text>Dose the deck have rot which makes it unsafe</Text>
+                <View style={{backgroundColor:"#f9f9f9",paddingVertical:10,paddingHorizontal:20}}>
+                    <Text style={{color:"#52575d",fontWeight:"bold",paddingBottom:20}}>Dose the deck have rot which makes it unsafe</Text>
                     <View style={{flexDirection:"row"}}>
                     <View style={styles.circle}></View>
-                        <Text>Yes (Add Dry Rot Repair</Text>
+                        <Text style={{color:"#7c8089",paddingLeft:15}}>Yes (Add Dry Rot Repair</Text>
+                    </View>
+                    <View style={{flexDirection:"row",paddingBottom:20,paddingTop:20}}>
+                    <View style={styles.circle}></View>
+                        <Text style={{color:"#7c8089",paddingLeft:15}}>No</Text>
+                    </View>
+                    <View style={{backgroundColor:"#f4f4f4",width:"100%",height:2,marginVertical:20}}></View>
+                    <Text style={{color:"#52575d",fontWeight:"bold",paddingBottom:20}}>Dose the deck appear weathered</Text>
+                    <View style={{flexDirection:"row"}}>
+                    <View style={styles.circle}></View>
+                        <Text style={{color:"#7c8089",paddingLeft:15}}>Yes (Add Dry Rot Repair</Text>
+                    </View>
+                    <View style={{flexDirection:"row",paddingBottom:20,paddingTop:20}}>
+                    <View style={styles.circle}></View>
+                        <Text style={{color:"#7c8089",paddingLeft:15}}>No</Text>
+                    </View>
+                    <View style={{backgroundColor:"#f4f4f4",width:"100%",height:2,marginVertical:20}}></View>
+                    <Text style={{color:"#52575d",fontWeight:"bold",paddingBottom:20}}>Dose each deck support have a footer under it</Text>
+                    <View style={{flexDirection:"row"}}>
+                    <View style={styles.circle}></View>
+                        <Text style={{color:"#7c8089",paddingLeft:15}}>Yes (Add Dry Rot Repair</Text>
+                    </View>
+                    <View style={{flexDirection:"row",paddingBottom:20,paddingTop:20}}>
+                    <View style={styles.circle}></View>
+                        <Text style={{color:"#7c8089",paddingLeft:15}}>No</Text>
                     </View>
                 </View>
+                <View>
+                    <View style={{backgroundColor:"#f4f4f4",paddingVertical:20,paddingHorizontal:20}}>
+                        <Text onPress={()=> navigation.navigate("EstimateItem")} style={{color:"#2b2f38"}}>Estimate Item</Text>
+                    </View>
+                    <View style={{backgroundColor:"#f9f9f9"}}>
+                        <View style={{flexDirection:"row",paddingHorizontal:20}}>
+                        <View style={{flex:1.5}}>
+                        <Text style={{flex:1,color:"#f38550",fontSize:12,}}>Repair Dry Rot, 2 Photos</Text>
+                        <View style={{backgroundColor:"#f38550",width:130,height:2,marginBottom:20}}></View>
+                        </View>
+                        <View style={{flexDirection:"row",flex:1,justifyContent:"space-between"}}>
+                        <Text style={{color:"#868991"}}>$0.00</Text>
+                        <TouchableOpacity
+                     activeOpacity={0.9}
+                    style={styles.editButtom2}>
+                        <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3 }}>Edit</Text>
+                    </TouchableOpacity>
+                    </View>
+                    </View>
+                    <View style={{flexDirection:"row",paddingHorizontal:20,paddingVertical:10}}>
+                        <View style={{flex:1.5}}>
+                        <Text style={{flex:1,color:"#f38550",fontSize:12,}}>Power Wash, Stain/Seal,1 Photo</Text>
+                        <View style={{backgroundColor:"#f38550",width:170,height:2,marginBottom:20}}></View>
+                        </View>
+                        <View style={{flexDirection:"row",flex:1,justifyContent:"space-between"}}>
+                        <Text style={{color:"#868991"}}>$0.00</Text>
+                        <TouchableOpacity
+                     activeOpacity={0.9}
+                    style={styles.editButtom2}>
+                        <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3 }}>Edit</Text>
+                    </TouchableOpacity>
+                    </View>
+                    </View>
+                    <Text style={{color:"#425871",paddingHorizontal:20,fontWeight:"bold"}}>Add New Item  +</Text>
+                    </View>
+                </View>
+                <View style={{flexDirection:"row",justifyContent:"space-between",paddingHorizontal:20,paddingVertical:20,backgroundColor:"#fcfcfc"}}>
+                    <Text style={{color:"#3e434a",fontWeight:"bold"}}>Total Items</Text>
+                    <Text style={{color:"#3e434a",fontWeight:"bold"}}>$744.95</Text>
+                </View>
+                <TouchableOpacity
+                        activeOpacity={0.9}
+                        onPress={() => setQuality(!quality)}
+                        // style={styles.continueButton}
+                        style={quality ? styles.continueButton : styles.continueButton2}
+                    >
+                        <Text style={{color:"#e3e3e3"}}>Continue</Text>
+                    </TouchableOpacity>
                 <Text style={{color:"#173250",fontWeight:"bold",paddingHorizontal:20}}>Photos / Video</Text>
                 <Text style={{color:"#a7abae",paddingHorizontal:20,paddingVertical:10}}>Note:repair-specific photos / video should be added in the estimate itself.</Text>
             </View>
@@ -267,5 +348,32 @@ const styles = StyleSheet.create ({
         borderWidth:2,
         borderColor:"#c3c3c3",
         borderRadius:20
-    }
+    },
+    editButtom2: {
+        backgroundColor: "#ebf7ed",
+        width: 70,
+        height: 26,
+        flexDirection:"row",
+        justifyContent:"space-evenly",
+    },
+    continueButton2:{
+        flexDirection:"row",
+        alignItems: "center",
+        justifyContent:"center",
+        backgroundColor: "#909090",
+        padding: 18,
+        marginHorizontal: 12,
+        marginVertical:30,
+        borderRadius: 35,
+    },
+    continueButton:{
+        flexDirection:"row",
+        alignItems: "center",
+        justifyContent:"center",
+        backgroundColor: "#193250",
+        padding: 18,
+        marginHorizontal: 12,
+        marginVertical:30,
+        borderRadius: 35,
+    },
 })

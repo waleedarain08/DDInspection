@@ -73,7 +73,7 @@ export default function InteriorMain({ navigation }) {
                 <View style={{ flexDirection: "row", justifyContent: "space-between", paddingVertical: 10, backgroundColor: "#ffffff" }}>
                     <Text style={{ flex: 3.5, color: "#797b7f" }}>Garbage Disposal</Text>
                     <Text style={{ flex: 1 }}>$0.00</Text>
-                    <View style={styles.editButtom}>
+                    <View style={styles.inspectButtom}>
                         <Text style={{ color: "#ff5454", textAlign: "center", paddingTop: 3 }}>Inspect</Text>
                     </View>
                 </View>
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
         paddingVertical: 18,
         marginHorizontal: 20,
         marginVertical: 8,
-        borderStyle: 'dotted',
+        borderStyle: 'dashed',
         borderRadius: 10
 
     },
