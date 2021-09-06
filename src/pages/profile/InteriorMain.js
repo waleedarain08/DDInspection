@@ -152,7 +152,7 @@ export default function InteriorMain({navigation}) {
           }}>
           <Text style={{flex: 3.5, color: '#797b7f'}}>Garbage Disposal</Text>
           <Text style={{flex: 1}}>$0.00</Text>
-          <View style={styles.editButtom}>
+          <View style={styles.inspectButtom}>
             <Text
               style={{color: '#ff5454', textAlign: 'center', paddingTop: 3}}>
               Inspect
@@ -219,15 +219,12 @@ export default function InteriorMain({navigation}) {
       </View>
 
       <Modal
-        // animationIn="slideInUp"
         animationIn="zoomIn"
         animationOut="zoomOut"
         animationInTiming={600}
         animationOutTiming={600}
         transparent={true}
         isVisible={modalVisible}
-
-        //   onSwipeComplete={() => setModalVisible(false)}
         onBackButtonPress={() => setModalVisible(!modalVisible)}
         onBackdropPress={() => setModalVisible(!modalVisible)}>
         <View style={styles.modalView}>
