@@ -10,26 +10,51 @@ import {
   TouchableOpacity,
   Flatlist,
 } from 'react-native';
-import { CheckBox } from 'react-native-elements'
+import {CheckBox} from 'react-native-elements';
 //import SelectMultiple from 'react-native-select-multiple'
 
 export default function DoNotBuy({navigation}) {
   // const[alternateImage, setAlternateImage] = useState(true);
   // const changeImage = () => {setAlternateImage (alternateImage => !alternateImage);}
-  const [checked, setChecked] = useState(true)
+  const [checked, setChecked] = useState(true);
   const [quality, setQuality] = useState(true);
   const [quality2, setQuality2] = useState(false);
   const [selected, setSelected] = useState(false);
+  const [button, setButton] = useState(0);
   const [dataSource, setDataSource] = useState([
-
-    {id: 1, title: 'Adjacent to gas stations or automotive service', image: require('../../assets/arrow03.png'), image: require('../../assets/downloadded.png'),isSelected: 0},
-    {id: 2, title: 'Adjacent to dry cleaners or retail centers', image: require('../../assets/arrow03.png'), image: require('../../assets/downloadded.png'), isSelected: 0},
-    {id: 3, title: 'Adjacent to burned, dilapidated, boarded, abandoned or condemned housing stock', image: require('../../assets/arrow03.png'), image: require('../../assets/downloadded.png'), isSelected: 0},
-    {id: 4, title: 'Adjacent properties have asurplus of trash/debris covering the property/lotto an extent it will interfere with leasing', image: require('../../assets/arrow03.png'), image: require('../../assets/downloadded.png'), isSelected: 0},
-    {id: 5, title: 'Area is not safe enough to perform the diligence inspection', image: require('../../assets/arrow03.png'), image: require('../../assets/downloadded.png'), isSelected: 0},
-    {id: 6, title: 'Not Applicable', image: require('../../assets/arrow03.png'), image: require('../../assets/downloadded.png'), isSelected: 0},
+    {
+      id: 1,
+      title: 'Adjacent to gas stations or automotive service',
+      isSelect: 0,
+    },
+    {
+      id: 2,
+      title: 'Adjacent to dry cleaners or retail centers',
+      isSelect: 0,
+    },
+    {
+      id: 3,
+      title:
+        'Adjacent to burned, dilapidated, boarded, abandoned or condemned housing stock',
+      isSelect: 0,
+    },
+    {
+      id: 4,
+      title:
+        'Adjacent properties have asurplus of trash/debris covering the property/lotto an extent it will interfere with leasing',
+      isSelect: 0,
+    },
+    {
+      id: 5,
+      title: 'Area is not safe enough to perform the diligence inspection',
+      isSelect: 0,
+    },
+    {
+      id: 6,
+      title: 'Not Applicable',
+      isSelect: 0,
+    },
   ]);
- 
 
   const selectItem = data => {
     data.item.isSelect = !data.item.isSelect;
@@ -43,50 +68,30 @@ export default function DoNotBuy({navigation}) {
 
     setDataSource(dataSource);
     setSelected(!selected);
+    checkButtonStatus();
     // this.setState({
     //   dataSource: this.state.dataSource,
     // });
   };
 
+  const checkButtonStatus = () => {
+    var obj = dataSource.find(o => o.isSelect == 1);
+    typeof(obj)==="undefined"?setButton(0):setButton(1);
+    console.log(button);
+  }
+
   const renderItem = data => {
+   // console.log(typeof(data.item.selectedClass));
     return (
       <View style={styles.fieldsContainer}>
-        <View>
-
-  
-
-
-        <CheckBox
-        style={[styles.list, data.item.selectedClass]}
-        onPress={() => selectItem(data)}
-        checkedIcon={<Image source={data.item.image} />}
-        uncheckedIcon={<Image source={data.item.image} />}
-        checked={checked}
-        // onPress={() => useState({checked: !useState.checked})}
-/>
-
-
-
-
-
-
-          
-          {/* <TouchableOpacity
+          <TouchableOpacity
             activeOpacity={0.8}
             style={[styles.list, data.item.selectedClass]}
             onPress={() => selectItem(data)}>
-               
-            <Text style={styles.lightText}>
-             
-            </Text>
-      
-
-          </TouchableOpacity> */}
-        </View>
+            <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
+          </TouchableOpacity>
         <View>
-          <Text style={styles.textFields}>
-            {data.item.title}
-          </Text>
+          <Text style={styles.textFields}>{data.item.title}</Text>
         </View>
       </View>
     );
@@ -542,9 +547,9 @@ export default function DoNotBuy({navigation}) {
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('DoNotBuy')}
+            onPress={() => checkButtonStatus()}
             activeOpacity={0.8}
-            style={styles.inspectButton}>
+            style={button?styles.inspectButton:styles.inspectButtonUnSelected}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
               Do Not Buy
             </Text>
@@ -601,12 +606,11 @@ const styles = StyleSheet.create({
   },
   fieldsContainer: {
     flexDirection: 'row',
-    alignItems: 'center',
-    // paddingHorizontal: '5%',
-    // paddingVertical: '2%',
+    paddingHorizontal: '5%',
+    paddingVertical: '2%',
   },
   textFields: {
-    // paddingHorizontal: '5%',
+    paddingHorizontal: '5%',
     color: '#7c8089',
     fontSize: 13,
   },
@@ -692,21 +696,59 @@ const styles = StyleSheet.create({
 
     elevation: 4,
   },
-  // // list: {
-  // //   // paddingVertical: 5,
-  // //   // margin: 3,
-  // //   // flexDirection: 'row',
-  // //   backgroundColor: '#cacacb',
-  // //   justifyContent: 'flex-start',
-  // //   alignItems: 'center',
-  // //   // zIndex: -1,
+  inspectButtonUnSelected: {
+    backgroundColor: '#909090',
+    paddingVertical: '5%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 25,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
 
-  // // },
-  // // selected: {backgroundColor: '#32d24c',},
-  // lightText: {
-  //   color: '#f7f7f7',
-  //   width: 40,
-  //   paddingLeft: 15,
-  //   fontSize: 12,
+    elevation: 4,
+  },
+  list: {
+    paddingVertical: 5,
+    marginTop:1,
+    flexDirection: 'row',
+    backgroundColor: '#cacacb',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: -1,
+    width:18,
+    height:18,
+    borderRadius:9,
+    backgroundColor:"#f5f6f8",
+    borderWidth:0.5,
+    borderColor:"#c7c7c7",
+
+   
+    // padding:5
+  },
+  selected: {backgroundColor: '#32d24c',},
+  // // lightText: {
+  // //   color: 'red',
+  // //   // width: 40,
+  // //   // paddingLeft: 5,
+  // //   // fontSize: 12,
   // },
+  imageSelected:{
+    width:10,
+    height:10,
+    tintColor:"#fff"
+  },
+  imageUnSelected:{
+    width:10,
+    height:10,
+    tintColor:"#c7c7c7",
+    
+   
+    
+
+  }
 });
