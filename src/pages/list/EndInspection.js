@@ -13,6 +13,27 @@ import * as Animatable from 'react-native-animatable';
 import {Input, Button, Card, SearchBar} from 'react-native-elements';
 
 export default function EndInspection({navigation}) {
+
+  const[alternateImage1, setAlternateImage1] = useState(true);
+  const[alternateImage2, setAlternateImage2] = useState(true);
+  const[alternateImage3, setAlternateImage3] = useState(true);
+  const[alternateImage4, setAlternateImage4] = useState(true);
+  const[alternateImage5, setAlternateImage5] = useState(true);
+  const[alternateImage6, setAlternateImage6] = useState(true);
+  const[alternateImage7, setAlternateImage7] = useState(true);
+  const[alternateImage8, setAlternateImage8] = useState(true);
+  const[alternateImage9, setAlternateImage9] = useState(true);
+
+  const changeImage1 = () => {setAlternateImage1 (alternateImage => !alternateImage);}
+  const changeImage2 = () => {setAlternateImage2 (alternateImage => !alternateImage);}
+  const changeImage3 = () => {setAlternateImage3 (alternateImage => !alternateImage);}
+  const changeImage4 = () => {setAlternateImage4 (alternateImage => !alternateImage);}
+  const changeImage5 = () => {setAlternateImage5 (alternateImage => !alternateImage);}
+  const changeImage6 = () => {setAlternateImage6 (alternateImage => !alternateImage);}
+  const changeImage7 = () => {setAlternateImage7 (alternateImage => !alternateImage);}
+  const changeImage8 = () => {setAlternateImage8 (alternateImage => !alternateImage);}
+  const changeImage9 = () => {setAlternateImage9 (alternateImage => !alternateImage);}
+
   return (
     <View style={styles.mainContainer}>
       <View
@@ -37,10 +58,12 @@ export default function EndInspection({navigation}) {
         contentContainerStyle={{paddingBottom: 40}}>
         <View style={styles.fieldsContainer}>
           <View style={styles.fieldsLines}>
-            <Image
-              source={require('../../assets/downloadded.png')}
-              style={{width: 22, height: 22, resizeMode: 'contain'}}
-            />
+            <TouchableOpacity activeOpacity={0.8} onPress={changeImage1} hitSlop={{top:15, bottom:15, right:20, left:20}}>
+              {alternateImage1 && (
+                <Image source={require('../../assets/arrow03.png')}/>)}
+              {!alternateImage1 && (
+                <Image source={require('../../assets/downloadded.png')}/>)}
+             </TouchableOpacity>
           </View>
           <View>
             <Text style={styles.textFields}>
@@ -50,11 +73,14 @@ export default function EndInspection({navigation}) {
           </View>
         </View>
         <View style={styles.fieldsContainer}>
+        
           <View>
-            <Image
-              source={require('../../assets/downloadded.png')}
-              style={{width: 22, height: 22, resizeMode: 'contain'}}
-            />
+             <TouchableOpacity activeOpacity={0.8} onPress={changeImage2} hitSlop={{top:15, bottom:15, right:20, left:20}}>
+               {alternateImage2 && (
+                <Image source={require('../../assets/arrow03.png')}/>)}
+              {!alternateImage2 && (
+                <Image source={require('../../assets/downloadded.png')}/>)}
+             </TouchableOpacity>
           </View>
           <View>
             <Text style={styles.textFields}>
@@ -64,10 +90,12 @@ export default function EndInspection({navigation}) {
         </View>
         <View style={styles.fieldsContainer}>
           <View>
-            <Image
-              source={require('../../assets/downloadded.png')}
-              style={{width: 22, height: 22, resizeMode: 'contain'}}
-            />
+            <TouchableOpacity activeOpacity={0.8} onPress={changeImage3} hitSlop={{top:15, bottom:15, right:20, left:20}}>
+              {alternateImage3 && (
+                <Image source={require('../../assets/arrow03.png')}/>)}
+              {!alternateImage3 && (
+                <Image source={require('../../assets/downloadded.png')}/>)}
+            </TouchableOpacity>
           </View>
           <View>
             <Text style={styles.textFields}>
@@ -77,10 +105,12 @@ export default function EndInspection({navigation}) {
         </View>
         <View style={styles.fieldsContainer}>
           <View>
-            <Image
-              source={require('../../assets/downloadded.png')}
-              style={{width: 22, height: 22, resizeMode: 'contain'}}
-            />
+            <TouchableOpacity activeOpacity={0.8} onPress={changeImage4} hitSlop={{top:15, bottom:15, right:20, left:20}}>
+              {alternateImage4 && (
+                <Image source={require('../../assets/arrow03.png')}/>)}
+              {!alternateImage4 && (
+                <Image source={require('../../assets/downloadded.png')}/>)}
+            </TouchableOpacity>
           </View>
           <View>
             <Text style={styles.textFields}>
@@ -90,10 +120,12 @@ export default function EndInspection({navigation}) {
         </View>
         <View style={styles.fieldsContainer}>
           <View>
-            <Image
-              source={require('../../assets/downloadded.png')}
-              style={{width: 22, height: 22, resizeMode: 'contain'}}
-            />
+            <TouchableOpacity activeOpacity={0.8} onPress={changeImage5} hitSlop={{top:15, bottom:15, right:20, left:20}}>
+              {alternateImage5 && (
+                <Image source={require('../../assets/arrow03.png')}/>)}
+              {!alternateImage5 && (
+                <Image source={require('../../assets/downloadded.png')}/>)}
+            </TouchableOpacity>
           </View>
           <View>
             <Text style={styles.textFields}>
@@ -101,13 +133,14 @@ export default function EndInspection({navigation}) {
             </Text>
           </View>
         </View>
-
         <View style={styles.fieldsContainer}>
           <View>
-            <Image
-              source={require('../../assets/downloadded.png')}
-              style={{width: 22, height: 22, resizeMode: 'contain'}}
-            />
+            <TouchableOpacity activeOpacity={0.8} onPress={changeImage6} hitSlop={{top:15, bottom:15, right:20, left:20}}>
+              {alternateImage6 && (
+                <Image source={require('../../assets/arrow03.png')}/>)}
+              {!alternateImage6 && (
+                <Image source={require('../../assets/downloadded.png')}/>)}
+            </TouchableOpacity>
           </View>
           <View>
             <Text style={styles.textFields}>
@@ -118,10 +151,12 @@ export default function EndInspection({navigation}) {
         </View>
         <View style={styles.fieldsContainer}>
           <View>
-            <Image
-              source={require('../../assets/downloadded.png')}
-              style={{width: 22, height: 22, resizeMode: 'contain'}}
-            />
+             <TouchableOpacity activeOpacity={0.8} onPress={changeImage7} hitSlop={{top:15, bottom:15, right:20, left:20}}>
+              {alternateImage7 && (
+                <Image source={require('../../assets/arrow03.png')}/>)}
+              {!alternateImage7 && (
+                <Image source={require('../../assets/downloadded.png')}/>)}
+             </TouchableOpacity>
           </View>
           <View>
             <Text style={styles.textFields}>
@@ -132,10 +167,12 @@ export default function EndInspection({navigation}) {
         </View>
         <View style={styles.fieldsContainer}>
           <View>
-            <Image
-              source={require('../../assets/downloadded.png')}
-              style={{width: 22, height: 22, resizeMode: 'contain'}}
-            />
+            <TouchableOpacity activeOpacity={0.8} onPress={changeImage8} hitSlop={{top:15, bottom:15, right:20, left:20}}>
+              {alternateImage8 && (
+                <Image source={require('../../assets/arrow03.png')}/>)}
+              {!alternateImage8 && (
+                <Image source={require('../../assets/downloadded.png')}/>)}
+            </TouchableOpacity>
           </View>
           <View>
             <Text style={styles.textFields}>
@@ -146,10 +183,12 @@ export default function EndInspection({navigation}) {
         </View>
         <View style={styles.fieldsContainer}>
           <View>
-            <Image
-              source={require('../../assets/downloadded.png')}
-              style={{width: 22, height: 22, resizeMode: 'contain'}}
-            />
+            <TouchableOpacity activeOpacity={0.8} onPress={changeImage9} hitSlop={{top:15, bottom:15, right:20, left:20}}>
+              {alternateImage9 && (
+                <Image source={require('../../assets/arrow03.png')}/>)}
+              {!alternateImage9 && (
+                <Image source={require('../../assets/downloadded.png')}/>)}
+            </TouchableOpacity>
           </View>
           <View>
             <Text style={styles.textFields}>
@@ -164,7 +203,7 @@ export default function EndInspection({navigation}) {
         <TouchableOpacity
           onPress={() => navigation.navigate('EndInspection2')}
           activeOpacity={0.8}
-          style={styles.inspectButton}>
+          style={styles.inspectButtonDimm}>
           <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
             End Inspection
           </Text>
@@ -180,6 +219,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   fieldsContainer: {
+
     flexDirection: 'row',
     backgroundColor: '#f9f8fd',
     alignItems: 'center',
@@ -196,7 +236,24 @@ const styles = StyleSheet.create({
     marginBottom: '5%',
   },
 
-  inspectButton: {
+  
+  inspectButtonDimm: {
+    backgroundColor: '#909090',
+    paddingVertical: '5%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 25,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 10,
+  },
+  inspectButtonEnable: {
     backgroundColor: '#193250',
     paddingVertical: '5%',
     alignItems: 'center',

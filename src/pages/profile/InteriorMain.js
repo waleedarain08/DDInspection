@@ -405,8 +405,7 @@ const styles = StyleSheet.create({
   },
 
   modalButtons: {
-    // backgroundColor:"red",
-    flex: 0.6,
+    flex: 0.5,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
