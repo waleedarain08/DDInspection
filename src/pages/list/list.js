@@ -127,12 +127,7 @@ export function List({navigation}) {
         </View>
 
         <View
-          style={{
-            flex: 1,
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-evenly',
-          }}>
+          style={styles.buttonContainer}>
           <TouchableOpacity
             onPress={() => navigation.navigate('EndInspection')}
             activeOpacity={0.8}
@@ -214,12 +209,7 @@ export function List({navigation}) {
         </View>
 
         <View
-          style={{
-            flex: 1,
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-evenly',
-          }}>
+          style={styles.buttonContainer}>
           <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
               Inspect Now
@@ -295,12 +285,7 @@ export function List({navigation}) {
         </View>
 
         <View
-          style={{
-            flex: 1,
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-evenly',
-          }}>
+          style={styles.buttonContainer}>
           <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
               Inspect Now
@@ -378,12 +363,7 @@ export function List({navigation}) {
         </View>
 
         <View
-          style={{
-            flex: 1,
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-evenly',
-          }}>
+          style={styles.buttonContainer}>
           <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
               Inspect Now
@@ -459,12 +439,7 @@ export function List({navigation}) {
         </View>
 
         <View
-          style={{
-            flex: 1,
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-evenly',
-          }}>
+          style={styles.buttonContainer}>
           <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
               Inspect Now
@@ -536,6 +511,12 @@ const styles = StyleSheet.create({
     height: 120,
     width: 130,
     borderRadius: 8,
+  },
+  buttonContainer:{
+    flex: 1,
+    flexDirection: 'row-reverse',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
   },
   resumeButton: {
     paddingHorizontal: '16%',

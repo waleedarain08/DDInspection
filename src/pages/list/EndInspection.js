@@ -88,7 +88,7 @@ const goAhead = () =>{
   if(button){
     navigation.navigate("")
   }else{
-    alert("Please select atleast one option.")
+    alert("Please select all fields to continue")
   }
 }
 
