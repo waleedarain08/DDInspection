@@ -11,7 +11,6 @@ import React from 'react';
 import HomeScreen from './pages/home/HomeScreen';
 import DetailScreen from './pages/home/DetailScreen';
 import CheckProperty from './pages/profile/CheckProperty';
-import CheckProperty2 from './pages/profile/CheckProperty2';
 import InspectionOverview from './pages/profile/InspectionOverview';
 import HomeOverview from './pages/profile/HomeOverview';
 import EstimateScope from './pages/profile/EstimateScope';
@@ -22,7 +21,6 @@ import DoNotBuy from './pages/profile/DoNotBuy';
 import DoNotBuy2 from './pages/profile/DoNotBuy2';
 import DetailPage from './pages/list/DetailPage';
 import EndInspection from './pages/list/EndInspection';
-import EndInspection2 from './pages/list/EndInspection2';
 import TabADetails from './pages/home/tabADetails';
 import CustomDrawer from './CustomDrawer';
 import { connect } from 'react-redux';
@@ -182,12 +180,6 @@ function HomeProfileStack() {
         options={({ navigation }) => ({
           headerShown: false,
         })} />
-      <HomeProfileStackNav.Screen name="CheckProperty2"
-
-        component={CheckProperty2}
-        options={({ navigation }) => ({
-          headerShown: false,
-        })} />
       <HomeProfileStackNav.Screen name="InspectionOverview"
 
         component={InspectionOverview}
@@ -275,12 +267,6 @@ function HomeListStack() {
       <HomeProfileStackNav.Screen name="EndInspection"
 
         component={EndInspection}
-        options={({ navigation }) => ({
-          headerShown: false,
-        })} />
-      <HomeProfileStackNav.Screen name="EndInspection2"
-
-        component={EndInspection2}
         options={({ navigation }) => ({
           headerShown: false,
         })} />

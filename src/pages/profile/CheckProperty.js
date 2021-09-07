@@ -6,6 +6,13 @@ import {CheckBox} from 'react-native-elements';
 export default function CheckProperty({ navigation }) {
     const [selected, setSelected] = useState(false);
     const [button, setButton] = useState(0);
+    const goAhead = () =>{
+      if(button){
+        navigation.navigate("")
+      }else{
+        alert("Please select atleast one option.")
+      }
+    }
     const [dataSource, setDataSource] = useState([
       {
         id: 1,
@@ -65,9 +72,7 @@ export default function CheckProperty({ navigation }) {
       };
     
       const checkButtonStatus = () => {
-        var obj = dataSource.find(o => o.isSelect == 1);
-        typeof(obj)==="undefined"?setButton(0):setButton(1);
-        console.log(button);
+        dataSource.length==dataSource.filter((obj) => obj.isSelect == 1).length?setButton(1):setButton(0);
       }
     
       const renderItem = data => {
@@ -99,38 +104,6 @@ export default function CheckProperty({ navigation }) {
                     </View>
                 </View>
                 <View style={{ flex: 4,paddingTop:30}}>
-                    {/* <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20,backgroundColor:"#f6f6f6" }}>
-                        <View style={{ flex: 1 }}>
-                            <Image style={styles.logo} source={require('../../assets/downloadded.png')} />
-                        </View>
-                        <View style={{ flex: 6 }}>
-                            <Text style={styles.textService}>Electric service is activated</Text>
-                        </View>
-                    </View>
-                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20,backgroundColor:"#f6f6f6" }}>
-                        <View style={{ flex: 1 }}>
-                            <Image style={styles.logo} source={require('../../assets/arrow03.png')} />
-                        </View>
-                        <View style={{ flex: 6 }}>
-                            <Text style={styles.textService}>water service is activated</Text>
-                        </View>
-                    </View>
-                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20,backgroundColor:"#f6f6f6" }}>
-                        <View style={{ flex: 1 }}>
-                            <Image style={styles.logo} source={require('../../assets/arrow03.png')} />
-                        </View>
-                        <View style={{ flex: 6 }}>
-                            <Text style={styles.textService}>Gas service is activated if aplicable</Text>
-                        </View>
-                    </View>
-                    <View style={{ flexDirection: "row", marginTop: 30, paddingHorizontal: 15, paddingBottom: 20,backgroundColor:"#f6f6f6" }}>
-                        <View style={{ flex: 1 }}>
-                            <Image style={styles.logo} source={require('../../assets/arrow03.png')} />
-                        </View>
-                        <View style={{ flex: 6 }}>
-                            <Text style={styles.textService}>Turn on HVAC and leave it running during the inspection</Text>
-                        </View>
-                    </View> */}
                     <FlatList
               data={dataSource}
               renderItem={item => renderItem(item)}
@@ -143,11 +116,12 @@ export default function CheckProperty({ navigation }) {
                         activeOpacity={0.9}
                         onPress={() => checkButtonStatus()}
                         style={button?styles.inspectButton:styles.inspectButtonUnSelected}
-                        onPress={() => navigation.navigate("CheckProperty2")}
+                        onPress={() => navigation.navigate("InspectionOverview")}
                     >
                         <Text style={{color:"#e3e3e3"}}>Continue</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
+                     onPress={() => goAhead()}
                         activeOpacity={0.9}
                         style={styles.stopButton}
                         onPress={() => navigation.goBack()}
