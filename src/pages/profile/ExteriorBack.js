@@ -114,13 +114,7 @@ export default function ExteriorBack({ navigation }) {
                 </View>
                 <View style={{flexDirection:"row",justifyContent:"space-between",paddingHorizontal:20,paddingVertical:20}}>
                     <Text style={{color:"#6a707c"}}>Wood</Text>
-              
-<CheckBox
-checkedColor={"red"}
-  checkedIcon='dot-circle-o'
-  uncheckedIcon='circle-o'
-  checked={checked}
-/>
+                    <View style={styles.circle}></View>
                 </View>
                 <View style={{flexDirection:"row",justifyContent:"space-between",paddingHorizontal:20,paddingVertical:20}}>
                     <Text style={{color:"#6a707c"}}>Vinyl</Text>
