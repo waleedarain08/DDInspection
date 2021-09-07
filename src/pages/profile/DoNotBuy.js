@@ -273,7 +273,7 @@ export default function DoNotBuy({navigation}) {
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('DoNotBuy2')}
+            // onPress={() => navigation.navigate('DoNotBuy')}
             activeOpacity={0.8}
             style={styles.inspectButton}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
