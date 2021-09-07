@@ -10,18 +10,18 @@ import {
   TouchableOpacity,
   Flatlist,
 } from 'react-native';
-import {CheckBox} from 'react-native-elements';
-//import SelectMultiple from 'react-native-select-multiple'
+
 
 export default function DoNotBuy({navigation}) {
-  // const[alternateImage, setAlternateImage] = useState(true);
-  // const changeImage = () => {setAlternateImage (alternateImage => !alternateImage);}
-  const [checked, setChecked] = useState(true);
+
   const [quality, setQuality] = useState(true);
   const [quality2, setQuality2] = useState(false);
   const [selected, setSelected] = useState(false);
   const [button, setButton] = useState(0);
-  const [dataSource, setDataSource] = useState([
+  
+
+                          // <===LOCATION DATA ARRAY===>  
+  const [locationDataSource, setLocationDataSource] = useState([
     {
       id: 1,
       title: 'Adjacent to gas stations or automotive service',
@@ -56,46 +56,122 @@ export default function DoNotBuy({navigation}) {
     },
   ]);
 
+                        // <===PROPERTY DATA ARRAY===>
+  const [propertyDataSource, setPropertyDataSource] = useState([
+    {
+      id: 1,
+      title: 'Adjacent to gas stations or automotive service',
+      isSelect: 0,
+    },
+    {
+      id: 2,
+      title: 'Adjacent to dry cleaners or retail centers',
+      isSelect: 0,
+    },
+    {
+      id: 3,
+      title:
+        'Adjacent to burned, dilapidated, boarded, abandoned or condemned housing stock',
+      isSelect: 0,
+    },
+    {
+      id: 4,
+      title:
+        'Adjacent properties have asurplus of trash/debris covering the property/lotto an extent it will interfere with leasing',
+      isSelect: 0,
+    },
+    {
+      id: 5,
+      title: 'Area is not safe enough to perform the diligence inspection',
+      isSelect: 0,
+    },
+    {
+      id: 6,
+      title: 'Not Applicable',
+      isSelect: 0,
+    },
+  ]);
+
+
+                        // <===LOCATION DATA SOURCE===>
+
   const selectItem = data => {
     data.item.isSelect = !data.item.isSelect;
     data.item.selectedClass = data.item.isSelect
       ? styles.selected
       : styles.list;
 
-    const index = dataSource.findIndex(item => data.item.id === item.id);
+    const index = locationDataSource.findIndex(item => data.item.id === item.id);
 
-    dataSource[index] = data.item;
+    locationDataSource[index] = data.item;
 
-    setDataSource(dataSource);
+    setLocationDataSource(locationDataSource);
     setSelected(!selected);
     checkButtonStatus();
-    // this.setState({
-    //   dataSource: this.state.dataSource,
-    // });
   };
 
   const checkButtonStatus = () => {
-    var obj = dataSource.find(o => o.isSelect == 1);
-    typeof(obj)==="undefined"?setButton(0):setButton(1);
-    console.log(button);
+    var locationObj = locationDataSource.find(o => o.isSelect == 1);
+    var propertyObj = propertyDataSource.find(o => o.isSelect == 1);
+
+    typeof(locationObj)==="undefined" && typeof(propertyObj)==="undefined"?setButton(0):setButton(1);
   }
 
   const renderItem = data => {
-   // console.log(typeof(data.item.selectedClass));
     return (
-      <View style={styles.fieldsContainer}>
-          <TouchableOpacity
-            activeOpacity={0.8}
-            style={[styles.list, data.item.selectedClass]}
-            onPress={() => selectItem(data)}>
-            <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
-          </TouchableOpacity>
-        <View>
-          <Text style={styles.textFields}>{data.item.title}</Text>
+     
+        <TouchableOpacity  activeOpacity={0.6} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
+        <View style={[styles.list, data.item.selectedClass]}>
+          <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
         </View>
+      <View>
+        <Text style={styles.textFields}>{data.item.title}</Text>
       </View>
+    </TouchableOpacity>
     );
   };
+
+
+                        // <===PROPERTY DATA SOURCE===>
+
+  const selectItem2 = data => {
+    data.item.isSelect = !data.item.isSelect;
+    data.item.selectedClass = data.item.isSelect
+      ? styles.selected
+      : styles.list;
+
+    const index = propertyDataSource.findIndex(item => data.item.id === item.id);
+
+    propertyDataSource[index] = data.item;
+
+    setPropertyDataSource(propertyDataSource);
+    setSelected(!selected);
+    checkButtonStatus();
+  };
+
+  const goAhead = () =>{
+    if(button){
+      navigation.navigate("")
+    }else{
+      alert("Please select atleast one option.")
+    }
+  }
+
+  const renderItem2 = data => {
+    return (
+
+      <TouchableOpacity  activeOpacity={0.6} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
+            <View style={[styles.list, data.item.selectedClass]}>
+              <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
+            </View>
+          <View>
+            <Text style={styles.textFields}>{data.item.title}</Text>
+          </View>
+        </TouchableOpacity>
+
+    );
+  };
+
 
   return (
     <ScrollView
@@ -137,122 +213,14 @@ export default function DoNotBuy({navigation}) {
           </TouchableOpacity>
         </View>
         {quality && (
-          <View style={{paddingVertical: 10, backgroundColor: '#f9f8fd'}}>
+          <View style={{paddingVertical: "3%", backgroundColor: '#f9f8fd'}}>
             <FlatList
-              data={dataSource}
-              //ItemSeparatorComponent={FlatListItemSeparator}
+              data={locationDataSource}
               renderItem={item => renderItem(item)}
               keyExtractor={item => item.id}
-              extraData={dataSource}
+              extraData={locationDataSource}
             />
-            {/* <View style={styles.fieldsContainer}>
-              <View>
-                <TouchableOpacity activeOpacity={0.8} onPress={changeImage1} hitSlop={{top:15, bottom:15, right:20, left:20}}>
-                  {alternateImage1 && (
-                    <Image source={require('../../assets/arrow03.png')}
-                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
-                  {!alternateImage1 && (
-                    <Image source={require('../../assets/downloadded.png')}
-                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
-              </TouchableOpacity>
-              </View>
-              <View>
-                <Text style={styles.textFields}>
-                  Adjacent to gas stations or automotive service
-                </Text>
-              </View>
-            </View>
-
-            <View style={styles.fieldsContainer}>
-              <View>
-              <TouchableOpacity activeOpacity={0.8} onPress={changeImage2} hitSlop={{top:15, bottom:15, right:20, left:20}}>
-                  {alternateImage2 && (
-                    <Image source={require('../../assets/arrow03.png')}
-                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
-                  {!alternateImage2 && (
-                    <Image source={require('../../assets/downloadded.png')}
-                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
-              </TouchableOpacity>
-              </View>
-              <View>
-                <Text style={styles.textFields}>
-                  Adjacent to dry cleaners or retail centers
-                </Text>
-              </View>
-            </View>
-
-            <View style={styles.fieldsContainer}>
-              <View>
-              <TouchableOpacity activeOpacity={0.8} onPress={changeImage3} hitSlop={{top:15, bottom:15, right:20, left:20}}>
-                  {alternateImage3 && (
-                    <Image source={require('../../assets/arrow03.png')}
-                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
-                  {!alternateImage3 && (
-                    <Image source={require('../../assets/downloadded.png')}
-                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
-              </TouchableOpacity>
-              </View>
-              <View>
-                <Text style={styles.textFields}>
-                  Adjacent to burned, dilapidated, boarded, abandoned or
-                  condemned housing stock
-                </Text>
-              </View>
-            </View>
-
-            <View style={styles.fieldsContainer}>
-              <View>
-              <TouchableOpacity activeOpacity={0.8} onPress={changeImage4} hitSlop={{top:15, bottom:15, right:20, left:20}}>
-                  {alternateImage4 && (
-                    <Image source={require('../../assets/arrow03.png')}
-                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
-                  {!alternateImage4 && (
-                    <Image source={require('../../assets/downloadded.png')}
-                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
-              </TouchableOpacity>
-              </View>
-              <View>
-                <Text style={styles.textFields}>
-                  Adjacent properties have asurplus of trash/debris covering the
-                  property/lotto an extent it will interfere with leasing
-                </Text>
-              </View>
-            </View>
-
-            <View style={styles.fieldsContainer}>
-              <View>
-              <TouchableOpacity activeOpacity={0.8} onPress={changeImage5} hitSlop={{top:15, bottom:15, right:20, left:20}}>
-                  {alternateImage5 && (
-                    <Image source={require('../../assets/arrow03.png')}
-                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
-                  {!alternateImage5 && (
-                    <Image source={require('../../assets/downloadded.png')}
-                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
-              </TouchableOpacity>
-              </View>
-              <View>
-                <Text style={styles.textFields}>
-                  Area is not safe enough to perform the diligence inspection
-                </Text>
-              </View>
-            </View>
-
-            <View style={styles.fieldsContainer}>
-              <View>
-              <TouchableOpacity activeOpacity={0.8} onPress={changeImage6} hitSlop={{top:15, bottom:15, right:20, left:20}}>
-                  {alternateImage6 && (
-                    <Image source={require('../../assets/arrow03.png')}
-                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
-                  {!alternateImage6 && (
-                    <Image source={require('../../assets/downloadded.png')}
-                    style={{width: 18, height: 18, resizeMode: 'contain'}}/>)}
-              </TouchableOpacity>
-              </View>
-              <View>
-                <Text style={styles.textFields}>Not Applicable</Text>
-              </View>
-            </View> */}
-          </View>
+           </View>
         )}
 
         {/* 2ND PROPERTY TAB SECTIONE */}
@@ -278,179 +246,24 @@ export default function DoNotBuy({navigation}) {
         </View>
         {quality2 && (
           <View style={{paddingVertical: 10, backgroundColor: '#f9f8fd'}}>
-            <View style={styles.fieldsContainer}>
-              <View>
-                <TouchableOpacity
-                  activeOpacity={0.8}
-                  onPress={changeImage1}
-                  hitSlop={{top: 15, bottom: 15, right: 20, left: 20}}>
-                  {alternateImage1 && (
-                    <Image
-                      source={require('../../assets/arrow03.png')}
-                      style={{width: 18, height: 18, resizeMode: 'contain'}}
-                    />
-                  )}
-                  {!alternateImage1 && (
-                    <Image
-                      source={require('../../assets/downloadded.png')}
-                      style={{width: 18, height: 18, resizeMode: 'contain'}}
-                    />
-                  )}
-                </TouchableOpacity>
-              </View>
-              <View>
-                <Text style={styles.textFields}>
-                  Adjacent to gas stations or automotive service
-                </Text>
-              </View>
-            </View>
-
-            <View style={styles.fieldsContainer}>
-              <View>
-                <TouchableOpacity
-                  activeOpacity={0.8}
-                  onPress={changeImage2}
-                  hitSlop={{top: 15, bottom: 15, right: 20, left: 20}}>
-                  {alternateImage2 && (
-                    <Image
-                      source={require('../../assets/arrow03.png')}
-                      style={{width: 18, height: 18, resizeMode: 'contain'}}
-                    />
-                  )}
-                  {!alternateImage2 && (
-                    <Image
-                      source={require('../../assets/downloadded.png')}
-                      style={{width: 18, height: 18, resizeMode: 'contain'}}
-                    />
-                  )}
-                </TouchableOpacity>
-              </View>
-              <View>
-                <Text style={styles.textFields}>
-                  Adjacent to dry cleaners or retail centers
-                </Text>
-              </View>
-            </View>
-
-            <View style={styles.fieldsContainer}>
-              <View>
-                <TouchableOpacity
-                  activeOpacity={0.8}
-                  onPress={changeImage3}
-                  hitSlop={{top: 15, bottom: 15, right: 20, left: 20}}>
-                  {alternateImage3 && (
-                    <Image
-                      source={require('../../assets/arrow03.png')}
-                      style={{width: 18, height: 18, resizeMode: 'contain'}}
-                    />
-                  )}
-                  {!alternateImage3 && (
-                    <Image
-                      source={require('../../assets/downloadded.png')}
-                      style={{width: 18, height: 18, resizeMode: 'contain'}}
-                    />
-                  )}
-                </TouchableOpacity>
-              </View>
-              <View>
-                <Text style={styles.textFields}>
-                  Adjacent to burned, dilapidated, boarded, abandoned or
-                  condemned housing stock
-                </Text>
-              </View>
-            </View>
-
-            <View style={styles.fieldsContainer}>
-              <View>
-                <TouchableOpacity
-                  activeOpacity={0.8}
-                  onPress={changeImage4}
-                  hitSlop={{top: 15, bottom: 15, right: 20, left: 20}}>
-                  {alternateImage4 && (
-                    <Image
-                      source={require('../../assets/arrow03.png')}
-                      style={{width: 18, height: 18, resizeMode: 'contain'}}
-                    />
-                  )}
-                  {!alternateImage4 && (
-                    <Image
-                      source={require('../../assets/downloadded.png')}
-                      style={{width: 18, height: 18, resizeMode: 'contain'}}
-                    />
-                  )}
-                </TouchableOpacity>
-              </View>
-              <View>
-                <Text style={styles.textFields}>
-                  Adjacent properties have asurplus of trash/debris covering the
-                  property/lotto an extent it will interfere with leasing
-                </Text>
-              </View>
-            </View>
-
-            <View style={styles.fieldsContainer}>
-              <View>
-                <TouchableOpacity
-                  activeOpacity={0.8}
-                  onPress={changeImage5}
-                  hitSlop={{top: 15, bottom: 15, right: 20, left: 20}}>
-                  {alternateImage5 && (
-                    <Image
-                      source={require('../../assets/arrow03.png')}
-                      style={{width: 18, height: 18, resizeMode: 'contain'}}
-                    />
-                  )}
-                  {!alternateImage5 && (
-                    <Image
-                      source={require('../../assets/downloadded.png')}
-                      style={{width: 18, height: 18, resizeMode: 'contain'}}
-                    />
-                  )}
-                </TouchableOpacity>
-              </View>
-              <View>
-                <Text style={styles.textFields}>
-                  Area is not safe enough to perform the diligence inspection
-                </Text>
-              </View>
-            </View>
-
-            <View style={styles.fieldsContainer}>
-              <View>
-                <TouchableOpacity
-                  activeOpacity={0.8}
-                  onPress={changeImage6}
-                  hitSlop={{top: 15, bottom: 15, right: 20, left: 20}}>
-                  {alternateImage6 && (
-                    <Image
-                      source={require('../../assets/arrow03.png')}
-                      style={{width: 18, height: 18, resizeMode: 'contain'}}
-                    />
-                  )}
-                  {!alternateImage6 && (
-                    <Image
-                      source={require('../../assets/downloadded.png')}
-                      style={{width: 18, height: 18, resizeMode: 'contain'}}
-                    />
-                  )}
-                </TouchableOpacity>
-              </View>
-              <View>
-                <Text style={styles.textFields}>Not Applicable</Text>
-              </View>
-            </View>
-          </View>
+          <FlatList
+            data={propertyDataSource}
+            renderItem={item => renderItem2(item)}
+            keyExtractor={item => item.id}
+            extraData={propertyDataSource}
+          />
+         </View>          
         )}
 
         {/* 3RD UPLOAD SECTIONE */}
 
         <View style={styles.uploadSecContainer}>
           <View style={styles.imageCard}>
-            <Text style={{fontWeight: '700'}}>Do Not Buy Photos</Text>
+            <Text style={{fontWeight: '700', paddingLeft:"2.5%"}}>Do Not Buy Photos</Text>
             <View
               style={{
                 flexDirection: 'row',
-                justifyContent: 'space-between',
+                justifyContent: 'space-around',
                 paddingVertical: 10,
               }}>
               <View>
@@ -547,9 +360,9 @@ export default function DoNotBuy({navigation}) {
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity
-            onPress={() => checkButtonStatus()}
+            onPress={() => goAhead()}
             activeOpacity={0.8}
-            style={button?styles.inspectButton:styles.inspectButtonUnSelected}>
+            style={button?styles.DoNotButtonEnable:styles.DoNotButtonDisable}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
               Do Not Buy
             </Text>
@@ -569,12 +382,30 @@ const styles = StyleSheet.create({
     backgroundColor: '#f4f4f4',
     flexDirection: 'row',
     paddingVertical: '3%',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 2,
   },
   propertyTabContainer: {
     backgroundColor: '#f4f4f4',
     flexDirection: 'row',
     paddingVertical: '3%',
     marginTop: '5%',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 2,
   },
   locationTabText: {
     flex: 3,
@@ -607,7 +438,7 @@ const styles = StyleSheet.create({
   fieldsContainer: {
     flexDirection: 'row',
     paddingHorizontal: '5%',
-    paddingVertical: '2%',
+    paddingVertical: 15,
   },
   textFields: {
     paddingHorizontal: '5%',
@@ -680,7 +511,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: '6%',
   },
 
-  inspectButton: {
+  DoNotButtonEnable: {
     backgroundColor: '#193250',
     paddingVertical: '5%',
     alignItems: 'center',
@@ -694,9 +525,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.27,
     shadowRadius: 4.65,
 
-    elevation: 4,
+    elevation: 10,
   },
-  inspectButtonUnSelected: {
+  DoNotButtonDisable: {
     backgroundColor: '#909090',
     paddingVertical: '5%',
     alignItems: 'center',
@@ -710,33 +541,26 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.27,
     shadowRadius: 4.65,
 
-    elevation: 4,
+    elevation: 10,
   },
   list: {
-    paddingVertical: 5,
-    marginTop:1,
     flexDirection: 'row',
     backgroundColor: '#cacacb',
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: -1,
-    width:18,
-    height:18,
-    borderRadius:9,
+    width:19,
+    height:19,
+    borderRadius:9.5,
     backgroundColor:"#f5f6f8",
     borderWidth:0.5,
     borderColor:"#c7c7c7",
-
-   
-    // padding:5
   },
-  selected: {backgroundColor: '#32d24c',},
-  // // lightText: {
-  // //   color: 'red',
-  // //   // width: 40,
-  // //   // paddingLeft: 5,
-  // //   // fontSize: 12,
-  // },
+  selected: {
+    backgroundColor: '#32d24c',
+    borderWidth:0,
+},
+
   imageSelected:{
     width:10,
     height:10,
@@ -746,9 +570,5 @@ const styles = StyleSheet.create({
     width:10,
     height:10,
     tintColor:"#c7c7c7",
-    
-   
-    
-
   }
 });

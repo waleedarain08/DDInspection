@@ -13,26 +13,101 @@ import * as Animatable from 'react-native-animatable';
 import {Input, Button, Card, SearchBar} from 'react-native-elements';
 
 export default function EndInspection({navigation}) {
+  const [button, setButton] = useState(0);
+  const [selected, setSelected] = useState(false);
+  const [dataSource, setDataSource] = useState([
+    {
+      id: 1,
+      title: 'Turn off A/C. Set the thermostate to 55 to prevent pipes from freezing',
+      isSelect: 0,
+    },
+    {
+      id: 2,
+      title: 'Close and lock all windows. Close all window shades or curtains',
+      isSelect: 0,
+    },
+    {
+      id: 3,
+      title:
+        'Turn off all lights. Double check all appliances are off.',
+      isSelect: 0,
+    },
+    {
+      id: 4,
+      title:
+        'Lock all doors. Return keys to lockboxes (if any).',
+      isSelect: 0,
+    },
+    {
+      id: 5,
+      title: 'Properly dispose of any used booties and gloves.',
+      isSelect: 0,
+    },
+    // {
+    //   id: 6,
+    //   title: 'Turn off A/C. Set the thermostate to 55 to prevent pipes from freezing',
+    //   isSelect: 0,
+    // },
+    // {
+    //   id: 7,
+    //   title: 'Area is not safe enough to perform the diligence inspection',
+    //   isSelect: 0,
+    // },
+  ]);
 
-  const[alternateImage1, setAlternateImage1] = useState(true);
-  const[alternateImage2, setAlternateImage2] = useState(true);
-  const[alternateImage3, setAlternateImage3] = useState(true);
-  const[alternateImage4, setAlternateImage4] = useState(true);
-  const[alternateImage5, setAlternateImage5] = useState(true);
-  const[alternateImage6, setAlternateImage6] = useState(true);
-  const[alternateImage7, setAlternateImage7] = useState(true);
-  const[alternateImage8, setAlternateImage8] = useState(true);
-  const[alternateImage9, setAlternateImage9] = useState(true);
 
-  const changeImage1 = () => {setAlternateImage1 (alternateImage => !alternateImage);}
-  const changeImage2 = () => {setAlternateImage2 (alternateImage => !alternateImage);}
-  const changeImage3 = () => {setAlternateImage3 (alternateImage => !alternateImage);}
-  const changeImage4 = () => {setAlternateImage4 (alternateImage => !alternateImage);}
-  const changeImage5 = () => {setAlternateImage5 (alternateImage => !alternateImage);}
-  const changeImage6 = () => {setAlternateImage6 (alternateImage => !alternateImage);}
-  const changeImage7 = () => {setAlternateImage7 (alternateImage => !alternateImage);}
-  const changeImage8 = () => {setAlternateImage8 (alternateImage => !alternateImage);}
-  const changeImage9 = () => {setAlternateImage9 (alternateImage => !alternateImage);}
+  const selectItem = data => {
+    data.item.isSelect = !data.item.isSelect;
+    data.item.selectedClass = data.item.isSelect
+      ? styles.selected
+      : styles.list;
+
+    const index = dataSource.findIndex(item => data.item.id === item.id);
+
+    dataSource[index] = data.item;
+
+    setDataSource(dataSource);
+    setSelected(!selected);
+    checkButtonStatus();
+  };
+
+  const checkButtonStatus = () => {
+    dataSource.length==dataSource.filter((obj) => obj.isSelect == 1).length?setButton(1):setButton(0);
+  }
+
+
+  const renderSeparator = () => (
+    <View
+      style={{
+        backgroundColor: '#fff',
+        height: 10,
+      }}
+    />
+)
+const goAhead = () =>{
+  if(button){
+    navigation.navigate("")
+  }else{
+    alert("Please select atleast one option.")
+  }
+}
+
+  const renderItem = data => {
+    return (
+
+        <TouchableOpacity  activeOpacity={0.6} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
+          <View style={[styles.list, data.item.selectedClass]}>
+            <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
+          </View>
+        <View>
+          <Text style={styles.textFields}>{data.item.title}</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  };
+
+
+
 
   return (
     <View style={styles.mainContainer}>
@@ -40,170 +115,32 @@ export default function EndInspection({navigation}) {
         style={{
           padding: '5%',
           elevation: 5,
-          paddingBottom: 30,
+          paddingBottom: 20,
           backgroundColor: '#fff',
         }}>
-        <Text style={{color: '#7c8089', fontSize: 12}}>
-          Thank you for handling the due diligence for this property.
-        </Text>
-        <Text style={{fontSize: 25, fontWeight: 'bold'}}>
-          A couple of reminders as
-        </Text>
-        <Text style={{fontSize: 25, fontWeight: 'bold'}}>
-          you exit the property:
+        <Text style={{color: '#7c8089', fontSize: 13, }}>
+          "Thank you for handling this inspection"
+        </Text>       
+        <Text style={{fontSize: 25, fontWeight: 'bold', marginVertical:10}}>
+          "Reminders as you exit:"
         </Text>
       </View>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{paddingBottom: 40}}>
-        <View style={styles.fieldsContainer}>
-          <View style={styles.fieldsLines}>
-            <TouchableOpacity activeOpacity={0.8} onPress={changeImage1} hitSlop={{top:15, bottom:15, right:20, left:20}}>
-              {alternateImage1 && (
-                <Image source={require('../../assets/arrow03.png')}/>)}
-              {!alternateImage1 && (
-                <Image source={require('../../assets/downloadded.png')}/>)}
-             </TouchableOpacity>
-          </View>
-          <View>
-            <Text style={styles.textFields}>
-              Turn off A/C. Set the thermostate to 55 to prevent pipes from
-              freezing
-            </Text>
-          </View>
-        </View>
-        <View style={styles.fieldsContainer}>
-        
-          <View>
-             <TouchableOpacity activeOpacity={0.8} onPress={changeImage2} hitSlop={{top:15, bottom:15, right:20, left:20}}>
-               {alternateImage2 && (
-                <Image source={require('../../assets/arrow03.png')}/>)}
-              {!alternateImage2 && (
-                <Image source={require('../../assets/downloadded.png')}/>)}
-             </TouchableOpacity>
-          </View>
-          <View>
-            <Text style={styles.textFields}>
-              Close and lock all windows. Close all window shades or curtains
-            </Text>
-          </View>
-        </View>
-        <View style={styles.fieldsContainer}>
-          <View>
-            <TouchableOpacity activeOpacity={0.8} onPress={changeImage3} hitSlop={{top:15, bottom:15, right:20, left:20}}>
-              {alternateImage3 && (
-                <Image source={require('../../assets/arrow03.png')}/>)}
-              {!alternateImage3 && (
-                <Image source={require('../../assets/downloadded.png')}/>)}
-            </TouchableOpacity>
-          </View>
-          <View>
-            <Text style={styles.textFields}>
-              Turn off all lights. Double check all appliances are off.
-            </Text>
-          </View>
-        </View>
-        <View style={styles.fieldsContainer}>
-          <View>
-            <TouchableOpacity activeOpacity={0.8} onPress={changeImage4} hitSlop={{top:15, bottom:15, right:20, left:20}}>
-              {alternateImage4 && (
-                <Image source={require('../../assets/arrow03.png')}/>)}
-              {!alternateImage4 && (
-                <Image source={require('../../assets/downloadded.png')}/>)}
-            </TouchableOpacity>
-          </View>
-          <View>
-            <Text style={styles.textFields}>
-              Lock all doors. Return keys to lockboxes (if any).
-            </Text>
-          </View>
-        </View>
-        <View style={styles.fieldsContainer}>
-          <View>
-            <TouchableOpacity activeOpacity={0.8} onPress={changeImage5} hitSlop={{top:15, bottom:15, right:20, left:20}}>
-              {alternateImage5 && (
-                <Image source={require('../../assets/arrow03.png')}/>)}
-              {!alternateImage5 && (
-                <Image source={require('../../assets/downloadded.png')}/>)}
-            </TouchableOpacity>
-          </View>
-          <View>
-            <Text style={styles.textFields}>
-              Properly dispose of any used booties and gloves.
-            </Text>
-          </View>
-        </View>
-        <View style={styles.fieldsContainer}>
-          <View>
-            <TouchableOpacity activeOpacity={0.8} onPress={changeImage6} hitSlop={{top:15, bottom:15, right:20, left:20}}>
-              {alternateImage6 && (
-                <Image source={require('../../assets/arrow03.png')}/>)}
-              {!alternateImage6 && (
-                <Image source={require('../../assets/downloadded.png')}/>)}
-            </TouchableOpacity>
-          </View>
-          <View>
-            <Text style={styles.textFields}>
-              Turn off A/C. Set the thermostate to 55 to prevent pipes from
-              freezing
-            </Text>
-          </View>
-        </View>
-        <View style={styles.fieldsContainer}>
-          <View>
-             <TouchableOpacity activeOpacity={0.8} onPress={changeImage7} hitSlop={{top:15, bottom:15, right:20, left:20}}>
-              {alternateImage7 && (
-                <Image source={require('../../assets/arrow03.png')}/>)}
-              {!alternateImage7 && (
-                <Image source={require('../../assets/downloadded.png')}/>)}
-             </TouchableOpacity>
-          </View>
-          <View>
-            <Text style={styles.textFields}>
-              Turn off A/C. Set the thermostate to 55 to prevent pipes from
-              freezing
-            </Text>
-          </View>
-        </View>
-        <View style={styles.fieldsContainer}>
-          <View>
-            <TouchableOpacity activeOpacity={0.8} onPress={changeImage8} hitSlop={{top:15, bottom:15, right:20, left:20}}>
-              {alternateImage8 && (
-                <Image source={require('../../assets/arrow03.png')}/>)}
-              {!alternateImage8 && (
-                <Image source={require('../../assets/downloadded.png')}/>)}
-            </TouchableOpacity>
-          </View>
-          <View>
-            <Text style={styles.textFields}>
-              Turn off A/C. Set the thermostate to 55 to prevent pipes from
-              freezing
-            </Text>
-          </View>
-        </View>
-        <View style={styles.fieldsContainer}>
-          <View>
-            <TouchableOpacity activeOpacity={0.8} onPress={changeImage9} hitSlop={{top:15, bottom:15, right:20, left:20}}>
-              {alternateImage9 && (
-                <Image source={require('../../assets/arrow03.png')}/>)}
-              {!alternateImage9 && (
-                <Image source={require('../../assets/downloadded.png')}/>)}
-            </TouchableOpacity>
-          </View>
-          <View>
-            <Text style={styles.textFields}>
-              Turn off A/C. Set the thermostate to 55 to prevent pipes from
-              freezing
-            </Text>
-          </View>
-        </View>
-      </ScrollView>
-
+          <View style={{backgroundColor: '#f9f8fd', marginBottom: 5, height:"72%"}}>
+              <FlatList
+                data={dataSource}
+                ItemSeparatorComponent={renderSeparator} 
+                showsVerticalScrollIndicator={false}
+                renderItem={item => renderItem(item)}
+                keyExtractor={item => item.id}
+                extraData={dataSource}
+              />
+           </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('EndInspection2')}
+          onPress={() => goAhead()}
+          // onPress={() => navigation.navigate('EndInspection2')}
           activeOpacity={0.8}
-          style={styles.inspectButtonDimm}>
+          style={button?styles.inspectButtonEnable:styles.inspectButtonDisable}>
           <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
             End Inspection
           </Text>
@@ -219,25 +156,32 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   fieldsContainer: {
-
     flexDirection: 'row',
     backgroundColor: '#f9f8fd',
     alignItems: 'center',
     padding: '6%',
-    marginVertical: '1.5%',
+    marginBottom:2,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 2,
   },
-  textFields: {
+    textFields: {
     paddingHorizontal: '5%',
     color: '#7c8089',
   },
+
   buttonContainer: {
     paddingVertical: '2%',
     paddingHorizontal: '5%',
-    marginBottom: '5%',
-  },
-
-  
-  inspectButtonDimm: {
+    marginBottom: '2%',
+  },  
+  inspectButtonDisable: {
     backgroundColor: '#909090',
     paddingVertical: '5%',
     alignItems: 'center',
@@ -269,4 +213,32 @@ const styles = StyleSheet.create({
 
     elevation: 10,
   },
+  list: {
+    flexDirection: 'row',
+    backgroundColor: '#cacacb',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: -1,
+    width:24,
+    height:24,
+    borderRadius:12,
+    backgroundColor:"#f5f6f8",
+    borderWidth:1,
+    borderColor:"#c7c7c7",
+  },
+  selected: {
+    backgroundColor: '#32d24c',
+    borderWidth:0,
+},
+
+  imageSelected:{
+    width:14,
+    height:14,
+    tintColor:"#fff"
+  },
+  imageUnSelected:{
+    width:14,
+    height:14,
+    tintColor:"#c7c7c7",
+  }
 });
