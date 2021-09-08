@@ -206,7 +206,7 @@ export default function InspectionOverview({navigation}) {
               source={require('../../assets/group921.png')}
             />
             <Text
-              style={{fontWeight: 'bold', fontSize: 20, marginVertical: '2%'}}>
+              style={{fontFamily:"OpenSans-Bold", fontSize: 20, marginVertical: '2%'}}>
               Pause Inspection?
             </Text>
             <View>
@@ -239,7 +239,7 @@ export default function InspectionOverview({navigation}) {
 
                   elevation: 8,
                 }}>
-                <Text style={{color: '#fff'}}>Done</Text>
+                <Text style={{color: '#fff', fontFamily:"OpenSans-SemiBold"}}>Done</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -432,5 +432,6 @@ const styles = StyleSheet.create({
     height: 90,
     fontSize: 14,
     color: '#333',
+    fontFamily:"OpenSans-Regular"
   },
 });

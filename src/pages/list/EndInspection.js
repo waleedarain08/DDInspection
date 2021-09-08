@@ -95,7 +95,7 @@ const goAhead = () =>{
   const renderItem = data => {
     return (
 
-        <TouchableOpacity  activeOpacity={0.6} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
+        <TouchableOpacity  activeOpacity={0.8} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
           <View style={[styles.list, data.item.selectedClass]}>
             <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
           </View>
@@ -114,18 +114,25 @@ const goAhead = () =>{
       <View
         style={{
           padding: '5%',
-          elevation: 5,
+          shadowColor: '#000',
+          shadowOffset: {
+            width: 0,
+            height: 3,
+          },
+          shadowOpacity: 0.27,
+          shadowRadius: 4.65,
+          elevation: 3,
           paddingBottom: 20,
           backgroundColor: '#fff',
         }}>
-        <Text style={{color: '#7c8089', fontSize: 13, }}>
+        <Text style={{fontFamily:"OpenSans-Regular",color: '#7c8089', fontSize: 12, }}>
           "Thank you for handling this inspection"
         </Text>       
-        <Text style={{fontSize: 25, fontWeight: 'bold', marginVertical:10}}>
+        <Text style={{fontFamily:"OpenSans-Bold", fontSize: 25, marginVertical:10}}>
           "Reminders as you exit:"
         </Text>
       </View>
-          <View style={{backgroundColor: '#f9f8fd', marginBottom: 5, height:"72%"}}>
+          <View style={{backgroundColor: '#f9f8fd', marginBottom: 5, height:"50%"}}>
               <FlatList
                 data={dataSource}
                 ItemSeparatorComponent={renderSeparator} 
@@ -141,7 +148,7 @@ const goAhead = () =>{
           // onPress={() => navigation.navigate('EndInspection2')}
           activeOpacity={0.8}
           style={button?styles.inspectButtonEnable:styles.inspectButtonDisable}>
-          <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
+          <Text style={{color: '#fff', fontFamily:"OpenSans-Bold",  fontSize: 14}}>
             End Inspection
           </Text>
         </TouchableOpacity>
@@ -174,6 +181,8 @@ const styles = StyleSheet.create({
     textFields: {
     paddingHorizontal: '5%',
     color: '#7c8089',
+    fontFamily:"OpenSans-Regular",
+    fontSize:14
   },
 
   buttonContainer: {
@@ -219,9 +228,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: -1,
-    width:24,
-    height:24,
-    borderRadius:12,
+    width:22,
+    height:22,
+    borderRadius:11,
     backgroundColor:"#f5f6f8",
     borderWidth:1,
     borderColor:"#c7c7c7",
@@ -232,13 +241,13 @@ const styles = StyleSheet.create({
 },
 
   imageSelected:{
-    width:14,
-    height:14,
+    width:12,
+    height:12,
     tintColor:"#fff"
   },
   imageUnSelected:{
-    width:14,
-    height:14,
+    width:12,
+    height:12,
     tintColor:"#c7c7c7",
   }
 });

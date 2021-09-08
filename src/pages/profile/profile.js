@@ -248,25 +248,25 @@ export function Profile({navigation}) {
                 activeOpacity={0.9}
                 onPress={() => navigation.navigate('')}
                 style={styles.modalButtons}>
-                <Text style={{color: '#fff'}}>Cannot Access Property</Text>
+                <Text style={{color: '#fff', fontFamily:"OpenSans-Regular"}}>Cannot Access Property</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 activeOpacity={0.9}
                 onPress={() => navigation.navigate('')}
                 style={styles.modalButtons}>
-                <Text style={{color: '#fff'}}>Utilities Not Activated</Text>
+                <Text style={{color: '#fff', fontFamily:"OpenSans-Regular"}}>Utilities Not Activated</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 activeOpacity={0.9}
                 onPress={() => navigation.navigate('DoNotBuy2')}
                 style={styles.modalButtons}>
-                <Text style={{color: '#fff'}}>Do Not Buy</Text>
+                <Text style={{color: '#fff', fontFamily:"OpenSans-Regular"}}>Do Not Buy</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 activeOpacity={0.9}
                 onPress={() => navigation.navigate('')}
                 style={styles.modalButtons}>
-                <Text style={{color: '#fff'}}>Pause Inspection</Text>
+                <Text style={{color: '#fff', fontFamily:"OpenSans-Regular"}}>Pause Inspection</Text>
               </TouchableOpacity>
             </View>
           </View>
