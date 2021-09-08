@@ -132,7 +132,7 @@ const goAhead = () =>{
           "Reminders as you exit:"
         </Text>
       </View>
-          <View style={{backgroundColor: '#f9f8fd', marginBottom: 5, height:"50%"}}>
+          <View style={{backgroundColor: '#f9f8fd', marginBottom: 5, height:"72%"}}>
               <FlatList
                 data={dataSource}
                 ItemSeparatorComponent={renderSeparator} 
