@@ -123,7 +123,7 @@ const goAhead = () =>{
           shadowOpacity: 0.27,
           shadowRadius: 4.65,      
           elevation: 1,
-          backgroundColor: '#ffffff',
+          backgroundColor: '#fff',
         }}>
         <Text style={{fontFamily:"OpenSans-Regular",color: '#7c8089', fontSize: 12, }}>
           "Thank you for handling this inspection"
