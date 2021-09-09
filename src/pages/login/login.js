@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   },
   backgroundImage:{
     width:"100%",
-    height:"120%",
+    height:"200%",
     },
   header: {
     flex: 8,

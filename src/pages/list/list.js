@@ -211,15 +211,8 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
-<<<<<<< HEAD
-          <TouchableOpacity 
-           activeOpacity={0.9}
-            style={styles.inspectButton}>
-            <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
-=======
           <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontFamily:"OpenSans-Bold", fontSize: 11}}>
->>>>>>> 0f344f4df1196744c12433a77a0d3160cea9f8f7
               Inspect Now
             </Text>
           </TouchableOpacity>
@@ -294,13 +287,8 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
-<<<<<<< HEAD
           <TouchableOpacity  activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
-=======
-          <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
-            <Text style={{color: '#fff', fontFamily:"OpenSans-Bold", fontSize: 11}}>
->>>>>>> 0f344f4df1196744c12433a77a0d3160cea9f8f7
               Inspect Now
             </Text>
           </TouchableOpacity>

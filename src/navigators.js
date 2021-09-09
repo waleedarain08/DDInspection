@@ -225,14 +225,16 @@ function HomeBeginTripStack() {
         name="DoNotBuy"
         component={DoNotBuy}
         options={({navigation}) => ({
-          headerShown: false,
+          headerTitle:"Do Not Buy",
+          headerLeft: () => drawerIcon(navigation),
         })}
       />
       <HomeBeginTripStackNav.Screen
         name="DoNotBuy2"
         component={DoNotBuy2}
         options={({navigation}) => ({
-          headerShown: false,
+          headerTitle:"Do Not Buy",
+          headerLeft: () => drawerIcon(navigation),
         })}
       />
       <HomeBeginTripStackNav.Screen

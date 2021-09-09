@@ -121,9 +121,8 @@ const goAhead = () =>{
             height: 3,
           },
           shadowOpacity: 0.27,
-          shadowRadius: 4.65,
-          elevation: 3,
-          paddingBottom: 20,
+          shadowRadius: 4.65,      
+          elevation: 1,
           backgroundColor: '#fff',
         }}>
         <Text style={{fontFamily:"OpenSans-Regular",color: '#7c8089', fontSize: 12, }}>
@@ -133,7 +132,7 @@ const goAhead = () =>{
           "Reminders as you exit:"
         </Text>
       </View>
-          <View style={{backgroundColor: '#f9f8fd', marginBottom: 5, height:"72%"}}>
+          <View style={{backgroundColor: '#f9f8fd', marginBottom: 5, }}>
               <FlatList
                 data={dataSource}
                 ItemSeparatorComponent={renderSeparator} 
@@ -167,15 +166,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#f9f8fd',
     alignItems: 'center',
-    padding: '5%',
+    padding: 15,
     marginBottom:2,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 3,
     },
-    shadowOpacity: 0.27,
-    shadowRadius: 4.65,
+    shadowOpacity: 0.17,
+    shadowRadius: 2.65,
 
     elevation: 2,
   },
