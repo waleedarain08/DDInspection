@@ -44,44 +44,44 @@ function HomeScreen({navigation, user, userLogout}) {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            <Text style={{fontSize: 20, fontWeight: 'bold'}}>LUKE SHAW</Text>
+            <Text style={{fontSize: 20, fontFamily:"OpenSans-Bold"}}>LUKE SHAW</Text>
           </View>
         </View>
       </View>
       <View style={styles.profileSection}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View style={styles.ratingView}>
-            <Text style={{fontSize: 20, fontWeight: 'bold'}}>15</Text>
-            <Text style={{color: '#dddddd'}}>Job Posts</Text>
+            <Text style={{fontSize: 20, fontFamily:"OpenSans-Bold",}}>15</Text>
+            <Text style={{color: '#dddddd', fontFamily:"OpenSans-SemiBold",}}>Job Posts</Text>
           </View>
           <View style={styles.ratingLineView}></View>
           <View style={styles.ratingView}>
-            <Text style={{fontSize: 20, fontWeight: 'bold'}}>45</Text>
-            <Text style={{color: '#dddddd'}}>Completed</Text>
+            <Text style={{fontSize: 20, fontFamily:"OpenSans-Bold",}}>45</Text>
+            <Text style={{color: '#dddddd',fontFamily:"OpenSans-SemiBold",}}>Completed</Text>
           </View>
           <View style={styles.ratingLineView}></View>
           <View style={styles.ratingView}>
-            <Text style={{fontSize: 20, fontWeight: 'bold'}}>56</Text>
-            <Text style={{color: '#dddddd'}}>Remaining</Text>
+            <Text style={{fontSize: 20, fontFamily:"OpenSans-Bold",}}>56</Text>
+            <Text style={{color: '#dddddd', fontFamily:"OpenSans-SemiBold",}}>Remaining</Text>
           </View>
         </View>
       </View>
       <View style={styles.formContainer}>
         <View style={styles.inputFields}>
           <View style={{flex: 1, alignItems: 'flex-start'}}>
-            <Text style={{color: '#8a8a8a'}}>John Snow</Text>
+            <Text style={{color: '#8a8a8a', fontFamily:"OpenSans-Regular"}}>John Snow</Text>
           </View>
           <View
             style={{flex: .5, alignItems: 'flex-end', justifyContent: 'center'}}>
-            {/* <Image
-              source={require('../../assets/user.png')}
+            <Image
+              source={require('../../assets/profile.png')}
               style={{width: 16, height: 16, resizeMode: 'contain'}}
-            /> */}
+            />
           </View>
         </View>
         <View style={styles.inputFields}>
           <View style={{flex: 1, alignItems: 'flex-start'}}>
-            <Text style={{color: '#8a8a8a'}}>johnsnow@gmail.com</Text>
+            <Text style={{color: '#8a8a8a', fontFamily:"OpenSans-Regular"}}>johnsnow@gmail.com</Text>
           </View>
           <View
             style={{flex: .5, alignItems: 'flex-end', justifyContent: 'center'}}>
@@ -93,7 +93,7 @@ function HomeScreen({navigation, user, userLogout}) {
         </View>
         <View style={styles.inputFields}>
           <View style={{flex: 1, alignItems: 'flex-start'}}>
-            <Text style={{color: '#8a8a8a'}}>202-555-0186</Text>
+            <Text style={{color: '#8a8a8a', fontFamily:"OpenSans-Regular",}}>202-555-0186</Text>
           </View>
           <View
             style={{flex: .5, alignItems: 'flex-end', justifyContent: 'center'}}>

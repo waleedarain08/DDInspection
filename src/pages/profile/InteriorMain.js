@@ -278,13 +278,13 @@ export default function InteriorMain({navigation}) {
             source={require('../../assets/remove1.png')}
           />
           <Text
-            style={{fontWeight: 'bold', fontSize: 20, marginVertical: '2%'}}>
+            style={{fontFamily:"OpenSans-Bold", fontSize: 20, marginVertical: '2%'}}>
             Delete File?
           </Text>
-          <Text style={{color: '#74777e'}}>
+          <Text style={{color: '#74777e', fontFamily:"OpenSans-Regular"}}>
             If you proceed, the file will be
           </Text>
-          <Text style={{color: '#74777e', paddingBottom: 15}}>
+          <Text style={{color: '#74777e', fontFamily:"OpenSans-Regular", paddingBottom: 15}}>
             permanently deleted.
           </Text>
 
@@ -310,7 +310,7 @@ export default function InteriorMain({navigation}) {
 
                 elevation: 6,
               }}>
-              <Text style={{color: '#193250'}}>No</Text>
+              <Text style={{color: '#193250',fontFamily:"OpenSans-SemiBold"}}>No</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -331,7 +331,7 @@ export default function InteriorMain({navigation}) {
 
                 elevation: 8,
               }}>
-              <Text style={{color: '#fff'}}>Yes</Text>
+              <Text style={{color: '#fff', fontFamily:"OpenSans-SemiBold"}}>Yes</Text>
             </TouchableOpacity>
           </View>
         </View>

@@ -93,7 +93,7 @@ export function List({navigation}) {
                   resizeMode: 'contain',
                 }}
               />
-              <Text style={{color: '#fff', fontSize: 10}}>
+              <Text style={{color: '#fff', fontFamily:"OpenSans-Regular", fontSize: 10}}>
                 Feb 16 - 11:30AM
               </Text>
             </View>
@@ -106,7 +106,7 @@ export function List({navigation}) {
                 source={require('../../assets/location.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa',fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
                 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
               </Text>
             </View>
@@ -119,7 +119,7 @@ export function List({navigation}) {
                 source={require('../../assets/infoSquare.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
                 The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
                 She will be there from 9-11AM on 1/26/21.
               </Text>
@@ -133,7 +133,7 @@ export function List({navigation}) {
             onPress={() => navigation.navigate('EndInspection')}
             activeOpacity={0.8}
             style={styles.resumeButton}>
-            <Text style={{color: '#193250', fontWeight: 'bold', fontSize: 12}}>
+            <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               Resume
             </Text>
           </TouchableOpacity>
@@ -142,7 +142,7 @@ export function List({navigation}) {
             onPress={() => navigation.navigate('DetailPage')}
             activeOpacity={0.8}
             style={styles.detailButton}>
-            <Text style={{color: '#193250', fontWeight: 'bold', fontSize: 12}}>
+            <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               View Details
             </Text>
           </TouchableOpacity>
@@ -177,7 +177,7 @@ export function List({navigation}) {
                   resizeMode: 'contain',
                 }}
               />
-              <Text style={{color: '#fff', fontSize: 10}}>Mar 16 - 2:30PM</Text>
+              <Text style={{color: '#fff', fontFamily:"OpenSans-Regular", fontSize: 10}}>Mar 16 - 2:30PM</Text>
             </View>
             <View
               style={{
@@ -188,7 +188,7 @@ export function List({navigation}) {
                 source={require('../../assets/location.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
                 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
               </Text>
             </View>
@@ -201,7 +201,7 @@ export function List({navigation}) {
                 source={require('../../assets/infoSquare.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
                 The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
                 She will be there from 9-11AM on 1/26/21.
               </Text>
@@ -211,16 +211,21 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
+<<<<<<< HEAD
           <TouchableOpacity 
            activeOpacity={0.9}
             style={styles.inspectButton}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
+=======
+          <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
+            <Text style={{color: '#fff', fontFamily:"OpenSans-Bold", fontSize: 11}}>
+>>>>>>> 0f344f4df1196744c12433a77a0d3160cea9f8f7
               Inspect Now
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity activeOpacity={0.8} style={styles.detailButton}>
-            <Text style={{color: '#193250', fontWeight: 'bold', fontSize: 12}}>
+            <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               View Details
             </Text>
           </TouchableOpacity>
@@ -255,7 +260,7 @@ export function List({navigation}) {
                   resizeMode: 'contain',
                 }}
               />
-              <Text style={{color: '#fff', fontSize: 10}}>Feb 17 - 9:00AM</Text>
+              <Text style={{color: '#fff', fontFamily:"OpenSans-Regular", fontSize: 10}}>Feb 17 - 9:00AM</Text>
             </View>
             <View
               style={{
@@ -266,7 +271,7 @@ export function List({navigation}) {
                 source={require('../../assets/location.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
                 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
               </Text>
             </View>
@@ -279,7 +284,7 @@ export function List({navigation}) {
                 source={require('../../assets/infoSquare.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
                 The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
                 She will be there from 9-11AM on 1/26/21.
               </Text>
@@ -289,14 +294,19 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
+<<<<<<< HEAD
           <TouchableOpacity  activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
+=======
+          <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
+            <Text style={{color: '#fff', fontFamily:"OpenSans-Bold", fontSize: 11}}>
+>>>>>>> 0f344f4df1196744c12433a77a0d3160cea9f8f7
               Inspect Now
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity activeOpacity={0.8} style={styles.detailButton}>
-            <Text style={{color: '#193250', fontWeight: 'bold', fontSize: 12}}>
+            <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               View Details
             </Text>
           </TouchableOpacity>
@@ -331,7 +341,7 @@ export function List({navigation}) {
                   resizeMode: 'contain',
                 }}
               />
-              <Text style={{color: '#fff', fontSize: 10}}>
+              <Text style={{color: '#fff', fontFamily:"OpenSans-Regular", fontSize: 10}}>
                 Feb 16 - 11:30AM
               </Text>
             </View>
@@ -344,7 +354,7 @@ export function List({navigation}) {
                 source={require('../../assets/location.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
                 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
               </Text>
             </View>
@@ -357,7 +367,7 @@ export function List({navigation}) {
                 source={require('../../assets/infoSquare.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
                 The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
                 She will be there from 9-11AM on 1/26/21.
               </Text>
@@ -368,20 +378,20 @@ export function List({navigation}) {
         <View
           style={styles.buttonContainer}>
           <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
-            <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
+            <Text style={{color: '#fff', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               Inspect Now
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity activeOpacity={0.8} style={styles.detailButton}>
-            <Text style={{color: '#193250', fontWeight: 'bold', fontSize: 12}}>
+            <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               View Details
             </Text>
           </TouchableOpacity>
         </View>
         <View style={styles.sectionBorder}></View>
 
-        {/* SECTION==2 */}
+        {/* SECTION==5 */}
 
         <View style={styles.sectionContainer}>
           <View style={styles.imageView}>
@@ -409,7 +419,7 @@ export function List({navigation}) {
                   resizeMode: 'contain',
                 }}
               />
-              <Text style={{color: '#fff', fontSize: 10}}>Mar 16 - 2:30PM</Text>
+              <Text style={{color: '#fff', fontFamily:"OpenSans-Regular", fontSize: 10}}>Mar 16 - 2:30PM</Text>
             </View>
             <View
               style={{
@@ -420,7 +430,7 @@ export function List({navigation}) {
                 source={require('../../assets/location.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
                 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
               </Text>
             </View>
@@ -433,7 +443,7 @@ export function List({navigation}) {
                 source={require('../../assets/infoSquare.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
                 The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
                 She will be there from 9-11AM on 1/26/21.
               </Text>
@@ -444,13 +454,13 @@ export function List({navigation}) {
         <View
           style={styles.buttonContainer}>
           <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
-            <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
+            <Text style={{color: '#fff', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               Inspect Now
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity activeOpacity={0.8} style={styles.detailButton}>
-            <Text style={{color: '#193250', fontWeight: 'bold', fontSize: 12}}>
+            <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               View Details
             </Text>
           </TouchableOpacity>
@@ -487,11 +497,12 @@ const styles = StyleSheet.create({
   topBarText: {
     color: '#193250',
     fontSize: 14,
-    fontWeight: '700',
+    fontFamily:"OpenSans-Bold",
   },
   topBarText2: {
     color: '#364b65',
     fontSize: 14,
+    fontFamily:"OpenSans-SemiBold",
   },
   sectionContainer: {
     flex: 1,
@@ -517,10 +528,12 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   buttonContainer:{
+    // backgroundColor:"red",
     flex: 1,
     flexDirection: 'row-reverse',
     alignItems: 'center',
     justifyContent: 'space-evenly',
+    paddingHorizontal:5,
   },
   resumeButton: {
     paddingHorizontal: '16%',

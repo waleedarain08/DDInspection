@@ -120,7 +120,7 @@ export default function DoNotBuy({navigation}) {
   const renderItem = data => {
     return (
      
-        <TouchableOpacity  activeOpacity={0.6} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
+        <TouchableOpacity  activeOpacity={0.8} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
         <View style={[styles.list, data.item.selectedClass]}>
           <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
         </View>
@@ -160,7 +160,11 @@ export default function DoNotBuy({navigation}) {
   const renderItem2 = data => {
     return (
 
+<<<<<<< HEAD
       <TouchableOpacity  activeOpacity={0.6} onPress={() => selectItem2(data)} style={styles.fieldsContainer}>
+=======
+      <TouchableOpacity  activeOpacity={0.8} onPress={() => selectItem2(data)} style={styles.fieldsContainer}>
+>>>>>>> 0f344f4df1196744c12433a77a0d3160cea9f8f7
             <View style={[styles.list, data.item.selectedClass]}>
               <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
             </View>
@@ -182,12 +186,11 @@ export default function DoNotBuy({navigation}) {
           <Text
             style={{
               color: '#3c434d',
-              fontSize: 18,
-              fontWeight: 'bold',
-              lineHeight: 25,
+              fontFamily:"OpenSans-Bold",
+              fontSize: 17  
             }}>
-            Please confirm the property above, then {'\n'}select at least one do
-            buy reason and {'\n'}click on "Do Not Buy" to continue.
+            Please confirm the property above, then select at least one do
+            buy reason and click on "Do Not Buy" to continue.
           </Text>
         </View>
 
@@ -195,7 +198,7 @@ export default function DoNotBuy({navigation}) {
 
         <View style={styles.locationTabContainer}>
           <View style={styles.locationTabText}>
-            <Text style={{fontWeight: 'bold', color: '#293036'}}>
+            <Text style={{ fontFamily:"OpenSans-Bold", color: '#293036'}}>
               Location Issue
             </Text>
           </View>
@@ -227,7 +230,7 @@ export default function DoNotBuy({navigation}) {
 
         <View style={styles.propertyTabContainer}>
           <View style={styles.locationTabText}>
-            <Text style={{fontWeight: 'bold', color: '#293036'}}>
+            <Text style={{ fontFamily:"OpenSans-Bold", color: '#293036'}}>
               Property Issue
             </Text>
           </View>
@@ -259,7 +262,7 @@ export default function DoNotBuy({navigation}) {
 
         <View style={styles.uploadSecContainer}>
           <View style={styles.imageCard}>
-            <Text style={{fontWeight: '700', paddingLeft:"2.5%"}}>Do Not Buy Photos</Text>
+            <Text style={{ fontFamily:"OpenSans-Bold", paddingLeft:"2.5%"}}>Do Not Buy Photos</Text>
             <View
               style={{
                 flexDirection: 'row',
@@ -276,10 +279,10 @@ export default function DoNotBuy({navigation}) {
                   source={require('../../assets/table.jpg')}
                 />
                 <View style={{paddingVertical: 10}}>
-                  <Text style={{color: '#7b7e83', fontSize: 12}}>
+                  <Text style={{color: '#7b7e83', fontFamily:"OpenSans-Regular", fontSize: 12}}>
                     Note:repair-specific
                   </Text>
-                  <Text style={{color: '#7b7e83', fontSize: 12}}>
+                  <Text style={{color: '#7b7e83', fontFamily:"OpenSans-Regular", fontSize: 12}}>
                     photos / video
                   </Text>
                   <TouchableOpacity
@@ -293,6 +296,7 @@ export default function DoNotBuy({navigation}) {
                     <Text
                       style={{
                         color: '#33ae46',
+                        fontFamily:"OpenSans-SemiBold",
                         textAlign: 'center',
                         paddingTop: 3,
                       }}>
@@ -312,17 +316,17 @@ export default function DoNotBuy({navigation}) {
                 />
                 <View>
                   <View style={{paddingVertical: 10}}>
-                    <Text style={{color: '#c7c8cc', fontSize: 12}}>
+                    <Text style={{color: '#c7c8cc', fontFamily:"OpenSans-Regular", fontSize: 12}}>
                       Note:repair-specific{' '}
                     </Text>
-                    <Text style={{color: '#c7c8cc', fontSize: 12}}>
+                    <Text style={{color: '#c7c8cc', fontFamily:"OpenSans-Regular", fontSize: 12}}>
                       {' '}
                       photos / video
                     </Text>
                   </View>
                   <View style={styles.line}></View>
                   <View style={styles.doneButton}>
-                    <Text style={{textAlign: 'center', color: '#5d5b66'}}>
+                    <Text style={{textAlign: 'center', fontFamily:"OpenSans-SemiBold", color:'#5d5b66'}}>
                       Done
                     </Text>
                   </View>
@@ -347,6 +351,7 @@ export default function DoNotBuy({navigation}) {
                     style={{
                       textAlign: 'center',
                       color: '#435971',
+                      fontFamily:"OpenSans-SemiBold",
                       fontSize: 12,
                       paddingVertical: 4,
                     }}>
@@ -363,7 +368,7 @@ export default function DoNotBuy({navigation}) {
             onPress={() => goAhead()}
             activeOpacity={0.8}
             style={button?styles.DoNotButtonEnable:styles.DoNotButtonDisable}>
-            <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
+            <Text style={{color: '#fff',  fontFamily:"OpenSans-Bold", fontSize: 14}}>
               Do Not Buy
             </Text>
           </TouchableOpacity>
@@ -443,7 +448,8 @@ const styles = StyleSheet.create({
   textFields: {
     paddingHorizontal: '5%',
     color: '#7c8089',
-    fontSize: 13,
+    fontFamily:"OpenSans-Regular",
+    fontSize: 12,
   },
 
   uploadSecContainer: {
@@ -513,7 +519,7 @@ const styles = StyleSheet.create({
 
   DoNotButtonEnable: {
     backgroundColor: '#193250',
-    paddingVertical: '5%',
+    paddingVertical: '4%',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 25,
@@ -529,7 +535,7 @@ const styles = StyleSheet.create({
   },
   DoNotButtonDisable: {
     backgroundColor: '#909090',
-    paddingVertical: '5%',
+    paddingVertical: '4%',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 25,
@@ -572,3 +578,8 @@ const styles = StyleSheet.create({
     tintColor:"#c7c7c7",
   }
 });
+
+
+
+
+
