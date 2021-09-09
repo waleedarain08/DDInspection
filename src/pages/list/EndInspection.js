@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import {Input, Button, Card, SearchBar} from 'react-native-elements';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function EndInspection({navigation}) {
   const [button, setButton] = useState(0);
@@ -110,7 +111,7 @@ const goAhead = () =>{
 
 
   return (
-    <View style={styles.mainContainer}>
+    <SafeAreaView style={styles.mainContainer}>
       <View
         style={{
           padding: '5%',
@@ -146,7 +147,7 @@ const goAhead = () =>{
           </Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -159,7 +160,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#f9f8fd',
     alignItems: 'center',
-    padding: '6%',
+    padding: '5%',
     marginBottom:2,
     shadowColor: '#000',
     shadowOffset: {

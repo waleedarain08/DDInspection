@@ -20,17 +20,6 @@ export default function InspectionOverview({navigation}) {
 
   return (
     <View style={styles.container}>
-      <View style={{flexDirection: 'row', paddingVertical: 20}}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          activeOpacity={0.9}>
-          <Image
-            style={styles.arrowlogo}
-            source={require('../../assets/grouparrow.png')}
-          />
-        </TouchableOpacity>
-        <Text style={styles.overview}>INSPECTION OVERVIEW</Text>
-      </View>
       <ScrollView
         contentContainerStyle={{height: 800}}
         showsVerticalScrollIndicator={false}>
@@ -39,8 +28,8 @@ export default function InspectionOverview({navigation}) {
             flexDirection: 'row',
             justifyContent: 'space-between',
             paddingHorizontal: 4,
-            paddingBottom: '15%',
-            paddingVertical: 10,
+            paddingBottom: '12%',
+            paddingVertical: 25,
           }}>
           <View style={styles.card}>
             <Text
@@ -130,7 +119,7 @@ export default function InspectionOverview({navigation}) {
               </Text>
             </TouchableOpacity>
             <Image
-              style={styles.homelogo}
+              style={styles.estimatelogo2}
               source={require('../../assets/chart.png')}
             />
           </View>
@@ -177,14 +166,14 @@ export default function InspectionOverview({navigation}) {
         <View
           style={{
             flexDirection: 'row',
-            justifyContent: 'space-between',
+            justifyContent: 'space-around',
             paddingTop: '20%',
           }}>
           <TouchableOpacity
             activeOpacity={0.9}
             onPress={() => setModalVisible(true)}
             style={styles.pauseButton}>
-            <Text style={{color: '#193250', fontWeight: 'bold'}}>Pause</Text>
+            <Text style={{color: '#193250', fontWeight: 'bold'}}>Cancel</Text>
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={0.9} style={styles.completeButton}>
             <Text style={{color: '#ffffff', fontWeight: 'bold'}}>Complete</Text>
@@ -268,69 +257,69 @@ const styles = StyleSheet.create({
     width: 22,
     height: 22,
     marginTop: 8,
+    marginLeft: 12,
+  },
+  estimatelogo2: {
+    width: 22,
+    height: 22,
+    marginTop: 8,
     marginLeft: 16,
   },
   card: {
     paddingVertical: 8,
     paddingHorizontal: 8,
+    backgroundColor:"#ffffff",
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 3,
+      height: 2,
     },
-    shadowOpacity: 0.27,
+    shadowOpacity: 0.25,
     shadowRadius: 4.65,
 
-    elevation: 2,
+    elevation: 1,
   },
   card2: {
     paddingVertical: 8,
     paddingHorizontal: 6,
+    backgroundColor:"#ffffff",
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 3,
+      height: 2,
     },
-    shadowOpacity: 0.27,
+    shadowOpacity: 0.25,
     shadowRadius: 4.65,
 
-    elevation: 2,
+    elevation: 1,
   },
   card3: {
     paddingVertical: 8,
-    paddingHorizontal: 14,
+    paddingHorizontal: 15,
+    backgroundColor:"#ffffff",
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 3,
+      height: 2,
     },
-  },
-
-    canelButton:{
-        flexDirection:"row",
-        alignItems: "center",
-        justifyContent:"center",
-        backgroundColor: "#ffffff",
-        borderRadius: 35,
-        width:156,
-        height:48,
-        borderWidth:1,
-        borderColor:"#7c94b0",
-
-    shadowOpacity: 0.27,
+    shadowOpacity: 0.25,
     shadowRadius: 4.65,
 
-
-    elevation: 2,
+    elevation: 1,
   },
   card4: {
     paddingVertical: 8,
     paddingHorizontal: 10,
+    backgroundColor:"#ffffff",
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 3,
     },
+    shadowOpacity: 0.25,
+    shadowRadius: 4.65,
+
+    elevation: 1,
    },
     completeButton:{
         flexDirection:"row",
@@ -363,6 +352,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 14,
     marginVertical: 6,
+    borderRadius:10
   },
   download: {
     width: 22,
@@ -376,6 +366,7 @@ const styles = StyleSheet.create({
     marginVertical: 6,
     borderWidth: 2,
     borderColor: '#c8cccf',
+    borderRadius:10
   },
   pauseButton: {
     flexDirection: 'row',
@@ -383,8 +374,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#ffffff',
     borderRadius: 35,
-    width: 154,
-    height: 54,
+    width: 160,
+    height: 46,
     borderWidth: 1,
     borderColor: '#7c94b0',
   },
@@ -393,8 +384,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#909090',
-    width: 154,
-    height: 52,
+    width: 160,
+    height: 46,
     borderRadius: 35,
   },
   modalView: {

@@ -160,7 +160,7 @@ export default function DoNotBuy({navigation}) {
   const renderItem2 = data => {
     return (
 
-      <TouchableOpacity  activeOpacity={0.6} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
+      <TouchableOpacity  activeOpacity={0.6} onPress={() => selectItem2(data)} style={styles.fieldsContainer}>
             <View style={[styles.list, data.item.selectedClass]}>
               <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
             </View>

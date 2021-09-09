@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import {Input, Button, Card, SearchBar} from 'react-native-elements';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export function List({navigation}) {
   const [job, setJob] = useState(true);
@@ -35,7 +36,7 @@ export function List({navigation}) {
 
   return (
     <View style={styles.container}>
-      <View style={{flexDirection: 'row', marginHorizontal: 15}}>
+      <View style={{flexDirection: 'row', marginHorizontal: 15,}}>
         <TouchableOpacity
           onPress={() => handleJob()}
           activeOpacity={0.8}
@@ -210,7 +211,9 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
-          <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
+          <TouchableOpacity 
+           activeOpacity={0.9}
+            style={styles.inspectButton}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
               Inspect Now
             </Text>
@@ -286,7 +289,7 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
-          <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
+          <TouchableOpacity  activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
               Inspect Now
             </Text>
@@ -454,7 +457,8 @@ export function List({navigation}) {
         </View>
         <View style={styles.sectionBorder}></View>
       </ScrollView>
-    </View>
+      <View style={{height:"3%"}}></View>
+    </View >
   );
 }
 

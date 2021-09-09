@@ -36,22 +36,22 @@ export default function CheckProperty({ navigation }) {
           'Turn on HVAC and leave it running during the inspection',
         isSelect: 0,
       },
-      {
-        id: 5,
-        title: 'Electric service is activated',
-        isSelect: 0,
-      },
-      {
-        id: 6,
-        title: 'water service is activated',
-        isSelect: 0,
-      },
-      {
-        id: 7,
-        title:
-          'Gas service is activated if aplicable',
-        isSelect: 0,
-      },
+      // {
+      //   id: 5,
+      //   title: 'Electric service is activated',
+      //   isSelect: 0,
+      // },
+      // {
+      //   id: 6,
+      //   title: 'water service is activated',
+      //   isSelect: 0,
+      // },
+      // {
+      //   id: 7,
+      //   title:
+      //     'Gas service is activated if aplicable',
+      //   isSelect: 0,
+      // },
     ]);
     const selectItem = data => {
         data.item.isSelect = !data.item.isSelect;
@@ -93,17 +93,14 @@ export default function CheckProperty({ navigation }) {
       };
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-               <Text style={styles.begin}>BEGIN INSPECTION</Text>
-            </View>
             {/* <ScrollView contentContainerStyle={{ height:700 }} showsVerticalScrollIndicator={false}> */}
-                <View style={{ paddingVertical: 10, flex: 1.5}}>
+                <View style={{ paddingVertical: 20, flex: 0.9}}>
                     <Text style={{ color: "#8f949a" }}>Thank you for handling the due diligance the property</Text>
                     <View style={{paddingVertical:10}}>
-                    <Text style={styles.confirmation}>Kindly confirm / do the following:</Text>
+                    <Text style={styles.confirmation}>"Kindly confirm / do the following:"</Text>
                     </View>
                 </View>
-                <View style={{ flex: 4,paddingTop:30}}>
+                <View style={{ flex: 4,paddingTop:0}}>
                     <FlatList
               data={dataSource}
               renderItem={item => renderItem(item)}
@@ -126,7 +123,7 @@ export default function CheckProperty({ navigation }) {
                         style={styles.stopButton}
                         onPress={() => navigation.goBack()}
                     >
-                        <Text style={{color:"#17324f",fontWeight:"bold"}}>Stop <Text style={{color:"#53657d",fontWeight:"400"}}>- Utilities Not Activated</Text></Text>
+                        <Text style={{color:"#17324f",fontWeight:"bold"}}>Cancel </Text>
                     </TouchableOpacity>
                 </View>
             {/* </ScrollView> */}
@@ -142,11 +139,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#ffffff",
         paddingHorizontal: 20,
-    },
-    header:{
-        flexDirection:"row",
-        paddingVertical:20,
-        justifyContent:"space-evenly"
     },
     begin:{
         color:"#5a6577",
@@ -222,7 +214,7 @@ const styles = StyleSheet.create({
         // flexDirection: 'row',
         // paddingHorizontal: '5%',
         // paddingVertical: 15,
-        flexDirection: "row", marginTop: 10, paddingHorizontal: 15, paddingBottom: 20,backgroundColor:"#f7f7f7"
+        flexDirection: "row", marginTop: 10, paddingHorizontal: 15,paddingVertical:20, backgroundColor:"#f7f7f7"
       },
       textFields: {
         paddingHorizontal: '5%',
