@@ -94,13 +94,13 @@ export default function CheckProperty({ navigation }) {
     return (
         <View style={styles.container}>
             {/* <ScrollView contentContainerStyle={{ height:700 }} showsVerticalScrollIndicator={false}> */}
-                <View style={{ paddingVertical: 20, flex: 0.9}}>
+                <View style={{ paddingVertical: 20, flex: 1}}>
                     <Text style={{ color: "#8f949a" }}>Thank you for handling the due diligance the property</Text>
-                    <View style={{paddingVertical:10}}>
+                    <View style={{paddingVertical:6}}>
                     <Text style={styles.confirmation}>"Kindly confirm / do the following:"</Text>
                     </View>
                 </View>
-                <View style={{ flex: 4,paddingTop:0}}>
+                <View style={{ flex: 3.8,paddingTop:0}}>
                     <FlatList
               data={dataSource}
               renderItem={item => renderItem(item)}
@@ -158,27 +158,6 @@ const styles = StyleSheet.create({
     textService: {
         color: "#a2a5ab",
         fontWeight: "500",
-    },
-    continueButton:{
-        flexDirection:"row",
-        alignItems: "center",
-        justifyContent:"center",
-        backgroundColor: "#909090",
-        padding: 18,
-        marginHorizontal: 12,
-        marginVertical:15,
-        borderRadius: 35,
-    },
-    stopButton:{
-        flexDirection:"row",
-        alignItems: "center",
-        justifyContent:"center",
-        backgroundColor: "#ffffff",
-        padding: 16,
-        marginHorizontal: 12,
-        borderRadius: 35,
-        borderWidth:1,
-        borderColor:"#193250",
     },
     list: {
         paddingVertical: 5,
@@ -255,4 +234,23 @@ const styles = StyleSheet.create({
     
         elevation: 4,
       },
+      stopButton:{
+        backgroundColor: '#ffffff',
+        paddingVertical: 15,
+        alignItems: 'center',
+        marginVertical:6,
+        justifyContent: 'center',
+        borderWidth:1,
+        borderRadius: 30,
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+    
+        elevation: 4,
+        borderColor:"#193250",
+    },
 })

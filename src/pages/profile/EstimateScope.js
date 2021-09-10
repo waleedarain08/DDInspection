@@ -45,9 +45,9 @@ export default function EstimateScope({ navigation }) {
                 )
               }}>
             </FlatList>
-            <View style={{flexDirection:"row",justifyContent:"space-between",backgroundColor:"#193250",paddingVertical:20,paddingHorizontal:20}}>
+            <View style={{flexDirection:"row",justifyContent:"space-between",backgroundColor:"#193250",paddingVertical:14,paddingHorizontal:20,alignItems:"center"}}>
                 <Text style={{color:"#ffffff",fontWeight:"bold"}}>Total</Text>
-                <View style={{flexDirection:"row"}}>
+                <View style={{flexDirection:"row",alignItems:"center"}}>
                 <View style={styles.line}></View>
                 <Text style={{color:"#ffffff",fontWeight:"bold",}}>$2594.95</Text>
                 </View>
@@ -99,7 +99,7 @@ const styles = StyleSheet.create ({
         width:1,
         height:24,
         backgroundColor:"#243e59",
-        marginBottom:10,
+        marginBottom:2,
         marginRight:8
     }
 })

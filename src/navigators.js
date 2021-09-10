@@ -20,6 +20,7 @@ import EstimateItem from './pages/profile/EstimateItem';
 import DoNotBuy from './pages/profile/DoNotBuy';
 import DoNotBuy2 from './pages/profile/DoNotBuy2';
 import DetailPage from './pages/list/DetailPage';
+import Download from './pages/list/Download';
 import EndInspection from './pages/list/EndInspection';
 import TabADetails from './pages/home/tabADetails';
 import CustomDrawer from './CustomDrawer';
@@ -41,6 +42,7 @@ const drawerButton = navigation => {
 const drawerIcon = navigation => {
   return (
     <TouchableOpacity
+    activeOpacity={0.8}
     onPress={() => navigation.goBack()}
     style={{marginLeft: 12, color: '#fff'}}>
     <Image
@@ -251,6 +253,13 @@ function HomeBeginTripStack() {
         options={({navigation}) => ({
           headerTitle:"ESTIMATE ITEM",
           headerLeft: () => drawerIcon(navigation),
+        })}
+      />
+         <HomeBeginTripStackNav.Screen
+        name="Download"
+        component={Download}
+        options={({navigation}) => ({
+          headerShown: false,
         })}
       />
     </HomeBeginTripStackNav.Navigator>
