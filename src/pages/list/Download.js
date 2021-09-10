@@ -1,29 +1,35 @@
 
-import React, {Component, useEffect, useState} from 'react';
+import React from 'react';
 import {
   View,
   Text,
-  StyleSheet,
-  FlatList,
   Image,
-  Dimensions,
-  ScrollView,
-  TouchableOpacity,
+  StyleSheet,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import {Input, Button, Card, SearchBar} from 'react-native-elements';
+
 
 export default function Download({ navigation }) {
     return(
-        <View style={styles.container}></View>
+        <View style={styles.mainContainer}>
+            <Animatable.View animation="bounceIn" style={{flex:1,justifyContent:"flex-end", alignItems:"center"}}>           
+                <Image source={require('../../assets/group919.png')}
+                style={{height:"42%", width:"42%", resizeMode:"contain" }}/>
+            </Animatable.View>
+            <View style={{flex:1,justifyContent:"flex-start", alignItems:"center",paddingTop:"8%"}}>
+                <Text style={{color:"#d1d6dc", fontFamily:"OpenSans-SemiBold", fontSize:16,}}>Data Downloaded</Text>
+                <Text style={{color:"#ffffff", fontFamily:"SpectralSC-Bold", fontSize:30,}}>SUCCESSFULLY!</Text>
+            </View>
+        </View>
+
     );
 }
 
 
 
 const styles = StyleSheet.create ({
-    container:{
+    mainContainer:{
         flex:1,
-        backgroundColor:"#193250"
+        backgroundColor:"#193250",
     }
 })
