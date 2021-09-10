@@ -1,16 +1,29 @@
 import React, { Component, useState } from 'react';
 import { TouchableOpacity } from 'react-native';
-import { View, Text, StyleSheet,ImageBackground, FlatList, Image, Modal, Pressable, ScrollView } from 'react-native';
+import { View, Text, StyleSheet,ImageBackground, FlatList, Image,  Pressable, ScrollView } from 'react-native';
 
 
 export default function CheckProperty({ navigation }) {
+    const[reason, setReason] = useState([{title: "abc", image: require('../../assets/house4.jpg')},
+    {title: "abd", image: require('../../assets/house4.jpg')},{title: "ghi", image: require('../../assets/house4.jpg')},
+    {title: "efg", image: require('../../assets/house4.jpg')}])
     return(
         <View style={styles.container}>
-                   <View style={{flex:1.5,}}>
-             
-                    <ImageBackground style={styles.housePng} source={require('../../assets/house4.jpg')} >
-                    </ImageBackground>
-                  
+                   <View style={{flex:1.6,}}>
+                   <FlatList 
+              keyExtractor={(item, index) => index}
+              horizontal={true}
+              data={reason}
+              showsHorizontalScrollIndicator={false}
+              renderItem={({ item }) => {
+                return (
+                    <View style={{width:400,}}>
+                    <Image style={styles.housePng} source={item.image} >
+                    </Image>
+                    </View>
+                )
+              }}>
+            </FlatList> 
          </View>
             <View style={styles.detail}>
                 <ScrollView contentContainerStyle={{ height: 500 }} showsVerticalScrollIndicator={false}>
@@ -104,7 +117,7 @@ const styles = StyleSheet.create ({
     },
     housePng:{
         width:"100%",
-        height:"105%",
+        height:"109%",
     },
     detail:{
         flex:3,
