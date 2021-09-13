@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { View, Text, StyleSheet,ImageBackground, FlatList, Image,  Pressable, ScrollView } from 'react-native';
+import { ButtonView } from '../../components';
 
 
 export default function CheckProperty({ navigation }) {
@@ -33,22 +34,22 @@ export default function CheckProperty({ navigation }) {
                 </View>
                 <View style={{flexDirection:"row",justifyContent:"space-between"}}>
                     <View>
-                    <Text style={{color:"#484c53",fontSize:18,fontWeight:"bold"}}>Nacary Banglow</Text>
-                    <Text style={{color:"#838d99",fontSize:12,lineHeight:20}}>4317 Masonic Drive Fort</Text>
+                    <Text style={{color:"#484c53",fontSize:18,fontWeight:"bold",fontFamily:"OpenSans-Regular"}}>Nacary Banglow</Text>
+                    <Text style={{color:"#838d99",fontSize:12,lineHeight:20,fontFamily:"OpenSans-Regular"}}>4317 Masonic Drive Fort</Text>
                     </View>
                     <View style={styles.saleButton}>
-                        <Text style={{textAlign:"center",paddingTop:2,color:"#193250",fontWeight:"bold",fontSize:11}}>For Sale</Text>
+                        <Text style={{textAlign:"center",paddingTop:4,color:"#193250",fontWeight:"bold",fontSize:11}}>For Sale</Text>
                     </View>
                 </View>
                 <Text style={styles.read}>
                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <Text style={{color:"#193250"}}>Read more...</Text>
                 </Text>
-                <Text style={{color:"#37383d",fontSize:15,fontWeight:"bold"}}>Contact Person</Text>
+                <Text style={{color:"#37383d",fontSize:15,fontWeight:"bold",fontFamily:"OpenSans-Regular"}}>Contact Person</Text>
                 <View style={{flexDirection:"row",paddingVertical:20,justifyContent:"space-around"}}>
                 <Image style={styles.logo} source={require('../../assets/group.png')} />
                 <View style={{paddingHorizontal:2,paddingVertical:5,flex:0.6}}>
-                    <Text style={{color:"#596677",}}>Marty Mccormick</Text>
-                    <Text style={{color:"#a7aeb8",fontSize:13}}>Owner</Text>
+                    <Text style={{color:"#596677",fontFamily:"OpenSans-Regular"}}>Marty Mccormick</Text>
+                    <Text style={{color:"#a7aeb8",fontSize:13,fontFamily:"OpenSans-Regular"}}>Owner</Text>
                 </View>
                 <View style={{flex:0.2}}>
                 <View style={styles.vector}>
@@ -61,46 +62,46 @@ export default function CheckProperty({ navigation }) {
                 </View>
                 </View>
                 </View>
-                <Text style={{color:"#505357",fontWeight:"bold",paddingVertical:20}}>Specification</Text>
+                <Text style={{color:"#505357",paddingVertical:20,fontFamily:"OpenSans-Bold"}}>Specification</Text>
                 <View style={{flexDirection:"row",justifyContent:"space-between",paddingHorizontal:15}}>
                  <View>
                 <View style={{flexDirection:"row",justifyContent:"space-between"}}>
                 <Image style={styles.frameLogo} source={require('../../assets/vector.png')} />
-                <Text style={{color:"#2d3238",fontSize:23,fontWeight:"bold"}}>03</Text>
+                <Text style={{color:"#2d3238",fontSize:23,fontWeight:"bold",fontFamily:"OpenSans-Regular"}}>03</Text>
                 </View>
                 <Text  style={{color:"#a3adb9",fontSize:12,lineHeight:20}}>Bathrooms</Text>
                 </View>
                 <View >
                 <View style={{flexDirection:"row",justifyContent:"space-between"}}>
                 <Image style={styles.frameLogo} source={require('../../assets/frame.png')} />
-                    <Text  style={{color:"#2d3238",fontSize:23,fontWeight:"bold"}}>05</Text>   
+                    <Text  style={{color:"#2d3238",fontSize:23,fontWeight:"bold",fontFamily:"OpenSans-Regular"}}>05</Text>   
                 </View>
-                <Text  style={{color:"#a3adb9",fontSize:12,lineHeight:20}}>Bathrooms</Text>
+                <Text  style={{color:"#a3adb9",fontSize:12,lineHeight:20,fontFamily:"OpenSans-Regular"}}>Bathrooms</Text>
                 </View>
                 <View>
                 <View style={{flexDirection:"row",justifyContent:"space-between"}}>
                 <Image style={styles.frameLogo} source={require('../../assets/groupicon.png')} />
-                    <Text  style={{color:"#2d3238",fontSize:22,fontWeight:"bold",paddingLeft:6}}>350</Text>
+                    <Text  style={{color:"#2d3238",fontSize:22,fontWeight:"bold",paddingLeft:6,fontFamily:"OpenSans-Regular"}}>350</Text>
                     
                 </View>
                 <Text style={{color:"#a3adb9",fontSize:12,lineHeight:20}}>Squre feet</Text>
                 </View>
                 </View>
                 <View style={{flexDirection:"row",justifyContent:"space-evenly",paddingVertical:"20%"}}>
-                <TouchableOpacity
+                <ButtonView 
                         activeOpacity={0.9}
                         style={styles.getButton}
                         onPress={() => navigation.goBack()}
                     >
                         <Text style={{color:"#193250"}}>Get Direction</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
+                    </ButtonView >
+                    <ButtonView 
                         activeOpacity={0.9}
                         style={styles.inspectButton}
                         onPress={() => navigation.navigate('Profile')} 
                     >
                         <Text style={{color:"#ffffff"}}>Inspect Now</Text>
-                    </TouchableOpacity>
+                    </ButtonView >
                 </View>
                 </View>
                 </ScrollView>
@@ -125,6 +126,7 @@ const styles = StyleSheet.create ({
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         paddingHorizontal:16,
+        paddingTop:20
     },
     line:{
         // backgroundColor:"#e1e1e1",
@@ -141,7 +143,8 @@ const styles = StyleSheet.create ({
         color:"#9c9fa4",
         paddingVertical:20,
         fontSize:12,
-        lineHeight:20
+        lineHeight:20,
+        fontFamily:"OpenSans-Regular"
     },
     getButton:{
         flexDirection:"row",
@@ -150,7 +153,7 @@ const styles = StyleSheet.create ({
         backgroundColor: "#ffffff",
         borderRadius: 35,
         width:158,
-        height:55,
+        height:50,
         borderWidth:1,
         borderColor:"#193250",
         marginRight:4,
@@ -171,7 +174,7 @@ const styles = StyleSheet.create ({
         justifyContent:"center",
         backgroundColor: "#193250",
         width:158,
-        height:55,
+        height:52,
         borderRadius: 35,
         marginLeft:8,
         shadowColor: '#000',

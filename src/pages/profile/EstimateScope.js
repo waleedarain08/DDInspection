@@ -45,7 +45,7 @@ export default function EstimateScope({ navigation }) {
                 )
               }}>
             </FlatList>
-            <View style={{flexDirection:"row",justifyContent:"space-between",backgroundColor:"#193250",paddingVertical:14,paddingHorizontal:20,alignItems:"center"}}>
+            <View style={{flexDirection:"row",justifyContent:"space-between",backgroundColor:"#193250",paddingVertical:20,paddingHorizontal:20,alignItems:"center"}}>
                 <Text style={{color:"#ffffff",fontWeight:"bold"}}>Total</Text>
                 <View style={{flexDirection:"row",alignItems:"center"}}>
                 <View style={styles.line}></View>

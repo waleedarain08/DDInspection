@@ -471,12 +471,11 @@ const styles = StyleSheet.create({
   },
 
   modalView: {
-    flex: 0.6,
     backgroundColor: '#fff',
     borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 10,
+    paddingVertical:30
   },
 
   modalLogo: {
@@ -487,7 +486,6 @@ const styles = StyleSheet.create({
   },
 
   modalButtons: {
-    flex: 0.5,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
