@@ -44,7 +44,7 @@ const drawerIcon = navigation => {
     <TouchableOpacity
     activeOpacity={0.8}
     onPress={() => navigation.goBack()}
-    style={{marginLeft: 12, color: '#fff'}}>
+    style={{marginLeft: 12, color: '#fff',}}>
     <Image
       source={require('./assets/grouparrow.png')}
       style={{width: 40, height: 34, resizeMode: 'contain'}}

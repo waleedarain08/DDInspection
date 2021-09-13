@@ -27,9 +27,9 @@ export default function InspectionOverview({navigation}) {
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
-            paddingHorizontal: 4,
+            paddingHorizontal: 18,
             paddingBottom: '12%',
-            paddingVertical: 25,
+            paddingVertical: 30,
           }}>
           <View style={styles.card}>
             <Text
@@ -37,7 +37,7 @@ export default function InspectionOverview({navigation}) {
                 color: '#4f5359',
                 fontWeight: '700',
                 textAlign: 'center',
-                fontSize: 12,
+                fontSize: 10,
               }}>
               Inspected
             </Text>
@@ -60,7 +60,7 @@ export default function InspectionOverview({navigation}) {
                 color: '#4f5359',
                 fontWeight: '700',
                 textAlign: 'center',
-                fontSize: 12,
+                fontSize: 10,
               }}>
               Remaining
             </Text>
@@ -86,7 +86,7 @@ export default function InspectionOverview({navigation}) {
                   color: '#4f5359',
                   fontWeight: '700',
                   textAlign: 'center',
-                  fontSize: 12,
+                  fontSize: 10,
                 }}>
                 Home
               </Text>
@@ -109,7 +109,7 @@ export default function InspectionOverview({navigation}) {
                   color: '#4f5359',
                   fontWeight: '700',
                   textAlign: 'center',
-                  fontSize: 12,
+                  fontSize: 10,
                 }}>
                 Estimate
               </Text>
@@ -124,11 +124,13 @@ export default function InspectionOverview({navigation}) {
             />
           </View>
         </View>
+        <View style={{backgroundColor:"#f8f8f8",paddingVertical:10}}>
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
             paddingVertical: 10,
+            paddingHorizontal:20
           }}>
           <Text style={styles.location}>Location</Text>
           <Text style={styles.item}>Items</Text>
@@ -163,10 +165,12 @@ export default function InspectionOverview({navigation}) {
           </View>
         </View>
         <View></View>
+        </View>
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-around',
+            paddingHorizontal:10,
             paddingTop: '20%',
           }}>
           <TouchableOpacity
@@ -242,7 +246,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ffffff',
-    paddingHorizontal: 20,
   },
   arrowlogo: {
     width: 34,
@@ -256,18 +259,22 @@ const styles = StyleSheet.create({
   homelogo: {
     width: 22,
     height: 22,
-    marginTop: 8,
-    marginLeft: 12,
+    marginTop: 10,
+    marginLeft: 2,
   },
   estimatelogo2: {
     width: 22,
     height: 22,
     marginTop: 8,
-    marginLeft: 16,
+    marginLeft: 2,
   },
   card: {
-    paddingVertical: 8,
-    paddingHorizontal: 8,
+    flex:1,
+    justifyContent:"center",
+    alignItems:'center',
+    marginHorizontal:4,
+    paddingVertical: 4,
+    paddingHorizontal: 4,
     backgroundColor:"#ffffff",
     shadowColor: '#000',
     shadowOffset: {
@@ -277,11 +284,15 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4.65,
 
-    elevation: 1,
+    elevation: 10,
   },
   card2: {
-    paddingVertical: 8,
-    paddingHorizontal: 6,
+    flex:1,
+    paddingVertical: 4,
+    paddingHorizontal: 4,
+    marginHorizontal:4,
+    justifyContent:"center",
+    alignItems:'center',
     backgroundColor:"#ffffff",
     shadowColor: '#000',
     shadowOffset: {
@@ -291,11 +302,15 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4.65,
 
-    elevation: 1,
+    elevation: 10,
   },
   card3: {
-    paddingVertical: 8,
-    paddingHorizontal: 15,
+    flex:1,
+    paddingVertical: 4,
+    paddingHorizontal: 4,
+    marginHorizontal:4,
+    justifyContent:"center",
+    alignItems:'center',
     backgroundColor:"#ffffff",
     shadowColor: '#000',
     shadowOffset: {
@@ -305,11 +320,15 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4.65,
 
-    elevation: 1,
+    elevation: 10,
   },
   card4: {
-    paddingVertical: 8,
-    paddingHorizontal: 10,
+    flex:1,
+    paddingVertical: 4,
+    paddingHorizontal: 4,
+    justifyContent:"center",
+    marginHorizontal:4,
+    alignItems:'center',
     backgroundColor:"#ffffff",
     shadowColor: '#000',
     shadowOffset: {
@@ -319,7 +338,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4.65,
 
-    elevation: 1,
+    elevation: 10,
    },
     completeButton:{
         flexDirection:"row",
@@ -352,6 +371,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 14,
     marginVertical: 6,
+    marginHorizontal:18,
     borderRadius:10
   },
   download: {
@@ -366,7 +386,9 @@ const styles = StyleSheet.create({
     marginVertical: 6,
     borderWidth: 2,
     borderColor: '#c8cccf',
-    borderRadius:10
+    borderRadius:10,
+    marginHorizontal:18,
+
   },
   pauseButton: {
     flexDirection: 'row',
@@ -375,7 +397,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     borderRadius: 35,
     width: 156,
-    height: 46,
+    height: 58,
     borderWidth: 1,
     borderColor: '#7c94b0',
   },
@@ -385,7 +407,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#909090',
     width: 156,
-    height: 46,
+    height: 58,
     borderRadius: 35,
   },
   modalView: {

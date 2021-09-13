@@ -331,20 +331,20 @@ export default function ExteriorBack({ navigation }) {
                 <View style={{ backgroundColor: "#f9f9f9", paddingVertical: 10, paddingHorizontal: 20 }}>
                     <Text style={{ color: "#52575d", fontWeight: "bold", paddingBottom: 20 }}>Dose the deck have rot which makes it unsafe</Text>
                     <TouchableOpacity
-                      activeOpacity={0.9}
-                      onPress={() => handleAdd1()}
-                    style={{ flexDirection: "row" }}>
-                    <TouchableOpacity
+                        activeOpacity={0.9}
+                        onPress={() => handleAdd1()}
+                        style={{ flexDirection: "row" }}>
+                        <TouchableOpacity
                             style={add1 ? styles.circle : styles.circle2}>
                             <View style={add1 ? styles.radioButton : styles.radioButton2}></View>
                         </TouchableOpacity >
                         <Text style={{ color: "#7c8089", paddingLeft: 15 }}>Yes (<Text style={{ color: "#f38550", fontWeight: "600", }}>Add Dry Rot Repair</Text>)</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                         activeOpacity={0.9}
-                         onPress={() => handleAdd2()}
-                    style={{ flexDirection: "row", paddingBottom: 20, paddingTop: 20 }}>
-                    <TouchableOpacity
+                        activeOpacity={0.9}
+                        onPress={() => handleAdd2()}
+                        style={{ flexDirection: "row", paddingBottom: 20, paddingTop: 20 }}>
+                        <TouchableOpacity
                             style={add2 ? styles.circle : styles.circle2}>
                             <View style={add2 ? styles.radioButton : styles.radioButton2}></View>
                         </TouchableOpacity >
@@ -355,8 +355,8 @@ export default function ExteriorBack({ navigation }) {
                     <TouchableOpacity
                         activeOpacity={0.9}
                         onPress={() => handleAdd3()}
-                    style={{ flexDirection: "row" }}>
-                    <TouchableOpacity
+                        style={{ flexDirection: "row" }}>
+                        <TouchableOpacity
                             style={add3 ? styles.circle : styles.circle2}>
                             <View style={add3 ? styles.radioButton : styles.radioButton2}></View>
                         </TouchableOpacity >
@@ -365,20 +365,20 @@ export default function ExteriorBack({ navigation }) {
                     <TouchableOpacity
                         activeOpacity={0.9}
                         onPress={() => handleAdd4()}
-                    style={{ flexDirection: "row", paddingBottom: 20, paddingTop: 20 }}>
-                    <TouchableOpacity
-                            style={add4? styles.circle : styles.circle2}>
+                        style={{ flexDirection: "row", paddingBottom: 20, paddingTop: 20 }}>
+                        <TouchableOpacity
+                            style={add4 ? styles.circle : styles.circle2}>
                             <View style={add4 ? styles.radioButton : styles.radioButton2}></View>
                         </TouchableOpacity >
                         <Text style={{ color: "#7c8089", paddingLeft: 15 }}>No</Text>
                     </TouchableOpacity>
                     <View style={{ backgroundColor: "#f4f4f4", width: "100%", height: 2, marginVertical: 20 }}></View>
                     <Text style={{ color: "#52575d", fontWeight: "bold", paddingBottom: 20 }}>Dose each deck support have a footer under it</Text>
-                    <TouchableOpacity 
+                    <TouchableOpacity
                         activeOpacity={0.9}
                         onPress={() => handleAdd5()}
-                    style={{ flexDirection: "row" }}>
-                    <TouchableOpacity
+                        style={{ flexDirection: "row" }}>
+                        <TouchableOpacity
                             style={add5 ? styles.circle : styles.circle2}>
                             <View style={add5 ? styles.radioButton : styles.radioButton2}></View>
                         </TouchableOpacity >
@@ -387,12 +387,12 @@ export default function ExteriorBack({ navigation }) {
                     <TouchableOpacity
                         activeOpacity={0.9}
                         onPress={() => handleAdd6()}
-                    style={{ flexDirection: "row", paddingBottom: 20, paddingTop: 20 }}>
-                    <TouchableOpacity
-                            style={add6? styles.circle : styles.circle2}>
+                        style={{ flexDirection: "row", paddingBottom: 20, paddingTop: 20 }}>
+                        <TouchableOpacity
+                            style={add6 ? styles.circle : styles.circle2}>
                             <View style={add6 ? styles.radioButton : styles.radioButton2}></View>
                         </TouchableOpacity >
-                        <Text style={{ color: "#7c8089", paddingLeft: 15 }}>No Add Deck (<Text style={{ color: "#f38550", fontWeight: "600",borderBottomWidth:2,borderColor:"red" }}>Footer Support</Text>)</Text>
+                        <Text style={{ color: "#7c8089", paddingLeft: 15 }}>No Add Deck (<Text style={{ color: "#f38550", fontWeight: "600", borderBottomWidth: 2, borderColor: "red" }}>Footer Support</Text>)</Text>
                     </TouchableOpacity>
                 </View>
                 <View>
@@ -538,7 +538,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: "#c3c3c3",
         borderRadius: 20,
-        borderColor: "#192550"
+        borderColor: "#193250"
     },
     circle2: {
         width: 18,
@@ -548,7 +548,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
     },
     radioButton: {
-        backgroundColor: "#192550",
+        backgroundColor: "#193250",
         width: 9,
         height: 9,
         borderRadius: 5,

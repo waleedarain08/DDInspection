@@ -96,11 +96,11 @@ export default function CheckProperty({ navigation }) {
             {/* <ScrollView contentContainerStyle={{ height:700 }} showsVerticalScrollIndicator={false}> */}
                 <View style={{ paddingVertical: 20, flex: 1}}>
                     <Text style={{ color: "#8f949a" }}>Thank you for handling the due diligance the property</Text>
-                    <View style={{paddingVertical:6}}>
+                    <View style={{paddingVertical:4}}>
                     <Text style={styles.confirmation}>"Kindly confirm / do the following:"</Text>
                     </View>
                 </View>
-                <View style={{ flex: 3.8,paddingTop:0}}>
+                <View style={{ flex: 3.5,paddingTop:10}}>
                     <FlatList
               data={dataSource}
               renderItem={item => renderItem(item)}
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#193250',
         paddingVertical: '5%',
         alignItems: 'center',
-        marginVertical:15,
+        marginVertical:10,
         justifyContent: 'center',
         borderRadius: 25,
         shadowColor: '#000',
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#909090',
         paddingVertical: '5%',
         alignItems: 'center',
-        marginVertical:15,
+        marginVertical:10,
         justifyContent: 'center',
         borderRadius: 25,
         shadowColor: '#000',

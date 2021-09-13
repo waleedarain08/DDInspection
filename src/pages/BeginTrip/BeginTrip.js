@@ -1,8 +1,10 @@
 import React, { Component, useState } from 'react';
 import { TouchableOpacity } from 'react-native';
-import { View, Text, StyleSheet, FlatList, Image, Modal, Button, Pressable, Dimensions, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Image, Button, Pressable, Dimensions, ScrollView } from 'react-native';
 import * as Progress from 'react-native-progress';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import Modal from 'react-native-modal';
+import { ButtonView } from '../../components';
+
 
 
 
@@ -88,83 +90,87 @@ export default function BeginTrip({ navigation }) {
                         }}>
                     </FlatList>
                 </View>
-                <View style={{
-                    position: "absolute", bottom: "5%", marginLeft: 20, shadowColor: '#ffffff',
-                    shadowOffset: {
-                        width: 0,
-                        height: 3,
-                    },
-                    shadowOpacity: 0.27,
-                    shadowRadius: 4.65,
+                <View
+                    style={{
+                        position: "absolute", bottom: "4%", shadowColor: '#ffffff', flex: 1, justifyContent: "center",paddingLeft:25,
+                        alignItems: "center",
+                        shadowOffset: {
+                            width: 0,
+                            height: 3,
+                        },
+                        shadowOpacity: 0.27,
+                        shadowRadius: 4.65,
 
-                    elevation: 5,
-                }}>
-                    <View >
-                        <TouchableOpacity 
+                        elevation: 5,
+                    }}
+                >
+
+                    <ButtonView
                         style={styles.tripbtn}
                         activeOpacity={0.9}
-                        onPress={() => setModalVisible(true)} >
-                            <Text style={{ color: "#ffffff", fontWeight: "bold" }}>Begin Trip</Text>
-                        </TouchableOpacity>
-                    </View>
+                        // onPress={() => setModalVisible(true)} 
+                        >
+                        <Text style={{ color: "#ffffff", fontWeight: "bold" }}>Begin Trip</Text>
+                    </ButtonView>
+
                 </View>
             </View>
             <Modal
-                animationType="slide"
+                animationIn="zoomIn"
+                animationOut="zoomOut"
+                animationInTiming={600}
+                animationOutTiming={600}
                 transparent={true}
-                visible={modalVisible}
-                onRequestClose={() => {
-                    setModalVisible(!modalVisible);
-                }}
+                isVisible={modalVisible}
+                onBackButtonPress={() => setModalVisible(!modalVisible)}
+                onBackdropPress={() => setModalVisible(!modalVisible)}
             >
-                <View style={styles.centeredView}>
-                    <View style={styles.modalView}>
-                        <View style={{ flex: 0, alignItems: "center", paddingBottom: 20 }}>
-                            <TouchableOpacity onPress={() => navigation.navigate('Download')} >
+                <View style={styles.modalView}>
+                    <View style={{ flex: 0, alignItems: "center", paddingBottom: 10 }}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Download')} >
                             <Image style={styles.upload} source={require("../../assets/upload.png")} />
-                            </TouchableOpacity>
-                        </View>
-                        <Text style={styles.textdv}> Your Inspection data is </Text>
-                        <Text style={styles.textdv}>downloading..</Text>
-                        <View style={{ flexDirection: "row", marginTop: "20%", justifyContent: "space-between", paddingHorizontal: 10 }}>
-                            <Text style={styles.dowm}>Downloading...</Text>
-                            <View style={{ flexDirection: "row" }}>
-                                <View style={{ marginRight: 18 }}>
-                                    <Image style={styles.logoGroup} source={require("../../assets/group813.png")} />
-                                </View>
-                                <Image style={styles.logoGroup} source={require("../../assets/group814.png")} />
+                        </TouchableOpacity>
+                    </View>
+                    <Text style={styles.textdv}> Your Inspection data is </Text>
+                    <Text style={styles.textdv}>downloading..</Text>
+                    <View style={{ flexDirection: "row", marginTop: "10%", justifyContent: "space-between", paddingHorizontal: 10 }}>
+                        <Text style={styles.dowm}>Downloading...</Text>
+                        <View style={{ flexDirection: "row" }}>
+                            <View style={{ marginRight: 18 }}>
+                                <Image style={styles.logoGroup} source={require("../../assets/group813.png")} />
                             </View>
-
+                            <Image style={styles.logoGroup} source={require("../../assets/group814.png")} />
                         </View>
 
-                        <View style={{ flexDirection: "row", paddingHorizontal: 12 }}>
-                            <Progress.Bar progress={0.7}
-                                animated={true} width={290}
-                                height={20}
-                                color={"#f36523"}
-                                borderRadius={12}
-                                borderWidth={0}
-                                unfilledColor={"#c4c4c4"}
-                            />
-                            <Text style={{ paddingHorizontal: 6, paddingTop: 2, color: "#3c434b", fontSize: 12 }}>75%</Text>
-                        </View>
-                        <TouchableOpacity 
+                    </View>
+
+                    <View style={{ flexDirection: "row", paddingHorizontal: 12 }}>
+                        <Progress.Bar progress={0.7}
+                            animated={true} width={270}
+                            height={20}
+                            color={"#f36523"}
+                            borderRadius={12}
+                            borderWidth={0}
+                            unfilledColor={"#c4c4c4"}
+                        />
+                        <Text style={{ paddingHorizontal: 6, paddingTop: 2, color: "#3c434b", fontSize: 12 }}>75%</Text>
+                    </View>
+                    <TouchableOpacity
                         onPress={() => navigation.navigate('List')}
                         activeOpacity={0.9}
-                        style={{ flex: 0, justifyContent: "center", alignItems: "center", marginTop: "20%" }}>
-                            <View style={styles.donebtn}>
-                                <Text 
-                                    style={{ color: "#fff" }}>Done</Text>
-                            </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity
+                        style={{ flex: 0, justifyContent: "center", alignItems: "center", marginVertical: "10%" }}>
+                        <View style={styles.donebtn}>
+                            <Text
+                                style={{ color: "#fff" }}>Done</Text>
+                        </View>
+                    </TouchableOpacity>
+                    {/* <TouchableOpacity
                         activeOpacity={0.9}
                             style={[styles.button, styles.buttonClose]}
                             onPress={() => setModalVisible(!modalVisible)}
                         >
                             <Text style={styles.textStyle}>Hide Modal</Text>
-                        </TouchableOpacity>
-                    </View>
+                        </TouchableOpacity> */}
                 </View>
             </Modal>
         </View >
@@ -183,7 +189,7 @@ const styles = StyleSheet.create({
         width: 20,
         height: 20,
         resizeMode: "contain",
-        marginTop:2
+        marginTop: 2
     },
     textconfimr: {
         color: "#292a2f",
@@ -198,12 +204,12 @@ const styles = StyleSheet.create({
     btn: {
         backgroundColor: '#f26521',
         flexDirection: 'row',
-        marginRight: "35%",
-        padding: 4,
+        marginRight: "30%",
         alignItems: 'center',
         justifyContent: 'space-evenly',
         borderRadius: 20,
         marginBottom: 10,
+        paddingVertical: 6,
 
     },
     calendarLogo: {
@@ -223,7 +229,7 @@ const styles = StyleSheet.create({
     },
     tripbtn: {
         backgroundColor: "#193250",
-        paddingHorizontal: "40%",
+        paddingHorizontal: "37%",
         paddingVertical: 18,
         alignItems: "center",
         borderRadius: 30,
@@ -237,26 +243,18 @@ const styles = StyleSheet.create({
         elevation: 5
     },
     centeredView: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#59595990",
+        // flex: 1,
+        // justifyContent: "center",
+        // alignItems: "center",
+        // backgroundColor: "#59595990",
 
     },
     modalView: {
-        backgroundColor: "#ffffff",
-        borderRadius: 16,
-        paddingVertical: 35,
-        paddingHorizontal: 6,
-        marginHorizontal: 15,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5
+        flex: 0.6,
+        backgroundColor: '#fff',
+        borderRadius: 15,
+        // paddingTop: 10,
+        paddingVertical: "8%"
     },
     donebtn: {
         backgroundColor: "#193250",
@@ -282,8 +280,8 @@ const styles = StyleSheet.create({
         fontWeight: "500"
     },
     upload: {
-        width: 45,
-        height: 45,
+        width: 70,
+        height: 70,
     },
     logoGroup: {
         width: 20,

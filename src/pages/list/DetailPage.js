@@ -26,7 +26,7 @@ export default function CheckProperty({ navigation }) {
             </FlatList> 
          </View>
             <View style={styles.detail}>
-                <ScrollView contentContainerStyle={{ height: 500 }} showsVerticalScrollIndicator={false}>
+                <ScrollView contentContainerStyle={{ height: 600 }} showsVerticalScrollIndicator={false}>
                 <View style={{ flex: 1, flexGrow: 1 }}>
                 <View style={{flex:0,alignItems:"center"}}>
                 <View style={styles.line}></View>
@@ -37,7 +37,7 @@ export default function CheckProperty({ navigation }) {
                     <Text style={{color:"#838d99",fontSize:12,lineHeight:20}}>4317 Masonic Drive Fort</Text>
                     </View>
                     <View style={styles.saleButton}>
-                        <Text style={{textAlign:"center",paddingTop:5,color:"#193250",fontWeight:"bold",fontSize:11}}>For Sale</Text>
+                        <Text style={{textAlign:"center",paddingTop:2,color:"#193250",fontWeight:"bold",fontSize:11}}>For Sale</Text>
                     </View>
                 </View>
                 <Text style={styles.read}>
@@ -149,8 +149,8 @@ const styles = StyleSheet.create ({
         justifyContent:"center",
         backgroundColor: "#ffffff",
         borderRadius: 35,
-        width:160,
-        height:46,
+        width:158,
+        height:55,
         borderWidth:1,
         borderColor:"#193250",
         marginRight:4,
@@ -170,8 +170,8 @@ const styles = StyleSheet.create ({
         alignItems: "center",
         justifyContent:"center",
         backgroundColor: "#193250",
-        width:165,
-        height:46,
+        width:158,
+        height:55,
         borderRadius: 35,
         marginLeft:8,
         shadowColor: '#000',

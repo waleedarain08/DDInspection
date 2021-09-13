@@ -115,6 +115,7 @@ const goAhead = () =>{
       <View
         style={{
           padding: '5%',
+          flex: 1,
           shadowColor: '#000',
           shadowOffset: {
             width: 0,
@@ -132,7 +133,7 @@ const goAhead = () =>{
           "Reminders as you exit:"
         </Text>
       </View>
-          <View style={{backgroundColor: '#f9f8fd', marginBottom: 5, Height:"68%"}}>
+          <View style={{backgroundColor: '#f9f8fd', marginBottom: 5,flex:4}}>
               <FlatList
                 data={dataSource}
                 ItemSeparatorComponent={renderSeparator} 
