@@ -9,6 +9,7 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
+import { ButtonView } from '../../components';
 import * as Animatable from 'react-native-animatable';
 import {Input, Button, Card, SearchBar} from 'react-native-elements';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -96,14 +97,14 @@ const goAhead = () =>{
   const renderItem = data => {
     return (
 
-        <TouchableOpacity  activeOpacity={0.8} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
+        <ButtonView  activeOpacity={0.8} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
           <View style={[styles.list, data.item.selectedClass]}>
             <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
           </View>
         <View>
           <Text style={styles.textFields}>{data.item.title}</Text>
         </View>
-      </TouchableOpacity>
+      </ButtonView>
     );
   };
 
@@ -144,7 +145,7 @@ const goAhead = () =>{
               />
            </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity
+        <ButtonView
           onPress={() => goAhead()}
           // onPress={() => navigation.navigate('EndInspection2')}
           activeOpacity={0.8}
@@ -152,7 +153,7 @@ const goAhead = () =>{
           <Text style={{color: '#fff', fontFamily:"OpenSans-Bold",  fontSize: 14}}>
             End Inspection
           </Text>
-        </TouchableOpacity>
+        </ButtonView>
       </View>
     </SafeAreaView>
   );

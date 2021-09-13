@@ -9,9 +9,11 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
+import { ButtonView } from '../../components';
 import * as Animatable from 'react-native-animatable';
 import {Input, Button, Card, SearchBar} from 'react-native-elements';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 export function List({navigation}) {
   const [job, setJob] = useState(true);
@@ -37,30 +39,30 @@ export function List({navigation}) {
   return (
     <View style={styles.container}>
       <View style={{flexDirection: 'row', marginHorizontal: 15,}}>
-        <TouchableOpacity
+        <ButtonView
           onPress={() => handleJob()}
           activeOpacity={0.8}
           style={job ? styles.topBar : styles.topBar2}>
           <Text style={job ? styles.topBarText : styles.topBarText2}>
             All Jobs
           </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
+        </ButtonView>
+        <ButtonView
           onPress={() => handleCompleted()}
           activeOpacity={0.8}
           style={completed ? styles.topBar : styles.topBar2}>
           <Text style={completed ? styles.topBarText : styles.topBarText2}>
             Completed
           </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
+        </ButtonView>
+        <ButtonView
           onPress={() => handleRejected()}
           activeOpacity={0.8}
           style={rejected ? styles.topBar : styles.topBar2}>
           <Text style={rejected ? styles.topBarText : styles.topBarText2}>
             Rejected
           </Text>
-        </TouchableOpacity>
+        </ButtonView>
       </View>
       <ScrollView
         showsVerticalScrollIndicator={false}
@@ -129,23 +131,23 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
-          <TouchableOpacity
+          <ButtonView
             onPress={() => navigation.navigate('EndInspection')}
             activeOpacity={0.8}
             style={styles.resumeButton}>
             <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               Resume
             </Text>
-          </TouchableOpacity>
+          </ButtonView>
 
-          <TouchableOpacity
+          <ButtonView
             onPress={() => navigation.navigate('DetailPage')}
             activeOpacity={0.8}
             style={styles.detailButton}>
             <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               View Details
             </Text>
-          </TouchableOpacity>
+          </ButtonView>
         </View>
         <View style={styles.sectionBorder}></View>
 
@@ -211,17 +213,17 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
-          <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
+          <ButtonView activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               Inspect Now
             </Text>
-          </TouchableOpacity>
+          </ButtonView>
 
-          <TouchableOpacity activeOpacity={0.8} style={styles.detailButton}>
+          <ButtonView activeOpacity={0.8} style={styles.detailButton}>
             <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               View Details
             </Text>
-          </TouchableOpacity>
+          </ButtonView>
         </View>
         <View style={styles.sectionBorder}></View>
 
@@ -287,17 +289,17 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
-          <TouchableOpacity  activeOpacity={0.8} style={styles.inspectButton}>
+          <ButtonView  activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
               Inspect Now
             </Text>
-          </TouchableOpacity>
+          </ButtonView>
 
-          <TouchableOpacity activeOpacity={0.8} style={styles.detailButton}>
+          <ButtonView activeOpacity={0.8} style={styles.detailButton}>
             <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               View Details
             </Text>
-          </TouchableOpacity>
+          </ButtonView>
         </View>
         <View style={styles.sectionBorder}></View>
 
@@ -365,17 +367,17 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
-          <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
+          <ButtonView activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               Inspect Now
             </Text>
-          </TouchableOpacity>
+          </ButtonView>
 
-          <TouchableOpacity activeOpacity={0.8} style={styles.detailButton}>
+          <ButtonView activeOpacity={0.8} style={styles.detailButton}>
             <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               View Details
             </Text>
-          </TouchableOpacity>
+          </ButtonView>
         </View>
         <View style={styles.sectionBorder}></View>
 
@@ -441,17 +443,17 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
-          <TouchableOpacity activeOpacity={0.8} style={styles.inspectButton}>
+          <ButtonView activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               Inspect Now
             </Text>
-          </TouchableOpacity>
+          </ButtonView>
 
-          <TouchableOpacity activeOpacity={0.8} style={styles.detailButton}>
+          <ButtonView activeOpacity={0.8} style={styles.detailButton}>
             <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               View Details
             </Text>
-          </TouchableOpacity>
+          </ButtonView>
         </View>
         <View style={styles.sectionBorder}></View>
       </ScrollView>

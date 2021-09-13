@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   Flatlist,
 } from 'react-native';
+import { ButtonView } from '../../components';
 
 
 export default function DoNotBuy({navigation}) {
@@ -120,14 +121,14 @@ export default function DoNotBuy({navigation}) {
   const renderItem = data => {
     return (
      
-        <TouchableOpacity  activeOpacity={0.8} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
+        <ButtonView  activeOpacity={0.8} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
         <View style={[styles.list, data.item.selectedClass]}>
           <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
         </View>
       <View>
         <Text style={styles.textFields}>{data.item.title}</Text>
       </View>
-    </TouchableOpacity>
+    </ButtonView>
     );
   };
 
@@ -160,14 +161,14 @@ export default function DoNotBuy({navigation}) {
   const renderItem2 = data => {
     return (
 
-      <TouchableOpacity  activeOpacity={0.8} onPress={() => selectItem2(data)} style={styles.fieldsContainer}>
+      <ButtonView  activeOpacity={0.8} onPress={() => selectItem2(data)} style={styles.fieldsContainer}>
             <View style={[styles.list, data.item.selectedClass]}>
               <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
             </View>
           <View>
             <Text style={styles.textFields}>{data.item.title}</Text>
           </View>
-        </TouchableOpacity>
+        </ButtonView>
 
     );
   };
@@ -201,7 +202,7 @@ export default function DoNotBuy({navigation}) {
 
           <View style={styles.ratingLineView}></View>
 
-          <TouchableOpacity
+          <ButtonView
             activeOpacity={0.5}
             onPress={() => setQuality(!quality)}
             style={styles.TabDropDown}>
@@ -209,7 +210,7 @@ export default function DoNotBuy({navigation}) {
               style={quality ? styles.transform : styles.dropdown}
               source={require('../../assets/down-arrow.png')}
             />
-          </TouchableOpacity>
+          </ButtonView>
         </View>
         {quality && (
           <View style={{paddingVertical: "3%", backgroundColor: '#f9f8fd'}}>
@@ -233,7 +234,7 @@ export default function DoNotBuy({navigation}) {
 
           <View style={styles.ratingLineView}></View>
 
-          <TouchableOpacity
+          <ButtonView
             activeOpacity={0.5}
             onPress={() => setQuality2(!quality2)}
             style={styles.TabDropDown}>
@@ -241,7 +242,7 @@ export default function DoNotBuy({navigation}) {
               style={quality2 ? styles.transform : styles.dropdown}
               source={require('../../assets/down-arrow.png')}
             />
-          </TouchableOpacity>
+          </ButtonView>
         </View>
         {quality2 && (
           <View style={{paddingVertical: 10, backgroundColor: '#f9f8fd'}}>
@@ -281,7 +282,7 @@ export default function DoNotBuy({navigation}) {
                   <Text style={{color: '#7b7e83', fontFamily:"OpenSans-Regular", fontSize: 12}}>
                     photos / video
                   </Text>
-                  <TouchableOpacity
+                  <ButtonView
                     activeOpacity={0.9}
                     onPress={() => navigation.navigate('ExteriorBack')}
                     style={styles.editButtom}>
@@ -298,7 +299,7 @@ export default function DoNotBuy({navigation}) {
                       }}>
                       Edit
                     </Text>
-                  </TouchableOpacity>
+                  </ButtonView>
                 </View>
               </View>
               <View>
@@ -360,14 +361,14 @@ export default function DoNotBuy({navigation}) {
         </View>
 
         <View style={styles.buttonContainer}>
-          <TouchableOpacity
+          <ButtonView
             onPress={() => goAhead()}
             activeOpacity={0.8}
             style={button?styles.DoNotButtonEnable:styles.DoNotButtonDisable}>
             <Text style={{color: '#fff',  fontFamily:"OpenSans-Bold", fontSize: 14}}>
               Do Not Buy
             </Text>
-          </TouchableOpacity>
+          </ButtonView>
         </View>
       </View>
     </ScrollView>
