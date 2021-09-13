@@ -24,7 +24,7 @@ export default class ButtonView extends React.PureComponent {
 
     if (Platform.OS=="android") {
       return (
-        <TouchableNativeFeedback background={TouchableNativeFeedback.Ripple('#aeaeae')} {...rest}>
+        <TouchableNativeFeedback background={TouchableNativeFeedback.Ripple('#aeaeae90')} {...rest}>
           <View style={style}>{this.props.children}</View>
         </TouchableNativeFeedback>
       );

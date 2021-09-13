@@ -13,7 +13,7 @@ import Modal from 'react-native-modal';
 import Textarea from 'react-native-textarea';
 import * as Animatable from 'react-native-animatable';
 import {Input, Button, Card, SearchBar} from 'react-native-elements';
-import {KeyboardAvoidingView} from 'react-native';
+import {ButtonView} from '../../components';
 
 export default function InspectionOverview({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -173,15 +173,15 @@ export default function InspectionOverview({navigation}) {
             paddingHorizontal:10,
             paddingTop: '20%',
           }}>
-          <TouchableOpacity
+          <ButtonView
             activeOpacity={0.9}
             onPress={() => setModalVisible(true)}
             style={styles.pauseButton}>
             <Text style={{color: '#193250', fontWeight: 'bold'}}>Cancel</Text>
-          </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.9} style={styles.completeButton}>
+          </ButtonView>
+          <ButtonView activeOpacity={0.9} style={styles.completeButton}>
             <Text style={{color: '#ffffff', fontWeight: 'bold'}}>Complete</Text>
-          </TouchableOpacity>
+          </ButtonView>
         </View>
 
         <Modal
@@ -397,7 +397,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     borderRadius: 35,
     width: 156,
-    height: 58,
+    height: 54,
     borderWidth: 1,
     borderColor: '#7c94b0',
   },
@@ -407,7 +407,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#909090',
     width: 156,
-    height: 58,
+    height: 54,
     borderRadius: 35,
   },
   modalView: {

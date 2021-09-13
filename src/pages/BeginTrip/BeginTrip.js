@@ -13,14 +13,21 @@ export default function BeginTrip({ navigation }) {
     const [reason1, setReason1] = useState([{ title: "abc", image: require('../../assets/house3.jpg') }, { title: "abc", image: require('../../assets/house1.jpg') }, { title: "abc", image: require('../../assets/house3.jpg') }, { title: "abc", image: require('../../assets/house1.jpg') }, { title: "abc", image: require('../../assets/house3.jpg') }]);
     const [modalVisible, setModalVisible] = useState(false);
     
-
-    const goAhead = () => {
-        if (button) {
-            navigation.navigate("")
-        } else {
-            alert("Please select all fields to continue")
-        }
+    const doubleCall = () => {
+        setModalVisible(!modalVisible);
+        navigation.navigate("Download");
     }
+    // const goAhead = () =>{
+    //     setModalVisible(!modalVisible)};
+    //     navigation.nvigate('Download')
+    // }
+    // const goAhead = () => {
+    //     if (button) {
+    //         navigation.navigate("")
+    //     } else {
+    //         alert("Please select all fields to continue")
+    //     }
+    // }
     const headerComponent = () => {
         return (
             <>
@@ -147,17 +154,17 @@ export default function BeginTrip({ navigation }) {
 
                     <View style={{ flexDirection: "row", paddingHorizontal: 12 }}>
                         <Progress.Bar progress={0.7}
-                            animated={true} width={270}
+                            animated={true} width={290}
                             height={20}
                             color={"#f36523"}
                             borderRadius={12}
                             borderWidth={0}
                             unfilledColor={"#c4c4c4"}
                         />
-                        <Text style={{ paddingHorizontal: 6, paddingTop: 2, color: "#3c434b", fontSize: 12 }}>75%</Text>
+                        <Text style={{paddingTop: 2, color: "#3c434b", fontSize: 12,paddingLeft:6 }}>75%</Text>
                     </View>
                     <TouchableOpacity
-                        onPress={() => navigation.navigate('Download')}
+                        onPress={() => doubleCall()}
                         activeOpacity={0.9}
                         style={{ flex: 0, justifyContent: "center", alignItems: "center", marginVertical: "10%" }}>
                         <View style={styles.donebtn}>
@@ -251,7 +258,7 @@ const styles = StyleSheet.create({
 
     },
     modalView: {
-        flex: 0.6,
+        // flex: 0.6,
         backgroundColor: '#fff',
         borderRadius: 15,
         // paddingTop: 10,
