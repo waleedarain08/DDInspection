@@ -8,6 +8,7 @@ import {
     Linking,
     TouchableOpacity
 } from 'react-native';
+import { ButtonView } from './components';
 
 import {
     DrawerContentScrollView,
@@ -29,34 +30,39 @@ function CustomDrawer({navigation,userLogout}) {
         userLogout(null);
     }
 
-    const BASE_PATH =
-       'https://raw.githubusercontent.com/AboutReact/sampleresource/master/';
-    const proileImage = 'react_logo.png';
+    // const BASE_PATH =
+    //    'https://raw.githubusercontent.com/AboutReact/sampleresource/master/';
+    // const proileImage = 'react_logo.png';
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <View style={{flex:1,backgroundColor:"#193250",justifyContent:"center",alignItems:"center"}}>
+            <View style={{flex:1.3,backgroundColor:"#193250",justifyContent:"center",alignItems:"center"}}>
             <Image style={styles.logo} source={require('./assets/sylvanRoad.png')} />
             </View>
             <View style={styles.manu}>
-                <View style={{flex:1,}}>
+                <ButtonView activeOpacity={0.8} style={{flex:0.5,flexDirection:"row",alignItems:"center"}}>
+                <Image style={styles.homeicon} source={require('./assets/homeIcon2.png')} style={{height:18, width:18, resizeMode:"contain"}} />
                 <Text style={styles.home}>Home</Text>
+                </ButtonView>
                 <View style={styles.borderline}></View>
-                </View>
-                <View style={{flex:1,}}>
+                <ButtonView activeOpacity={0.8} style={{flex:0.5,flexDirection:"row",alignItems:"center"}}>
+                <Image style={styles.homeicon} source={require('./assets/group669.png')} style={{height:18, width:18, resizeMode:"contain"}}/>
                 <Text style={styles.home}>Setting</Text>
+                </ButtonView>
                 <View style={styles.borderline}></View>
-                </View>
-                <View style={{flex:1,}}>
+                <ButtonView activeOpacity={0.8} style={{flex:0.5,flexDirection:"row",alignItems:"center"}}>
+                <Image style={styles.homeicon} source={require('./assets/profile.png')} style={{height:18, width:18, resizeMode:"contain"}}/>
                 <Text onPress={()=> navigation.navigate("Account")} style={styles.home}>Account</Text>
+                </ButtonView>
                 <View style={styles.borderline}></View>
-                </View>
-                <View style={{flex:1,}}>
+                <ButtonView activeOpacity={0.8} style={{flex:0.5,flexDirection:"row",alignItems:"center"}}>
+                <Image style={styles.homeicon} source={require('./assets/info.png')} style={{height:18, width:18, resizeMode:"contain"}}/>
                 <Text style={styles.home}>About</Text>
+                </ButtonView>
                 <View style={styles.borderline}></View>
-                </View>
-                <View style={{flex:1,}}>
+                <ButtonView activeOpacity={0.8} style={{flex:0.5,flexDirection:"row",alignItems:"center"}}>
+                <Image style={styles.homeicon} source={require('./assets/login.png')} style={{height:18, width:18, resizeMode:"contain"}}/>
                 <Text onPress={()=>logout()} style={styles.home}>Logout</Text>
-                </View>
+                </ButtonView>
                 <View style={{flex:3.5}}></View>
             </View>
         </SafeAreaView>
@@ -76,9 +82,12 @@ const styles = StyleSheet.create({
         resizeMode:"contain"
       },
     home:{
-        color:"#193250",
+        color:"#666666",
         fontSize:15,
-        fontWeight:"500"
+        fontWeight:"500",
+        paddingLeft:20,
+        fontFamily:"OpenSans-Bold"
+
     },
     borderline:{
         backgroundColor:"#e5e5e5",
@@ -88,6 +97,11 @@ const styles = StyleSheet.create({
     groupPng:{
         width:20
     },
+    homeicon:{
+        width:18,
+        height:20,
+        tintColor:"#666666"
+    }
 });
 
 const mapStateToProps = state => {
