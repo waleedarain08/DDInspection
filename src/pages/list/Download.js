@@ -7,9 +7,17 @@ import {
   StyleSheet,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
+import  { Component, useState,useEffect } from 'react';
+
 
 
 export default function Download({ navigation }) {
+    useEffect(() => {
+        setTimeout(() => {
+            navigation.navigate('List')
+        }, 2000);
+      }, []);
+      
     return(
         <View style={styles.mainContainer}>
             <Animatable.View animation="bounceIn" style={{flex:1,justifyContent:"flex-end", alignItems:"center"}}>           

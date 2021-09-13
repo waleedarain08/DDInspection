@@ -12,6 +12,7 @@ import { ButtonView } from '../../components';
 export default function BeginTrip({ navigation }) {
     const [reason1, setReason1] = useState([{ title: "abc", image: require('../../assets/house3.jpg') }, { title: "abc", image: require('../../assets/house1.jpg') }, { title: "abc", image: require('../../assets/house3.jpg') }, { title: "abc", image: require('../../assets/house1.jpg') }, { title: "abc", image: require('../../assets/house3.jpg') }]);
     const [modalVisible, setModalVisible] = useState(false);
+    
 
     const goAhead = () => {
         if (button) {
@@ -108,7 +109,7 @@ export default function BeginTrip({ navigation }) {
                     <ButtonView
                         style={styles.tripbtn}
                         activeOpacity={0.9}
-                        // onPress={() => setModalVisible(true)} 
+                        onPress={() => setModalVisible(true)} 
                         >
                         <Text style={{ color: "#ffffff", fontWeight: "bold" }}>Begin Trip</Text>
                     </ButtonView>
@@ -127,7 +128,7 @@ export default function BeginTrip({ navigation }) {
             >
                 <View style={styles.modalView}>
                     <View style={{ flex: 0, alignItems: "center", paddingBottom: 10 }}>
-                        <TouchableOpacity onPress={() => navigation.navigate('Download')} >
+                        <TouchableOpacity >
                             <Image style={styles.upload} source={require("../../assets/upload.png")} />
                         </TouchableOpacity>
                     </View>
@@ -156,7 +157,7 @@ export default function BeginTrip({ navigation }) {
                         <Text style={{ paddingHorizontal: 6, paddingTop: 2, color: "#3c434b", fontSize: 12 }}>75%</Text>
                     </View>
                     <TouchableOpacity
-                        onPress={() => navigation.navigate('List')}
+                        onPress={() => navigation.navigate('Download')}
                         activeOpacity={0.9}
                         style={{ flex: 0, justifyContent: "center", alignItems: "center", marginVertical: "10%" }}>
                         <View style={styles.donebtn}>
