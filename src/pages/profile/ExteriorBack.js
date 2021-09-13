@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { Input, Button, Card, CheckBox } from 'react-native-elements';
+import { ButtonView } from '../../components';
+
 
 export default function ExteriorBack({ navigation }) {
     const [quality, setQuality] = useState(false);
@@ -435,14 +437,14 @@ export default function ExteriorBack({ navigation }) {
                     <Text style={{ color: "#3e434a", fontWeight: "bold" }}>Total Items</Text>
                     <Text style={{ color: "#3e434a", fontWeight: "bold" }}>$744.95</Text>
                 </View>
-                <TouchableOpacity
+                <ButtonView
                     activeOpacity={0.9}
                     onPress={() => setQuality(!quality)}
                     // style={styles.continueButton}
                     style={quality ? styles.continueButton : styles.continueButton2}
                 >
                     <Text style={{ color: "#e3e3e3" }}>Continue</Text>
-                </TouchableOpacity>
+                </ButtonView>
             </View>
         </ScrollView>
     );
@@ -589,8 +591,8 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: "#c3c3c3",
         borderRadius: 20,
-        backgroundColor: "#192590",
-        borderColor: "#192590",
+        backgroundColor: "#192550",
+        borderColor: "#192550",
         flex: 0,
         justifyContent: "center", alignItems: "center"
     },

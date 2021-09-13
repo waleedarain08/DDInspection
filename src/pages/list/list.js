@@ -42,6 +42,7 @@ export function List({navigation}) {
         <ButtonView
           onPress={() => handleJob()}
           activeOpacity={0.8}
+          isRound={0}
           style={job ? styles.topBar : styles.topBar2}>
           <Text style={job ? styles.topBarText : styles.topBarText2}>
             All Jobs
@@ -50,6 +51,7 @@ export function List({navigation}) {
         <ButtonView
           onPress={() => handleCompleted()}
           activeOpacity={0.8}
+          isRound={0}
           style={completed ? styles.topBar : styles.topBar2}>
           <Text style={completed ? styles.topBarText : styles.topBarText2}>
             Completed
@@ -58,6 +60,7 @@ export function List({navigation}) {
         <ButtonView
           onPress={() => handleRejected()}
           activeOpacity={0.8}
+          isRound={0}
           style={rejected ? styles.topBar : styles.topBar2}>
           <Text style={rejected ? styles.topBarText : styles.topBarText2}>
             Rejected
@@ -134,6 +137,7 @@ export function List({navigation}) {
           <ButtonView
             onPress={() => navigation.navigate('EndInspection')}
             activeOpacity={0.8}
+            isRound={1}
             style={styles.resumeButton}>
             <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               Resume

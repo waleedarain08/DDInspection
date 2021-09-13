@@ -15,7 +15,7 @@ export default function Download({ navigation }) {
     useEffect(() => {
         setTimeout(() => {
             navigation.navigate('List')
-        }, 5000);
+        }, 3000);
       }, []);
       
     return(

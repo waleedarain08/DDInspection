@@ -14,6 +14,8 @@ import {
 } from 'react-native';
 import * as Progress from 'react-native-progress';
 import Modal from 'react-native-modal';
+import { ButtonView } from '../../components';
+
 
 export  function Profile({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -121,20 +123,20 @@ export  function Profile({navigation}) {
         </View>
         <View style={{paddingVertical: 20, paddingHorizontal: 20,marginTop:"28%"}}>
         <View>
-            <TouchableOpacity
+            <ButtonView
               activeOpacity={0.9}
               onPress={() => navigation.navigate('CheckProperty')}
               style={styles.continueButton}>
               <Text style={{color: '#fff'}}>Continue</Text>
-            </TouchableOpacity>
+            </ButtonView>
           </View>
           <View>
-            <TouchableOpacity
+            <ButtonView
               activeOpacity={0.9}
               onPress={() => setModalVisible(true)}
               style={styles.pouseButton}>
               <Text>Cancel</Text>
-            </TouchableOpacity>
+            </ButtonView>
           </View>
         </View>
         <Modal

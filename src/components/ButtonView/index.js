@@ -16,15 +16,18 @@ export default class ButtonView extends React.PureComponent {
 
   static defaultProps = {
     style: {},
-    rippleOnAndroid: false
+    rippleOnAndroid: false,
+    isRound:1
   };
 
+//SelectableBackgroundBorderless(rippleRadius: ?5);
+
   render() {
-    const { style, children, rippleOnAndroid, ...rest } = this.props;
+    const { style, children, rippleOnAndroid,isRound, ...rest } = this.props;
 
     if (Platform.OS=="android") {
       return (
-        <TouchableNativeFeedback background={TouchableNativeFeedback.Ripple('#aeaeae90')} {...rest}>
+        <TouchableNativeFeedback   background={TouchableNativeFeedback.Ripple("#19325090", false,isRound?0:90)}  {...rest}>
           <View style={style}>{this.props.children}</View>
         </TouchableNativeFeedback>
       );

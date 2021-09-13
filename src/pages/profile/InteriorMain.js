@@ -11,8 +11,7 @@ import {
 } from 'react-native';
 import Modal from 'react-native-modal';
 import * as Animatable from 'react-native-animatable';
-import {Input, Button, Card, SearchBar} from 'react-native-elements';
-
+import { ButtonView } from '../../components';
 export default function InteriorMain({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
   const [quality, setQuality] = useState(true);
@@ -24,7 +23,7 @@ export default function InteriorMain({navigation}) {
     <ScrollView
       contentContainerStyle={{height: 900, backgroundColor: '#ffffff'}}>
       <Text
-        style={{paddingHorizontal: 10, paddingVertical: 20, color: '#5a5d62',fontWeight:"600"}}>
+        style={{paddingHorizontal: 10, paddingVertical: 20, color: '#5a5d62',fontWeight:"600",fontFamily:"OpenSans-Regular"}}>
         Please Confirm You Are Weraing Booties Before Intering The Interior.
       </Text>
 
@@ -38,7 +37,7 @@ export default function InteriorMain({navigation}) {
               source={require('../../assets/down-arrow.png')}
             />
           </TouchableOpacity>
-        <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 4,paddingTop:2}}>
+        <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 4,paddingTop:2,fontFamily:"OpenSans-Regular"}}>
           Bathroom 1
         </Text>
         <View style={{flex: 0.5}}>
@@ -71,7 +70,7 @@ export default function InteriorMain({navigation}) {
               source={require('../../assets/down-arrow.png')}
             />
           </TouchableOpacity>
-        <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 4,paddingTop:2}}>
+        <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 4,paddingTop:2,fontFamily:"OpenSans-Regular"}}>
           Bathroom 1
         </Text>
         <View style={{flex: 0.5}}>
@@ -105,7 +104,7 @@ export default function InteriorMain({navigation}) {
               source={require('../../assets/down-arrow.png')}
             />
           </TouchableOpacity>
-          <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 4,paddingTop:2}}>
+          <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 4,paddingTop:2,fontFamily:"OpenSans-Regular"}}>
             Kitchen
           </Text>
           <View style={{flex: 0.5}}>
@@ -137,8 +136,8 @@ export default function InteriorMain({navigation}) {
             backgroundColor: '#ffffff',
             paddingHorizontal:10
           }}>
-          <Text style={{flex: 3.5, color: '#797b7f'}}>Suqure Footage</Text>
-          <Text style={{flex: 1}}>$0.00</Text>
+          <Text style={{flex: 3.5, color: '#797b7f',fontFamily:"OpenSans-Regular"}}>Suqure Footage</Text>
+          <Text style={{flex: 1,fontFamily:"OpenSans-Regular"}}>$0.00</Text>
           <TouchableOpacity
             activeOpacity={0.9}
             onPress={() => navigation.navigate('ExteriorBack')}
@@ -148,7 +147,7 @@ export default function InteriorMain({navigation}) {
               source={require('../../assets/edit.png')}
             />
             <Text
-              style={{color: '#33ae46', textAlign: 'center', paddingTop: 3,fontSize:12}}>
+              style={{color: '#33ae46', textAlign: 'center', paddingTop: 3,fontSize:12,fontFamily:"OpenSans-Regular"}}>
               Edit
             </Text>
           </TouchableOpacity>
@@ -161,8 +160,8 @@ export default function InteriorMain({navigation}) {
             backgroundColor: '#ffffff',
             paddingHorizontal:10
           }}>
-          <Text style={{flex: 3.5, color: '#797b7f'}}>Exhaust Fan</Text>
-          <Text style={{flex: 1}}>$0.00</Text>
+          <Text style={{flex: 3.5, color: '#797b7f',fontFamily:"OpenSans-Regular"}}>Exhaust Fan</Text>
+          <Text style={{flex: 1,fontFamily:"OpenSans-Regular"}}>$0.00</Text>
           <TouchableOpacity
             activeOpacity={0.9}
             onPress={() => navigation.navigate('ExteriorBack')}
@@ -172,7 +171,7 @@ export default function InteriorMain({navigation}) {
               source={require('../../assets/edit.png')}
             />
             <Text
-              style={{color: '#33ae46', textAlign: 'center', paddingTop: 3,fontSize:12}}>
+              style={{color: '#33ae46', textAlign: 'center', paddingTop: 3,fontSize:12,fontFamily:"OpenSans-Regular"}}>
               Edit
             </Text>
           </TouchableOpacity>
@@ -185,8 +184,8 @@ export default function InteriorMain({navigation}) {
             backgroundColor: '#ffffff',
             paddingHorizontal:10
           }}>
-          <Text style={{flex: 3.5, color: '#797b7f'}}>Garbage Disposal</Text>
-          <Text style={{flex: 1}}>$0.00</Text>
+          <Text style={{flex: 3.5, color: '#797b7f',fontFamily:"OpenSans-Regular"}}>Garbage Disposal</Text>
+          <Text style={{flex: 1,fontFamily:"OpenSans-Regular"}}>$0.00</Text>
           <View style={styles.inspectButtom}>
             <Text
               style={{color: '#ff5454', textAlign: 'center', paddingTop: 3,fontSize:12}}>
@@ -202,11 +201,11 @@ export default function InteriorMain({navigation}) {
             backgroundColor: '#ffffff',
             paddingHorizontal:10
           }}>
-          <Text style={{flex: 3.5, color: '#797b7f'}}>Sink</Text>
-          <Text style={{flex: 1}}>$0.00</Text>
+          <Text style={{flex: 3.5, color: '#797b7f',fontFamily:"OpenSans-Regular"}}>Sink</Text>
+          <Text style={{flex: 1,fontFamily:"OpenSans-Regular"}}>$0.00</Text>
           <View style={styles.inspectButtom}>
             <Text
-              style={{color: '#ff5454', textAlign: 'center', paddingTop: 3,fontSize:12}}>
+              style={{color: '#ff5454', textAlign: 'center', paddingTop: 3,fontSize:12,fontFamily:"OpenSans-Regular"}}>
               Inspect
             </Text>
           </View>
@@ -222,7 +221,7 @@ export default function InteriorMain({navigation}) {
               source={require('../../assets/down-arrow.png')}
             />
           </TouchableOpacity>
-        <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 4,paddingTop:2}}>
+        <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 4,paddingTop:2,fontFamily:"OpenSans-Regular"}}>
           Bathroom 1
         </Text>
         <View style={{flex: 0.5}}>
@@ -246,22 +245,22 @@ export default function InteriorMain({navigation}) {
         </TouchableOpacity>
       </View>
       <View style={styles.dotted}>
-        <Text style={{textAlign: 'center', color: '#17324f'}}>
+        <Text style={{textAlign: 'center', color: '#17324f',fontFamily:"OpenSans-Sami-Bold"}}>
           Add New Area +
         </Text>
       </View>
       <View style={styles.total}>
-        <Text style={{color: '#ffffff', fontWeight: 'bold', fontSize: 18}}>
+        <Text style={{color: '#ffffff', fontWeight: 'bold', fontSize: 18,fontFamily:"OpenSans-Regular"}}>
           Tolat{' '}
         </Text>
         <View style={styles.line2}></View>
-        <Text style={{color: '#ffffff', fontWeight: 'bold', fontSize: 18}}>
+        <Text style={{color: '#ffffff', fontWeight: 'bold', fontSize: 18,fontFamily:"OpenSans-Regular"}}>
           $1,070,00
         </Text>
       </View>
-      <View style={styles.completeButton}>
-        <Text style={{textAlign: 'center', color: '#ffffff'}}>Complete</Text>
-      </View>
+      <ButtonView activeOpacity={0.9} style={styles.completeButton}>
+        <Text style={{textAlign: 'center', color: '#ffffff',fontFamily:"OpenSans-Regular",}}>Complete</Text>
+      </ButtonView>
 
       <Modal
         animationIn="zoomIn"
@@ -278,7 +277,7 @@ export default function InteriorMain({navigation}) {
             source={require('../../assets/remove1.png')}
           />
           <Text
-            style={{fontFamily:"OpenSans-Bold", fontSize: 20, marginVertical: '2%'}}>
+            style={{fontFamily:"OpenSans-Bold", fontSize: 20, marginVertical: '2%', fontFamily:"OpenSans-Regular",}}>
             Delete File?
           </Text>
           <Text style={{color: '#74777e', fontFamily:"OpenSans-Regular"}}>
@@ -289,7 +288,7 @@ export default function InteriorMain({navigation}) {
           </Text>
 
           <View style={styles.modalButtons}>
-            <TouchableOpacity
+            <ButtonView
               activeOpacity={0.8}
               onPress={() => setModalVisible(!modalVisible)}
               style={{
@@ -300,6 +299,7 @@ export default function InteriorMain({navigation}) {
                 paddingHorizontal: '18%',
                 margin: '3%',
                 borderRadius: 25,
+                fontFamily:"OpenSans-Regular",
                 shadowColor: '#000',
                 shadowOffset: {
                   width: 0,
@@ -311,15 +311,16 @@ export default function InteriorMain({navigation}) {
                 elevation: 6,
               }}>
               <Text style={{color: '#193250',fontFamily:"OpenSans-SemiBold"}}>No</Text>
-            </TouchableOpacity>
+            </ButtonView>
 
-            <TouchableOpacity
+            <ButtonView
               activeOpacity={0.8}
               style={{
                 backgroundColor: '#193250',
                 paddingVertical: 10,
                 paddingHorizontal: '18%',
                 margin: '3%',
+                fontFamily:"OpenSans-Regular",
                 borderRadius: 25,
                 shadowColor: '#000',
                 shadowOffset: {
@@ -332,7 +333,7 @@ export default function InteriorMain({navigation}) {
                 elevation: 8,
               }}>
               <Text style={{color: '#fff', fontFamily:"OpenSans-SemiBold"}}>Yes</Text>
-            </TouchableOpacity>
+            </ButtonView>
           </View>
         </View>
       </Modal>

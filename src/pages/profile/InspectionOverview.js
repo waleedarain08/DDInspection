@@ -213,7 +213,7 @@ export default function InspectionOverview({navigation}) {
               />
             </View>
             <View style={styles.modalButtons}>
-              <TouchableOpacity
+              <ButtonView
                 activeOpacity={0.8}
                 onPress={() => setModalVisible(!modalVisible)}
                 style={{
@@ -233,7 +233,7 @@ export default function InspectionOverview({navigation}) {
                   elevation: 8,
                 }}>
                 <Text style={{color: '#fff', fontFamily:"OpenSans-SemiBold"}}>Done</Text>
-              </TouchableOpacity>
+              </ButtonView>
             </View>
           </View>
         </Modal>

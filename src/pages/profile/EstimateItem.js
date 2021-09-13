@@ -11,6 +11,8 @@ import React, { useState, useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { userLogin } from '../../redux/actions';
+import {ButtonView} from '../../components';
+
 
 export default function EstimateItem({ navigation }) {
 
@@ -123,14 +125,14 @@ export default function EstimateItem({ navigation }) {
             justifyContent: 'space-around',
             paddingVertical:10
           }}>
-          <TouchableOpacity
+          <ButtonView
             activeOpacity={0.9}
             style={styles.pauseButton}>
             <Text style={{color: '#193250', fontWeight: 'bold'}}>Pause</Text>
-          </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.9} style={styles.completeButton}>
+          </ButtonView>
+          <ButtonView activeOpacity={0.9} style={styles.completeButton}>
             <Text style={{color: '#ffffff', fontWeight: 'bold'}}>Continue</Text>
-          </TouchableOpacity>
+          </ButtonView>
         </View>
         <View style={{paddingBottom:30}}></View>
     </ScrollView>
