@@ -14,11 +14,11 @@ import { Input, Button, Card, CheckBox } from 'react-native-elements';
 
 export default function ExteriorBack({ navigation }) {
     const [quality, setQuality] = useState(false);
-    const [checked, setChecked] = useState(false);
-    const [quality1, setQuality1] = useState(true);
-    const [quality2, setQuality2] = useState(true);
-    const [quality3, setQuality3] = useState(true);
-    const [quality4, setQuality4] = useState(true);
+    // const [checked, setChecked] = useState(false);
+    const [quality1, setQuality1] = useState(false);
+    const [quality2, setQuality2] = useState(false);
+    const [quality3, setQuality3] = useState(false);
+    const [quality4, setQuality4] = useState(false);
     const [radio, setRadio] = useState(true);
 
     handleRadio = circle => {
@@ -52,12 +52,12 @@ export default function ExteriorBack({ navigation }) {
     const [tick4, setTick4] = useState(true);
     const [tick5, setTick5] = useState(true);
     const [tick6, setTick6] = useState(true);
-    const [add1, setAdd1] = useState(true);
-    const [add2, setAdd2] = useState(true);
-    const [add3, setAdd3] = useState(true);
-    const [add4, setAdd4] = useState(true);
-    const [add5, setAdd5] = useState(true);
-    const [add6, setAdd6] = useState(true);
+    const [add1, setAdd1] = useState(false);
+    const [add2, setAdd2] = useState(false);
+    const [add3, setAdd3] = useState(false);
+    const [add4, setAdd4] = useState(false);
+    const [add5, setAdd5] = useState(false);
+    const [add6, setAdd6] = useState(false);
     handleAdd1 = circle => {
         setAdd1(1);
         setAdd2(0);

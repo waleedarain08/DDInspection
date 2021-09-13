@@ -27,8 +27,8 @@ function Login({ navigation, userInfo, userLogin }) {
   const [hide, setHide] = useState(false);
 
   return (
-    <View style={styles.container}>
-      <View style={styles2.heaader}>
+    <View style={styles2.MainContainer}>
+      <View style={styles2.header}>
         {/* <Image
           style={styles.logo}
           source={require('../../assets/sylvanRoad.png')}
@@ -86,7 +86,7 @@ const styles2 = StyleSheet.create({
   },
   backgroundImage: {
     width: "100%",
-    height: "70%",
+    height: "200%",
   },
   header: {
     flex: 8,
