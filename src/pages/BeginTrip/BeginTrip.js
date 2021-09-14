@@ -141,7 +141,7 @@ export default function BeginTrip({ navigation }) {
                     </View>
                     <Text style={styles.textdv}> Your Inspection data is </Text>
                     <Text style={styles.textdv}>downloading..</Text>
-                    <View style={{ flexDirection: "row", marginTop: "10%", justifyContent: "space-between", paddingHorizontal: 10 }}>
+                    <View style={{ flexDirection: "row", marginTop: "15%", justifyContent: "space-between", paddingHorizontal: 10 }}>
                         <Text style={styles.dowm}>Downloading...</Text>
                         <View style={{ flexDirection: "row" }}>
                             <View style={{ marginRight: 18 }}>

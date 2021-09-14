@@ -137,8 +137,8 @@ export default function InspectionOverview({ navigation }) {
           </View>
           <View>
             <View style={styles.front}>
-              <Text style={{ flex: 2.5, color: '#84868a',  fontFamily:  "OpenSans-Sami-Bold" }}>Exterior Front</Text>
-              <Text style={{ flex: 1, color: '#86888c',  fontFamily: "OpenSans-Sami-Bold"}}>2</Text>
+              <Text style={{ flex: 2.5, color: '#84868a',  fontFamily:  "OpenSans-Regular" }}>Exterior Front</Text>
+              <Text style={{ flex: 1, color: '#86888c',  fontFamily:  "OpenSans-Regular"}}>2</Text>
               <Image
                 style={styles.download}
                 source={require('../../assets/downloadded.png')}
@@ -147,21 +147,21 @@ export default function InspectionOverview({ navigation }) {
             <View style={styles.interior}>
               <Text
                 onPress={() => navigation.navigate('InteriorMain')}
-                style={{ color: '#818387',  fontFamily:  "OpenSans-Sami-Bold" }}>
+                style={{ color: '#818387',  fontFamily:  "OpenSans-Regular" }}>
                 Interior Main
               </Text>
             </View>
             <View style={styles.interior}>
-              <Text style={{ color: '#818387',  fontFamily: "OpenSans-Sami-Bold" }}>Interior 2nd Ievel</Text>
+              <Text style={{ color: '#818387',  fontFamily:  "OpenSans-Regular" }}>Interior 2nd Ievel</Text>
             </View>
             <View style={styles.interior}>
-              <Text style={{ color: '#818387',  fontFamily:  "OpenSans-Sami-Bold"}}>Interior Basement</Text>
+              <Text style={{ color: '#818387',  fontFamily:  "OpenSans-Regular"}}>Interior Basement</Text>
             </View>
             <View style={styles.interior}>
-              <Text style={{ color: '#818387',  fontFamily:  "OpenSans-Sami-Bold"}}>Interior Crawl Space</Text>
+              <Text style={{ color: '#818387',  fontFamily:  "OpenSans-Regular"}}>Interior Crawl Space</Text>
             </View>
             <View style={styles.interior}>
-              <Text style={{ color: '#818387',  fontFamily:  "OpenSans-Sami-Bold" }}>Interior Attic</Text>
+              <Text style={{ color: '#818387',  fontFamily:  "OpenSans-Regular" }}>Interior Attic</Text>
             </View>
           </View>
           <View></View>

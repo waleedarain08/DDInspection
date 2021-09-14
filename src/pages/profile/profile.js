@@ -35,7 +35,7 @@ export  function Profile({navigation}) {
             "Thank you for handling this inspection."
           </Text>
           <Text
-            style={{fontSize: 20, fontWeight: '#3f434e',paddingVertical:10,fontFamily: "OpenSans-Bold"}}>
+            style={{fontSize: 20, fontWeight: 'bold',paddingVertical:10,fontFamily: "OpenSans-Bold"}}>
            "Please confirm the following:"
           </Text>
         </View>
@@ -80,7 +80,7 @@ export  function Profile({navigation}) {
           </View>
         </View>
         <View style={{paddingVertical: 10, paddingHorizontal: 20,backgroundColor:"#f4f4f4"}}>
-          <Text style={{color: '#666b71',fontSize:12,fontWeight:"600",fontFamily: "OpenSans-Sami-Bold"}}>
+          <Text style={{color: '#666b71',fontSize:12,fontWeight:"600",fontFamily: "OpenSans-Regular"}}>
             This property is accessible using the provided instructions. if it
             is not accessible please contact (in the order):
           </Text>

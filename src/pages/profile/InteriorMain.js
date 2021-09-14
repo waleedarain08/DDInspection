@@ -245,7 +245,7 @@ export default function InteriorMain({navigation}) {
         </TouchableOpacity>
       </View>
       <View style={styles.dotted}>
-        <Text style={{textAlign: 'center', color: '#17324f',fontFamily:"OpenSans-Sami-Bold"}}>
+        <Text style={{textAlign: 'center', color: '#17324f',fontFamily:  "OpenSans-Regular"}}>
           Add New Area +
         </Text>
       </View>
@@ -310,7 +310,7 @@ export default function InteriorMain({navigation}) {
 
                 elevation: 6,
               }}>
-              <Text style={{color: '#193250',fontFamily:"OpenSans-SemiBold"}}>No</Text>
+              <Text style={{color: '#193250',fontFamily:  "OpenSans-Regular"}}>No</Text>
             </ButtonView>
 
             <ButtonView

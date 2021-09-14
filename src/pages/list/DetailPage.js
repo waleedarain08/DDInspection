@@ -12,11 +12,13 @@ export default function CheckProperty({ navigation }) {
         <View style={styles.container}>
             <View style={{ flex: 1.6, }}>
                 <View
-                    style={{ flexDirection: "row", justifyContent: "space-between", }}>
+                     style={{ flexDirection: "row", justifyContent: "space-between", }}
+                    >
                     <TouchableOpacity  
                     activeOpacity={0.9}
                     onPress={() => navigation.goBack()} 
-                    style={{ backgroundColor: "#fff", position: "absolute", zIndex: 20, padding: 14, top: 15, left: 20, borderRadius: 5 }}>
+                 style={{ backgroundColor: "#fff", position: "absolute", zIndex: 20, padding: 14, top: 15, left: 20, borderRadius: 5 }}
+                    >
                         <Image  style={styles.arrow} source={require('../../assets/drop-down.png')} />
                     </TouchableOpacity>
                     <Image style={styles.dots} source={require('../../assets/3-dots.png')} />
@@ -123,11 +125,11 @@ export default function CheckProperty({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        color: "#ffffff",
+        backgroundColor: "#268ca0",
     },
     housePng: {
         width: "100%",
-        height: "109%",
+        height: "110%",
     },
     arrow: {
         position: "absolute", zIndex: 10,
@@ -151,7 +153,8 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         paddingHorizontal: 16,
-        paddingTop: 10
+        paddingTop: 10,
+
     },
     line: {
         // backgroundColor:"#e1e1e1",
