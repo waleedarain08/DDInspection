@@ -21,7 +21,7 @@ export default function InteriorMain({navigation}) {
 
   return (
     <ScrollView
-      contentContainerStyle={{height: 900, backgroundColor: '#ffffff'}}>
+      contentContainerStyle={{height: 850, backgroundColor: '#ffffff'}}>
       <Text
         style={{paddingHorizontal: 10, paddingVertical: 20, color: '#5a5d62',fontWeight:"600",fontFamily:"OpenSans-Regular"}}>
         Please Confirm You Are Weraing Booties Before Intering The Interior.

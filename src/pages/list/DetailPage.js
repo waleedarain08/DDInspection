@@ -1,109 +1,118 @@
 import React, { Component, useState } from 'react';
 import { TouchableOpacity } from 'react-native';
-import { View, Text, StyleSheet,ImageBackground, FlatList, Image,  Pressable, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, FlatList, Image, Pressable, ScrollView } from 'react-native';
 import { ButtonView } from '../../components';
 
 
 export default function CheckProperty({ navigation }) {
-    const[reason, setReason] = useState([{title: "abc", image: require('../../assets/house4.jpg')},
-    {title: "abd", image: require('../../assets/house4.jpg')},{title: "ghi", image: require('../../assets/house4.jpg')},
-    {title: "efg", image: require('../../assets/house4.jpg')}])
-    return(
+    const [reason, setReason] = useState([{ title: "abc", image: require('../../assets/house4.jpg') },
+    { title: "abd", image: require('../../assets/house4.jpg') }, { title: "ghi", image: require('../../assets/house4.jpg') },
+    { title: "efg", image: require('../../assets/house4.jpg') }])
+    return (
         <View style={styles.container}>
-                   <View style={{flex:1.6,}}>
-                   <FlatList 
-              keyExtractor={(item, index) => index}
-              horizontal={true}
-              data={reason}
-              showsHorizontalScrollIndicator={false}
-              renderItem={({ item }) => {
-                return (
-                    <View style={{width:400,}}>
-                    <Image style={styles.housePng} source={item.image} >
-                    </Image>
-                    </View>
-                )
-              }}>
-            </FlatList> 
-         </View>
+            <View style={{ flex: 1.6, }}>
+                <View
+                    style={{ flexDirection: "row", justifyContent: "space-between", }}>
+                    <TouchableOpacity  
+                    activeOpacity={0.9}
+                    onPress={() => navigation.goBack()} 
+                    style={{ backgroundColor: "#fff", position: "absolute", zIndex: 20, padding: 14, top: 15, left: 20, borderRadius: 5 }}>
+                        <Image  style={styles.arrow} source={require('../../assets/drop-down.png')} />
+                    </TouchableOpacity>
+                    <Image style={styles.dots} source={require('../../assets/3-dots.png')} />
+                </View>
+                <FlatList
+                    keyExtractor={(item, index) => index}
+                    horizontal={true}
+                    data={reason}
+                    showsHorizontalScrollIndicator={false}
+                    renderItem={({ item }) => {
+                        return (
+                            <View style={{ width: 400, }}>
+                                <Image style={styles.housePng} source={item.image} >
+                                </Image>
+                            </View>
+                        )
+                    }}>
+                </FlatList>
+            </View>
             <View style={styles.detail}>
                 <ScrollView contentContainerStyle={{ height: 600 }} showsVerticalScrollIndicator={false}>
-                <View style={{ flex: 1, flexGrow: 1 }}>
-                <View style={{flex:0,alignItems:"center"}}>
-                <View style={styles.line}></View>
-                </View>
-                <View style={{flexDirection:"row",justifyContent:"space-between"}}>
-                    <View>
-                    <Text style={{color:"#484c53",fontSize:18,fontWeight:"bold",fontFamily:"OpenSans-Regular"}}>Nacary Banglow</Text>
-                    <Text style={{color:"#838d99",fontSize:12,lineHeight:20,fontFamily:"OpenSans-Regular"}}>4317 Masonic Drive Fort</Text>
+                    <View style={{ flex: 1, flexGrow: 1 }}>
+                        <View style={{ flex: 0, alignItems: "center" }}>
+                            <View style={styles.line}></View>
+                        </View>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                            <View>
+                                <Text style={{ color: "#484c53", fontSize: 18, fontWeight: "bold", fontFamily: "OpenSans-Regular" }}>Nacary Banglow</Text>
+                                <Text style={{ color: "#838d99", fontSize: 12, lineHeight: 20, fontFamily: "OpenSans-Regular" }}>4317 Masonic Drive Fort</Text>
+                            </View>
+                            <View style={styles.saleButton}>
+                                <Text style={{ textAlign: "center", paddingTop: 4, color: "#193250", fontWeight: "bold", fontSize: 11 }}>For Sale</Text>
+                            </View>
+                        </View>
+                        <Text style={styles.read}>
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <Text style={{ color: "#193250" }}>Read more...</Text>
+                        </Text>
+                        <Text style={{ color: "#37383d", fontSize: 15, fontWeight: "bold", fontFamily: "OpenSans-Regular" }}>Contact Person</Text>
+                        <View style={{ flexDirection: "row", paddingVertical: 20, justifyContent: "space-around" }}>
+                            <Image style={styles.logo} source={require('../../assets/group.png')} />
+                            <View style={{ paddingHorizontal: 2, paddingVertical: 5, flex: 0.6 }}>
+                                <Text style={{ color: "#596677", fontFamily: "OpenSans-Regular" }}>Marty Mccormick</Text>
+                                <Text style={{ color: "#a7aeb8", fontSize: 13, fontFamily: "OpenSans-Regular" }}>Owner</Text>
+                            </View>
+                            <View style={{ flex: 0.2 }}>
+                                <View style={styles.vector}>
+                                    <Image style={styles.vectorLogo} source={require('../../assets/vector1.png')} />
+                                </View>
+                            </View>
+                            <View style={{ flex: 0 }}>
+                                <View style={styles.vector}>
+                                    <Image style={styles.vectorLogo} source={require('../../assets/call.png')} />
+                                </View>
+                            </View>
+                        </View>
+                        <Text style={{ color: "#505357", paddingVertical: 20, fontFamily: "OpenSans-Bold" }}>Specification</Text>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 15 }}>
+                            <View>
+                                <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                                    <Image style={styles.frameLogo} source={require('../../assets/vector.png')} />
+                                    <Text style={{ color: "#2d3238", fontSize: 23, fontWeight: "bold", fontFamily: "OpenSans-Regular" }}>03</Text>
+                                </View>
+                                <Text style={{ color: "#a3adb9", fontSize: 12, lineHeight: 20 }}>Bathrooms</Text>
+                            </View>
+                            <View >
+                                <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                                    <Image style={styles.frameLogo} source={require('../../assets/frame.png')} />
+                                    <Text style={{ color: "#2d3238", fontSize: 23, fontWeight: "bold", fontFamily: "OpenSans-Regular" }}>05</Text>
+                                </View>
+                                <Text style={{ color: "#a3adb9", fontSize: 12, lineHeight: 20, fontFamily: "OpenSans-Regular" }}>Bathrooms</Text>
+                            </View>
+                            <View>
+                                <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                                    <Image style={styles.frameLogo} source={require('../../assets/groupicon.png')} />
+                                    <Text style={{ color: "#2d3238", fontSize: 22, fontWeight: "bold", paddingLeft: 6, fontFamily: "OpenSans-Regular" }}>350</Text>
+
+                                </View>
+                                <Text style={{ color: "#a3adb9", fontSize: 12, lineHeight: 20 }}>Squre feet</Text>
+                            </View>
+                        </View>
+                        <View style={{ flexDirection: "row", justifyContent: "space-evenly", paddingVertical: "20%" }}>
+                            <ButtonView
+                                activeOpacity={0.9}
+                                style={styles.getButton}
+                            >
+                                <Text style={{ color: "#193250" }}>Get Direction</Text>
+                            </ButtonView >
+                            <ButtonView
+                                activeOpacity={0.9}
+                                style={styles.inspectButton}
+                                onPress={() => navigation.navigate('Profile')}
+                            >
+                                <Text style={{ color: "#ffffff" }}>Inspect Now</Text>
+                            </ButtonView >
+                        </View>
                     </View>
-                    <View style={styles.saleButton}>
-                        <Text style={{textAlign:"center",paddingTop:4,color:"#193250",fontWeight:"bold",fontSize:11}}>For Sale</Text>
-                    </View>
-                </View>
-                <Text style={styles.read}>
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <Text style={{color:"#193250"}}>Read more...</Text>
-                </Text>
-                <Text style={{color:"#37383d",fontSize:15,fontWeight:"bold",fontFamily:"OpenSans-Regular"}}>Contact Person</Text>
-                <View style={{flexDirection:"row",paddingVertical:20,justifyContent:"space-around"}}>
-                <Image style={styles.logo} source={require('../../assets/group.png')} />
-                <View style={{paddingHorizontal:2,paddingVertical:5,flex:0.6}}>
-                    <Text style={{color:"#596677",fontFamily:"OpenSans-Regular"}}>Marty Mccormick</Text>
-                    <Text style={{color:"#a7aeb8",fontSize:13,fontFamily:"OpenSans-Regular"}}>Owner</Text>
-                </View>
-                <View style={{flex:0.2}}>
-                <View style={styles.vector}>
-                <Image style={styles.vectorLogo} source={require('../../assets/vector1.png')} />
-                </View>
-                </View>
-                <View style={{flex:0}}>
-                <View style={styles.vector}>
-                <Image style={styles.vectorLogo} source={require('../../assets/call.png')} />
-                </View>
-                </View>
-                </View>
-                <Text style={{color:"#505357",paddingVertical:20,fontFamily:"OpenSans-Bold"}}>Specification</Text>
-                <View style={{flexDirection:"row",justifyContent:"space-between",paddingHorizontal:15}}>
-                 <View>
-                <View style={{flexDirection:"row",justifyContent:"space-between"}}>
-                <Image style={styles.frameLogo} source={require('../../assets/vector.png')} />
-                <Text style={{color:"#2d3238",fontSize:23,fontWeight:"bold",fontFamily:"OpenSans-Regular"}}>03</Text>
-                </View>
-                <Text  style={{color:"#a3adb9",fontSize:12,lineHeight:20}}>Bathrooms</Text>
-                </View>
-                <View >
-                <View style={{flexDirection:"row",justifyContent:"space-between"}}>
-                <Image style={styles.frameLogo} source={require('../../assets/frame.png')} />
-                    <Text  style={{color:"#2d3238",fontSize:23,fontWeight:"bold",fontFamily:"OpenSans-Regular"}}>05</Text>   
-                </View>
-                <Text  style={{color:"#a3adb9",fontSize:12,lineHeight:20,fontFamily:"OpenSans-Regular"}}>Bathrooms</Text>
-                </View>
-                <View>
-                <View style={{flexDirection:"row",justifyContent:"space-between"}}>
-                <Image style={styles.frameLogo} source={require('../../assets/groupicon.png')} />
-                    <Text  style={{color:"#2d3238",fontSize:22,fontWeight:"bold",paddingLeft:6,fontFamily:"OpenSans-Regular"}}>350</Text>
-                    
-                </View>
-                <Text style={{color:"#a3adb9",fontSize:12,lineHeight:20}}>Squre feet</Text>
-                </View>
-                </View>
-                <View style={{flexDirection:"row",justifyContent:"space-evenly",paddingVertical:"20%"}}>
-                <ButtonView 
-                        activeOpacity={0.9}
-                        style={styles.getButton}
-                        onPress={() => navigation.goBack()}
-                    >
-                        <Text style={{color:"#193250"}}>Get Direction</Text>
-                    </ButtonView >
-                    <ButtonView 
-                        activeOpacity={0.9}
-                        style={styles.inspectButton}
-                        onPress={() => navigation.navigate('Profile')} 
-                    >
-                        <Text style={{color:"#ffffff"}}>Inspect Now</Text>
-                    </ButtonView >
-                </View>
-                </View>
                 </ScrollView>
             </View>
         </View>
@@ -111,56 +120,72 @@ export default function CheckProperty({ navigation }) {
 }
 
 
-const styles = StyleSheet.create ({
+const styles = StyleSheet.create({
     container: {
         flex: 1,
         color: "#ffffff",
     },
-    housePng:{
-        width:"100%",
-        height:"109%",
+    housePng: {
+        width: "100%",
+        height: "109%",
     },
-    detail:{
-        flex:3,
-        backgroundColor:"#ffffff",
+    arrow: {
+        position: "absolute", zIndex: 10,
+        width: 14,
+        height: 8,
+        tintColor: "#000",
+        transform: [{ rotate: '90deg' }],
+        top: 10,
+        left: 6
+    },
+    dots: {
+        width: 4,
+        height: 15,
+        position: "absolute", zIndex: 10,
+        top: 20,
+        right: 20
+    },
+    detail: {
+        flex: 3,
+        backgroundColor: "#ffffff",
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
-        paddingHorizontal:16,
-        paddingTop:20
+        paddingHorizontal: 16,
+        paddingTop: 10
     },
-    line:{
+    line: {
         // backgroundColor:"#e1e1e1",
-        height:3,width:40,
-        marginVertical:10
+        height: 3, width: 40,
+        marginVertical: 10
     },
-    saleButton:{
-        backgroundColor:"#e7ebee",
-        marginRight:16,
-        height:24,
-        width:70
+    saleButton: {
+        backgroundColor: "#e7ebee",
+        marginRight: 16,
+        height: 24,
+        width: 70
     },
-    read:{
-        color:"#9c9fa4",
-        paddingVertical:20,
-        fontSize:12,
-        lineHeight:20,
-        fontFamily:"OpenSans-Regular"
+    read: {
+        color: "#9c9fa4",
+        paddingVertical: 20,
+        fontSize: 12,
+        lineHeight: 20,
+        fontFamily: "OpenSans-Regular"
     },
-    getButton:{
-        flexDirection:"row",
+    getButton: {
+        flexDirection: "row",
         alignItems: "center",
-        justifyContent:"center",
+        justifyContent: "center",
         backgroundColor: "#ffffff",
         borderRadius: 35,
-        width:158,
-        height:50,
-        borderWidth:1,
-        borderColor:"#193250",
-        marginRight:4,
+        width: 158,
+        height: 50,
+        borderWidth: 1,
+        borderColor: "#193250",
+        marginRight: 4,
         shadowColor: '#000',
         shadowOffset: {
-          width: 0,
-          height: 2,
+            width: 0,
+            height: 2,
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
@@ -168,49 +193,49 @@ const styles = StyleSheet.create ({
         elevation: 6,
 
     },
-    inspectButton:{
-        flexDirection:"row",
+    inspectButton: {
+        flexDirection: "row",
         alignItems: "center",
-        justifyContent:"center",
+        justifyContent: "center",
         backgroundColor: "#193250",
-        width:158,
-        height:52,
+        width: 158,
+        height: 52,
         borderRadius: 35,
-        marginLeft:8,
+        marginLeft: 8,
         shadowColor: '#000',
         shadowOffset: {
-          width: 0,
-          height: 2,
+            width: 0,
+            height: 2,
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
 
         elevation: 6,
     },
-    vector:{
-        backgroundColor:"#ffffff",
-        width:40,
-        height:40,
-        borderRadius:40,
+    vector: {
+        backgroundColor: "#ffffff",
+        width: 40,
+        height: 40,
+        borderRadius: 40,
         shadowColor: '#000',
         shadowOffset: {
-          width: 0,
-          height: 3,
+            width: 0,
+            height: 3,
         },
         shadowOpacity: 0.27,
         shadowRadius: 4.65,
-    
+
         elevation: 10,
     },
-    vectorLogo:{
-        width:20,
-        height:20,
-        marginLeft:10,marginTop:10
+    vectorLogo: {
+        width: 20,
+        height: 20,
+        marginLeft: 10, marginTop: 10
     },
-    frameLogo:{
-        width:24,
-        height:22,
-        resizeMode:"contain",
-        marginTop:4
+    frameLogo: {
+        width: 24,
+        height: 22,
+        resizeMode: "contain",
+        marginTop: 4
     }
 })

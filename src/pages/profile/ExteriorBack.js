@@ -87,9 +87,9 @@ export default function ExteriorBack({ navigation }) {
     return (
         <ScrollView >
             <View style={styles.container}>
-                <Text style={{ color: "#3c434d", fontWeight: "bold", fontSize: 20, paddingHorizontal: 15, paddingVertical: 20 }}>Dack / Porch</Text>
-                <Text style={{ color: "#173250", fontWeight: "bold", paddingHorizontal: 20 }}>Photos / Video</Text>
-                <Text style={{ color: "#a7abae", paddingHorizontal: 20, paddingVertical: 10 }}>Note:repair-specific photos / video should be added in the estimate itself.</Text>
+                <Text style={{ color: "#3c434d", fontWeight: "bold", fontFamily: "OpenSans-Regular", fontSize: 20, paddingHorizontal: 15, paddingVertical: 20 }}>Dack / Porch</Text>
+                <Text style={{ color: "#173250", fontWeight: "bold", paddingHorizontal: 20, fontFamily: "OpenSans-Regular" }}>Photos / Video</Text>
+                <Text style={{ color: "#a7abae", paddingHorizontal: 20, paddingVertical: 10, fontFamily: "OpenSans-Regular" }}>Note:repair-specific photos / video should be added in the estimate itself.</Text>
                 <View style={styles.imageCard}>
                     <Text>Top of deck, wide angle<Text style={{ color: "#d91614" }}>*</Text></Text>
                     <View style={{ flexDirection: "row", justifyContent: "space-around", paddingVertical: 10 }}>
@@ -97,13 +97,13 @@ export default function ExteriorBack({ navigation }) {
                             <Image style={styles.cross} source={require("../../assets/group743.png")} />
                             <Image style={styles.table} source={require("../../assets/table.jpg")} />
                             <View style={{ paddingVertical: 10 }}>
-                                <Text style={{ color: "#7b7e83", fontSize: 12 }}>Note:repair-specific </Text>
-                                <Text style={{ color: "#7b7e83", fontSize: 12 }}> photos / video</Text>
+                                <Text style={{ color: "#7b7e83", fontSize: 12, fontFamily: "OpenSans-Regular" }}>Note:repair-specific </Text>
+                                <Text style={{ color: "#7b7e83", fontSize: 12, fontFamily: "OpenSans-Regular" }}> photos / video</Text>
                                 <TouchableOpacity
                                     activeOpacity={0.9}
                                     style={styles.editButtom}>
                                     <Image style={styles.editIcon} source={require("../../assets/edit.png")} />
-                                    <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3 }}>Edit</Text>
+                                    <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3, fontFamily: "OpenSans-Regular" }}>Edit</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -112,19 +112,19 @@ export default function ExteriorBack({ navigation }) {
                             <Image style={styles.table} source={require("../../assets/table2.jpg")} />
                             <View>
                                 <View style={{ paddingVertical: 10 }}>
-                                    <Text style={{ color: "#c7c8cc", fontSize: 12 }}>Note:repair-specific </Text>
-                                    <Text style={{ color: "#c7c8cc", fontSize: 12 }}> photos / video</Text>
+                                    <Text style={{ color: "#c7c8cc", fontSize: 12, fontFamily: "OpenSans-Regular" }}>Note:repair-specific </Text>
+                                    <Text style={{ color: "#c7c8cc", fontSize: 12, fontFamily: "OpenSans-Regular" }}> photos / video</Text>
                                 </View>
                                 <View style={styles.line}></View>
                                 <View style={styles.doneButton}>
-                                    <Text style={{ textAlign: "center", color: "#5d5b66" }}>Done</Text>
+                                    <Text style={{ textAlign: "center", color: "#5d5b66", fontFamily: "OpenSans-Regular" }}>Done</Text>
                                 </View>
                             </View>
                         </View>
                         <View>
                             <View style={{ borderStyle: 'dashed', borderRadius: 10, width: 100, height: 100, borderWidth: 1, borderColor: "#b0aeb9" }}>
                                 <Image style={styles.delete} source={require("../../assets/group740.png")} />
-                                <Text style={{ textAlign: "center", color: "#435971", fontSize: 12, paddingVertical: 4 }}>Add Photo</Text>
+                                <Text style={{ textAlign: "center", color: "#435971", fontSize: 12, paddingVertical: 4, fontFamily: "OpenSans-Regular" }}>Add Photo</Text>
                             </View>
                         </View>
                     </View>
@@ -136,13 +136,13 @@ export default function ExteriorBack({ navigation }) {
                             <Image style={styles.cross} source={require("../../assets/group743.png")} />
                             <Image style={styles.table} source={require("../../assets/table.jpg")} />
                             <View style={{ paddingVertical: 10 }}>
-                                <Text style={{ color: "#7b7e83", fontSize: 12 }}>Note:repair-specific </Text>
-                                <Text style={{ color: "#7b7e83", fontSize: 12 }}> photos / video</Text>
+                                <Text style={{ color: "#7b7e83", fontSize: 12, fontFamily: "OpenSans-Regular" }}>Note:repair-specific </Text>
+                                <Text style={{ color: "#7b7e83", fontSize: 12, fontFamily: "OpenSans-Regular" }}> photos / video</Text>
                                 <TouchableOpacity
                                     activeOpacity={0.9}
                                     style={styles.editButtom}>
                                     <Image style={styles.editIcon} source={require("../../assets/edit.png")} />
-                                    <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3 }}>Edit</Text>
+                                    <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3, fontFamily: "OpenSans-Regular" }}>Edit</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -151,40 +151,40 @@ export default function ExteriorBack({ navigation }) {
                             <Image style={styles.table} source={require("../../assets/table2.jpg")} />
                             <View>
                                 <View style={{ paddingVertical: 10 }}>
-                                    <Text style={{ color: "#c7c8cc", fontSize: 12 }}>Note:repair-specific </Text>
-                                    <Text style={{ color: "#c7c8cc", fontSize: 12 }}> photos / video</Text>
+                                    <Text style={{ color: "#c7c8cc", fontSize: 12, fontFamily: "OpenSans-Regular" }}>Note:repair-specific </Text>
+                                    <Text style={{ color: "#c7c8cc", fontSize: 12, fontFamily: "OpenSans-Regular" }}> photos / video</Text>
                                 </View>
                                 <View style={styles.line}></View>
                                 <View style={styles.doneButton}>
-                                    <Text style={{ textAlign: "center", color: "#5d5b66" }}>Done</Text>
+                                    <Text style={{ textAlign: "center", color: "#5d5b66", fontFamily: "OpenSans-Regular" }}>Done</Text>
                                 </View>
                             </View>
                         </View>
                         <View>
                             <View style={{ borderStyle: 'dashed', borderRadius: 10, width: 100, height: 100, borderWidth: 1, borderColor: "#cdccd2" }}>
                                 <Image style={styles.delete} source={require("../../assets/group740.png")} />
-                                <Text style={{ textAlign: "center", color: "#435971", fontSize: 12, paddingVertical: 4 }}>Add Photo</Text>
+                                <Text style={{ textAlign: "center", color: "#435971", fontSize: 12, paddingVertical: 4, fontFamily: "OpenSans-Regular" }}>Add Photo</Text>
                             </View>
                         </View>
                     </View>
                 </View>
                 <View style={styles.uploadImage}>
                     <Image style={styles.upload} source={require("../../assets/upload.png")} />
-                    <Text style={{ color: "#868990", paddingVertical: 10 }}>Deck button / structure <Text style={{ color: "#d91614" }}>*</Text></Text>
+                    <Text style={{ color: "#868990", paddingVertical: 10, fontFamily: "OpenSans-Regular" }}>Deck button / structure <Text style={{ color: "#d91614" }}>*</Text></Text>
                     <View style={styles.imageButton}>
-                        <Text style={{ color: "#ffffff", fontSize: 13 }}>Upload Image +</Text>
+                        <Text style={{ color: "#ffffff", fontSize: 13, fontFamily: "OpenSans-Regular" }}>Upload Image +</Text>
                     </View>
                 </View>
                 <View style={{ backgroundColor: "#f9f9f9", marginTop: 20 }}>
                     <View style={{ backgroundColor: "#f4f4f4", paddingVertical: 20, paddingHorizontal: 20, }}>
-                        <Text>Deck Material</Text>
-                        <Text style={{ color: "#6a707c" }}>Select one</Text>
+                        <Text style={{ fontFamily: "OpenSans-Regular" }}>Deck Material</Text>
+                        <Text style={{ color: "#6a707c", fontFamily: "OpenSans-Regular" }}>Select one</Text>
                     </View>
                     <TouchableOpacity
                         activeOpacity={0.9}
                         onPress={() => handleRadio()}
                         style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingVertical: 20 }}>
-                        <Text style={{ color: "#6a707c" }}>Wood</Text>
+                        <Text style={{ color: "#6a707c", fontFamily: "OpenSans-Regular" }}>Wood</Text>
                         <TouchableOpacity
 
                             style={quality1 ? styles.circle : styles.circle2}>
@@ -195,7 +195,7 @@ export default function ExteriorBack({ navigation }) {
                         activeOpacity={0.9}
                         onPress={() => handleRadio1()}
                         style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingVertical: 20 }}>
-                        <Text style={{ color: "#6a707c" }}>Vinyl</Text>
+                        <Text style={{ color: "#6a707c", fontFamily: "OpenSans-Regular" }}>Vinyl</Text>
                         <TouchableOpacity
                             style={quality2 ? styles.circle : styles.circle2}>
                             <View style={quality2 ? styles.radioButton : styles.radioButton2}></View>
@@ -205,7 +205,7 @@ export default function ExteriorBack({ navigation }) {
                         activeOpacity={0.9}
                         onPress={() => handleRadio2()}
                         style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingVertical: 20 }}>
-                        <Text style={{ color: "#6a707c" }}>Composite</Text>
+                        <Text style={{ color: "#6a707c", fontFamily: "OpenSans-Regular" }}>Composite</Text>
                         <TouchableOpacity
                             style={quality3 ? styles.circle : styles.circle2}>
                             <View style={quality3 ? styles.radioButton : styles.radioButton2}></View>
@@ -215,7 +215,7 @@ export default function ExteriorBack({ navigation }) {
                         activeOpacity={0.9}
                         onPress={() => handleRadio3()}
                         style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingVertical: 20 }}>
-                        <Text style={{ color: "#6a707c" }}>Other enter text</Text>
+                        <Text style={{ color: "#6a707c", fontFamily: "OpenSans-Regular" }}>Other enter text</Text>
                         <TouchableOpacity
                             style={quality4 ? styles.circle : styles.circle2}>
                             <View style={quality4 ? styles.radioButton : styles.radioButton2}></View>
@@ -224,14 +224,14 @@ export default function ExteriorBack({ navigation }) {
                 </View>
                 <View style={{ backgroundColor: "#f9f9f9", marginVertical: 20 }}>
                     <View style={{ backgroundColor: "#f4f4f4", paddingVertical: 20, paddingHorizontal: 20, }}>
-                        <Text>Deck Material</Text>
-                        <Text style={{ color: "#6a707c" }}>Select All the apply</Text>
+                        <Text style={{ fontFamily: "OpenSans-Regular" }}>Deck Material</Text>
+                        <Text style={{ color: "#6a707c", fontFamily: "OpenSans-Regular" }}>Select All the apply</Text>
                     </View>
                     <TouchableOpacity
                         onPress={() => setTick(!tick)}
                         activeOpacity={0.9}
                         style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingVertical: 20 }}>
-                        <Text style={{ color: "#6a707c" }}>Railing</Text>
+                        <Text style={{ color: "#6a707c", fontFamily: "OpenSans-Regular" }}>Railing</Text>
                         <TouchableOpacity
                             style={tick ? styles.circleTick : styles.circleTick1}>
                             <Image
@@ -245,7 +245,7 @@ export default function ExteriorBack({ navigation }) {
                         onPress={() => setTick1(!tick1)}
                         activeOpacity={0.9}
                         style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingVertical: 20 }}>
-                        <Text style={{ color: "#6a707c" }}>No Railing</Text>
+                        <Text style={{ color: "#6a707c", fontFamily: "OpenSans-Regular" }}>No Railing</Text>
                         <TouchableOpacity
                             style={tick1 ? styles.circleTick : styles.circleTick1}>
                             <Image
@@ -259,7 +259,7 @@ export default function ExteriorBack({ navigation }) {
                         onPress={() => setTick2(!tick2)}
                         activeOpacity={0.9}
                         style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingVertical: 20 }}>
-                        <Text style={{ color: "#6a707c" }}>Composite</Text>
+                        <Text style={{ color: "#6a707c", fontFamily: "OpenSans-Regular" }}>Composite</Text>
                         <TouchableOpacity
                             style={tick2 ? styles.circleTick : styles.circleTick1}>
                             <Image
@@ -273,7 +273,7 @@ export default function ExteriorBack({ navigation }) {
                         onPress={() => setTick3(!tick3)}
                         activeOpacity={0.9}
                         style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingVertical: 20 }}>
-                        <Text style={{ color: "#6a707c" }}>Covered</Text>
+                        <Text style={{ color: "#6a707c", fontFamily: "OpenSans-Regular" }}>Covered</Text>
                         <TouchableOpacity
                             style={tick3 ? styles.circleTick : styles.circleTick1}>
                             <Image
@@ -287,7 +287,7 @@ export default function ExteriorBack({ navigation }) {
                         onPress={() => setTick4(!tick4)}
                         activeOpacity={0.9}
                         style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingVertical: 20 }}>
-                        <Text style={{ color: "#6a707c" }}>Uncovered</Text>
+                        <Text style={{ color: "#6a707c", fontFamily: "OpenSans-Regular" }}>Uncovered</Text>
                         <TouchableOpacity
                             style={tick4 ? styles.circleTick : styles.circleTick1}>
                             <Image
@@ -301,7 +301,7 @@ export default function ExteriorBack({ navigation }) {
                         onPress={() => setTick5(!tick5)}
                         activeOpacity={0.9}
                         style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingVertical: 20 }}>
-                        <Text style={{ color: "#6a707c" }}>Star</Text>
+                        <Text style={{ color: "#6a707c", fontFamily: "OpenSans-Regular" }}>Star</Text>
                         <TouchableOpacity
                             style={tick5 ? styles.circleTick : styles.circleTick1}>
                             <Image
@@ -315,7 +315,7 @@ export default function ExteriorBack({ navigation }) {
                         onPress={() => setTick6(!tick6)}
                         activeOpacity={0.9}
                         style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingVertical: 20 }}>
-                        <Text style={{ color: "#6a707c" }}>No Star</Text>
+                        <Text style={{ color: "#6a707c", fontFamily: "OpenSans-Regular" }}>No Star</Text>
                         <TouchableOpacity
                             style={tick6 ? styles.circleTick : styles.circleTick1}>
                             <Image
@@ -328,10 +328,10 @@ export default function ExteriorBack({ navigation }) {
                     </TouchableOpacity>
                 </View>
                 <View style={{ backgroundColor: "#f4f4f4", paddingVertical: 20, paddingHorizontal: 20 }}>
-                    <Text style={{ color: "#000000" }}>Note: <Text style={{ color: "#8e9196" }}>Certain answer choices will promp you to add an estimate. As you add an estimate please pay close attention and added as needed</Text></Text>
+                    <Text style={{ color: "#000000", fontFamily: "OpenSans-Regular" }}>Note: <Text style={{ color: "#8e9196", fontFamily: "OpenSans-Regular" }}>Certain answer choices will promp you to add an estimate. As you add an estimate please pay close attention and added as needed</Text></Text>
                 </View>
                 <View style={{ backgroundColor: "#f9f9f9", paddingVertical: 10, paddingHorizontal: 20 }}>
-                    <Text style={{ color: "#52575d", fontWeight: "bold", paddingBottom: 20 }}>Dose the deck have rot which makes it unsafe</Text>
+                    <Text style={{ color: "#52575d", fontWeight: "bold", paddingBottom: 20, fontFamily: "OpenSans-Regular" }}>Dose the deck have rot which makes it unsafe</Text>
                     <TouchableOpacity
                         activeOpacity={0.9}
                         onPress={() => handleAdd1()}
@@ -340,7 +340,7 @@ export default function ExteriorBack({ navigation }) {
                             style={add1 ? styles.circle : styles.circle2}>
                             <View style={add1 ? styles.radioButton : styles.radioButton2}></View>
                         </TouchableOpacity >
-                        <Text style={{ color: "#7c8089", paddingLeft: 15 }}>Yes (<Text style={{ color: "#f38550", fontWeight: "600", }}>Add Dry Rot Repair</Text>)</Text>
+                        <Text style={{ color: "#7c8089", paddingLeft: 15, fontFamily: "OpenSans-Regular" }}>Yes (<Text style={{ color: "#f38550", fontWeight: "600", fontFamily: "OpenSans-Regular" }}>Add Dry Rot Repair</Text>)</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         activeOpacity={0.9}
@@ -353,7 +353,7 @@ export default function ExteriorBack({ navigation }) {
                         <Text style={{ color: "#7c8089", paddingLeft: 15 }}>No</Text>
                     </TouchableOpacity>
                     <View style={{ backgroundColor: "#f4f4f4", width: "100%", height: 2, marginVertical: 20 }}></View>
-                    <Text style={{ color: "#52575d", fontWeight: "bold", paddingBottom: 20 }}>Dose the deck appear weathered</Text>
+                    <Text style={{ color: "#52575d", fontWeight: "bold", paddingBottom: 20, fontFamily: "OpenSans-Regular" }}>Dose the deck appear weathered</Text>
                     <TouchableOpacity
                         activeOpacity={0.9}
                         onPress={() => handleAdd3()}
@@ -362,7 +362,7 @@ export default function ExteriorBack({ navigation }) {
                             style={add3 ? styles.circle : styles.circle2}>
                             <View style={add3 ? styles.radioButton : styles.radioButton2}></View>
                         </TouchableOpacity >
-                        <Text style={{ color: "#7c8089", paddingLeft: 15 }}>Yes (<Text style={{ color: "#f38550", fontWeight: "600", }}>Add Power Watch Stain/Seal</Text>)</Text>
+                        <Text style={{ color: "#7c8089", paddingLeft: 15, fontFamily: "OpenSans-Regular" }}>Yes (<Text style={{ color: "#f38550", fontWeight: "600", fontFamily: "OpenSans-Regular", }}>Add Power Watch Stain/Seal</Text>)</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         activeOpacity={0.9}
@@ -372,10 +372,10 @@ export default function ExteriorBack({ navigation }) {
                             style={add4 ? styles.circle : styles.circle2}>
                             <View style={add4 ? styles.radioButton : styles.radioButton2}></View>
                         </TouchableOpacity >
-                        <Text style={{ color: "#7c8089", paddingLeft: 15 }}>No</Text>
+                        <Text style={{ color: "#7c8089", paddingLeft: 15, fontFamily: "OpenSans-Regular" }}>No</Text>
                     </TouchableOpacity>
                     <View style={{ backgroundColor: "#f4f4f4", width: "100%", height: 2, marginVertical: 20 }}></View>
-                    <Text style={{ color: "#52575d", fontWeight: "bold", paddingBottom: 20 }}>Dose each deck support have a footer under it</Text>
+                    <Text style={{ color: "#52575d", fontWeight: "bold", paddingBottom: 20, fontFamily: "OpenSans-Regular" }}>Dose each deck support have a footer under it</Text>
                     <TouchableOpacity
                         activeOpacity={0.9}
                         onPress={() => handleAdd5()}
@@ -384,7 +384,7 @@ export default function ExteriorBack({ navigation }) {
                             style={add5 ? styles.circle : styles.circle2}>
                             <View style={add5 ? styles.radioButton : styles.radioButton2}></View>
                         </TouchableOpacity >
-                        <Text style={{ color: "#7c8089", paddingLeft: 15 }}>Yes</Text>
+                        <Text style={{ color: "#7c8089", paddingLeft: 15, fontFamily: "OpenSans-Regular",   }}>Yes</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         activeOpacity={0.9}
@@ -394,12 +394,19 @@ export default function ExteriorBack({ navigation }) {
                             style={add6 ? styles.circle : styles.circle2}>
                             <View style={add6 ? styles.radioButton : styles.radioButton2}></View>
                         </TouchableOpacity >
-                        <Text style={{ color: "#7c8089", paddingLeft: 15 }}>No Add Deck (<Text style={{ color: "#f38550", fontWeight: "600", borderBottomWidth: 2, borderColor: "red" }}>Footer Support</Text>)</Text>
+                        <Text
+                            style={{
+                                color: "#7c8089", paddingLeft: 15, fontFamily: "OpenSans-Regular",
+                            }}>No Add Deck (
+                            <Text style={{ color: "#f38550", fontWeight: "600", borderBottomWidth: 2, borderColor: "red", fontFamily: "OpenSans-Regular" }}>Footer Support</Text>)</Text>
                     </TouchableOpacity>
                 </View>
                 <View>
                     <View style={{ backgroundColor: "#f4f4f4", paddingVertical: 20, paddingHorizontal: 20 }}>
-                        <Text onPress={() => navigation.navigate("EstimateItem")} style={{ color: "#2b2f38" }}>Estimate Item</Text>
+                        <Text
+                            onPress={() => navigation.navigate("EstimateItem")}
+                            style={{ color: "#2b2f38", fontFamily: "OpenSans-Regular" }}
+                        >Estimate Item</Text>
                     </View>
                     <View style={{ backgroundColor: "#f9f9f9", paddingVertical: 20 }}>
                         <View style={{ flexDirection: "row", paddingHorizontal: 20 }}>
@@ -408,34 +415,33 @@ export default function ExteriorBack({ navigation }) {
                                 {/* <View style={{backgroundColor:"#f38550",width:130,height:2,marginBottom:20}}></View> */}
                             </View>
                             <View style={{ flexDirection: "row", flex: 1, justifyContent: "space-between" }}>
-                                <Text style={{ color: "#868991", fontWeight: "600" }}>$0.00</Text>
+                                <Text style={{ color: "#868991", fontWeight: "600", fontFamily: "OpenSans-Regular" }}>$0.00</Text>
                                 <TouchableOpacity
                                     activeOpacity={0.9}
                                     style={styles.editButtom2}>
-                                    <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3 }}>Edit</Text>
+                                    <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3, fontFamily: "OpenSans-Regular" }}>Edit</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
                         <View style={{ flexDirection: "row", paddingHorizontal: 20, paddingVertical: 10 }}>
                             <View style={{ flex: 1.5 }}>
-                                <Text style={{ flex: 1, color: "#868991", fontSize: 12, }}>Power Wash, Stain/Seal,1 Photo</Text>
-                                {/* <View style={{backgroundColor:"#f38550",width:170,height:2,marginBottom:20}}></View> */}
+                                <Text style={{ flex: 1, color: "#868991", fontSize: 12, fontFamily: "OpenSans-Regular" }}>Power Wash, Stain/Seal,1 Photo</Text>
                             </View>
                             <View style={{ flexDirection: "row", flex: 1, justifyContent: "space-between" }}>
-                                <Text style={{ color: "#868991", fontWeight: "600" }}>$0.00</Text>
+                                <Text style={{ color: "#868991", fontWeight: "600", fontFamily: "OpenSans-Regular" }}>$0.00</Text>
                                 <TouchableOpacity
                                     activeOpacity={0.9}
                                     style={styles.editButtom2}>
-                                    <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3 }}>Edit</Text>
+                                    <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3, fontFamily: "OpenSans-Regular" }}>Edit</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
-                        <Text style={{ color: "#425871", paddingHorizontal: 20, fontWeight: "bold" }}>Add New Item  +</Text>
+                        <Text style={{ color: "#425871", paddingHorizontal: 20, fontWeight: "bold", fontFamily: "OpenSans-Regular" }}>Add New Item  +</Text>
                     </View>
                 </View>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingVertical: 24, backgroundColor: "#fcfcfc" }}>
-                    <Text style={{ color: "#3e434a", fontWeight: "bold" }}>Total Items</Text>
-                    <Text style={{ color: "#3e434a", fontWeight: "bold" }}>$744.95</Text>
+                    <Text style={{ color: "#3e434a", fontWeight: "bold", fontFamily: "OpenSans-Regular" }}>Total Items</Text>
+                    <Text style={{ color: "#3e434a", fontWeight: "bold", fontFamily: "OpenSans-Regular" }}>$744.95</Text>
                 </View>
                 <ButtonView
                     activeOpacity={0.9}
@@ -443,7 +449,7 @@ export default function ExteriorBack({ navigation }) {
                     // style={styles.continueButton}
                     style={quality ? styles.continueButton : styles.continueButton2}
                 >
-                    <Text style={{ color: "#e3e3e3" }}>Continue</Text>
+                    <Text style={{ color: "#e3e3e3", fontFamily: "OpenSans-Regular" }}>Continue</Text>
                 </ButtonView>
             </View>
         </ScrollView>

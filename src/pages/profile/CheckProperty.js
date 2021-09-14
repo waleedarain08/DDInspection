@@ -164,9 +164,9 @@ const styles = StyleSheet.create({
   },
   confirmation: {
     color: '#3c434d',
-    fontWeight: 'bold',
-    fontSize: 24,
-    fontFamily: 'OpenSans-Regular',
+    // fontWeight: 'bold',
+    fontSize: 22,
+    fontFamily: 'OpenSans-Bold',
 
   },
   logo: {

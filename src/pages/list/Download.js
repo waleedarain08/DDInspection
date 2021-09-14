@@ -20,7 +20,7 @@ export default function Download({ navigation }) {
       
     return(
         <View style={styles.mainContainer}>
-            <Animatable.View animation="bounceIn" style={{flex:1,justifyContent:"flex-end", alignItems:"center"}}>           
+            <Animatable.View animation="fadeInDown" style={{flex:1,justifyContent:"flex-end", alignItems:"center"}}>           
                 <Image source={require('../../assets/group919.png')}
                 style={{height:"42%", width:"42%", resizeMode:"contain" }}/>
             </Animatable.View>
