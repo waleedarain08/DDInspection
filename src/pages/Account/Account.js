@@ -52,17 +52,17 @@ function HomeScreen({navigation, user, userLogout}) {
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View style={styles.ratingView}>
             <Text style={{fontSize: 20, fontFamily:"OpenSans-Bold",}}>15</Text>
-            <Text style={{color: '#dddddd', fontFamily:"OpenSans-SemiBold",}}>Job Posts</Text>
+            <Text style={{color: '#dddddd', fontFamily:"OpenSans-SemiBold",fontSize:12}}>Job Posts</Text>
           </View>
           <View style={styles.ratingLineView}></View>
           <View style={styles.ratingView}>
             <Text style={{fontSize: 20, fontFamily:"OpenSans-Bold",}}>45</Text>
-            <Text style={{color: '#dddddd',fontFamily:"OpenSans-SemiBold",}}>Completed</Text>
+            <Text style={{color: '#dddddd',fontFamily:"OpenSans-SemiBold",fontSize:12}}>Completed</Text>
           </View>
           <View style={styles.ratingLineView}></View>
           <View style={styles.ratingView}>
             <Text style={{fontSize: 20, fontFamily:"OpenSans-Bold",}}>56</Text>
-            <Text style={{color: '#dddddd', fontFamily:"OpenSans-SemiBold",}}>Remaining</Text>
+            <Text style={{color: '#dddddd', fontFamily:"OpenSans-SemiBold",fontSize:12}}>Remaining</Text>
           </View>
         </View>
       </View>

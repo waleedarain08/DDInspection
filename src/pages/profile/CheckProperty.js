@@ -6,11 +6,6 @@ import {
   StyleSheet,
   FlatList,
   Image,
-  Modal,
-  Button,
-  Pressable,
-  Dimensions,
-  ScrollView,
 } from 'react-native';
 import {ButtonView} from '../../components';
 
@@ -23,6 +18,10 @@ export default function CheckProperty({navigation}) {
     } else {
       alert('Please select atleast one option.');
     }
+  };
+  const checkList = () => {
+    goAhead(true)
+     navigation.navigate('InspectionOverview');
   };
   const [dataSource, setDataSource] = useState([
     {
@@ -133,16 +132,16 @@ export default function CheckProperty({navigation}) {
       <View style={{flex: 2, marginTop: 20}}>
         <ButtonView
           activeOpacity={0.9}
-          onPress={() => checkButtonStatus()}
+          onPress={() => checkList()}
           style={button ? styles.inspectButton : styles.inspectButtonUnSelected}
-          onPress={() => navigation.navigate('InspectionOverview')}>
+          >
           <Text style={{color: '#e3e3e3',fontFamily: 'OpenSans-Regular',}}>Continue</Text>
         </ButtonView>
         <ButtonView
-          onPress={() => goAhead()}
           activeOpacity={0.9}
           style={styles.stopButton}
-          onPress={() => navigation.goBack()}>
+          onPress={() => navigation.goBack()}
+          >
           <Text style={{color: '#17324f', fontWeight: 'bold',fontFamily: 'OpenSans-Regular',}}>Cancel </Text>
         </ButtonView>
       </View>

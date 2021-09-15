@@ -154,14 +154,14 @@ export default function BeginTrip({ navigation }) {
 
                     <View style={{ flexDirection: "row", paddingHorizontal: 12 }}>
                         <Progress.Bar progress={0.7}
-                            animated={true} width={290}
+                            animated={true} width={270}
                             height={20}
                             color={"#f36523"}
                             borderRadius={12}
                             borderWidth={0}
                             unfilledColor={"#c4c4c4"}
                         />
-                        <Text style={{paddingTop: 2, color: "#3c434b", fontSize: 12,paddingLeft:6 }}>75%</Text>
+                        <Text style={{ color: "#3c434b", fontSize: 12,paddingLeft:6 }}>75%</Text>
                     </View>
                     <TouchableOpacity
                         onPress={() => doubleCall()}
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
     },
     tripbtn: {
         backgroundColor: "#193250",
-        paddingHorizontal: "40%",
+        paddingHorizontal: "38%",
         paddingVertical: 18,
         alignItems: "center",
         borderRadius: 30,

@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     },
     housePng: {
         width:Dimensions.get("window").width,
-        height:250,
+        height:280,
         resizeMode:"cover"
     },
     arrow: {

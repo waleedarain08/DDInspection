@@ -83,21 +83,6 @@ function LoginStack() {
 }
 
 
-// const AccountStackNav = createStackNavigator();
-// function AccountStack() {
-//   return (
-//     <AccountStackNav.Navigator
-//       screenOptions={{
-//         headerShown: false,
-//       }}
-//       initialRouteName="Login">
-//       <AccountStackNav.Screen name="Login"  component={Login} />
-//     </AccountStackNav.Navigator>
-//   );
-// }
-
-
-
 const HomeBeginTripStackNav = createStackNavigator();
 function HomeBeginTripStack() {
   return (
