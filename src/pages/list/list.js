@@ -135,7 +135,6 @@ export function List({navigation}) {
         <View
           style={styles.buttonContainer}>
           <ButtonView
-            onPress={() => navigation.navigate('EndInspection')}
             activeOpacity={0.8}
             isRound={1}
             style={styles.resumeButton}>

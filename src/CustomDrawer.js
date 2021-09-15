@@ -24,17 +24,12 @@ import { connect } from 'react-redux';
 function CustomDrawer({navigation,userLogout}) {
 
     logout = () => {
-       // navigation.toggleDrawer();
-        //navigation.navigate("Login");
         navigation.closeDrawer();
         userLogout(null);
     }
 
-    // const BASE_PATH =
-    //    'https://raw.githubusercontent.com/AboutReact/sampleresource/master/';
-    // const proileImage = 'react_logo.png';
     return (
-        <SafeAreaView style={{ flex: 1,backgroundColor:"#ffffff" }}>
+        <View style={{ flex: 1,}}>
             <View style={{flex:1.3,backgroundColor:"#193250",justifyContent:"center",alignItems:"center"}}>
             <Image style={styles.logo} source={require('./assets/sylvanRoad.png')} />
             </View>
@@ -49,9 +44,9 @@ function CustomDrawer({navigation,userLogout}) {
                 <Text style={styles.home}>Setting</Text>
                 </ButtonView>
                 <View style={styles.borderline}></View>
-                <ButtonView activeOpacity={0.8} style={{flex:0.8,flexDirection:"row",alignItems:"center"}}>
+                <ButtonView activeOpacity={0.8} onPress={()=> navigation.navigate("Account")} style={{flex:0.8,flexDirection:"row",alignItems:"center"}}>
                 <Image style={styles.homeicon} source={require('./assets/profile.png')} style={{height:18, width:18, resizeMode:"contain"}}/>
-                <Text onPress={()=> navigation.navigate("Account")} style={styles.home}>Account</Text>
+                <Text style={styles.home}>Account</Text>
                 </ButtonView>
                 <View style={styles.borderline}></View>
                 <ButtonView activeOpacity={0.8} style={{flex:0.8,flexDirection:"row",alignItems:"center"}}>
@@ -65,7 +60,7 @@ function CustomDrawer({navigation,userLogout}) {
                 </ButtonView>
                 <View style={{flex:3.5}}></View>
             </View>
-        </SafeAreaView>
+        </View>
     );
 };
 

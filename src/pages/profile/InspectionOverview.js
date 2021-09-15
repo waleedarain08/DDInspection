@@ -1,4 +1,4 @@
-import React, {Component, useEffect, useState} from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -12,16 +12,18 @@ import {
 import Modal from 'react-native-modal';
 import Textarea from 'react-native-textarea';
 import * as Animatable from 'react-native-animatable';
-import {Input, Button, Card, SearchBar} from 'react-native-elements';
-import {ButtonView} from '../../components';
+import { Input, Button, Card, SearchBar } from 'react-native-elements';
+import { ButtonView } from '../../components';
 
-export default function InspectionOverview({navigation}) {
+export default function InspectionOverview({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
+  const [complete, setComplete] = useState(false);
+
 
   return (
     <View style={styles.container}>
       <ScrollView
-        contentContainerStyle={{height: 800}}
+        contentContainerStyle={{ height: 800 }}
         showsVerticalScrollIndicator={false}>
         <View
           style={{
@@ -35,20 +37,20 @@ export default function InspectionOverview({navigation}) {
             <Text
               style={{
                 color: '#4f5359',
-                fontWeight: '700',
+                // fontWeight: '700',
                 textAlign: 'center',
+                fontFamily: "OpenSans-Bold",
                 fontSize: 10,
               }}>
               Inspected
             </Text>
-            <Text style={{color: '#c1c3c7', textAlign: 'center', fontSize: 10}}>
+            <Text style={{ color: '#c1c3c7', textAlign: 'center', fontSize: 10,fontFamily: "OpenSans-Regular" }}>
               Items
             </Text>
             <Text
               style={{
                 fontSize: 24,
-                fontWeight: 'bold',
-                color: '#fb739b',
+                fontFamily: "OpenSans-Bold", color: '#fb739b',
                 textAlign: 'center',
               }}>
               04
@@ -58,21 +60,21 @@ export default function InspectionOverview({navigation}) {
             <Text
               style={{
                 color: '#4f5359',
-                fontWeight: '700',
                 textAlign: 'center',
+                fontFamily: "OpenSans-Bold",
                 fontSize: 10,
               }}>
               Remaining
             </Text>
-            <Text style={{color: '#c1c3c7', textAlign: 'center', fontSize: 10}}>
+            <Text style={{ color: '#c1c3c7', textAlign: 'center', fontSize: 10,fontFamily: "OpenSans-Regular" }}>
               Items
             </Text>
             <Text
               style={{
                 fontSize: 24,
-                fontWeight: 'bold',
                 color: '#5bd2f3',
                 textAlign: 'center',
+                fontFamily: "OpenSans-Bold"
               }}>
               88
             </Text>
@@ -84,14 +86,14 @@ export default function InspectionOverview({navigation}) {
               <Text
                 style={{
                   color: '#4f5359',
-                  fontWeight: '700',
                   textAlign: 'center',
                   fontSize: 10,
+                  fontFamily: "OpenSans-Bold"
                 }}>
                 Home
               </Text>
               <Text
-                style={{color: '#c1c3c7', textAlign: 'center', fontSize: 10}}>
+                style={{ color: '#c1c3c7', textAlign: 'center', fontSize: 10,fontFamily: "OpenSans-Regular" }}>
                 Overview
               </Text>
             </TouchableOpacity>
@@ -107,14 +109,14 @@ export default function InspectionOverview({navigation}) {
               <Text
                 style={{
                   color: '#4f5359',
-                  fontWeight: '700',
                   textAlign: 'center',
                   fontSize: 10,
+                  fontFamily: "OpenSans-Bold"
                 }}>
                 Estimate
               </Text>
               <Text
-                style={{color: '#c1c3c7', textAlign: 'center', fontSize: 10}}>
+                style={{ color: '#c1c3c7', textAlign: 'center', fontSize: 10,fontFamily: "OpenSans-Regular" }}>
                 Scope
               </Text>
             </TouchableOpacity>
@@ -124,63 +126,65 @@ export default function InspectionOverview({navigation}) {
             />
           </View>
         </View>
-        <View style={{backgroundColor:"#f8f8f8",paddingVertical:10}}>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            paddingVertical: 10,
-            paddingHorizontal:20
-          }}>
-          <Text style={styles.location}>Location</Text>
-          <Text style={styles.item}>Items</Text>
-        </View>
-        <View>
-          <View style={styles.front}>
-            <Text style={{flex: 2.5, color: '#84868a'}}>Exterior Front</Text>
-            <Text style={{flex: 1, color: '#86888c'}}>2</Text>
-            <Image
-              style={styles.download}
-              source={require('../../assets/downloadded.png')}
-            />
+        <View style={{ backgroundColor: "#f8f8f8", paddingVertical: 10 }}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              paddingVertical: 10,
+              paddingHorizontal: 20
+            }}>
+            <Text style={styles.location}>Location</Text>
+            <Text style={styles.item}>Items</Text>
           </View>
-          <View style={styles.interior}>
-            <Text
-              onPress={() => navigation.navigate('InteriorMain')}
-              style={{color: '#818387'}}>
-              Interior Main
-            </Text>
+          <View>
+            <View style={styles.front}>
+              <Text style={{ flex: 2.5, color: '#84868a',  fontFamily:  "OpenSans-Regular" }}>Exterior Front</Text>
+              <Text style={{ flex: 1, color: '#86888c',  fontFamily:  "OpenSans-Regular"}}>2</Text>
+              <Image
+                style={styles.download}
+                source={require('../../assets/downloadded.png')}
+              />
+            </View>
+            <View style={styles.interior}>
+              <Text
+                onPress={() => navigation.navigate('InteriorMain')}
+                style={{ color: '#818387',  fontFamily:  "OpenSans-Regular" }}>
+                Interior Main
+              </Text>
+            </View>
+            <View style={styles.interior}>
+              <Text style={{ color: '#818387',  fontFamily:  "OpenSans-Regular" }}>Interior 2nd Ievel</Text>
+            </View>
+            <View style={styles.interior}>
+              <Text style={{ color: '#818387',  fontFamily:  "OpenSans-Regular"}}>Interior Basement</Text>
+            </View>
+            <View style={styles.interior}>
+              <Text style={{ color: '#818387',  fontFamily:  "OpenSans-Regular"}}>Interior Crawl Space</Text>
+            </View>
+            <View style={styles.interior}>
+              <Text style={{ color: '#818387',  fontFamily:  "OpenSans-Regular" }}>Interior Attic</Text>
+            </View>
           </View>
-          <View style={styles.interior}>
-            <Text style={{color: '#818387'}}>Interior 2nd Ievel</Text>
-          </View>
-          <View style={styles.interior}>
-            <Text style={{color: '#818387'}}>Interior Basement</Text>
-          </View>
-          <View style={styles.interior}>
-            <Text style={{color: '#818387'}}>Interior Crawl Space</Text>
-          </View>
-          <View style={styles.interior}>
-            <Text style={{color: '#818387'}}>Interior Attic</Text>
-          </View>
-        </View>
-        <View></View>
+          <View></View>
         </View>
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-around',
-            paddingHorizontal:10,
+            paddingHorizontal: 10,
             paddingTop: '20%',
           }}>
           <ButtonView
             activeOpacity={0.9}
             onPress={() => setModalVisible(true)}
             style={styles.pauseButton}>
-            <Text style={{color: '#193250', fontWeight: 'bold'}}>Cancel</Text>
+            <Text style={{ color: '#193250',   fontFamily: "OpenSans-Bold"}}>Cancel</Text>
           </ButtonView>
-          <ButtonView activeOpacity={0.9} style={styles.completeButton}>
-            <Text style={{color: '#ffffff', fontWeight: 'bold'}}>Complete</Text>
+          <ButtonView 
+           onPress={() => navigation.navigate('EndInspection')}
+           activeOpacity={0.9} style={complete ? styles.completeButton2 : styles.completeButton}>
+            <Text style={{ color: '#ffffff',  fontFamily: "OpenSans-Bold" }}>Complete</Text>
           </ButtonView>
         </View>
 
@@ -199,7 +203,7 @@ export default function InspectionOverview({navigation}) {
               source={require('../../assets/group921.png')}
             />
             <Text
-              style={{fontFamily:"OpenSans-Bold", fontSize: 20, marginVertical: '2%'}}>
+              style={{ fontFamily: "OpenSans-Bold", fontSize: 20, marginVertical: '2%' }}>
               Pause Inspection?
             </Text>
             <View>
@@ -232,7 +236,7 @@ export default function InspectionOverview({navigation}) {
 
                   elevation: 8,
                 }}>
-                <Text style={{color: '#fff', fontFamily:"OpenSans-SemiBold"}}>Done</Text>
+                <Text style={{ color: '#fff', fontFamily: "OpenSans-SemiBold" }}>Done</Text>
               </ButtonView>
             </View>
           </View>
@@ -269,13 +273,13 @@ const styles = StyleSheet.create({
     marginLeft: 2,
   },
   card: {
-    flex:1,
-    justifyContent:"center",
-    alignItems:'center',
-    marginHorizontal:4,
+    flex: 1,
+    justifyContent: "center",
+    alignItems: 'center',
+    marginHorizontal: 4,
     paddingVertical: 4,
     paddingHorizontal: 4,
-    backgroundColor:"#ffffff",
+    backgroundColor: "#ffffff",
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -287,13 +291,13 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   card2: {
-    flex:1,
+    flex: 1,
     paddingVertical: 4,
     paddingHorizontal: 4,
-    marginHorizontal:4,
-    justifyContent:"center",
-    alignItems:'center',
-    backgroundColor:"#ffffff",
+    marginHorizontal: 4,
+    justifyContent: "center",
+    alignItems: 'center',
+    backgroundColor: "#ffffff",
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -305,13 +309,13 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   card3: {
-    flex:1,
+    flex: 1,
     paddingVertical: 4,
     paddingHorizontal: 4,
-    marginHorizontal:4,
-    justifyContent:"center",
-    alignItems:'center',
-    backgroundColor:"#ffffff",
+    marginHorizontal: 4,
+    justifyContent: "center",
+    alignItems: 'center',
+    backgroundColor: "#ffffff",
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -323,13 +327,13 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   card4: {
-    flex:1,
+    flex: 1,
     paddingVertical: 4,
     paddingHorizontal: 4,
-    justifyContent:"center",
-    marginHorizontal:4,
-    alignItems:'center',
-    backgroundColor:"#ffffff",
+    justifyContent: "center",
+    marginHorizontal: 4,
+    alignItems: 'center',
+    backgroundColor: "#ffffff",
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -339,15 +343,15 @@ const styles = StyleSheet.create({
     shadowRadius: 4.65,
 
     elevation: 10,
-   },
-    completeButton:{
-        flexDirection:"row",
-        alignItems: "center",
-        justifyContent:"center",
-        backgroundColor: "#909090",
-        width:156,
-        height:48,
-        borderRadius: 35,
+  },
+  completeButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#909090",
+    width: 156,
+    height: 48,
+    borderRadius: 35,
 
     shadowOpacity: 0.27,
     shadowRadius: 4.65,
@@ -356,12 +360,31 @@ const styles = StyleSheet.create({
   },
   location: {
     color: '#32373d',
-    fontWeight: 'bold',
     flex: 1.5,
+    fontFamily: "OpenSans-Bold"
+  },
+  completeButton2: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#192550",
+    width: 156,
+    height: 48,
+    borderRadius: 35,
+
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 2,
+  },
+  location: {
+    color: '#32373d',
+    flex: 1.5,
+    fontFamily: "OpenSans-Bold"
   },
   item: {
     color: '#32373d',
-    fontWeight: 'bold',
+    fontFamily: "OpenSans-Bold",    
     flex: 1,
   },
   front: {
@@ -371,8 +394,8 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 14,
     marginVertical: 6,
-    marginHorizontal:18,
-    borderRadius:10
+    marginHorizontal: 18,
+    borderRadius: 10
   },
   download: {
     width: 22,
@@ -386,8 +409,8 @@ const styles = StyleSheet.create({
     marginVertical: 6,
     borderWidth: 2,
     borderColor: '#c8cccf',
-    borderRadius:10,
-    marginHorizontal:18,
+    borderRadius: 10,
+    marginHorizontal: 18,
 
   },
   pauseButton: {
@@ -445,6 +468,6 @@ const styles = StyleSheet.create({
     height: 90,
     fontSize: 14,
     color: '#333',
-    fontFamily:"OpenSans-Regular"
+    fontFamily: "OpenSans-Regular"
   },
 });

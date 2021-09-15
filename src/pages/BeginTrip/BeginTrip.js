@@ -112,7 +112,7 @@ export default function BeginTrip({ navigation }) {
                         elevation: 5,
                     }}
                 >
-
+                    {/* <View style={{backgroundColor:"#ffffff70",right:"3%",paddingVertical:20}}> */}
                     <ButtonView
                         style={styles.tripbtn}
                         activeOpacity={0.9}
@@ -120,7 +120,7 @@ export default function BeginTrip({ navigation }) {
                         >
                         <Text style={{ color: "#ffffff", fontWeight: "bold" }}>Begin Trip</Text>
                     </ButtonView>
-
+                    {/* </View> */}
                 </View>
             </View>
             <Modal
@@ -141,7 +141,7 @@ export default function BeginTrip({ navigation }) {
                     </View>
                     <Text style={styles.textdv}> Your Inspection data is </Text>
                     <Text style={styles.textdv}>downloading..</Text>
-                    <View style={{ flexDirection: "row", marginTop: "10%", justifyContent: "space-between", paddingHorizontal: 10 }}>
+                    <View style={{ flexDirection: "row", marginTop: "15%", justifyContent: "space-between", paddingHorizontal: 10 }}>
                         <Text style={styles.dowm}>Downloading...</Text>
                         <View style={{ flexDirection: "row" }}>
                             <View style={{ marginRight: 18 }}>
@@ -237,18 +237,19 @@ const styles = StyleSheet.create({
     },
     tripbtn: {
         backgroundColor: "#193250",
-        paddingHorizontal: "37%",
+        paddingHorizontal: "40%",
         paddingVertical: 18,
         alignItems: "center",
         borderRadius: 30,
-        shadowColor: "#000",
+        right:"3%",
+        shadowColor: "#fff",
         shadowOffset: {
-            width: 0,
-            height: 2
+            width: 2,
+            height: 5
         },
         shadowOpacity: 0.25,
         shadowRadius: 4,
-        elevation: 5
+        elevation: 10
     },
     centeredView: {
         // flex: 1,

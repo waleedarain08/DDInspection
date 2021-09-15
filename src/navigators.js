@@ -8,8 +8,6 @@ import profile, {Profile} from './pages/profile/profile';
 import list, {List} from './pages/list/list';
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import HomeScreen from './pages/home/HomeScreen';
-import DetailScreen from './pages/home/DetailScreen';
 import CheckProperty from './pages/profile/CheckProperty';
 import InspectionOverview from './pages/profile/InspectionOverview';
 import HomeOverview from './pages/profile/HomeOverview';
@@ -22,21 +20,22 @@ import DoNotBuy2 from './pages/profile/DoNotBuy2';
 import DetailPage from './pages/list/DetailPage';
 import Download from './pages/list/Download';
 import EndInspection from './pages/list/EndInspection';
-import TabADetails from './pages/home/tabADetails';
 import CustomDrawer from './CustomDrawer';
 import {connect} from 'react-redux';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createStackNavigator} from '@react-navigation/stack';
 
 const drawerButton = navigation => {
   return (
-    <Icon
-      name="menu"
-      size={24}
-      style={{marginLeft: 10, color: '#fff'}}
-      onPress={() => navigation.toggleDrawer()}
-    />
+    <TouchableOpacity
+    onPress={() => navigation.toggleDrawer()}
+    style={{marginLeft: 10, color: '#fff'}}
+    >
+    <Image 
+    source={require('./assets/menuIcon.png')}
+    style={{width: 40, height: 34, resizeMode: 'contain'}}
+  />
+  </TouchableOpacity>
   );
 };
 const drawerIcon = navigation => {
@@ -77,50 +76,27 @@ function LoginStack() {
         headerShown: false,
       }}
       initialRouteName="Login">
-      <LoginStackNav.Screen name="Login" component={Login} />
+      <LoginStackNav.Screen name="Login"  component={Login} />
       <LoginStackNav.Screen name="Signup" component={Signup} />
     </LoginStackNav.Navigator>
   );
 }
 
-const HomeTabAStackNav = createStackNavigator();
-function HomeTabAStack() {
-  return (
-    <HomeTabAStackNav.Navigator
-      initialRouteName="HomeScreen"
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: '#0e101f',
-          shadowOpacity: 0.85,
-          shadowRadius: 0,
-          shadowOffset: {
-            width: 0,
-            height: 0,
-          },
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-      }}>
-      <HomeTabAStackNav.Screen
-        name="Home"
-        component={HomeScreen}
-        options={({navigation}) => ({
-          headerLeft: () => drawerButton(navigation),
-        })}
-      />
-      <HomeAccountStackNav.Screen
-        name="Account"
-        component={Account}
-        options={({navigation}) => ({
-          headerLeft: () => drawerButton(navigation),
-        })}
-      />
-      <HomeTabAStackNav.Screen name="DetailScreen" component={DetailScreen} />
-    </HomeTabAStackNav.Navigator>
-  );
-}
+
+// const AccountStackNav = createStackNavigator();
+// function AccountStack() {
+//   return (
+//     <AccountStackNav.Navigator
+//       screenOptions={{
+//         headerShown: false,
+//       }}
+//       initialRouteName="Login">
+//       <AccountStackNav.Screen name="Login"  component={Login} />
+//     </AccountStackNav.Navigator>
+//   );
+// }
+
+
 
 const HomeBeginTripStackNav = createStackNavigator();
 function HomeBeginTripStack() {
@@ -143,6 +119,7 @@ function HomeBeginTripStack() {
           fontSize: 14,
         },
       }}>
+             
       <HomeBeginTripStackNav.Screen
         name="PRE-INPECTION CHECKLIST"
         component={BeginTrip}
@@ -262,40 +239,19 @@ function HomeBeginTripStack() {
           headerShown: false,
         })}
       />
+       <HomeBeginTripStackNav.Screen 
+       name="Account" 
+        component={Account} 
+        options={({navigation}) => ({
+          headerTitle:"MY PROFILE",
+          headerLeft: () => drawerIcon(navigation),
+        })}
+        />
+
     </HomeBeginTripStackNav.Navigator>
   );
 }
-// const HomeAccountStackNav = createStackNavigator();
-// function HomeAccountStack() {
-//   return (
-//     <HomeAccountStackNav.Navigator
-//       initialRouteName="Account"
-//       screenOptions={{
-//         headerStyle: {
-//           backgroundColor: '#ffffff',
-//           shadowOpacity: 0.85,
-//           shadowRadius: 0,
-//           shadowOffset: {
-//             width: 0,
-//             height: 0,
-//           },
-//         },
-//         headerTintColor: '#5a6778',
-//         headerTitleStyle: {
-//           fontWeight: 'bold',
-//           fontSize: 16,
-//         },
-//       }}>
-//       <HomeAccountStackNav.Screen
-//         name="Account"
-//         component={Account}
-//         options={({navigation}) => ({
-//           headerLeft: () => drawerButton(navigation),
-//         })}
-//       />
-//     </HomeAccountStackNav.Navigator>
-//   );
-// }
+
 
 
 function RootContainer({user}) {
@@ -313,8 +269,9 @@ function RootContainer({user}) {
           backgroundColor: '#193250',
           opacity: 0.9,
         }}
+        screenOptions={{gestureEnabled:user.loggedin}}
         drawerType="front">
-        <Drawer.Screen name="main">
+        <Drawer.Screen name="main" >
           {() => (user?.loggedin ? HomeBeginTripStack() : <LoginStack />)}
         </Drawer.Screen>
       </Drawer.Navigator>

@@ -31,11 +31,11 @@ export  function Profile({navigation}) {
       showsVerticalScrollIndicator={false}>
       <View style={{flex: 1, flexGrow: 1}}>
         <View style={{paddingVertical: 25, paddingHorizontal: 20,flex:1}}>
-          <Text style={{fontSize: 12, color: '#989da3', paddingBottom: 2}}>
+          <Text style={{fontSize: 12, color: '#989da3', paddingBottom: 2,fontFamily: "OpenSans-Regular"}}>
             "Thank you for handling this inspection."
           </Text>
           <Text
-            style={{fontSize: 22, fontWeight: '#3f434e', fontWeight: 'bold',paddingVertical:10}}>
+            style={{fontSize: 20, fontWeight: 'bold',paddingVertical:10,fontFamily: "OpenSans-Bold"}}>
            "Please confirm the following:"
           </Text>
         </View>
@@ -80,7 +80,7 @@ export  function Profile({navigation}) {
           </View>
         </View>
         <View style={{paddingVertical: 10, paddingHorizontal: 20,backgroundColor:"#f4f4f4"}}>
-          <Text style={{color: '#666b71',fontSize:12,fontWeight:"600"}}>
+          <Text style={{color: '#666b71',fontSize:12,fontWeight:"600",fontFamily: "OpenSans-Regular"}}>
             This property is accessible using the provided instructions. if it
             is not accessible please contact (in the order):
           </Text>
@@ -127,7 +127,7 @@ export  function Profile({navigation}) {
               activeOpacity={0.9}
               onPress={() => navigation.navigate('CheckProperty')}
               style={styles.continueButton}>
-              <Text style={{color: '#fff'}}>Continue</Text>
+              <Text style={{color: '#fff',fontFamily: "OpenSans-Regular"}}>Continue</Text>
             </ButtonView>
           </View>
           <View>
@@ -135,7 +135,7 @@ export  function Profile({navigation}) {
               activeOpacity={0.9}
               onPress={() => setModalVisible(true)}
               style={styles.pouseButton}>
-              <Text>Cancel</Text>
+              <Text style={{fontFamily: "OpenSans-Regular"}}>Cancel</Text>
             </ButtonView>
           </View>
         </View>
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   textProperty: {
-    color: '#7b7f88',
+    color: '#7b7f88',fontFamily: "OpenSans-Regular"
   },
   locationDetail: {
     color: '#676a71',
@@ -213,7 +213,8 @@ const styles = StyleSheet.create({
   adjacent: {
     color: '#919eaf',
     fontSize:12,
-    fontWeight:"600"
+    fontWeight:"600",
+    fontFamily: "OpenSans-Regular"
   },
   pouseButton: {
     flexDirection: 'row',
