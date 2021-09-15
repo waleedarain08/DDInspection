@@ -1,8 +1,6 @@
 import React, { Component, useState } from 'react';
-import { TouchableOpacity } from 'react-native';
-import { View, Text, StyleSheet, ImageBackground, FlatList, Image, Pressable, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, FlatList, Image, Pressable, ScrollView,Dimensions,TouchableOpacity,Linking } from 'react-native';
 import { ButtonView } from '../../components';
-
 
 export default function CheckProperty({ navigation }) {
     const [reason, setReason] = useState([{ title: "abc", image: require('../../assets/house4.jpg') },
@@ -10,7 +8,7 @@ export default function CheckProperty({ navigation }) {
     { title: "efg", image: require('../../assets/house4.jpg') }])
     return (
         <View style={styles.container}>
-            <View style={{ flex: 1.6, }}>
+            <View style={{flex:1}}>
                 <View
                      style={{ flexDirection: "row", justifyContent: "space-between", }}
                     >
@@ -30,14 +28,14 @@ export default function CheckProperty({ navigation }) {
                     showsHorizontalScrollIndicator={false}
                     renderItem={({ item }) => {
                         return (
-                            <View style={{ width: 400, }}>
-                                <Image style={styles.housePng} source={item.image} >
-                                </Image>
-                            </View>
+                           
+                                <Image style={styles.housePng}  source={item.image} >
+                                </Image >
                         )
                     }}>
                 </FlatList>
             </View>
+            <View style={{flex:1.5}}></View>
             <View style={styles.detail}>
                 <ScrollView contentContainerStyle={{ height: 600 }} showsVerticalScrollIndicator={false}>
                     <View style={{ flex: 1, flexGrow: 1 }}>
@@ -64,14 +62,14 @@ export default function CheckProperty({ navigation }) {
                                 <Text style={{ color: "#a7aeb8", fontSize: 13, fontFamily: "OpenSans-Regular" }}>Owner</Text>
                             </View>
                             <View style={{ flex: 0.2 }}>
-                                <View style={styles.vector}>
+                                <TouchableOpacity onPress={() => Linking.openURL('sms:+923362857730?body=hi')} style={styles.vector}>
                                     <Image style={styles.vectorLogo} source={require('../../assets/vector1.png')} />
-                                </View>
+                                </TouchableOpacity>
                             </View>
                             <View style={{ flex: 0 }}>
-                                <View style={styles.vector}>
+                                <TouchableOpacity onPress={() => Linking.openURL(`tel:${+923362857730}`)}  style={styles.vector}>
                                     <Image style={styles.vectorLogo} source={require('../../assets/call.png')} />
-                                </View>
+                                </TouchableOpacity>
                             </View>
                         </View>
                         <Text style={{ color: "#505357", paddingVertical: 20, fontFamily: "OpenSans-Bold" }}>Specification</Text>
@@ -125,11 +123,11 @@ export default function CheckProperty({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#268ca0",
     },
     housePng: {
-        width: "100%",
-        height: "110%",
+        width:Dimensions.get("window").width,
+        height:250,
+        resizeMode:"cover"
     },
     arrow: {
         position: "absolute", zIndex: 10,
@@ -149,11 +147,15 @@ const styles = StyleSheet.create({
     },
     detail: {
         flex: 3,
+        height:"65%",
         backgroundColor: "#ffffff",
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         paddingHorizontal: 16,
         paddingTop: 10,
+        position:"absolute",
+        zIndex:10,
+        bottom:0
 
     },
     line: {
@@ -170,7 +172,7 @@ const styles = StyleSheet.create({
     read: {
         color: "#9c9fa4",
         paddingVertical: 20,
-        fontSize: 12,
+        fontSize: 11,
         lineHeight: 20,
         fontFamily: "OpenSans-Regular"
     },

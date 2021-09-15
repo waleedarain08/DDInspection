@@ -17,6 +17,8 @@ import { ButtonView } from '../../components';
 
 export default function InspectionOverview({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
+  const [complete, setComplete] = useState(false);
+
 
   return (
     <View style={styles.container}>
@@ -179,7 +181,9 @@ export default function InspectionOverview({ navigation }) {
             style={styles.pauseButton}>
             <Text style={{ color: '#193250',   fontFamily: "OpenSans-Bold"}}>Cancel</Text>
           </ButtonView>
-          <ButtonView activeOpacity={0.9} style={styles.completeButton}>
+          <ButtonView 
+           onPress={() => navigation.navigate('EndInspection')}
+           activeOpacity={0.9} style={complete ? styles.completeButton2 : styles.completeButton}>
             <Text style={{ color: '#ffffff',  fontFamily: "OpenSans-Bold" }}>Complete</Text>
           </ButtonView>
         </View>
@@ -345,6 +349,25 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#909090",
+    width: 156,
+    height: 48,
+    borderRadius: 35,
+
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 2,
+  },
+  location: {
+    color: '#32373d',
+    flex: 1.5,
+    fontFamily: "OpenSans-Bold"
+  },
+  completeButton2: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#192550",
     width: 156,
     height: 48,
     borderRadius: 35,
