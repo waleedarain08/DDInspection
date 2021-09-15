@@ -42,7 +42,7 @@ export function List({navigation}) {
         <ButtonView
           onPress={() => handleJob()}
           activeOpacity={0.8}
-          isRound={0}
+          isRound={1}
           style={job ? styles.topBar : styles.topBar2}>
           <Text style={job ? styles.topBarText : styles.topBarText2}>
             All Jobs
@@ -51,7 +51,7 @@ export function List({navigation}) {
         <ButtonView
           onPress={() => handleCompleted()}
           activeOpacity={0.8}
-          isRound={0}
+          isRound={1}
           style={completed ? styles.topBar : styles.topBar2}>
           <Text style={completed ? styles.topBarText : styles.topBarText2}>
             Completed
@@ -60,7 +60,7 @@ export function List({navigation}) {
         <ButtonView
           onPress={() => handleRejected()}
           activeOpacity={0.8}
-          isRound={0}
+          isRound={1}
           style={rejected ? styles.topBar : styles.topBar2}>
           <Text style={rejected ? styles.topBarText : styles.topBarText2}>
             Rejected
