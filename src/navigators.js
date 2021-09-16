@@ -56,7 +56,6 @@ const drawerIcon = navigation => {
 const headerRightIcon = navigation => {
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate('Profile')}
       style={{marginRight: 12, color: '#fff'}}>
       <Image
         source={require('./assets/group.png')}

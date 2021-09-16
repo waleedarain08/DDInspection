@@ -146,7 +146,7 @@ const goAhead = () =>{
            </View>
       <View style={styles.buttonContainer}>
         <ButtonView
-          onPress={() => goAhead()}
+          onPress={() => navigation.navigate('List')}
           isRound={1}
           // onPress={() => navigation.navigate('EndInspection2')}
           activeOpacity={0.8}

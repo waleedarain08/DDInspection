@@ -107,26 +107,26 @@ export function List({navigation}) {
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop: '4%',
+                paddingTop: 5,
               }}>
               <Image
                 source={require('../../assets/location.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa',fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa',fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
                 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
               </Text>
             </View>
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop: '4%',
+                paddingTop: 5,
               }}>
               <Image
                 source={require('../../assets/infoSquare.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
                 The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
                 She will be there from 9-11AM on 1/26/21.
               </Text>
@@ -191,26 +191,26 @@ export function List({navigation}) {
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop: '4%',
+                paddingTop: 5,
               }}>
               <Image
                 source={require('../../assets/location.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
                 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
               </Text>
             </View>
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop: '4%',
+                paddingTop: 5,
               }}>
               <Image
                 source={require('../../assets/infoSquare.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
                 The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
                 She will be there from 9-11AM on 1/26/21.
               </Text>
@@ -269,26 +269,26 @@ export function List({navigation}) {
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop: '4%',
+                paddingTop: 5,
               }}>
               <Image
                 source={require('../../assets/location.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
                 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
               </Text>
             </View>
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop: '4%',
+                paddingTop: 5,
               }}>
               <Image
                 source={require('../../assets/infoSquare.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
                 The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
                 She will be there from 9-11AM on 1/26/21.
               </Text>
@@ -349,26 +349,26 @@ export function List({navigation}) {
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop: '4%',
+                paddingTop: 5,
               }}>
               <Image
                 source={require('../../assets/location.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
                 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
               </Text>
             </View>
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop: '4%',
+                paddingTop: 5,
               }}>
               <Image
                 source={require('../../assets/infoSquare.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
                 The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
                 She will be there from 9-11AM on 1/26/21.
               </Text>
@@ -427,26 +427,26 @@ export function List({navigation}) {
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop: '4%',
+                paddingTop: 5,
               }}>
               <Image
                 source={require('../../assets/location.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
                 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
               </Text>
             </View>
             <View
               style={{
                 flexDirection: 'row',
-                paddingTop: '4%',
+                paddingTop: 5,
               }}>
               <Image
                 source={require('../../assets/infoSquare.png')}
                 style={{height: 14, width: 14, resizeMode: 'contain'}}
               />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 10, paddingLeft: '5%'}}>
+              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
                 The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
                 She will be there from 9-11AM on 1/26/21.
               </Text>
@@ -515,7 +515,7 @@ const styles = StyleSheet.create({
     flex: 1.3,
    },
   imageView2: {
-    height:"90%",
+    height:"88%",
     width:"95%",
     borderRadius: 4,
     shadowColor: '#000',
