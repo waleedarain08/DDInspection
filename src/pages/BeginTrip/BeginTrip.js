@@ -62,7 +62,7 @@ export default function BeginTrip({ navigation }) {
                         keyExtractor={(item, index) => index}
                         vartical={true}
                         ListHeaderComponent={headerComponent}
-                        showsVerticalScrollIndicator={true}
+                        showsVerticalScrollIndicator={false}
                         renderItem={({ item }) => {
                             return (
                                 <View style={{ flexDirection: "row", paddingHorizontal: 16, marginTop: 35 }}>
@@ -112,7 +112,7 @@ export default function BeginTrip({ navigation }) {
                         elevation: 5,
                     }}
                 >
-                    {/* <View style={{backgroundColor:"#ffffff70",right:"3%",paddingVertical:20}}> */}
+                    <View style={{flex:0,justifyContent:"center",alignItems:"center"}}>
                     <ButtonView
                         style={styles.tripbtn}
                         activeOpacity={0.9}
@@ -120,7 +120,7 @@ export default function BeginTrip({ navigation }) {
                         >
                         <Text style={{ color: "#ffffff", fontWeight: "bold" }}>Begin Trip</Text>
                     </ButtonView>
-                    {/* </View> */}
+                    </View>
                 </View>
             </View>
             <Modal
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
     },
     tripbtn: {
         backgroundColor: "#193250",
-        paddingHorizontal: "38%",
+        paddingHorizontal: "40%",
         paddingVertical: 18,
         alignItems: "center",
         borderRadius: 30,
