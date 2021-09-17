@@ -55,6 +55,7 @@ function Login({ navigation, userInfo, userLogin }) {
           <View style={{ marginTop: 25 }}>
             <ButtonView
               onPress={() => userLogin(username, password)}
+              isRound={1}
               style={styles2.loginGoogleButton}>
               <Image
                 style={styles2.googlelogo}

@@ -97,7 +97,7 @@ const goAhead = () =>{
   const renderItem = data => {
     return (
 
-        <ButtonView  activeOpacity={0.8} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
+        <ButtonView  isRound={1} activeOpacity={0.8} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
           <View style={[styles.list, data.item.selectedClass]}>
             <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
           </View>
@@ -146,7 +146,8 @@ const goAhead = () =>{
            </View>
       <View style={styles.buttonContainer}>
         <ButtonView
-          onPress={() => goAhead()}
+          onPress={() => navigation.navigate('List')}
+          isRound={1}
           // onPress={() => navigation.navigate('EndInspection2')}
           activeOpacity={0.8}
           style={button?styles.inspectButtonEnable:styles.inspectButtonDisable}>

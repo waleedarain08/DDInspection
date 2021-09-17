@@ -62,7 +62,7 @@ export default function BeginTrip({ navigation }) {
                         keyExtractor={(item, index) => index}
                         vartical={true}
                         ListHeaderComponent={headerComponent}
-                        showsVerticalScrollIndicator={true}
+                        showsVerticalScrollIndicator={false}
                         renderItem={({ item }) => {
                             return (
                                 <View style={{ flexDirection: "row", paddingHorizontal: 16, marginTop: 35 }}>
@@ -112,7 +112,7 @@ export default function BeginTrip({ navigation }) {
                         elevation: 5,
                     }}
                 >
-                    {/* <View style={{backgroundColor:"#ffffff70",right:"3%",paddingVertical:20}}> */}
+                    <View style={{flex:0,justifyContent:"center",alignItems:"center"}}>
                     <ButtonView
                         style={styles.tripbtn}
                         activeOpacity={0.9}
@@ -120,7 +120,7 @@ export default function BeginTrip({ navigation }) {
                         >
                         <Text style={{ color: "#ffffff", fontWeight: "bold" }}>Begin Trip</Text>
                     </ButtonView>
-                    {/* </View> */}
+                    </View>
                 </View>
             </View>
             <Modal
@@ -154,14 +154,14 @@ export default function BeginTrip({ navigation }) {
 
                     <View style={{ flexDirection: "row", paddingHorizontal: 12 }}>
                         <Progress.Bar progress={0.7}
-                            animated={true} width={290}
+                            animated={true} width={270}
                             height={20}
                             color={"#f36523"}
                             borderRadius={12}
                             borderWidth={0}
                             unfilledColor={"#c4c4c4"}
                         />
-                        <Text style={{paddingTop: 2, color: "#3c434b", fontSize: 12,paddingLeft:6 }}>75%</Text>
+                        <Text style={{ color: "#3c434b", fontSize: 12,paddingLeft:6 }}>75%</Text>
                     </View>
                     <TouchableOpacity
                         onPress={() => doubleCall()}

@@ -342,6 +342,7 @@ export default function ExteriorBack({ navigation }) {
                         </TouchableOpacity >
                         <Text style={{ color: "#7c8089", paddingLeft: 15, fontFamily: "OpenSans-Regular" }}>Yes (<Text style={{ color: "#f38550", fontWeight: "600", fontFamily: "OpenSans-Regular" }}>Add Dry Rot Repair</Text>)</Text>
                     </TouchableOpacity>
+                    <View style={{width:"44%",height:1,backgroundColor:"#f38550",left:"22%",Button:10}}></View>
                     <TouchableOpacity
                         activeOpacity={0.9}
                         onPress={() => handleAdd2()}
@@ -364,6 +365,7 @@ export default function ExteriorBack({ navigation }) {
                         </TouchableOpacity >
                         <Text style={{ color: "#7c8089", paddingLeft: 15, fontFamily: "OpenSans-Regular" }}>Yes (<Text style={{ color: "#f38550", fontWeight: "600", fontFamily: "OpenSans-Regular", }}>Add Power Watch Stain/Seal</Text>)</Text>
                     </TouchableOpacity>
+                    <View style={{width:"66%",height:1,backgroundColor:"#f38550",left:"22%",Button:10}}></View>
                     <TouchableOpacity
                         activeOpacity={0.9}
                         onPress={() => handleAdd4()}
@@ -398,8 +400,9 @@ export default function ExteriorBack({ navigation }) {
                             style={{
                                 color: "#7c8089", paddingLeft: 15, fontFamily: "OpenSans-Regular",
                             }}>No Add Deck (
-                            <Text style={{ color: "#f38550", fontWeight: "600", borderBottomWidth: 2, borderColor: "red", fontFamily: "OpenSans-Regular" }}>Footer Support</Text>)</Text>
+                            <Text style={{ color: "#f38550", fontWeight: "600", fontFamily: "OpenSans-Regular" }}>Footer Support</Text>)</Text>
                     </TouchableOpacity>
+                    <View style={{width:"35%",height:1,backgroundColor:"#f38550",left:"45%",top:"-4%"}}></View>
                 </View>
                 <View>
                     <View style={{ backgroundColor: "#f4f4f4", paddingVertical: 20, paddingHorizontal: 20 }}>

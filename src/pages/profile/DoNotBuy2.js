@@ -121,7 +121,7 @@ export default function DoNotBuy({navigation}) {
   const renderItem = data => {
     return (
      
-        <ButtonView  activeOpacity={0.8} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
+        <ButtonView  isRound={1} activeOpacity={0.8} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
         <View style={[styles.list, data.item.selectedClass]}>
           <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
         </View>
@@ -161,7 +161,7 @@ export default function DoNotBuy({navigation}) {
   const renderItem2 = data => {
     return (
 
-      <ButtonView  activeOpacity={0.8} onPress={() => selectItem2(data)} style={styles.fieldsContainer}>
+      <ButtonView isRound={1} activeOpacity={0.8} onPress={() => selectItem2(data)} style={styles.fieldsContainer}>
             <View style={[styles.list, data.item.selectedClass]}>
               <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
             </View>
@@ -204,6 +204,7 @@ export default function DoNotBuy({navigation}) {
 
           <ButtonView
             activeOpacity={0.5}
+            isRound={0}
             onPress={() => setQuality(!quality)}
             style={styles.TabDropDown}>
             <Image
@@ -236,6 +237,7 @@ export default function DoNotBuy({navigation}) {
 
           <ButtonView
             activeOpacity={0.5}
+            isRound={0}
             onPress={() => setQuality2(!quality2)}
             style={styles.TabDropDown}>
             <Image
