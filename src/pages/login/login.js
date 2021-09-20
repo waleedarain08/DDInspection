@@ -87,7 +87,7 @@ const styles2 = StyleSheet.create({
   },
   backgroundImage: {
     width: "100%",
-    height: "200%",
+    height: "150%",
   },
   header: {
     flex: 8,
