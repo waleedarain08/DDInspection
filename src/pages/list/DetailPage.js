@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react';
-import { View, Text, StyleSheet, ImageBackground, FlatList, Image, Pressable, ScrollView, Dimensions, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, FlatList, Image, Pressable, ScrollView, Dimensions, TouchableOpacity, Linking, Platform } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { ButtonView } from '../../components';
 
 export default function CheckProperty({ navigation }) {
@@ -17,18 +18,6 @@ const [currentIndex, setCurrentIndex] = useState ()
     return (
         <View style={styles.container}>
             <View style={{ flex: 1 }}>
-                <View
-                    style={{ flexDirection: "row", justifyContent: "space-between", }}
-                >
-                    <TouchableOpacity
-                        activeOpacity={0.9}
-                        onPress={() => navigation.goBack()}
-                        style={{ backgroundColor: "#fff", position: "absolute", zIndex: 20, padding: 14, top: 15, left: 20, borderRadius: 5 }}
-                    >
-                        <Image style={styles.arrow} source={require('../../assets/drop-down.png')} />
-                    </TouchableOpacity>
-                    <Image style={styles.dots} source={require('../../assets/3-dots.png')} />
-                </View>
                 <FlatList
                     keyExtractor={(item, index) => index}
                     horizontal={true}
@@ -41,18 +30,32 @@ const [currentIndex, setCurrentIndex] = useState ()
                         return (
                             <View>
                                 <Image style={styles.housePng} source={item.image} >
-                                </Image >
+                                </Image  >
 
                             </View>
                         )
                     }}>
                 </FlatList>
+                <View
+                    style={{ position: 'absolute', top: Platform.OS == "ios" ? "12%" : 10, flexDirection: 'row', justifyContent: 'space-between', width: '95%', left: 5, paddingHorizontal: 10}}
+                >
+                    <TouchableOpacity
+                        activeOpacity={0.9}
+                        onPress={() => navigation.goBack()}
+                        style={{ backgroundColor: "#fff", padding: 14,   borderRadius: 5 }}
+                    >
+                        <Image style={styles.arrow} source={require('../../assets/drop-down.png')} />
+                    </TouchableOpacity>
+                    <View>
+                        <Image style={styles.dots} source={require('../../assets/3-dots.png')}  />
+                    </View>
+                </View>
                 <View style={{ flexDirection: "row",justifyContent:"center"}}>
                     {reason.map((val, index ) => {
                        if(index == currentIndex) {
-                           return  <View style={{ width: 12, height: 12, backgroundColor: "#fff", borderRadius: 10, zIndex: 20,margin:4,zIndex:20,bottom:"12%" }} />
+                           return  <View style={{ width: 12, height: 12, backgroundColor: "#fff", borderRadius: 10, zIndex: 20,margin:4,zIndex:20,bottom:"19%" }} />
                        }else {
-                        return <View style={{ width: 8, height: 8, backgroundColor: "#c4c4c4", borderRadius: 10, zIndex: 20,margin:4,zIndex:20,bottom:"12%" }} />
+                        return <View style={{ width: 8, height: 8, backgroundColor: "#c4c4c4", borderRadius: 10, zIndex: 20,margin:4,zIndex:20,bottom:"19%" }} />
                        }
                     })}
                 </View>
@@ -148,8 +151,9 @@ const styles = StyleSheet.create({
     },
     housePng: {
         width: Dimensions.get("window").width,
-        height: 280,
-        resizeMode: "cover"
+        height: Platform.OS == "ios" ? 310 :280,
+        resizeMode: "cover",
+        position:'relative'
     },
     arrow: {
         position: "absolute", zIndex: 10,
@@ -163,13 +167,14 @@ const styles = StyleSheet.create({
     dots: {
         width: 4,
         height: 15,
-        position: "absolute", zIndex: 10,
-        top: 20,
-        right: 20
+        // position: "absolute", zIndex: 30,
+        // top: 45,
+        // right: 20
     },
     detail: {
         flex: 3,
-        height: "65%",
+        height: "66%",
+        width:"100%",
         backgroundColor: "#ffffff",
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,

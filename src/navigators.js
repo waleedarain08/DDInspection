@@ -124,18 +124,6 @@ function DrawerNavigator() {
             headerTitle:"Account",
             headerRight: () => headerRightIcon(navigation),
           })} name="Account" component={Account} />
-        <Drawer.Screen options={({navigation}) => ({
-            headerShown: true,
-            headerLeft: () => drawerButton(navigation),
-            headerTitle:"DetailPage",
-            headerRight: () => headerRightIcon(navigation),
-          })} name="DetailPage" component={DetailPage} />
-        <Drawer.Screen options={({navigation}) => ({
-            headerShown: true,
-            headerLeft: () => drawerButton(navigation),
-            headerTitle:"EndInspection",
-            headerRight: () => headerRightIcon(navigation),
-          })} name="EndInspection" component={EndInspection} />
     </Drawer.Navigator>
   )
 }
