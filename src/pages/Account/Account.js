@@ -24,6 +24,10 @@ function HomeScreen({navigation, user, userLogout}) {
         <View>
           <View
             style={{
+              backgroundColor:"#fff",
+              height:98,
+              width:98,
+              borderRadius:49,
               shadowColor: '#000',
               shadowOffset: {
                 width: 0,
@@ -31,7 +35,9 @@ function HomeScreen({navigation, user, userLogout}) {
               },
               shadowOpacity: 0.27,
               shadowRadius: 4.65,
-              elevation: 10,
+              elevation: 20,
+
+              margin:5,
             }}>
             <Image
               source={require('../../assets/group.png')}
@@ -44,27 +50,25 @@ function HomeScreen({navigation, user, userLogout}) {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            <Text style={{fontSize: 20, fontFamily:"OpenSans-Bold"}}>LUKE SHAW</Text>
+            <Text style={{fontSize: 18, fontFamily:"OpenSans-Bold"}}>LUKE SHAW</Text>
           </View>
         </View>
       </View>
       <View style={styles.profileSection}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View style={styles.ratingView}>
-            <Text style={{fontSize: 20, fontFamily:"OpenSans-Bold",}}>15</Text>
+            <Text style={{fontSize: 18, fontFamily:"OpenSans-Bold",}}>15</Text>
             <Text style={{color: '#dddddd', fontFamily:"OpenSans-SemiBold",fontSize:12}}>Job Posts</Text>
           </View>
           <View style={styles.ratingLineView}></View>
           <View style={styles.ratingView}>
-            <Text style={{fontSize: 20, fontFamily:"OpenSans-Bold",}}>45</Text>
+            <Text style={{fontSize: 18, fontFamily:"OpenSans-Bold",}}>45</Text>
             <Text style={{color: '#dddddd',fontFamily:"OpenSans-SemiBold",fontSize:12}}>Completed</Text>
           </View>
           <View style={styles.ratingLineView}></View>
           <View style={styles.ratingView}>
-            <Text style={{fontSize: 20, fontFamily:"OpenSans-Bold",}}>56</Text>
+            <Text style={{fontSize: 18, fontFamily:"OpenSans-Bold",}}>56</Text>
             <Text style={{color: '#dddddd', fontFamily:"OpenSans-SemiBold",fontSize:12}}>Remaining</Text>
           </View>
-        </View>
       </View>
       <View style={styles.formContainer}>
         <View style={styles.inputFields}>
@@ -128,8 +132,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   profileSection: {
-    flex: 0.2,
-    alignItems: 'center',
+    flex: .2,
+    flexDirection: 'row',
+    justifyContent:"center"
   },
   ratingView: {
     paddingHorizontal: '6%',
@@ -145,14 +150,14 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     flex: 1,
-    paddingHorizontal: '5%',
+    paddingHorizontal: 25,
     paddingTop: 15,
   },
   inputFields: {
     flexDirection: 'row',
     borderBottomWidth: 1,
     borderBottomColor: '#dddddd',
-    padding: '3%',
-    marginVertical: '6%',
+    padding: 12,
+    marginVertical: 12,
   },
 });
