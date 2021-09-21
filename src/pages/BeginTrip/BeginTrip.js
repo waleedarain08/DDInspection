@@ -235,8 +235,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     tripbtn: {
-        width:321,
-        height:45,
+        width:352,
+        height:46,
         backgroundColor: "#193250",
         alignItems: "center",
         borderRadius: 30,
