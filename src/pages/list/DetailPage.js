@@ -53,7 +53,7 @@ const [currentIndex, setCurrentIndex] = useState ()
                 <View style={{ flexDirection: "row",justifyContent:"center"}}>
                     {reason.map((val, index ) => {
                        if(index == currentIndex) {
-                           return  <View style={{ width: 12, height: 12, backgroundColor: "#fff", borderRadius: 10, zIndex: 20,margin:4,zIndex:20,bottom:"19%" }} />
+                           return  <View style={{ width: 10, height: 10, backgroundColor: "#fff", borderRadius: 10, zIndex: 20,margin:4,zIndex:20,bottom:"19%" }} />
                        }else {
                         return <View style={{ width: 8, height: 8, backgroundColor: "#c4c4c4", borderRadius: 10, zIndex: 20,margin:4,zIndex:20,bottom:"19%" }} />
                        }

@@ -287,7 +287,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#193250',
     paddingVertical: '4%',
-    paddingHorizontal: '25%',
+    paddingHorizontal: '24%',
     margin: '3%',
     borderRadius: 25,
   },

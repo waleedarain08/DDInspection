@@ -37,7 +37,7 @@ export default function BeginTrip({ navigation }) {
                     </View>
                     <View style={{ flex: 6 }}>
                         <Text style={styles.textconfimr}>Please Confirm your devices battery is sufficiently charge and you have the following tools:</Text>
-                        <Text style={{ color: "#93969d", paddingTop: 8, fontSize: 12 }}>Rafter Square, Tape Measure, Sonic Measure</Text>
+                        <Text style={{ color: "#93969d", paddingTop: 8, fontSize: 12,fontFamily:"OpenSans-Regular", }}>Rafter Square, Tape Measure, Sonic Measure</Text>
                     </View>
                 </View>
                 <View style={styles.borderline}></View>
@@ -117,7 +117,7 @@ export default function BeginTrip({ navigation }) {
                         activeOpacity={0.9}
                         onPress={() => setModalVisible(true)} 
                         >
-                        <Text style={{ color: "#ffffff", fontWeight: "bold" }}>Begin Trip</Text>
+                        <Text style={{ color: "#ffffff", fontWeight: "bold",paddingTop:10,fontFamily:"OpenSans-bold", }}>Begin Trip</Text>
                     </ButtonView>
                 </View>
             </View>
@@ -200,7 +200,8 @@ const styles = StyleSheet.create({
     textconfimr: {
         color: "#292a2f",
         fontWeight: "600",
-        fontSize: 12
+        fontSize: 12,
+        fontFamily:"OpenSans-Regular",
     },
     borderline: {
         height: 1,
@@ -234,9 +235,9 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     tripbtn: {
+        width:321,
+        height:45,
         backgroundColor: "#193250",
-        paddingHorizontal: "40%",
-        paddingVertical: 18,
         alignItems: "center",
         borderRadius: 30,
         right:"3%",
@@ -278,13 +279,14 @@ const styles = StyleSheet.create({
         elevation: 5
     },
     dowm: {
-        color: "#b7b6bc", paddingLeft: 6, paddingBottom: 22
+        color: "#b7b6bc", paddingLeft: 6, paddingBottom: 22,fontFamily:"OpenSans-Regular",
 
     },
     textdv: {
         color: "#676570",
         textAlign: "center",
-        fontWeight: "500"
+        fontWeight: "500",
+        fontFamily:"OpenSans-Regular",
     },
     upload: {
         width: 70,

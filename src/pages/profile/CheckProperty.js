@@ -8,9 +8,12 @@ import {
   Image,
 } from 'react-native';
 import {ButtonView} from '../../components';
+import Modal from 'react-native-modal';
 
 export default function CheckProperty({navigation}) {
   const [selected, setSelected] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
+
   const [button, setButton] = useState(0);
   const goAhead = () => {
     if (button) {
@@ -140,12 +143,57 @@ export default function CheckProperty({navigation}) {
         <ButtonView
           activeOpacity={0.9}
           style={styles.stopButton}
-          onPress={() => navigation.goBack()}
+          onPress={() => setModalVisible(true)}
           >
           <Text style={{color: '#17324f', fontWeight: 'bold',fontFamily: 'OpenSans-Regular',}}>Cancel </Text>
         </ButtonView>
       </View>
       {/* </ScrollView> */}
+      <Modal
+          animationType="slideInUp"
+          transparent={true}
+          isVisible={modalVisible}
+          swipeDirection="down"
+          style={styles.view}
+          onSwipeComplete={() => setModalVisible(false)}
+          onBackButtonPress={() => setModalVisible(!modalVisible)}
+          onBackdropPress={() => setModalVisible(!modalVisible)}>
+          <View style={styles.modalView}>
+            <TouchableOpacity
+              activeOpacity={0.9}
+              hitSlop={{top: 20, bottom: 20, left: 40, right: 40}}>
+              {/* // onPress={() => setModalVisible(!modalVisible)}> */}
+              <View style={styles.modalLineView}></View>
+            </TouchableOpacity>
+
+            <View style={{marginVertical: 25}}>
+              <TouchableOpacity
+                activeOpacity={0.9}
+                onPress={() => navigation.navigate('')}
+                style={styles.modalButtons}>
+                <Text style={{color: '#fff', fontFamily:"OpenSans-Regular"}}>Cannot Access Property</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.9}
+                onPress={() => navigation.navigate('')}
+                style={styles.modalButtons}>
+                <Text style={{color: '#fff', fontFamily:"OpenSans-Regular"}}>Utilities Not Activated</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.9}
+                onPress={() => navigation.navigate('DoNotBuy2')}
+                style={styles.modalButtons}>
+                <Text style={{color: '#fff', fontFamily:"OpenSans-Regular"}}>Do Not Buy</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.9}
+                onPress={() => navigation.navigate('')}
+                style={styles.modalButtons}>
+                <Text style={{color: '#fff', fontFamily:"OpenSans-Regular"}}>Pause Inspection</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
     </View>
   );
 }
@@ -275,5 +323,44 @@ const styles = StyleSheet.create({
 
     elevation: 4,
     borderColor: '#193250',
+  },
+  view: {
+    justifyContent: 'flex-end',
+    margin: 0,
+  },
+  modalView: {
+    backgroundColor: '#fff',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+  },
+  modalLineView: {
+    width: 35,
+    height: 2,
+    backgroundColor: '#8b98a8',
+    marginTop: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 2,
+  },
+
+  modalButtons: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#193250',
+    paddingVertical: '4%',
+    paddingHorizontal: '24%',
+    margin: '3%',
+    borderRadius: 25,
   },
 });

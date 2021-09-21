@@ -220,7 +220,7 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
-          <ButtonView activeOpacity={0.8} style={styles.inspectButton}>
+          <ButtonView onPress={() => navigation.navigate('Profile')} activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               Inspect Now
             </Text>
@@ -298,7 +298,7 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
-          <ButtonView  activeOpacity={0.8} style={styles.inspectButton}>
+          <ButtonView onPress={() => navigation.navigate('Profile')} activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
               Inspect Now
             </Text>
@@ -378,7 +378,7 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
-          <ButtonView activeOpacity={0.8} style={styles.inspectButton}>
+          <ButtonView onPress={() => navigation.navigate('Profile')} activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               Inspect Now
             </Text>
@@ -456,7 +456,7 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
-          <ButtonView activeOpacity={0.8} style={styles.inspectButton}>
+          <ButtonView onPress={() => navigation.navigate('Profile')} activeOpacity={0.8} style={styles.inspectButton}>
             <Text style={{color: '#fff', fontFamily:"OpenSans-Bold", fontSize: 11}}>
               Inspect Now
             </Text>

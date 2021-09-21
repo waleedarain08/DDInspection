@@ -277,7 +277,7 @@ export default function InteriorMain({navigation}) {
             source={require('../../assets/remove1.png')}
           />
           <Text
-            style={{fontFamily:"OpenSans-Bold", fontSize: 20, marginVertical: '2%', fontFamily:"OpenSans-Regular",}}>
+            style={{fontFamily:"OpenSans-Bold", fontSize: 20, marginVertical: '2%', fontFamily:"OpenSans-Regular",fontWeight:"bold"}}>
             Delete File?
           </Text>
           <Text style={{color: '#74777e', fontFamily:"OpenSans-Regular"}}>
@@ -314,6 +314,7 @@ export default function InteriorMain({navigation}) {
             </ButtonView>
 
             <ButtonView
+             onPress={() => setModalVisible(!modalVisible)}
               activeOpacity={0.8}
               style={{
                 backgroundColor: '#193250',

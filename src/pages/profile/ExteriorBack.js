@@ -845,7 +845,7 @@ export default function ExteriorBack({navigation}) {
             }}>
             <Text
               onPress={() => navigation.navigate('EstimateItem')}
-              style={{color: '#2b2f38', fontFamily: 'OpenSans-Regular'}}>
+              style={{color: '#2b2f38', fontFamily: 'OpenSans-bold',fontWeight:"700"}}>
               Estimate Item
             </Text>
           </View>

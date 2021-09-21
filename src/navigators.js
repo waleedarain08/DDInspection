@@ -30,7 +30,9 @@ const drawerButton = navigation => {
   return (
     <TouchableOpacity
     activeOpacity={0.8}
-    onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+    onPress={() => {
+      navigation.dispatch(DrawerActions.toggleDrawer())
+    }}
     style={{marginLeft: 10, color: '#fff'}}
     >
     <Image 
@@ -58,11 +60,25 @@ const drawerIcon = navigation => {
 const headerRightIcon = navigation => {
   return (
     <TouchableOpacity
+    onPress={() => navigation.navigate('Account')}
     activeOpacity={0.8}
       style={{marginRight: 12, color: '#fff'}}>
       <Image
         source={require('./assets/group.png')}
         style={{width: 40, height: 40, resizeMode: 'contain'}}
+      />
+    </TouchableOpacity>
+  );
+};
+const headerRightIcon2 = navigation => {
+  return (
+    <TouchableOpacity
+    onPress={() => navigation.navigate('Account')}
+    activeOpacity={0.8}
+      style={{marginRight: 12, color: '#fff'}}>
+      <Image
+        source={require('./assets/editIcon.png')}
+        style={{width: 36, height: 36, resizeMode: 'contain'}}
       />
     </TouchableOpacity>
   );
@@ -114,7 +130,7 @@ function DrawerNavigator() {
           options={({navigation}) => ({
             headerShown: true,  
             headerLeft: () => drawerButton(navigation),
-              headerTitle:"List",
+              headerTitle:"INSPECTIONS",
               headerRight: () => headerRightIcon(navigation),
             })}
           name="List" component={List} />
@@ -122,7 +138,7 @@ function DrawerNavigator() {
             headerShown: true,
             headerLeft: () => drawerButton(navigation),
             headerTitle:"Account",
-            headerRight: () => headerRightIcon(navigation),
+            headerRight: () => headerRightIcon2(navigation),
           })} name="Account" component={Account} />
     </Drawer.Navigator>
   )
@@ -173,7 +189,7 @@ function HomeBeginTripStack() {
           headerShown: false
         })}
       />
-      <HomeBeginTripStackNav.Screen
+      {/* <HomeBeginTripStackNav.Screen
         name="List"
         component={List}
         options={({navigation}) => ({
@@ -181,7 +197,7 @@ function HomeBeginTripStack() {
           headerTitle:"INSPECTIONS",
           headerRight: () => headerRightIcon(navigation),
         })}
-      />
+      /> */}
         <HomeBeginTripStackNav.Screen
         name="DetailPage"
         component={DetailPage}

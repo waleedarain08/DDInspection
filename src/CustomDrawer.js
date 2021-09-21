@@ -128,12 +128,12 @@ const styles = StyleSheet.create({
         fontFamily:"OpenSans-Bold"
     },
     borderLineEnable:{
-        backgroundColor:"#666666",
-        height:.3,
+        backgroundColor:"#e5e5e5",
+        height:1,
     },
     borderLineDisable:{
-        backgroundColor:"#193250",
-        height:.3,
+        backgroundColor:"#e5e5e5",
+        height:1,
     },
     groupPng:{
         width:20
