@@ -11,7 +11,7 @@ import React, { useState, useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { userLogin } from '../../redux/actions';
-import {ButtonView} from '../../components';
+import { ButtonView } from '../../components';
 
 
 export default function EstimateItem({ navigation }) {
@@ -19,13 +19,13 @@ export default function EstimateItem({ navigation }) {
   return (
     <ScrollView style={styles.MainContainer}>
       <View style={{ paddingVertical: 10, paddingHorizontal: 20 }}>
-        <Text style={{color:"#464d55",fontWeight:"600",paddingTop:20}}>Estimate Item Photos/Video</Text>
+        <Text style={{ color: "#464d55", fontWeight: "600", paddingTop: 20, fontFamily: "OpenSans-Bold", }}>Estimate Item Photos/Video</Text>
         <View style={{ flexDirection: "row", justifyContent: "space-around", paddingVertical: 10 }}>
           <View>
             <Image style={styles.cross} source={require("../../assets/group743.png")} />
             <Image style={styles.table} source={require("../../assets/table.jpg")} />
             <View style={{ paddingVertical: 10 }}>
-              <Text style={{ color: "#7b7e83", fontSize: 12 }}>Note:repair-specific </Text>
+              <Text style={{ color: "#7b7e83", fontSize: 12, }}>Note:repair-specific </Text>
               <Text style={{ color: "#7b7e83", fontSize: 12 }}> photos / video</Text>
             </View>
           </View>
@@ -47,94 +47,97 @@ export default function EstimateItem({ navigation }) {
           </View>
         </View>
       </View>
-      <View style={{paddingHorizontal:20,paddingVertical:20,flexDirection:"row",justifyContent:"space-between"}}>
-        <Text style={{color:"#213b57",fontWeight:"600"}}>Repair Dry Rot</Text>
+      <View style={{ paddingHorizontal: 20, paddingVertical: 20, flexDirection: "row", justifyContent: "space-between" }}>
+        <Text style={{ color: "#213b57", fontWeight: "600", fontFamily: "OpenSans-Bold", }}>Repair Dry Rot</Text>
         <View style={styles.editButtom}>
-                        <Image  style={styles.editIcon} source={require("../../assets/edit.png")} />
-                            <Text style={{color:"#83838b",textAlign:"center",paddingTop:3}}>Edit</Text>
-                        </View>
+          <Image style={styles.editIcon} source={require("../../assets/edit.png")} />
+          <Text style={{ color: "#83838b", textAlign: "center", paddingTop: 2, fontSize: 12 }}>Edit</Text>
+        </View>
       </View>
-      <View style={{paddingHorizontal:20,paddingVertical:20,flexDirection:"row",justifyContent:"space-between"}}>
-        <Text style={{color:"#263f5a",fontWeight:"600"}}>6.0 Framing</Text>
+      <View style={{ paddingHorizontal: 20, paddingVertical: 20, flexDirection: "row", justifyContent: "space-between" }}>
+        <Text style={{ color: "#263f5a", fontWeight: "600", fontFamily: "OpenSans-Bold", }}>6.0 Framing</Text>
       </View>
       <Text style={{
-        paddingVertical:10,paddingHorizontal:20,
-        color:"#383d43",fontWeight:"600"
+        paddingVertical: 10, paddingHorizontal: 20,
+        color: "#383d43", fontWeight: "600", fontFamily: "OpenSans-Bold",
       }}
       >Labor Total</Text>
-      <View style={{flexDirection:"row",paddingHorizontal:20,paddingVertical:20}}>
-        <Text style={{flex:1,color:"#abacb0",fontSize:12}}>Replace 4 Planks On Deck. Use Matching Screws</Text>
-        <View style={{flexDirection:"row",flex:1,justifyContent:"space-around"}}>
-          <Text style={{color:"#4a4e59",flex:0.8,paddingLeft:35,fontWeight:"600",fontSize:12}}>#400.00</Text>
+      <View style={{ flexDirection: "row", paddingHorizontal: 20, paddingVertical: 20 }}>
+        <Text style={{ flex: 1, color: "#abacb0", fontSize: 12, fontFamily: "OpenSans-Regular", }}>Replace 4 Planks On Deck. Use Matching Screws</Text>
+        <View style={{ flexDirection: "row", flex: 1, justifyContent: "space-around" }}>
+          <Text style={{ color: "#4a4e59", flex: 0.8, paddingLeft: 35, fontWeight: "600", fontSize: 12 }}>#400.00</Text>
           <TouchableOpacity
-                     activeOpacity={0.9}
-                    style={styles.editButtom2}>
-                      <Image  style={styles.editIcon2} source={require("../../assets/edit.png")} />
-                        <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3,fontSize:12 }}>Edit</Text>
-                    </TouchableOpacity>
+            activeOpacity={0.9}
+            style={styles.editButtom2}>
+            <Image style={styles.editIcon2} source={require("../../assets/edit.png")} />
+            <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 2, fontSize: 12 }}>Edit</Text>
+          </TouchableOpacity>
         </View>
       </View>
       <View style={{
-        flexDirection:"row",
-      justifyContent:"space-between",
-      paddingHorizontal:20,
-      paddingVertical:20,
-      backgroundColor:"#fcfcfc"
+        flexDirection: "row",
+        justifyContent: "space-between",
+        paddingHorizontal: 20,
+        paddingVertical: 20,
+        backgroundColor: "#fcfcfc"
       }}>
-        <Text style={{color:"#293036",fontWeight:"bold"}}>Labor Total</Text>
-        <Text style={{color:"#2b2f38",fontWeight:"bold"}}>$44.95</Text>
+        <Text style={{ color: "#293036", fontWeight: "bold", fontFamily: "OpenSans-Bold", }}>Labor Total</Text>
+        <Text style={{ color: "#2b2f38", fontWeight: "bold", fontFamily: "OpenSans-Regular", }}>$44.95</Text>
       </View>
-      <Text style={{paddingHorizontal:20,paddingTop:20}}>Material</Text>
-      <View style={{flexDirection:"row",paddingHorizontal:20,paddingVertical:10}}>
-        <Text style={{flex:1,color:"#abacb0",fontSize:12}}>2 In. X 4 In.X 8 Ft #2 Ground Contact Pressure</Text>
-        <View style={{flexDirection:"row",flex:1,justifyContent:"space-around"}}>
-          <Text style={{color:"#4a4e59",paddingLeft:10,fontWeight:"600",fontSize:12}}>#39.96</Text>
+      <Text style={{ paddingHorizontal: 20, paddingTop: 20,fontFamily: "OpenSans-Bold", }}>Material</Text>
+      <View style={{ flexDirection: "row", paddingHorizontal: 20, paddingVertical: 10 }}>
+        <Text style={{ flex: 1, color: "#abacb0", fontSize: 12 }}>2 In. X 4 In.X 8 Ft #2 Ground Contact Pressure</Text>
+        <View style={{ flexDirection: "row", flex: 1, justifyContent: "space-around" }}>
+          <Text style={{ color: "#4a4e59", paddingLeft: 10, fontWeight: "600", fontSize: 12 }}>#39.96</Text>
           <TouchableOpacity
-                     activeOpacity={0.9}
-                    style={styles.editButtom2}>
-                       <Image  style={styles.editIcon2} source={require("../../assets/edit.png")} />
-                        <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3,fontSize:12 }}>Edit</Text>
-                    </TouchableOpacity>
-                    <Image  style={styles.deleteLogo} source={require("../../assets/delete2.png")} />
+            activeOpacity={0.9}
+            style={styles.editButtom2}>
+            <Image style={styles.editIcon2} source={require("../../assets/edit.png")} />
+            <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 2, fontSize: 12 }}>Edit</Text>
+          </TouchableOpacity>
+          <Image style={styles.deleteLogo} source={require("../../assets/delete2.png")} />
         </View>
       </View>
-      <View style={{flexDirection:"row",paddingHorizontal:20,paddingVertical:10}}>
-        <Text style={{flex:1,color:"#abacb0",fontSize:12}}>Additional Material-Screws, Brackets,Etc.SKU N/A</Text>
-        <View style={{flexDirection:"row",flex:1,justifyContent:"space-around"}}>
-        <Text style={{color:"#4a4e59",paddingLeft:10,fontWeight:"600",fontSize:12}}>#4.99</Text>
+      <View style={{ flexDirection: "row", paddingHorizontal: 20, paddingVertical: 10 }}>
+        <Text style={{ flex: 1, color: "#abacb0", fontSize: 12 }}>Additional Material-Screws, Brackets,Etc.SKU N/A</Text>
+        <View style={{ flexDirection: "row", flex: 1, justifyContent: "space-around" }}>
+          <Text style={{ color: "#4a4e59", paddingLeft: 10, fontWeight: "600", fontSize: 12 }}>#4.99</Text>
           <TouchableOpacity
-                     activeOpacity={0.9}
-                    style={styles.editButtom2}>
-                       <Image  style={styles.editIcon2} source={require("../../assets/edit.png")} />
-                        <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 3, }}>Edit</Text>
-                    </TouchableOpacity>
-                    <Image  style={styles.deleteLogo} source={require("../../assets/delete2.png")} />
+            activeOpacity={0.9}
+            style={styles.editButtom2}>
+            <Image style={styles.editIcon2} source={require("../../assets/edit.png")} />
+            <Text style={{ color: "#33ae46", textAlign: "center", paddingTop: 2, fontSize: 12 }}>Edit</Text>
+          </TouchableOpacity>
+          <Image style={styles.deleteLogo} source={require("../../assets/delete2.png")} />
         </View>
       </View>
-      <View style={{flexDirection:"row",justifyContent:"space-between",paddingHorizontal:20,paddingVertical:20}}>
-        <Text style={{color:"#293036",fontWeight:"bold"}}>Material Total</Text>
-        <Text style={{color:"#2b2f38",fontWeight:"bold"}}>$400.95</Text>
+      <TouchableOpacity activeOpacity={0.9} style={{paddingHorizontal:20}}>
+        <Text style={{color:"#344c66",fontFamily: "OpenSans-Bold",}}>Add New Item +</Text>
+      </TouchableOpacity>
+      <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingVertical: 20 }}>
+        <Text style={{ color: "#293036", fontWeight: "bold",fontFamily: "OpenSans-Bold", }}>Material Total</Text>
+        <Text style={{ color: "#2b2f38", fontWeight: "bold" }}>$400.95</Text>
       </View>
-      <View style={{backgroundColor:"#193250",flexDirection:"row",justifyContent:"space-between",paddingVertical:20,paddingHorizontal:20,marginVertical:20}}>
-        <Text style={{color:"#ffffff",fontWeight:"bold"}}>Labor and Material Total</Text>
-        <Text style={{color:"#ffffff",fontWeight:"bold"}}>$400.95</Text>
+      <View style={{ backgroundColor: "#193250", flexDirection: "row", justifyContent: "space-between", paddingVertical: 20, paddingHorizontal: 20, marginVertical: 20 }}>
+        <Text style={{ color: "#ffffff", fontWeight: "bold" }}>Labor and Material Total</Text>
+        <Text style={{ color: "#ffffff", fontWeight: "bold" }}>$400.95</Text>
       </View>
       <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-around',
-            paddingVertical:10
-          }}>
-          <ButtonView
-            activeOpacity={0.9}
-            style={styles.pauseButton}>
-            <Text style={{color: '#193250', fontWeight: 'bold'}}>Pause</Text>
-          </ButtonView>
-          <ButtonView activeOpacity={0.9} style={styles.completeButton}>
-            <Text style={{color: '#ffffff', fontWeight: 'bold'}}>Continue</Text>
-          </ButtonView>
-        </View>
-        <View style={{paddingBottom:30}}></View>
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-around',
+          paddingVertical: 10
+        }}>
+        <ButtonView
+          activeOpacity={0.9}
+          style={styles.pauseButton}>
+          <Text style={{ color: '#193250', fontWeight: 'bold' }}>Pause</Text>
+        </ButtonView>
+        <ButtonView activeOpacity={0.9} style={styles.completeButton}>
+          <Text style={{ color: '#ffffff', fontWeight: 'bold' }}>Continue</Text>
+        </ButtonView>
+      </View>
+      <View style={{ paddingBottom: 30 }}></View>
     </ScrollView>
   );
 }
@@ -143,8 +146,8 @@ export default function EstimateItem({ navigation }) {
 const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
-    flexGrow:1,
-    backgroundColor:"#ffffff"
+    flexGrow: 1,
+    backgroundColor: "#ffffff"
   },
   table: {
     width: 100,
@@ -168,68 +171,68 @@ const styles = StyleSheet.create({
   editButtom2: {
     backgroundColor: "#ebf7ed",
     width: 56,
-    height: 22,
-    flexDirection:"row",
-    justifyContent:"space-evenly",
-},
-deleteLogo:{
-  width:14,
-  height:16
-},
-editButtom:{
-  backgroundColor:"#efeff1",
-  width: 56,
-  height: 22,
-  flexDirection:"row",
-  justifyContent:"space-evenly"
-},
-editIcon:{
-  width:10,
-  height:10,
-  marginTop:5,
-  tintColor:"#83838b"
-},
-editIcon2:{
-  width:10,
-  height:10,
-  marginTop:5,
-},
-pauseButton: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'center',
-  backgroundColor: '#ffffff',
-  borderRadius: 35,
-  width: 160,
-  height: 44,
-  borderWidth: 1,
-  borderColor: '#193250',
-  shadowOffset: {
-    width: 0,
-    height: 3,
+    height: 24,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
   },
-  shadowOpacity: 0.27,
-  shadowRadius: 4.65,
-
-  elevation: 20,
-},
-completeButton: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'center',
-  backgroundColor: '#193250',
-  width: 160,
-  height: 44,
-  borderRadius: 35,
-  shadowColor: '#000',
-  shadowOffset: {
-    width: 0,
-    height: 3,
+  deleteLogo: {
+    width: 14,
+    height: 16
   },
-  shadowOpacity: 0.27,
-  shadowRadius: 4.65,
+  editButtom: {
+    backgroundColor: "#efeff1",
+    width: 56,
+    height: 24,
+    flexDirection: "row",
+    justifyContent: "space-evenly"
+  },
+  editIcon: {
+    width: 10,
+    height: 10,
+    marginTop: 6,
+    tintColor: "#83838b"
+  },
+  editIcon2: {
+    width: 10,
+    height: 10,
+    marginTop: 6,
+  },
+  pauseButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ffffff',
+    borderRadius: 35,
+    width: 160,
+    height: 44,
+    borderWidth: 1,
+    borderColor: '#193250',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
 
-  elevation: 20,
-},
+    elevation: 20,
+  },
+  completeButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#193250',
+    width: 160,
+    height: 44,
+    borderRadius: 35,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 20,
+  },
 });
 

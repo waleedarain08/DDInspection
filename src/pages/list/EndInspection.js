@@ -128,10 +128,10 @@ const goAhead = () =>{
           backgroundColor: '#fff',
         }}>
         <Text style={{fontFamily:"OpenSans-Regular",color: '#7c8089', fontSize: 12, }}>
-          "Thank you for handling this inspection"
+          Thank you for handling this inspection
         </Text>       
         <Text style={{fontFamily:"OpenSans-Bold", fontSize: 25, marginVertical:10}}>
-          "Reminders as you exit:"
+          Reminders as you exit:
         </Text>
       </View>
           <View style={{backgroundColor: '#f9f8fd', marginBottom: 5,flex:4}}>

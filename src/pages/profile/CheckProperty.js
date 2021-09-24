@@ -116,11 +116,11 @@ export default function CheckProperty({navigation}) {
       {/* <ScrollView contentContainerStyle={{ height:700 }} showsVerticalScrollIndicator={false}> */}
       <View style={{paddingVertical: 20, flex: 1}}>
         <Text style={{color: '#8f949a', fontFamily: 'OpenSans-Regular'}}>
-          Thank you for handling the due diligance the property
+          Thank you for handling this inspection
         </Text>
         <View style={{paddingVertical: 4}}>
           <Text style={styles.confirmation}>
-            "Kindly confirm / do the following:"
+            Please confirm / do the following:
           </Text>
         </View>
       </View>
@@ -303,7 +303,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.27,
     shadowRadius: 4.65,
 
-    elevation: 4,
   },
   stopButton: {
     backgroundColor: '#ffffff',
@@ -321,7 +320,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.27,
     shadowRadius: 4.65,
 
-    elevation: 4,
+    elevation: 2,
     borderColor: '#193250',
   },
   view: {
@@ -358,9 +357,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#193250',
-    paddingVertical: '4%',
-    paddingHorizontal: '24%',
     margin: '3%',
     borderRadius: 25,
+    width:330,
+    height:56
   },
 });

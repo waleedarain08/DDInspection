@@ -73,7 +73,7 @@ const [currentIndex, setCurrentIndex] = useState ()
                                 <Text style={{ color: "#838d99", fontSize: 12, lineHeight: 20, fontFamily: "OpenSans-Regular" }}>4317 Masonic Drive Fort</Text>
                             </View>
                             <View style={styles.saleButton}>
-                                <Text style={{ textAlign: "center", paddingTop: 4, color: "#193250", fontWeight: "bold", fontSize: 11 }}>For Sale</Text>
+                                <Text style={{ textAlign: "center", paddingTop: 3, color: "#193250", fontWeight: "bold", fontSize: 11 }}>For Sale</Text>
                             </View>
                         </View>
                         <Text style={styles.read}>
@@ -83,7 +83,7 @@ const [currentIndex, setCurrentIndex] = useState ()
                         <View style={{ flexDirection: "row", paddingVertical: 20, justifyContent: "space-around" }}>
                             <Image style={styles.logo} source={require('../../assets/group.png')} />
                             <View style={{ paddingHorizontal: 2, paddingVertical: 5, flex: 0.6 }}>
-                                <Text style={{ color: "#596677", fontFamily: "OpenSans-Regular" }}>Marty Mccormick</Text>
+                                <Text style={{ color: "#596677", fontFamily: "OpenSans-bold",fontWeight:"bold" }}>Marty Mccormick</Text>
                                 <Text style={{ color: "#a7aeb8", fontSize: 13, fontFamily: "OpenSans-Regular" }}>Owner</Text>
                             </View>
                             <View style={{ flex: 0.2 }}>
@@ -166,7 +166,8 @@ const styles = StyleSheet.create({
     },
     dots: {
         width: 4,
-        height: 15,
+        height: 16,
+         marginTop:4
         // position: "absolute", zIndex: 30,
         // top: 45,
         // right: 20
@@ -222,7 +223,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
 
-        elevation: 6,
+        elevation: 2,
 
     },
     inspectButton: {
@@ -242,7 +243,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
 
-        elevation: 6,
+        elevation: 2,
     },
     vector: {
         backgroundColor: "#ffffff",

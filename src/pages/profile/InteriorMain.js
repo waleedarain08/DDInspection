@@ -23,7 +23,7 @@ export default function InteriorMain({navigation}) {
     <ScrollView
       contentContainerStyle={{height: 850, backgroundColor: '#ffffff'}}>
       <Text
-        style={{paddingHorizontal: 10, paddingVertical: 20, color: '#5a5d62',fontWeight:"600",fontFamily:"OpenSans-Regular"}}>
+        style={{paddingHorizontal: 10, paddingVertical: 20, color: '#5a5d62',fontWeight:"700",fontFamily:"OpenSans-bold"}}>
         Please Confirm You Are Weraing Booties Before Intering The Interior.
       </Text>
 
@@ -171,7 +171,7 @@ export default function InteriorMain({navigation}) {
               source={require('../../assets/edit.png')}
             />
             <Text
-              style={{color: '#33ae46', textAlign: 'center', paddingTop: 3,fontSize:12,fontFamily:"OpenSans-Regular"}}>
+              style={{color: '#33ae46', textAlign: 'center', paddingTop: 2,fontSize:12,fontFamily:"OpenSans-Regular"}}>
               Edit
             </Text>
           </TouchableOpacity>
@@ -188,7 +188,7 @@ export default function InteriorMain({navigation}) {
           <Text style={{flex: 1,fontFamily:"OpenSans-Regular"}}>$0.00</Text>
           <View style={styles.inspectButtom}>
             <Text
-              style={{color: '#ff5454', textAlign: 'center', paddingTop: 3,fontSize:12}}>
+              style={{color: '#ff5454', textAlign: 'center', paddingTop: 2,fontSize:12}}>
               Inspect
             </Text>
           </View>
@@ -205,7 +205,7 @@ export default function InteriorMain({navigation}) {
           <Text style={{flex: 1,fontFamily:"OpenSans-Regular"}}>$0.00</Text>
           <View style={styles.inspectButtom}>
             <Text
-              style={{color: '#ff5454', textAlign: 'center', paddingTop: 3,fontSize:12,fontFamily:"OpenSans-Regular"}}>
+              style={{color: '#ff5454', textAlign: 'center', paddingTop: 2,fontSize:12,fontFamily:"OpenSans-Regular"}}>
               Inspect
             </Text>
           </View>
@@ -251,7 +251,7 @@ export default function InteriorMain({navigation}) {
       </View>
       <View style={styles.total}>
         <Text style={{color: '#ffffff', fontWeight: 'bold', fontSize: 18,fontFamily:"OpenSans-Regular"}}>
-          Tolat{' '}
+          Total
         </Text>
         <View style={styles.line2}></View>
         <Text style={{color: '#ffffff', fontWeight: 'bold', fontSize: 18,fontFamily:"OpenSans-Regular"}}>
@@ -362,7 +362,7 @@ const styles = StyleSheet.create({
   editButtom: {
     backgroundColor: '#ebf7ed',
     width: 60,
-    height: 22,
+    height: 24 ,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
@@ -421,7 +421,7 @@ const styles = StyleSheet.create({
   inspectButtom: {
     backgroundColor: '#ffeeee',
     width: 60,
-    height: 22,
+    height: 24,
   },
   dotted: {
     borderWidth: 0.8,

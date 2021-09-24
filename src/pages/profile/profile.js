@@ -32,11 +32,11 @@ export  function Profile({navigation}) {
       <View style={{flex: 1, flexGrow: 1}}>
         <View style={{paddingVertical: 25, paddingHorizontal: 20,flex:1}}>
           <Text style={{fontSize: 12, color: '#989da3', paddingBottom: 2,fontFamily: "OpenSans-Regular"}}>
-            "Thank you for handling this inspection."
+            Thank you for handling this inspection.
           </Text>
           <Text
             style={{fontSize: 20, fontWeight: 'bold',paddingVertical:10,fontFamily: "OpenSans-Bold"}}>
-           "Please confirm the following:"
+           Please confirm the following:
           </Text>
         </View>
         <View
@@ -80,7 +80,7 @@ export  function Profile({navigation}) {
           </View>
         </View>
         <View style={{paddingVertical: 10, paddingHorizontal: 20,backgroundColor:"#f4f4f4"}}>
-          <Text style={{color: '#666b71',fontSize:12,fontWeight:"600",fontFamily: "OpenSans-Regular"}}>
+          <Text style={{color: '#666b71',fontSize:12,fontWeight:"700",fontFamily: "OpenSans-bold"}}>
             This property is accessible using the provided instructions. if it
             is not accessible please contact (in the order):
           </Text>
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   textProperty: {
-    color: '#7b7f88',fontFamily: "OpenSans-Regular"
+    color: '#7b7f88',fontFamily: "OpenSans-bold",fontWeight:"600"
   },
   locationDetail: {
     color: '#676a71',
@@ -286,9 +286,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#193250',
-    paddingVertical: '4%',
-    paddingHorizontal: '24%',
     margin: '3%',
     borderRadius: 25,
+    width:330,
+    height:56
   },
 });

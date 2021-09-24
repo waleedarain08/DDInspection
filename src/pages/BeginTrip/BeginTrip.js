@@ -100,7 +100,7 @@ export default function BeginTrip({ navigation }) {
                 </View>
                 <View
                     style={{
-                        position: "absolute", bottom: "4%", shadowColor: '#ffffff', flex: 1, justifyContent: "center",paddingLeft:25,
+                        position:"absolute", bottom: "4%",left:0,right:0, shadowColor: '#ffffff', flex: 1, justifyContent: "center",
                         alignItems: "center",
                         shadowOffset: {
                             width: 0,
@@ -117,7 +117,7 @@ export default function BeginTrip({ navigation }) {
                         activeOpacity={0.9}
                         onPress={() => setModalVisible(true)} 
                         >
-                        <Text style={{ color: "#ffffff", fontWeight: "bold",paddingTop:10,fontFamily:"OpenSans-bold", }}>Begin Trip</Text>
+                        <Text style={{ color: "#ffffff", fontWeight: "bold",paddingTop:16,fontFamily:"OpenSans-bold", }}>Begin Trip</Text>
                     </ButtonView>
                 </View>
             </View>
@@ -200,8 +200,8 @@ const styles = StyleSheet.create({
     textconfimr: {
         color: "#292a2f",
         fontWeight: "600",
-        fontSize: 12,
-        fontFamily:"OpenSans-Regular",
+        fontSize: 13,
+        fontFamily:"OpenSans-bold",
     },
     borderline: {
         height: 1,
@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
     btn: {
         backgroundColor: '#f26521',
         flexDirection: 'row',
-        marginRight: "30%",
+        marginRight: "26%",
         alignItems: 'center',
         justifyContent: 'space-evenly',
         borderRadius: 20,
@@ -235,12 +235,11 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     tripbtn: {
-        width:352,
-        height:46,
+        width:340,
+        height:58,
         backgroundColor: "#193250",
         alignItems: "center",
         borderRadius: 30,
-        right:"3%",
         shadowColor: "#fff",
         shadowOffset: {
             width: 2,

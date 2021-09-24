@@ -14,15 +14,25 @@ import {connect} from 'react-redux';
 import {userLogout} from '../../redux/actions';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {TextInput} from 'react-native';
+import { imagePicker } from '../../helper/utils';
 
 function HomeScreen({navigation, user, userLogout}) {
-
-
+const[image, setImage]= useState()
+  const imageSelector = async () => {
+      try {
+          const url = await imagePicker(false)
+          setImage(url[0])
+          console.log("url", url)
+      } catch (error) {
+        
+      }
+  } 
   return (
     <View style={styles.mainContainer}>
       <View style={styles.profileLogoContainer}>
         <View>
-          <View
+          <TouchableOpacity
+            onPress={imageSelector}
             style={{
               backgroundColor:"#fff",
               height:98,
@@ -36,14 +46,13 @@ function HomeScreen({navigation, user, userLogout}) {
               shadowOpacity: 0.27,
               shadowRadius: 4.65,
               elevation: 20,
-
               margin:5,
             }}>
             <Image
-              source={require('../../assets/group.png')}
-              style={{width: 100, height: 100, resizeMode: 'contain'}}
+              source={image ? {uri: image.path} : require('../../assets/group.png')}
+              style={{width: 100, height: 100, borderRadius: 50}}
             />
-          </View>
+          </TouchableOpacity>
           <View
             style={{
               paddingTop: 10,

@@ -142,7 +142,7 @@ export default function ExteriorBack({navigation}) {
                     fontSize: 12,
                     fontFamily: 'OpenSans-Regular',
                   }}>
-                  Note:repair-specific{' '}
+                  Note:repair-specific
                 </Text>
                 <Text
                   style={{

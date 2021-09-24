@@ -37,7 +37,7 @@ export default function InspectionOverview({ navigation }) {
             <Text
               style={{
                 color: '#4f5359',
-                // fontWeight: '700',
+                fontWeight: '900',
                 textAlign: 'center',
                 fontFamily: "OpenSans-Bold",
                 fontSize: 10,
@@ -60,6 +60,7 @@ export default function InspectionOverview({ navigation }) {
             <Text
               style={{
                 color: '#4f5359',
+                fontWeight: '900',
                 textAlign: 'center',
                 fontFamily: "OpenSans-Bold",
                 fontSize: 10,
@@ -86,9 +87,10 @@ export default function InspectionOverview({ navigation }) {
               <Text
                 style={{
                   color: '#4f5359',
+                  fontWeight: '900',
                   textAlign: 'center',
+                  fontFamily: "OpenSans-Bold",
                   fontSize: 10,
-                  fontFamily: "OpenSans-Bold"
                 }}>
                 Home
               </Text>
@@ -109,9 +111,10 @@ export default function InspectionOverview({ navigation }) {
               <Text
                 style={{
                   color: '#4f5359',
+                  fontWeight: '900',
                   textAlign: 'center',
+                  fontFamily: "OpenSans-Bold",
                   fontSize: 10,
-                  fontFamily: "OpenSans-Bold"
                 }}>
                 Estimate
               </Text>
@@ -189,55 +192,47 @@ export default function InspectionOverview({ navigation }) {
         </View>
 
         <Modal
-          animationIn="zoomIn"
-          animationOut="zoomOut"
-          animationInTiming={600}
-          animationOutTiming={600}
+          animationType="slideInUp"
           transparent={true}
           isVisible={modalVisible}
+          swipeDirection="down"
+          style={styles.view}
+          onSwipeComplete={() => setModalVisible(false)}
           onBackButtonPress={() => setModalVisible(!modalVisible)}
           onBackdropPress={() => setModalVisible(!modalVisible)}>
           <View style={styles.modalView}>
-            <Image
-              style={styles.modalLogo}
-              source={require('../../assets/group921.png')}
-            />
-            <Text
-              style={{ fontFamily: "OpenSans-Bold", fontSize: 20, marginVertical: '2%' }}>
-              Pause Inspection?
-            </Text>
-            <View>
-              <Textarea
-                containerStyle={styles.textareaContainer}
-                style={styles.textarea}
-                maxLength={300}
-                placeholder={'Type your reason here'}
-                placeholderTextColor={'#a6a9ae'}
-                underlineColorAndroid={'transparent'}
-              />
-            </View>
-            <View style={styles.modalButtons}>
-              <ButtonView
-                activeOpacity={0.8}
-                onPress={() => setModalVisible(!modalVisible)}
-                style={{
-                  backgroundColor: '#193250',
-                  paddingVertical: 10,
-                  paddingHorizontal: '25%',
-                  marginTop: '3%',
-                  borderRadius: 25,
-                  shadowColor: '#000',
-                  shadowOffset: {
-                    width: 0,
-                    height: 2,
-                  },
-                  shadowOpacity: 0.25,
-                  shadowRadius: 3.84,
+            <TouchableOpacity
+              activeOpacity={0.9}
+              hitSlop={{top: 20, bottom: 20, left: 40, right: 40}}>
+              {/* // onPress={() => setModalVisible(!modalVisible)}> */}
+              <View style={styles.modalLineView}></View>
+            </TouchableOpacity>
 
-                  elevation: 8,
-                }}>
-                <Text style={{ color: '#fff', fontFamily: "OpenSans-SemiBold" }}>Done</Text>
-              </ButtonView>
+            <View style={{marginVertical: 25}}>
+              <TouchableOpacity
+                activeOpacity={0.9}
+                onPress={() => navigation.navigate('')}
+                style={styles.modalButtons}>
+                <Text style={{color: '#fff', fontFamily:"OpenSans-Regular"}}>Cannot Access Property</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.9}
+                onPress={() => navigation.navigate('')}
+                style={styles.modalButtons}>
+                <Text style={{color: '#fff', fontFamily:"OpenSans-Regular"}}>Utilities Not Activated</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.9}
+                onPress={() => navigation.navigate('DoNotBuy2')}
+                style={styles.modalButtons}>
+                <Text style={{color: '#fff', fontFamily:"OpenSans-Regular"}}>Do Not Buy</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.9}
+                onPress={() => navigation.navigate('')}
+                style={styles.modalButtons}>
+                <Text style={{color: '#fff', fontFamily:"OpenSans-Regular"}}>Pause Inspection</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </Modal>
@@ -380,12 +375,16 @@ const styles = StyleSheet.create({
   location: {
     color: '#32373d',
     flex: 1.5,
-    fontFamily: "OpenSans-Bold"
+    fontFamily: "OpenSans-Bold",
+    fontWeight:"bold",
+    fontSize:16
   },
   item: {
     color: '#32373d',
     fontFamily: "OpenSans-Bold",    
     flex: 1,
+    fontWeight:"bold",
+    fontSize:16
   },
   front: {
     flexDirection: 'row',
@@ -435,39 +434,41 @@ const styles = StyleSheet.create({
   },
   modalView: {
     backgroundColor: '#fff',
-    borderRadius: 15,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
     alignItems: 'center',
-    justifyContent: 'center',
-    padding: '10%',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
   },
-
-  modalLogo: {
-    width: 100,
-    height: 100,
-    resizeMode: 'contain',
-    marginBottom: 10,
+  view: {
+    justifyContent: 'flex-end',
+    margin: 0,
   },
-
+  modalLineView: {
+    width: 35,
+    height: 2,
+    backgroundColor: '#8b98a8',
+    marginTop: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 2,
+  },
 
   modalButtons: {
-    // backgroundColor:"red",
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 15,
-  },
-  textareaContainer: {
-    width: 280,
-    height: 100,
-    padding: 5,
-    backgroundColor: '#f6f6f6',
-    borderRadius: 8,
-    marginVertical: '5%',
-  },
-  textarea: {
-    textAlignVertical: 'top', // hack android
-    height: 90,
-    fontSize: 14,
-    color: '#333',
-    fontFamily: "OpenSans-Regular"
+    backgroundColor: '#193250',
+    margin: '3%',
+    borderRadius: 25,
+    width:330,
+    height:56
   },
 });

@@ -1,27 +1,36 @@
-import React, {Component, useEffect, useState} from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import {
   View,
   Text,
   StyleSheet,
   FlatList,
   Image,
-  Dimensions,
-  ScrollView,
+  TextInput, ScrollView,
   TouchableOpacity,
   Flatlist,
 } from 'react-native';
 import { ButtonView } from '../../components';
+import { imagePicker } from '../../helper/utils';
 
 
-export default function DoNotBuy({navigation}) {
+export default function DoNotBuy({ navigation }) {
 
   const [quality, setQuality] = useState(true);
   const [quality2, setQuality2] = useState(false);
   const [selected, setSelected] = useState(false);
   const [button, setButton] = useState(0);
-  
+  const [reason, setReason] = useState([{ title: "abc", path: require('../../assets/table.jpg') }, { title: "abc", path: require('../../assets/table2.jpg') },])
+  const imageSelector = async () => {
+    try {
+      const url = await imagePicker(true)
+      setReason([...reason, ...url])
+      console.log("url", url)
+    } catch (error) {
 
-                          // <===LOCATION DATA ARRAY===>  
+    }
+  }
+  const[loop, setLoop] = useState (null)
+  // <===LOCATION DATA ARRAY===>  
   const [locationDataSource, setLocationDataSource] = useState([
     {
       id: 1,
@@ -57,7 +66,7 @@ export default function DoNotBuy({navigation}) {
     },
   ]);
 
-                        // <===PROPERTY DATA ARRAY===>
+  // <===PROPERTY DATA ARRAY===>
   const [propertyDataSource, setPropertyDataSource] = useState([
     {
       id: 1,
@@ -94,7 +103,7 @@ export default function DoNotBuy({navigation}) {
   ]);
 
 
-                        // <===LOCATION DATA SOURCE===>
+  // <===LOCATION DATA SOURCE===>
 
   const selectItem = data => {
     data.item.isSelect = !data.item.isSelect;
@@ -115,25 +124,25 @@ export default function DoNotBuy({navigation}) {
     var locationObj = locationDataSource.find(o => o.isSelect == 1);
     var propertyObj = propertyDataSource.find(o => o.isSelect == 1);
 
-    typeof(locationObj)==="undefined" && typeof(propertyObj)==="undefined"?setButton(0):setButton(1);
+    typeof (locationObj) === "undefined" && typeof (propertyObj) === "undefined" ? setButton(0) : setButton(1);
   }
 
   const renderItem = data => {
     return (
-     
-        <ButtonView  isRound={1} activeOpacity={0.8} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
+
+      <ButtonView isRound={1} activeOpacity={0.8} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
         <View style={[styles.list, data.item.selectedClass]}>
-          <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
+          <Image source={require('../../assets/tick.png')} style={data.item.isSelect ? styles.imageSelected : styles.imageUnSelected}></Image>
         </View>
-      <View>
-        <Text style={styles.textFields}>{data.item.title}</Text>
-      </View>
-    </ButtonView>
+        <View>
+          <Text style={styles.textFields}>{data.item.title}</Text>
+        </View>
+      </ButtonView>
     );
   };
 
 
-                        // <===PROPERTY DATA SOURCE===>
+  // <===PROPERTY DATA SOURCE===>
 
   const selectItem2 = data => {
     data.item.isSelect = !data.item.isSelect;
@@ -150,10 +159,10 @@ export default function DoNotBuy({navigation}) {
     checkButtonStatus();
   };
 
-  const goAhead = () =>{
-    if(button){
+  const goAhead = () => {
+    if (button) {
       navigation.navigate("")
-    }else{
+    } else {
       alert("Please select atleast one option.")
     }
   }
@@ -162,29 +171,30 @@ export default function DoNotBuy({navigation}) {
     return (
 
       <ButtonView isRound={1} activeOpacity={0.8} onPress={() => selectItem2(data)} style={styles.fieldsContainer}>
-            <View style={[styles.list, data.item.selectedClass]}>
-              <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
-            </View>
-          <View>
-            <Text style={styles.textFields}>{data.item.title}</Text>
-          </View>
-        </ButtonView>
+        <View style={[styles.list, data.item.selectedClass]}>
+          <Image source={require('../../assets/tick.png')} style={data.item.isSelect ? styles.imageSelected : styles.imageUnSelected}></Image>
+        </View>
+        <View>
+          <Text style={styles.textFields}>{data.item.title}</Text>
+        </View>
+      </ButtonView>
 
     );
   };
 
+  console.log("reason image", reason)
 
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
-      contentContainerStyle={{paddingBottom: 40}}>
+      contentContainerStyle={{ paddingBottom: 40 }}>
       <View style={styles.mainContainer}>
-        <View style={{padding: '5%', paddingBottom: 30}}>
+        <View style={{ padding: '5%', paddingBottom: 30 }}>
           <Text
             style={{
               color: '#3c434d',
-              fontFamily:"OpenSans-Bold",
-              fontSize: 17  
+              fontFamily: "OpenSans-Bold",
+              fontSize: 17
             }}>
             Please confirm the property above, then select at least one do
             buy reason and click on "Do Not Buy" to continue.
@@ -195,7 +205,7 @@ export default function DoNotBuy({navigation}) {
 
         <View style={styles.locationTabContainer}>
           <View style={styles.locationTabText}>
-            <Text style={{ fontFamily:"OpenSans-Bold", color: '#293036'}}>
+            <Text style={{ fontFamily: "OpenSans-Bold", color: '#293036' }}>
               Location Issue
             </Text>
           </View>
@@ -214,21 +224,21 @@ export default function DoNotBuy({navigation}) {
           </ButtonView>
         </View>
         {quality && (
-          <View style={{paddingVertical: "3%", backgroundColor: '#f9f8fd'}}>
+          <View style={{ paddingVertical: "3%", backgroundColor: '#f9f8fd' }}>
             <FlatList
               data={locationDataSource}
               renderItem={item => renderItem(item)}
               keyExtractor={item => item.id}
               extraData={locationDataSource}
             />
-           </View>
+          </View>
         )}
 
         {/* 2ND PROPERTY TAB SECTIONE */}
 
         <View style={styles.propertyTabContainer}>
           <View style={styles.locationTabText}>
-            <Text style={{ fontFamily:"OpenSans-Bold", color: '#293036'}}>
+            <Text style={{ fontFamily: "OpenSans-Bold", color: '#293036' }}>
               Property Issue
             </Text>
           </View>
@@ -247,118 +257,143 @@ export default function DoNotBuy({navigation}) {
           </ButtonView>
         </View>
         {quality2 && (
-          <View style={{paddingVertical: 10, backgroundColor: '#f9f8fd'}}>
-          <FlatList
-            data={propertyDataSource}
-            renderItem={item => renderItem2(item)}
-            keyExtractor={item => item.id}
-            extraData={propertyDataSource}
-          />
-         </View>          
+          <View style={{ paddingVertical: 10, backgroundColor: '#f9f8fd' }}>
+            <FlatList
+              data={propertyDataSource}
+              renderItem={item => renderItem2(item)}
+              keyExtractor={item => item.id}
+              extraData={propertyDataSource}
+            />
+          </View>
         )}
 
         {/* 3RD UPLOAD SECTIONE */}
 
         <View style={styles.uploadSecContainer}>
           <View style={styles.imageCard}>
-            <Text style={{ fontFamily:"OpenSans-Bold", paddingLeft:"2.5%"}}>Do Not Buy Photos</Text>
+            <Text style={{ fontFamily: "OpenSans-Bold", paddingLeft: "2.5%" }}>Do Not Buy Photos</Text>
             <View
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-around',
-                paddingVertical: 10,
+                paddingTop: 10,
               }}>
-              <View>
+              <FlatList
+                data={reason}
+                keyExtractor={(item, index) => index}
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                renderItem={({ item, index }) => {
+                  console.log("item image", item)
+                  var type = typeof item.path
+                  return (
+                    <>
+                      <View>
+                        <Image
+                          style={styles.cross}
+                          source={require('../../assets/group743.png')}
+                        />
+                        <Image
+                          style={styles.table}
+                          source={type == "string" ? { uri: item.path } : item.path}
+                        />
+                        <View style={{ flexDirection: "row" }}>
+                          <View style={{ paddingVertical: 10, flex: 1, }}>
+
+                            {index == loop  ? (
+                              <TextInput
+                                style={styles.textArea1}
+                                underlineColorAndroid="transparent"
+                                placeholder="Note:repair-specific photos / video"
+                                placeholderTextColor="#c7c8cc"
+                                numberOfLines={10}
+                                multiline={true}
+                              />
+                            ) :
+                              (
+                                <>
+                                  <Text
+                                    style={{
+                                      color: '#c7c8cc',
+                                      fontSize: 12,
+                                      fontFamily: 'OpenSans-Regular',
+                                      width: 105
+                                    }}>
+                                    Note:repair-specific photos / video
+                                  </Text>
+                                </>
+                              )}
+                            {index == loop ? (
+                              <TouchableOpacity activeOpacity={0.9} onPress={() => setLoop(null)} style={styles.doneButton}>
+                                <Text style={{ textAlign: 'center', fontFamily: "OpenSans-SemiBold", color: '#5d5b66' }}>
+                                  Done
+                                </Text>
+                              </TouchableOpacity>
+
+                            ) : (
+                              <ButtonView
+                                onPress={() => setLoop(index)}
+                                activeOpacity={0.9}
+                                style={styles.editButtom}>
+                                <Image
+                                  style={styles.editIcon}
+                                  source={require('../../assets/edit.png')}
+                                />
+                                <Text
+                                  style={{
+                                    color: '#33ae46',
+                                    fontFamily: "OpenSans-SemiBold",
+                                    textAlign: 'center',
+                                    paddingTop: 3,
+                                  }}>
+                                  Edit
+                                </Text>
+                              </ButtonView>
+                            )}
+
+                          </View>
+
+                          <View style={{ flex: 1 }}></View>
+                        </View>
+                      </View>
+
+                    </>
+                  )
+                }}
+              >
+
+              </FlatList>
+
+
+              <TouchableOpacity
+                onPress={imageSelector}
+                activeOpacity={0.9}
+                style={{
+                  borderStyle: 'dashed',
+                  borderRadius: 6,
+                  width: 105,
+                  height: 100,
+                  borderWidth: 1.5,
+                  borderColor: '#b0aeb9',
+                  backgroundColor: '#fff',
+                }}>
                 <Image
-                  style={styles.cross}
-                  source={require('../../assets/group743.png')}
+                  style={styles.delete}
+                  source={require('../../assets/group740.png')}
                 />
-                <Image
-                  style={styles.table}
-                  source={require('../../assets/table.jpg')}
-                />
-                <View style={{paddingVertical: 10}}>
-                  <Text style={{color: '#7b7e83', fontFamily:"OpenSans-Regular", fontSize: 12}}>
-                    Note:repair-specific
-                  </Text>
-                  <Text style={{color: '#7b7e83', fontFamily:"OpenSans-Regular", fontSize: 12}}>
-                    photos / video
-                  </Text>
-                  <ButtonView
-                    activeOpacity={0.9}
-                    onPress={() => navigation.navigate('ExteriorBack')}
-                    style={styles.editButtom}>
-                    <Image
-                      style={styles.editIcon}
-                      source={require('../../assets/edit.png')}
-                    />
-                    <Text
-                      style={{
-                        color: '#33ae46',
-                        fontFamily:"OpenSans-SemiBold",
-                        textAlign: 'center',
-                        paddingTop: 3,
-                      }}>
-                      Edit
-                    </Text>
-                  </ButtonView>
-                </View>
-              </View>
-              <View>
-                <Image
-                  style={styles.cross}
-                  source={require('../../assets/group743.png')}
-                />
-                <Image
-                  style={styles.table}
-                  source={require('../../assets/table2.jpg')}
-                />
-                <View>
-                  <View style={{paddingVertical: 10}}>
-                    <Text style={{color: '#c7c8cc', fontFamily:"OpenSans-Regular", fontSize: 12}}>
-                      Note:repair-specific{' '}
-                    </Text>
-                    <Text style={{color: '#c7c8cc', fontFamily:"OpenSans-Regular", fontSize: 12}}>
-                      {' '}
-                      photos / video
-                    </Text>
-                  </View>
-                  <View style={styles.line}></View>
-                  <View style={styles.doneButton}>
-                    <Text style={{textAlign: 'center', fontFamily:"OpenSans-SemiBold", color:'#5d5b66'}}>
-                      Done
-                    </Text>
-                  </View>
-                </View>
-              </View>
-              <View>
-                <View
+                <Text
                   style={{
-                    borderStyle: 'dashed',
-                    borderRadius: 6,
-                    width: 105,
-                    height: 100,
-                    borderWidth: 1.5,
-                    borderColor: '#b0aeb9',
-                    backgroundColor: '#fff',
+                    textAlign: 'center',
+                    color: '#435971',
+                    fontFamily: "OpenSans-SemiBold",
+                    fontSize: 12,
+                    paddingVertical: 4,
                   }}>
-                  <Image
-                    style={styles.delete}
-                    source={require('../../assets/group740.png')}
-                  />
-                  <Text
-                    style={{
-                      textAlign: 'center',
-                      color: '#435971',
-                      fontFamily:"OpenSans-SemiBold",
-                      fontSize: 12,
-                      paddingVertical: 4,
-                    }}>
-                    Add Photo
-                  </Text>
-                </View>
-              </View>
+                  Add Photo
+                </Text>
+              </TouchableOpacity>
             </View>
+
           </View>
         </View>
 
@@ -366,8 +401,8 @@ export default function DoNotBuy({navigation}) {
           <ButtonView
             onPress={() => goAhead()}
             activeOpacity={0.8}
-            style={button?styles.DoNotButtonEnable:styles.DoNotButtonDisable}>
-            <Text style={{color: '#fff',  fontFamily:"OpenSans-Bold", fontSize: 14}}>
+            style={button ? styles.DoNotButtonEnable : styles.DoNotButtonDisable}>
+            <Text style={{ color: '#fff', fontFamily: "OpenSans-Bold", fontSize: 14 }}>
               Do Not Buy
             </Text>
           </ButtonView>
@@ -431,7 +466,7 @@ const styles = StyleSheet.create({
     height: 15,
     resizeMode: 'contain',
     tintColor: '#193251',
-    transform: [{rotate: '270deg'}],
+    transform: [{ rotate: '270deg' }],
   },
   transform: {
     width: 14,
@@ -447,7 +482,7 @@ const styles = StyleSheet.create({
   textFields: {
     paddingHorizontal: '5%',
     color: '#7c8089',
-    fontFamily:"OpenSans-Regular",
+    fontFamily: "OpenSans-Regular",
     fontSize: 12,
   },
 
@@ -468,6 +503,7 @@ const styles = StyleSheet.create({
     width: 105,
     height: 100,
     borderRadius: 6,
+    marginHorizontal: 5.5
   },
   delete: {
     width: 12,
@@ -483,10 +519,16 @@ const styles = StyleSheet.create({
     top: 7,
     left: 80,
   },
-  line: {
-    backgroundColor: '#c3cad4',
-    width: '90%',
-    height: 2,
+  textArea: {
+    height: 60,
+    fontSize: 12,
+    borderBottomWidth: 1,
+    borderColor: "#b3bbc6"
+  },
+  textArea1: {
+    height: 60,
+    fontSize: 12,
+    width: 105
   },
   doneButton: {
     backgroundColor: '#ededef',
@@ -502,7 +544,7 @@ const styles = StyleSheet.create({
     height: 28,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    marginVertical: 20,
+    marginVertical: 10,
     borderRadius: 5,
   },
   editIcon: {
@@ -554,27 +596,27 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: -1,
-    width:19,
-    height:19,
-    borderRadius:9.5,
-    backgroundColor:"#f5f6f8",
-    borderWidth:0.5,
-    borderColor:"#c7c7c7",
+    width: 19,
+    height: 19,
+    borderRadius: 9.5,
+    backgroundColor: "#f5f6f8",
+    borderWidth: 0.5,
+    borderColor: "#c7c7c7",
   },
   selected: {
     backgroundColor: '#32d24c',
-    borderWidth:0,
-},
-
-  imageSelected:{
-    width:10,
-    height:10,
-    tintColor:"#fff"
+    borderWidth: 0,
   },
-  imageUnSelected:{
-    width:10,
-    height:10,
-    tintColor:"#c7c7c7",
+
+  imageSelected: {
+    width: 10,
+    height: 10,
+    tintColor: "#fff"
+  },
+  imageUnSelected: {
+    width: 10,
+    height: 10,
+    tintColor: "#c7c7c7",
   }
 });
 

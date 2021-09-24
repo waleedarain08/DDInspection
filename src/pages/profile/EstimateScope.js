@@ -35,10 +35,10 @@ export default function EstimateScope({ navigation }) {
                         </View>
                         <Text style={{flex:1, color:"#4a4e59",fontWeight:"bold",paddingRight:8,fontSize:12,fontFamily: "OpenSans-Regular"}}>$444.95</Text>
                         <View style={{flex:0}}>
-                        <View style={styles.editButtom}>
+                        <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('ExteriorBack')} style={styles.editButtom}>
                         <Image  style={styles.editIcon} source={require("../../assets/edit.png")} />
-                            <Text style={{color:"#33ae46",textAlign:"center",paddingTop:3,fontSize:12,fontFamily: "OpenSans-Regular"}}>Edit</Text>
-                        </View>
+                            <Text style={{color:"#33ae46",textAlign:"center",paddingTop:2,fontSize:12,fontFamily: "OpenSans-Regular"}}>Edit</Text>
+                        </TouchableOpacity>
                         </View>
                     </View>
                     </View>
@@ -75,12 +75,13 @@ const styles = StyleSheet.create ({
     buttonEster:{
         backgroundColor:"#18314f",
         width:70,
-        height:20
+        height:20,
+        borderRadius:3
     },
     editButtom:{
         backgroundColor:"#ebf7ed",
         width:64,
-        height:22,
+        height:24,
         flexDirection:"row",
         justifyContent:"space-evenly"
     },
@@ -91,8 +92,8 @@ const styles = StyleSheet.create ({
         marginLeft:"30%"
     },
     editIcon:{
-        width:10,
-        height:10,
+        width:12,
+        height:12,
         marginTop:5
     },
     line:{

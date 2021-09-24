@@ -86,7 +86,7 @@ export function List({navigation}) {
               style={{
                 backgroundColor: '#f26521',
                 flexDirection: 'row',
-                marginRight: '35%',
+                marginRight: '32%',
                 padding: '2.5%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
@@ -172,7 +172,7 @@ export function List({navigation}) {
               style={{
                 backgroundColor: '#bd0000',
                 flexDirection: 'row',
-                marginRight: '35%',
+                marginRight: '32%',
                 padding: '2.5%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
@@ -250,7 +250,7 @@ export function List({navigation}) {
               style={{
                 backgroundColor: '#f26521',
                 flexDirection: 'row',
-                marginRight: '35%',
+                marginRight: '32%',
                 padding: '2.5%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
@@ -328,7 +328,7 @@ export function List({navigation}) {
               style={{
                 backgroundColor: '#f26521',
                 flexDirection: 'row',
-                marginRight: '35%',
+                marginRight: '32%',
                 padding: '2.5%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
@@ -408,7 +408,7 @@ export function List({navigation}) {
               style={{
                 backgroundColor: '#bd0000',
                 flexDirection: 'row',
-                marginRight: '35%',
+                marginRight: '32%',
                 padding: '2.5%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
