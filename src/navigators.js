@@ -98,7 +98,7 @@ function DrawerNavigator() {
       drawerType="front"
       drawerStyle={{
         backgroundColor: '#193250',
-        opacity: 0.9,
+        opacity: 1,
       }}
       // screenOptions={{gestureEnabled: user.loggedin}}
       screenOptions={{
