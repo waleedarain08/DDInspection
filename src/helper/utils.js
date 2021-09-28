@@ -8,6 +8,7 @@ export const imagePicker = async ({multiple=true, }) => {
         height: 400,
         multiple: multiple,
     })
+    console.log('result',result);
     return result
    } catch (error) {
        console.log('imagePicker error', error)
