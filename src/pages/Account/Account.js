@@ -35,8 +35,8 @@ const[image, setImage]= useState()
             onPress={imageSelector}
             style={{
               backgroundColor:"#fff",
-              height:98,
-              width:98,
+              height:100,
+              width:100,
               borderRadius:49,
               shadowColor: '#000',
               shadowOffset: {

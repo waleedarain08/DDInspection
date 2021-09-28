@@ -18,7 +18,7 @@ export default function HomeOverview({ navigation }) {
     return(
         <View style={styles.container}>
             <Text style={{color:"#2c3137",fontFamily: "Regular",paddingTop:12,paddingHorizontal:20,}}>Rooms are added as inspected.</Text>
-            <Text style={{color:"#4d525c",fontSize:20,fontFamily: "OpenSans-Bold",paddingVertical:10,paddingHorizontal:20,}}>Finished Rooms</Text>
+            <Text style={{color:"#4d525c",fontSize:22,fontFamily: "OpenSans-Bold",paddingVertical:10,paddingHorizontal:20,}}>Finished Rooms</Text>
             <FlatList
               keyExtractor={(item, index) => index}
               data={reason}

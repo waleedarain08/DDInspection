@@ -100,8 +100,12 @@ export default function BeginTrip({ navigation }) {
                 </View>
                 <View
                     style={{
-                        position:"absolute", bottom: "4%",left:0,right:0, shadowColor: '#ffffff', flex: 1, justifyContent: "center",
+                        position:"absolute", bottom: "0%",left:0,right:0, shadowColor: '#ffffff', flex: 2, justifyContent: "center",
+                        paddingHorizontal:20,
+                        paddingBottom:30,
+                        paddingTop:10,
                         alignItems: "center",
+                        shadowColor: "#fff",
                         shadowOffset: {
                             width: 0,
                             height: 3,
@@ -110,8 +114,10 @@ export default function BeginTrip({ navigation }) {
                         shadowRadius: 4.65,
 
                         elevation: 5,
+                        backgroundColor:"#ffffff90"
                     }}
                 >
+                    
                     <ButtonView
                         style={styles.tripbtn}
                         activeOpacity={0.9}
@@ -211,7 +217,7 @@ const styles = StyleSheet.create({
     btn: {
         backgroundColor: '#f26521',
         flexDirection: 'row',
-        marginRight: "26%",
+        marginRight: "16%",
         alignItems: 'center',
         justifyContent: 'space-evenly',
         borderRadius: 20,

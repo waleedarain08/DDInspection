@@ -149,9 +149,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
+    
     housePng: {
         width: Dimensions.get("window").width,
-        height: Platform.OS == "ios" ? 310 :280,
+        height: Platform.OS == "ios" ? 310 :320,
         resizeMode: "cover",
         position:'relative'
     },

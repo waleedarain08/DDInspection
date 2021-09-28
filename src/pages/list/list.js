@@ -525,8 +525,8 @@ const styles = StyleSheet.create({
         elevation: 15,
   },
   sectionImage: {
-    height: 120,
-    width: 130,
+    height: 123,
+    width: 135,
     borderRadius: 8,
   },
   buttonContainer:{
