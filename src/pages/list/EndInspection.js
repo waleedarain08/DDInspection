@@ -20,7 +20,7 @@ export default function EndInspection({navigation}) {
   const [dataSource, setDataSource] = useState([
     {
       id: 1,
-      title: 'Turn off A/C. Set the thermostate to 55 to prevent pipes from freezing',
+      title: 'Turn off A/C. Set the thermostat to 55 to prevent pipes from freezing',
       isSelect: 0,
     },
     {

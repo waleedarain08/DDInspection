@@ -79,7 +79,7 @@ export  function Profile({navigation}) {
             </Text>
           </View>
         </View>
-        <View style={{paddingVertical: 10, paddingHorizontal: 20,backgroundColor:"#f4f4f4"}}>
+        <View style={{paddingVertical: 5, paddingHorizontal: 20,backgroundColor:"#f4f4f4"}}>
           <Text style={{color: '#666b71',fontSize:12,fontWeight:"700",fontFamily: "OpenSans-bold"}}>
             This property is accessible using the provided instructions. if it
             is not accessible please contact (in the order):

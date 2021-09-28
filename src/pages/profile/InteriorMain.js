@@ -24,7 +24,7 @@ export default function InteriorMain({navigation}) {
       contentContainerStyle={{height: 850, backgroundColor: '#ffffff'}}>
       <Text
         style={{paddingHorizontal: 10, paddingVertical: 20, color: '#5a5d62',fontWeight:"700",fontFamily:"OpenSans-bold"}}>
-        Please Confirm You Are Weraing Booties Before Intering The Interior.
+        Please Confirm You Are Wearing Booties Before Entering The Interior.
       </Text>
 
       <View style={styles.bathroom}>

@@ -95,7 +95,7 @@ export default function ExteriorBack({navigation}) {
             paddingHorizontal: 15,
             paddingVertical: 20,
           }}>
-          Dack / Porch
+          Deck / Porch
         </Text>
         <Text
           style={{
@@ -242,7 +242,7 @@ export default function ExteriorBack({navigation}) {
         </View>
         <View style={styles.imageCard}>
           <Text>
-            Top of deck, wide angle<Text style={{color: '#d91614'}}>*</Text>
+            Top of deck, close up<Text style={{color: '#d91614'}}>*</Text>
           </Text>
           <View
             style={{

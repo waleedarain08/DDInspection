@@ -6,7 +6,7 @@ import BeginTrip from './pages/BeginTrip/BeginTrip';
 import Account from './pages/Account/Account';
 import profile, {Profile} from './pages/profile/profile';
 import list, {List} from './pages/list/list';
-import {NavigationContainer, DrawerActions} from '@react-navigation/native';
+import {NavigationContainer,DefaultTheme, DrawerActions} from '@react-navigation/native';
 import React from 'react';
 import CheckProperty from './pages/profile/CheckProperty';
 import InspectionOverview from './pages/profile/InspectionOverview';
@@ -137,7 +137,7 @@ function DrawerNavigator() {
         <Drawer.Screen options={({navigation}) => ({
             headerShown: true,
             headerLeft: () => drawerButton(navigation),
-            headerTitle:"Account",
+            headerTitle:"MY PROFILE",
             headerRight: () => headerRightIcon2(navigation),
           })} name="Account" component={Account} />
     </Drawer.Navigator>
@@ -317,7 +317,7 @@ function HomeBeginTripStack() {
 
 function RootContainer({user}) {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={{...DefaultTheme,dark:true,colors:{'background':'#fff'}}}>
       {/* <Drawer.Navigator
         drawerContent={props => <CustomDrawer {...props} />}
         drawerContentOptions={{

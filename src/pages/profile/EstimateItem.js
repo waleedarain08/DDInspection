@@ -56,6 +56,14 @@ export default function EstimateItem({ navigation }) {
       </View>
       <View style={{ paddingHorizontal: 20, paddingVertical: 20, flexDirection: "row", justifyContent: "space-between" }}>
         <Text style={{ color: "#263f5a", fontWeight: "600", fontFamily: "OpenSans-Bold", }}>6.0 Framing</Text>
+        <TouchableOpacity
+            activeOpacity={0.5}
+            style={ styles.TabDropDown}>
+            <Image
+              style={styles.transform}
+              source={require('../../assets/down-arrow.png')}
+            />
+          </TouchableOpacity>
       </View>
       <Text style={{
         paddingVertical: 10, paddingHorizontal: 20,
@@ -186,6 +194,23 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly"
   },
+  TabDropDown: {
+    flex: 0,
+    alignItems: 'center',
+    backgroundColor: '#909090',    borderRadius:10,
+    width:18,
+    height:18,
+    marginRight:10,
+    marginTop:3,
+    justifyContent:"center"
+  },
+  transform: {
+    width: 10,
+    height: 10,
+    resizeMode: 'contain',
+    tintColor: '#ffffff',
+    transform: [{rotate: '270deg'}],
+  },
   editIcon: {
     width: 10,
     height: 10,
@@ -214,7 +239,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.27,
     shadowRadius: 4.65,
 
-    elevation: 20,
+    elevation: 4,
   },
   completeButton: {
     flexDirection: 'row',
@@ -232,7 +257,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.27,
     shadowRadius: 4.65,
 
-    elevation: 20,
+    elevation: 4,
   },
 });
 
