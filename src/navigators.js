@@ -121,7 +121,7 @@ function DrawerNavigator() {
            options={({navigation}) => ({
             headerShown: true,
             headerLeft: () => drawerButton(navigation),
-            headerTitle:"PRE-INPECTION CHECKLIST",
+            headerTitle:"PRE-INSPECTION CHECKLIST",
             headerRight: () => headerRightIcon(navigation),
           })}
           name="PRE-INPECTION CHECKLIST" 

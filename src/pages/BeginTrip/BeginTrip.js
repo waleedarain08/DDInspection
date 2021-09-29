@@ -36,7 +36,7 @@ export default function BeginTrip({ navigation }) {
                         <Image style={styles.logo} source={require('../../assets/downloadded.png')} />
                     </View>
                     <View style={{ flex: 6 }}>
-                        <Text style={styles.textconfimr}>Please Confirm your devices battery is sufficiently charge and you have the following tools:</Text>
+                        <Text style={styles.textconfimr}>Please confirm your devices battery is sufficiently charge and you have the following tools:</Text>
                         <Text style={{ color: "#93969d", paddingTop: 8, fontSize: 12,fontFamily:"OpenSans-Regular", }}>Rafter Square, Tape Measure, Sonic Measure</Text>
                     </View>
                 </View>
@@ -46,7 +46,7 @@ export default function BeginTrip({ navigation }) {
                         <Image style={styles.logo} source={require('../../assets/downloadded.png')} />
                     </View>
                     <View style={{ flex: 6 }}>
-                        <Text style={styles.textconfimr}>Please Confirm acces information for the jobs you plan on completing this trip:</Text>
+                        <Text style={styles.textconfimr}>Please confirm acces information for the jobs you plan on completing this trip:</Text>
                     </View>
                 </View>
             </>
@@ -65,10 +65,17 @@ export default function BeginTrip({ navigation }) {
                         showsVerticalScrollIndicator={false}
                         renderItem={({ item }) => {
                             return (
+                                <>
                                 <View style={{ flexDirection: "row", paddingHorizontal: 16, marginTop: 35 }}>
                                     <View style={{
                                         height: 120, width: 120,
-                                        borderRadius: 10, elevation: 25, backgroundColor: "#fff"
+                                        borderRadius: 10, elevation: 25, backgroundColor: "#fff",shadowColor: "#000",
+                                        shadowOffset: {
+                                            width: 2,
+                                            height: 6
+                                        },
+                                        shadowOpacity: 0.25,
+                                        shadowRadius: 4,
                                     }}>
                                         <Image style={styles.housepng} source={item.image} />
                                     </View>
@@ -94,6 +101,8 @@ export default function BeginTrip({ navigation }) {
                                         </View>
                                     </View>
                                 </View>
+                                     <View style={{backgroundColor:"red",width:"100%",height:1,marginTop:30}}></View>
+                                     </>
                             )
                         }}>
                     </FlatList>
@@ -170,7 +179,7 @@ export default function BeginTrip({ navigation }) {
                     <TouchableOpacity
                         onPress={() => doubleCall()}
                         activeOpacity={0.9}
-                        style={{ flex: 0, justifyContent: "center", alignItems: "center", marginVertical: "10%" }}>
+                        style={{ flex: 0, justifyContent: "flex-end", alignItems: "center", marginVertical: "10%" }}>
                         <View style={styles.donebtn}>
                             <Text
                                 style={{ color: "#fff" }}>Done</Text>
@@ -217,7 +226,7 @@ const styles = StyleSheet.create({
     btn: {
         backgroundColor: '#f26521',
         flexDirection: 'row',
-        marginRight: "16%",
+        marginRight: "30%",
         alignItems: 'center',
         justifyContent: 'space-evenly',
         borderRadius: 20,
@@ -255,19 +264,10 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 10
     },
-    centeredView: {
-        // flex: 1,
-        // justifyContent: "center",
-        // alignItems: "center",
-        // backgroundColor: "#59595990",
-
-    },
     modalView: {
-        // flex: 0.6,
         backgroundColor: '#fff',
         borderRadius: 15,
-        // paddingTop: 10,
-        paddingVertical: "8%"
+        paddingTop: "8%"
     },
     donebtn: {
         backgroundColor: "#193250",

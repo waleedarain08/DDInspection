@@ -86,6 +86,7 @@ export function List({navigation}) {
               style={{
                 backgroundColor: '#f26521',
                 flexDirection: 'row',
+                marginVertical:5,
                 marginRight: '32%',
                 padding: '2.5%',
                 alignItems: 'center',
@@ -136,12 +137,9 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
-          <ButtonView
-            activeOpacity={0.8}
-            isRound={1}
-            style={styles.resumeButton}>
-            <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
-              Resume
+         <ButtonView onPress={() => navigation.navigate('Profile')} activeOpacity={0.8} style={styles.inspectButton}>
+            <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
+              Inspect Now
             </Text>
           </ButtonView>
 
@@ -172,6 +170,7 @@ export function List({navigation}) {
               style={{
                 backgroundColor: '#bd0000',
                 flexDirection: 'row',
+                marginVertical:5,
                 marginRight: '32%',
                 padding: '2.5%',
                 alignItems: 'center',
@@ -220,9 +219,12 @@ export function List({navigation}) {
 
         <View
           style={styles.buttonContainer}>
-          <ButtonView onPress={() => navigation.navigate('Profile')} activeOpacity={0.8} style={styles.inspectButton}>
-            <Text style={{color: '#fff', fontFamily:"OpenSans-Bold", fontSize: 11}}>
-              Inspect Now
+             <ButtonView
+            activeOpacity={0.8}
+            isRound={1}
+            style={styles.resumeButton}>
+            <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
+              Resume
             </Text>
           </ButtonView>
 
@@ -251,6 +253,7 @@ export function List({navigation}) {
                 backgroundColor: '#f26521',
                 flexDirection: 'row',
                 marginRight: '32%',
+                marginVertical:5,
                 padding: '2.5%',
                 alignItems: 'center',
                 justifyContent: 'space-evenly',
@@ -328,6 +331,7 @@ export function List({navigation}) {
               style={{
                 backgroundColor: '#f26521',
                 flexDirection: 'row',
+                marginVertical:5,
                 marginRight: '32%',
                 padding: '2.5%',
                 alignItems: 'center',
@@ -408,6 +412,7 @@ export function List({navigation}) {
               style={{
                 backgroundColor: '#bd0000',
                 flexDirection: 'row',
+                marginVertical:5,
                 marginRight: '32%',
                 padding: '2.5%',
                 alignItems: 'center',
