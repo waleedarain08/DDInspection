@@ -117,7 +117,7 @@ export default function ExteriorBack({navigation}) {
           itself.
         </Text>
         <View style={styles.imageCard}>
-          <Text>
+          <Text style={{paddingLeft:20}}>
             Top of deck, wide angle<Text style={{color: '#d91614'}}>*</Text>
           </Text>
           <View
@@ -241,7 +241,7 @@ export default function ExteriorBack({navigation}) {
           </View>
         </View>
         <View style={styles.imageCard}>
-          <Text >
+          <Text style={{paddingLeft:20}}>
             Top of deck, close up<Text style={{color: '#d91614'}}>*</Text>
           </Text>
           <View
@@ -1018,10 +1018,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fcfcfe',
     borderColor: '#f2f3f5',
     borderWidth: 1,
-    paddingHorizontal: 10,
-    paddingVertical: 10,
-    marginVertical: 10,
-    marginHorizontal: 10,
+    padding: 10,
+    margin:10
   },
   table: {
     width: 100,
