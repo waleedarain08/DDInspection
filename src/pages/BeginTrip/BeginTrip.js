@@ -56,7 +56,7 @@ export default function BeginTrip({ navigation }) {
     return (
         <View style={styles.container}>
             <View>
-                <View>
+                <View style={{paddingBottom:"20%"}}>
                     <FlatList
                         data={reason1}
                         keyExtractor={(item, index) => index}

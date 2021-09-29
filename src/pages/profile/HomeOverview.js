@@ -17,7 +17,7 @@ export default function HomeOverview({ navigation }) {
     {title: "abc",title:"Bedroom #2" },{title: "abc",title:"Bedroom #2" },{title: "abc",title:"Hallway" },{title: "abc",title:"Bedroom #3" },{title: "abc",title:"Bedroom #4" },{title: "abc",title:"Bedroom #4" },{title: "abc",title:"Bedroom #5" },{title: "abc",title:"Bedroom #6" }]);
     return(
         <View style={styles.container}>
-            <Text style={{color:"#2c3137",fontFamily: "Regular",paddingTop:12,paddingHorizontal:20,}}>Rooms are added as inspected.</Text>
+            <Text style={{color:"#2c3137",fontFamily: "OpenSans-Regular",paddingTop:12,paddingHorizontal:20,}}>Rooms are added as inspected.</Text>
             <Text style={{color:"#4d525c",fontSize:22,fontFamily: "OpenSans-Bold",paddingVertical:10,paddingHorizontal:20,}}>Finished Rooms</Text>
             <FlatList
               keyExtractor={(item, index) => index}
@@ -27,8 +27,8 @@ export default function HomeOverview({ navigation }) {
                     <View style={{ paddingHorizontal:20,borderBottomWidth:1,borderColor:"#Eff0f2"}}>
                         <View style={{flexDirection:"row",justifyContent:"space-between",paddingVertical:15}}>
                         <View >
-                        <Text style={{color:"#2c3137",fontFamily: "Regular",}}>{item.title}</Text>
-                        <Text style={{color:"#9ba0a6",fontSize:10,fontFamily: "Regular",}}>Interior-Main Level</Text>
+                        <Text style={{color:"#2c3137",fontFamily: "OpenSans-Regular"}}>{item.title}</Text>
+                        <Text style={{color:"#9ba0a6",fontSize:10,fontFamily: "OpenSans-Regular"}}>Interior-Main Level</Text>
                         </View>
                         {/* <View style={styles.line}></View> */}
                         <Text style={{color:"#4e4f61",fontWeight:"bold"}}>100 sq</Text>
@@ -93,13 +93,13 @@ const styles = StyleSheet.create ({
         paddingVertical:8,
         textAlign:"right",
         fontSize:12,
-        fontFamily: "Regular",
+        fontFamily: "OpenSans-Regular"
     },
     roomText1:{
         color:"#d4d4d4",
         paddingVertical:8,
         fontSize:12,
         fontWeight:"600",
-        fontFamily: "Regular",
+        fontFamily: "OpenSans-Regular"
     }
 })
