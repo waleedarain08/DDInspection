@@ -111,7 +111,7 @@ const [currentIndex, setCurrentIndex] = useState ()
                                     <Image style={styles.frameLogo} source={require('../../assets/frame.png')} />
                                     <Text style={{ color: "#2d3238", fontSize: 23, fontWeight: "bold", fontFamily: "OpenSans-Regular" }}>05</Text>
                                 </View>
-                                <Text style={{ color: "#a3adb9", fontSize: 12, lineHeight: 20, fontFamily: "OpenSans-Regular" }}>Bathrooms</Text>
+                                <Text style={{ color: "#a3adb9", fontSize: 12, lineHeight: 20, fontFamily: "OpenSans-Regular" }}>Bedrooms</Text>
                             </View>
                             <View>
                                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
@@ -119,7 +119,7 @@ const [currentIndex, setCurrentIndex] = useState ()
                                     <Text style={{ color: "#2d3238", fontSize: 22, fontWeight: "bold", paddingLeft: 6, fontFamily: "OpenSans-Regular" }}>350</Text>
 
                                 </View>
-                                <Text style={{ color: "#a3adb9", fontSize: 12, lineHeight: 20 }}>Squre feet</Text>
+                                <Text style={{ color: "#a3adb9", fontSize: 12, lineHeight: 20 }}>Square feet</Text>
                             </View>
                         </View>
                         <View style={{ flexDirection: "row", justifyContent: "space-evenly", paddingVertical: "20%" }}>

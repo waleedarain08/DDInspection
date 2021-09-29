@@ -54,7 +54,7 @@ export  function Profile({navigation}) {
           </View>
           <View style={{flex: 9}}>
             <Text style={styles.textProperty}>
-              You are at the correct property.101 main street Atlanta GA 12345
+              You are at the correct property.101 main street Atlanta, GA 12345
             </Text>
           </View>
         </View>
@@ -74,7 +74,7 @@ export  function Profile({navigation}) {
           </View>
           <View style={{flex: 9}}>
             <Text style={styles.textProperty}>
-              Your car is parked in safe location. if not please make sure it is
+              Your car is parked in a safe location. if not, please make sure it is
               and then proceed
             </Text>
           </View>
@@ -82,11 +82,11 @@ export  function Profile({navigation}) {
         <View style={{paddingVertical: 5, paddingHorizontal: 20,backgroundColor:"#f4f4f4"}}>
           <Text style={{color: '#666b71',fontSize:12,fontWeight:"700",fontFamily: "OpenSans-bold"}}>
             This property is accessible using the provided instructions. if it
-            is not accessible please contact (in the order):
+            is not accessible, please contact (in this order):
           </Text>
         </View>
         <View>
-          <View style={{flexDirection: 'row', paddingVertical: 10,backgroundColor:"#F9F9F9"}}>
+          <View style={{flexDirection: 'row', paddingVertical: 10,backgroundColor:"#F9F9F9",paddingLeft:15}}>
             <View
               style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
               <View style={styles.circle}></View>
@@ -98,7 +98,7 @@ export  function Profile({navigation}) {
               </Text>
             </View>
           </View>
-          <View style={{flexDirection: 'row', paddingVertical: 10,backgroundColor:"#F9F9F9"}}>
+          <View style={{flexDirection: 'row', paddingVertical: 10,backgroundColor:"#F9F9F9",paddingLeft:15}}>
             <View
               style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
               <View style={styles.circle}></View>
@@ -109,7 +109,7 @@ export  function Profile({navigation}) {
               </Text>
             </View>
           </View>
-          <View style={{flexDirection: 'row', paddingVertical: 10,backgroundColor:"#F9F9F9"}}>
+          <View style={{flexDirection: 'row', paddingVertical: 10,backgroundColor:"#F9F9F9",paddingLeft:15}}>
             <View
               style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
               <View style={styles.circle}></View>
@@ -214,7 +214,8 @@ const styles = StyleSheet.create({
     color: '#919eaf',
     fontSize:12,
     fontWeight:"600",
-    fontFamily: "OpenSans-Regular"
+    fontFamily: "OpenSans-Regular",
+    paddingRight:10
   },
   pouseButton: {
     flexDirection: 'row',

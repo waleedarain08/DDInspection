@@ -18,25 +18,25 @@ export default function EstimateItem({ navigation }) {
 
   return (
     <ScrollView style={styles.MainContainer}>
-      <View style={{ paddingVertical: 10, paddingHorizontal: 20 }}>
-        <Text style={{ color: "#464d55", fontWeight: "600", paddingTop: 20, fontFamily: "OpenSans-Bold", }}>Estimate Item Photos/Video</Text>
+      <View style={{ paddingVertical: 10, paddingHorizontal: 15 }}>
+        <Text style={{ color: "#464d55", fontWeight: "600", paddingTop: 20, fontFamily: "OpenSans-Bold",paddingLeft:5 }}>Estimate Item Photos/Video</Text>
         <View style={{ flexDirection: "row", justifyContent: "space-around", paddingVertical: 10 }}>
           <View>
             <Image style={styles.cross} source={require("../../assets/group743.png")} />
             <Image style={styles.table} source={require("../../assets/table.jpg")} />
-            <View style={{ paddingVertical: 10 }}>
+            {/* <View style={{ paddingVertical: 10 }}>
               <Text style={{ color: "#7b7e83", fontSize: 12, }}>Note:repair-specific </Text>
               <Text style={{ color: "#7b7e83", fontSize: 12 }}> photos / video</Text>
-            </View>
+            </View> */}
           </View>
           <View>
             <Image style={styles.cross} source={require("../../assets/group743.png")} />
             <Image style={styles.table} source={require("../../assets/table2.jpg")} />
             <View>
-              <View style={{ paddingVertical: 10 }}>
+              {/* <View style={{ paddingVertical: 10 }}>
                 <Text style={{ color: "#c7c8cc", fontSize: 12 }}>Note:repair-specific </Text>
                 <Text style={{ color: "#c7c8cc", fontSize: 12 }}> photos / video</Text>
-              </View>
+              </View> */}
             </View>
           </View>
           <View>
@@ -47,14 +47,14 @@ export default function EstimateItem({ navigation }) {
           </View>
         </View>
       </View>
-      <View style={{ paddingHorizontal: 20, paddingVertical: 20, flexDirection: "row", justifyContent: "space-between" }}>
+      <View style={{ paddingHorizontal: 20, paddingVertical: 20, flexDirection: "row", justifyContent: "space-between", backgroundColor: '#f2f3f5', paddingLeft: 25,marginVertical:10 }}>
         <Text style={{ color: "#213b57", fontWeight: "600", fontFamily: "OpenSans-Bold", }}>Repair Dry Rot</Text>
         <View style={styles.editButtom}>
           <Image style={styles.editIcon} source={require("../../assets/edit.png")} />
           <Text style={{ color: "#83838b", textAlign: "center", paddingTop: 2, fontSize: 12 }}>Edit</Text>
         </View>
       </View>
-      <View style={{ paddingHorizontal: 20, paddingVertical: 20, flexDirection: "row", justifyContent: "space-between" }}>
+      <View style={{ paddingHorizontal: 20, paddingVertical: 20, flexDirection: "row", justifyContent: "space-between", paddingLeft: 25,backgroundColor: '#f2f3f5',  }}>
         <Text style={{ color: "#263f5a", fontWeight: "600", fontFamily: "OpenSans-Bold", }}>6.0 Framing</Text>
         <TouchableOpacity
             activeOpacity={0.5}
@@ -70,7 +70,7 @@ export default function EstimateItem({ navigation }) {
         color: "#383d43", fontWeight: "600", fontFamily: "OpenSans-Bold",
       }}
       >Labor Total</Text>
-      <View style={{ flexDirection: "row", paddingHorizontal: 20, paddingVertical: 20 }}>
+      <View style={{ flexDirection: "row", paddingHorizontal: 20, paddingVertical: 20, paddingLeft: 30 }}>
         <Text style={{ flex: 1, color: "#abacb0", fontSize: 12, fontFamily: "OpenSans-Regular", }}>Replace 4 Planks On Deck. Use Matching Screws</Text>
         <View style={{ flexDirection: "row", flex: 1, justifyContent: "space-around" }}>
           <Text style={{ color: "#4a4e59", flex: 0.8, paddingLeft: 35, fontWeight: "600", fontSize: 12 }}>#400.00</Text>
@@ -87,13 +87,15 @@ export default function EstimateItem({ navigation }) {
         justifyContent: "space-between",
         paddingHorizontal: 20,
         paddingVertical: 20,
-        backgroundColor: "#fcfcfc"
+        backgroundColor: "#fcfcfc",
+        borderWidth:1,
+        borderColor:"#f2f3f5"
       }}>
-        <Text style={{ color: "#293036", fontWeight: "bold", fontFamily: "OpenSans-Bold", }}>Labor Total</Text>
+        <Text style={{ color: "#293036", fontWeight: "bold", fontFamily: "OpenSans-Bold", paddingLeft: 15 }}>Labor Total</Text>
         <Text style={{ color: "#2b2f38", fontWeight: "bold", fontFamily: "OpenSans-Regular", }}>$44.95</Text>
       </View>
       <Text style={{ paddingHorizontal: 20, paddingTop: 20,fontFamily: "OpenSans-Bold", }}>Material</Text>
-      <View style={{ flexDirection: "row", paddingHorizontal: 20, paddingVertical: 10 }}>
+      <View style={{ flexDirection: "row", paddingHorizontal: 20, paddingVertical: 10, paddingLeft: 30 }}>
         <Text style={{ flex: 1, color: "#abacb0", fontSize: 12 }}>2 In. X 4 In.X 8 Ft #2 Ground Contact Pressure</Text>
         <View style={{ flexDirection: "row", flex: 1, justifyContent: "space-around" }}>
           <Text style={{ color: "#4a4e59", paddingLeft: 10, fontWeight: "600", fontSize: 12 }}>#39.96</Text>
@@ -106,7 +108,7 @@ export default function EstimateItem({ navigation }) {
           <Image style={styles.deleteLogo} source={require("../../assets/delete2.png")} />
         </View>
       </View>
-      <View style={{ flexDirection: "row", paddingHorizontal: 20, paddingVertical: 10 }}>
+      <View style={{ flexDirection: "row", paddingHorizontal: 20, paddingVertical: 10, paddingLeft: 30 }}>
         <Text style={{ flex: 1, color: "#abacb0", fontSize: 12 }}>Additional Material-Screws, Brackets,Etc.SKU N/A</Text>
         <View style={{ flexDirection: "row", flex: 1, justifyContent: "space-around" }}>
           <Text style={{ color: "#4a4e59", paddingLeft: 10, fontWeight: "600", fontSize: 12 }}>#4.99</Text>
@@ -119,10 +121,11 @@ export default function EstimateItem({ navigation }) {
           <Image style={styles.deleteLogo} source={require("../../assets/delete2.png")} />
         </View>
       </View>
-      <TouchableOpacity activeOpacity={0.9} style={{paddingHorizontal:20}}>
+      <TouchableOpacity activeOpacity={0.9} style={{paddingHorizontal:20, paddingLeft: 30}}>
         <Text style={{color:"#344c66",fontFamily: "OpenSans-Bold",}}>Add New Item +</Text>
       </TouchableOpacity>
-      <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingVertical: 20 }}>
+      <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingVertical: 20, paddingLeft: 30,  borderWidth:1,
+        borderColor:"#f2f3f5",marginVertical:10 }}>
         <Text style={{ color: "#293036", fontWeight: "bold",fontFamily: "OpenSans-Bold", }}>Material Total</Text>
         <Text style={{ color: "#2b2f38", fontWeight: "bold" }}>$400.95</Text>
       </View>

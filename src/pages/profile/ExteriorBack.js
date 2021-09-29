@@ -241,7 +241,7 @@ export default function ExteriorBack({navigation}) {
           </View>
         </View>
         <View style={styles.imageCard}>
-          <Text>
+          <Text >
             Top of deck, close up<Text style={{color: '#d91614'}}>*</Text>
           </Text>
           <View
@@ -408,6 +408,8 @@ export default function ExteriorBack({navigation}) {
               justifyContent: 'space-between',
               paddingHorizontal: 20,
               paddingVertical: 20,
+              borderColor:"#f4f4f4",
+              borderBottomWidth:1
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Wood
@@ -427,6 +429,8 @@ export default function ExteriorBack({navigation}) {
               justifyContent: 'space-between',
               paddingHorizontal: 20,
               paddingVertical: 20,
+              borderColor:"#f4f4f4",
+              borderBottomWidth:1
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Vinyl
@@ -446,6 +450,8 @@ export default function ExteriorBack({navigation}) {
               justifyContent: 'space-between',
               paddingHorizontal: 20,
               paddingVertical: 20,
+              borderColor:"#f4f4f4",
+              borderBottomWidth:1
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Composite
@@ -465,6 +471,8 @@ export default function ExteriorBack({navigation}) {
               justifyContent: 'space-between',
               paddingHorizontal: 20,
               paddingVertical: 20,
+              borderColor:"#f4f4f4",
+              borderBottomWidth:1
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Other enter text
@@ -486,7 +494,7 @@ export default function ExteriorBack({navigation}) {
             }}>
             <Text style={{fontFamily: 'OpenSans-Regular'}}>Deck Material</Text>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
-              Select All the apply
+              Select all that apply
             </Text>
           </View>
           <TouchableOpacity
@@ -497,6 +505,8 @@ export default function ExteriorBack({navigation}) {
               justifyContent: 'space-between',
               paddingHorizontal: 20,
               paddingVertical: 20,
+              borderColor:"#f4f4f4",
+              borderBottomWidth:1
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Railing
@@ -518,6 +528,8 @@ export default function ExteriorBack({navigation}) {
               justifyContent: 'space-between',
               paddingHorizontal: 20,
               paddingVertical: 20,
+              borderColor:"#f4f4f4",
+              borderBottomWidth:1
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               No Railing
@@ -539,6 +551,8 @@ export default function ExteriorBack({navigation}) {
               justifyContent: 'space-between',
               paddingHorizontal: 20,
               paddingVertical: 20,
+              borderColor:"#f4f4f4",
+              borderBottomWidth:1
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Composite
@@ -560,6 +574,8 @@ export default function ExteriorBack({navigation}) {
               justifyContent: 'space-between',
               paddingHorizontal: 20,
               paddingVertical: 20,
+              borderColor:"#f4f4f4",
+              borderBottomWidth:1
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Covered
@@ -581,6 +597,8 @@ export default function ExteriorBack({navigation}) {
               justifyContent: 'space-between',
               paddingHorizontal: 20,
               paddingVertical: 20,
+              borderColor:"#f4f4f4",
+              borderBottomWidth:1
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Uncovered
@@ -602,9 +620,11 @@ export default function ExteriorBack({navigation}) {
               justifyContent: 'space-between',
               paddingHorizontal: 20,
               paddingVertical: 20,
+              borderColor:"#f4f4f4",
+              borderBottomWidth:1
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
-              Star
+              Stairs
             </Text>
             <TouchableOpacity
               style={tick5 ? styles.circleTick : styles.circleTick1}>
@@ -623,9 +643,11 @@ export default function ExteriorBack({navigation}) {
               justifyContent: 'space-between',
               paddingHorizontal: 20,
               paddingVertical: 20,
+              borderColor:"#f4f4f4",
+              borderBottomWidth:1
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
-              No Star
+              No Stairs
             </Text>
             <TouchableOpacity
               style={tick6 ? styles.circleTick : styles.circleTick1}>
@@ -646,7 +668,7 @@ export default function ExteriorBack({navigation}) {
           <Text style={{color: '#000000', fontFamily: 'OpenSans-Regular'}}>
             Note:{' '}
             <Text style={{color: '#8e9196', fontFamily: 'OpenSans-Regular'}}>
-              Certain answer choices will promp you to add an estimate. As you
+              Certain answer choices will prompt you to add an estimate. As you
               add an estimate please pay close attention and added as needed
             </Text>
           </Text>
@@ -664,7 +686,7 @@ export default function ExteriorBack({navigation}) {
               paddingBottom: 20,
               fontFamily: 'OpenSans-Regular',
             }}>
-            Dose the deck have rot which makes it unsafe
+            Does the deck have rot which makes it unsafe?
           </Text>
           <TouchableOpacity
             activeOpacity={0.9}
@@ -721,7 +743,7 @@ export default function ExteriorBack({navigation}) {
               paddingBottom: 20,
               fontFamily: 'OpenSans-Regular',
             }}>
-            Dose the deck appear weathered
+            Does the deck appear weathered?
           </Text>
           <TouchableOpacity
             activeOpacity={0.9}
@@ -785,7 +807,7 @@ export default function ExteriorBack({navigation}) {
               paddingBottom: 20,
               fontFamily: 'OpenSans-Regular',
             }}>
-            Dose each deck support have a footer under it
+            Does each deck support have a footer under it?
           </Text>
           <TouchableOpacity
             activeOpacity={0.9}
@@ -844,7 +866,6 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
             }}>
             <Text
-              onPress={() => navigation.navigate('EstimateItem')}
               style={{color: '#2b2f38', fontFamily: 'OpenSans-bold',fontWeight:"700"}}>
               Estimate Item
             </Text>
@@ -932,6 +953,10 @@ export default function ExteriorBack({navigation}) {
                 </TouchableOpacity>
               </View>
             </View>
+            <TouchableOpacity
+            activeOpacity={0.9}
+            onPress={() => navigation.navigate('EstimateItem')}
+            >
             <Text
               style={{
                 color: '#425871',
@@ -941,6 +966,7 @@ export default function ExteriorBack({navigation}) {
               }}>
               Add New Item +
             </Text>
+            </TouchableOpacity>
           </View>
         </View>
         <View
@@ -1001,6 +1027,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 10,
+    marginLeft:5
   },
   delete: {
     width: 12,

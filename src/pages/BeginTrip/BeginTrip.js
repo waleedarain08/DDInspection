@@ -101,7 +101,7 @@ export default function BeginTrip({ navigation }) {
                                         </View>
                                     </View>
                                 </View>
-                                     <View style={{backgroundColor:"red",width:"100%",height:1,marginTop:30}}></View>
+                                     <View style={{backgroundColor:"#efeff1",width:"100%",height:1,marginTop:30}}></View>
                                      </>
                             )
                         }}>
