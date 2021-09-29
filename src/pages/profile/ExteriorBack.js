@@ -409,7 +409,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Wood
@@ -430,7 +430,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Vinyl
@@ -451,7 +451,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Composite
@@ -472,7 +472,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Other enter text
@@ -506,7 +506,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Railing
@@ -529,7 +529,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               No Railing
@@ -552,7 +552,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Composite
@@ -575,7 +575,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Covered
@@ -598,7 +598,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Uncovered
@@ -621,7 +621,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Stairs
@@ -644,7 +644,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               No Stairs
