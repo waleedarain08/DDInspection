@@ -593,7 +593,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appstirr.DDInspection;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appstirr.sylvan;
 				PRODUCT_NAME = DDInspection;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -620,7 +620,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appstirr.DDInspection;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appstirr.sylvan;
 				PRODUCT_NAME = DDInspection;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

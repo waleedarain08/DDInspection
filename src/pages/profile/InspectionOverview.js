@@ -23,7 +23,7 @@ export default function InspectionOverview({ navigation }) {
   return (
     <View style={styles.container}>
       <ScrollView
-        contentContainerStyle={{ height: 800 }}
+        contentContainerStyle={{ height: 850 }}
         showsVerticalScrollIndicator={false}>
         <View
           style={{
@@ -80,7 +80,10 @@ export default function InspectionOverview({ navigation }) {
               88
             </Text>
           </View>
-          <View style={styles.card3}>
+          <TouchableOpacity 
+          activeOpacity={0.9}
+          onPress={() => navigation.navigate('HomeOverview')}
+          style={styles.card3}>
             <TouchableOpacity
               activeOpacity={0.9}
               onPress={() => navigation.navigate('HomeOverview')}>
@@ -100,11 +103,15 @@ export default function InspectionOverview({ navigation }) {
               </Text>
             </TouchableOpacity>
             <Image
+            
               style={styles.homelogo}
               source={require('../../assets/home.png')}
             />
-          </View>
-          <View style={styles.card4}>
+          </TouchableOpacity >
+          <TouchableOpacity 
+             activeOpacity={0.9}
+             onPress={() => navigation.navigate('EstimateScope')}
+           style={styles.card4}>
             <TouchableOpacity
               activeOpacity={0.9}
               onPress={() => navigation.navigate('EstimateScope')}>
@@ -127,7 +134,7 @@ export default function InspectionOverview({ navigation }) {
               style={styles.estimatelogo2}
               source={require('../../assets/chart.png')}
             />
-          </View>
+          </TouchableOpacity >
         </View>
         <View style={{ backgroundColor: "#f8f8f8", paddingVertical: 10 }}>
           <View

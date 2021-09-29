@@ -73,7 +73,7 @@ export default function EstimateItem({ navigation }) {
       <View style={{ flexDirection: "row", paddingHorizontal: 20, paddingVertical: 20, paddingLeft: 30 }}>
         <Text style={{ flex: 1, color: "#abacb0", fontSize: 12, fontFamily: "OpenSans-Regular", }}>Replace 4 Planks On Deck. Use Matching Screws</Text>
         <View style={{ flexDirection: "row", flex: 1, justifyContent: "space-around" }}>
-          <Text style={{ color: "#4a4e59", flex: 0.8, paddingLeft: 35, fontWeight: "600", fontSize: 12 }}>#400.00</Text>
+          <Text style={{ color: "#4a4e59", flex: 0.8, paddingLeft: 35, fontWeight: "600", fontSize: 12 }}>$400.00</Text>
           <TouchableOpacity
             activeOpacity={0.9}
             style={styles.editButtom2}>
@@ -98,7 +98,7 @@ export default function EstimateItem({ navigation }) {
       <View style={{ flexDirection: "row", paddingHorizontal: 20, paddingVertical: 10, paddingLeft: 30 }}>
         <Text style={{ flex: 1, color: "#abacb0", fontSize: 12 }}>2 In. X 4 In.X 8 Ft #2 Ground Contact Pressure</Text>
         <View style={{ flexDirection: "row", flex: 1, justifyContent: "space-around" }}>
-          <Text style={{ color: "#4a4e59", paddingLeft: 10, fontWeight: "600", fontSize: 12 }}>#39.96</Text>
+          <Text style={{ color: "#4a4e59", paddingLeft: 10, fontWeight: "600", fontSize: 12 }}>$39.96</Text>
           <TouchableOpacity
             activeOpacity={0.9}
             style={styles.editButtom2}>
@@ -111,7 +111,7 @@ export default function EstimateItem({ navigation }) {
       <View style={{ flexDirection: "row", paddingHorizontal: 20, paddingVertical: 10, paddingLeft: 30 }}>
         <Text style={{ flex: 1, color: "#abacb0", fontSize: 12 }}>Additional Material-Screws, Brackets,Etc.SKU N/A</Text>
         <View style={{ flexDirection: "row", flex: 1, justifyContent: "space-around" }}>
-          <Text style={{ color: "#4a4e59", paddingLeft: 10, fontWeight: "600", fontSize: 12 }}>#4.99</Text>
+          <Text style={{ color: "#4a4e59", paddingLeft: 10, fontWeight: "600", fontSize: 12 }}>$4.99</Text>
           <TouchableOpacity
             activeOpacity={0.9}
             style={styles.editButtom2}>
@@ -125,7 +125,7 @@ export default function EstimateItem({ navigation }) {
         <Text style={{color:"#344c66",fontFamily: "OpenSans-Bold",}}>Add New Item +</Text>
       </TouchableOpacity>
       <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingVertical: 20, paddingLeft: 30,  borderWidth:1,
-        borderColor:"#f2f3f5",marginVertical:10 }}>
+        borderColor:"#f2f3f5",marginVertical:10,backgroundColor: "#fcfcfc", }}>
         <Text style={{ color: "#293036", fontWeight: "bold",fontFamily: "OpenSans-Bold", }}>Material Total</Text>
         <Text style={{ color: "#2b2f38", fontWeight: "bold" }}>$400.95</Text>
       </View>
