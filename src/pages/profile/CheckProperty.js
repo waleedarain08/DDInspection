@@ -34,17 +34,17 @@ export default function CheckProperty({navigation}) {
     },
     {
       id: 2,
-      title: 'water service is activated',
+      title: 'Water service is activated',
       isSelect: 0,
     },
     {
       id: 3,
-      title: 'Gas service is activated if aplicable',
+      title: 'Gas service is activated if applicable',
       isSelect: 0,
     },
     {
       id: 4,
-      title: 'Turn on HVAC and leave it running during the inspection',
+      title: 'Turn on HVAC and leave it running during the inspection.',
       isSelect: 0,
     },
     // {
@@ -116,7 +116,7 @@ export default function CheckProperty({navigation}) {
       {/* <ScrollView contentContainerStyle={{ height:700 }} showsVerticalScrollIndicator={false}> */}
       <View style={{paddingVertical: 20, flex: 1}}>
         <Text style={{color: '#8f949a', fontFamily: 'OpenSans-Regular'}}>
-          Thank you for handling this inspection
+          Thank you for handling this inspection.
         </Text>
         <View style={{paddingVertical: 4}}>
           <Text style={styles.confirmation}>
@@ -132,7 +132,7 @@ export default function CheckProperty({navigation}) {
           extraData={dataSource}
         />
       </View>
-      <View style={{flex: 2, marginTop: 20}}>
+      <View style={{flex: 2, marginTop:"32%"}}>
         <ButtonView
           activeOpacity={0.9}
           onPress={() => checkList()}
@@ -278,15 +278,15 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     justifyContent: 'center',
     borderRadius: 25,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.27,
-    shadowRadius: 4.65,
+    // shadowColor: '#000',
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 3,
+    // },
+    // shadowOpacity: 0.27,
+    // shadowRadius: 4.65,
 
-    elevation: 4,
+    // elevation: 4,
   },
   inspectButtonUnSelected: {
     backgroundColor: '#909090',
@@ -295,13 +295,13 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     justifyContent: 'center',
     borderRadius: 25,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.27,
-    shadowRadius: 4.65,
+    // shadowColor: '#000',
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 3,
+    // },
+    // shadowOpacity: 0.27,
+    // shadowRadius: 4.65,
 
   },
   stopButton: {
@@ -312,15 +312,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderWidth: 1,
     borderRadius: 30,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.27,
-    shadowRadius: 4.65,
+    // shadowColor: '#000',
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 3,
+    // },
+    // shadowOpacity: 0.27,
+    // shadowRadius: 4.65,
 
-    elevation: 2,
+    // elevation: 2,
     borderColor: '#193250',
   },
   view: {

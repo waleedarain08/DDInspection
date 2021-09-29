@@ -71,7 +71,7 @@ export default function InteriorMain({navigation}) {
             />
           </TouchableOpacity>
         <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 4,paddingTop:2,fontFamily:"OpenSans-Regular"}}>
-          Bathroom 1
+          Bathroom 2
         </Text>
         <View style={{flex: 0.5}}>
           <Image
@@ -136,7 +136,7 @@ export default function InteriorMain({navigation}) {
             backgroundColor: '#ffffff',
             paddingHorizontal:10
           }}>
-          <Text style={{flex: 3.5, color: '#797b7f',fontFamily:"OpenSans-Regular"}}>Suqure Footage</Text>
+          <Text style={{flex: 3.5, color: '#797b7f',fontFamily:"OpenSans-Regular"}}>Square Footage</Text>
           <Text style={{flex: 1,fontFamily:"OpenSans-Regular"}}>$0.00</Text>
           <TouchableOpacity
             activeOpacity={0.9}
@@ -222,7 +222,7 @@ export default function InteriorMain({navigation}) {
             />
           </TouchableOpacity>
         <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 4,paddingTop:2,fontFamily:"OpenSans-Regular"}}>
-          Bathroom 1
+          Bathroom 2
         </Text>
         <View style={{flex: 0.5}}>
           <Image

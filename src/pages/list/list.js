@@ -410,7 +410,7 @@ export function List({navigation}) {
           <View style={{flex: 2, marginLeft: '8%'}}>
             <View
               style={{
-                backgroundColor: '#bd0000',
+                backgroundColor: '#f26521',
                 flexDirection: 'row',
                 marginVertical:5,
                 marginRight: '32%',

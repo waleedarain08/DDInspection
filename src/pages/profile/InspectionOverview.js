@@ -142,7 +142,7 @@ export default function InspectionOverview({ navigation }) {
           </View>
           <View>
             <View style={styles.front}>
-              <Text style={{ flex: 2.5, color: '#84868a',  fontFamily:  "OpenSans-Regular" }}>Exterior Front</Text>
+              <Text style={{ flex: 2.5, color: '#84868a',  fontFamily:  "OpenSans-Regular" }}>Exterior</Text>
               <Text style={{ flex: 1, color: '#86888c',  fontFamily:  "OpenSans-Regular"}}>2</Text>
               <Image
                 style={styles.download}
@@ -338,6 +338,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4.65,
 
     elevation: 10,
+    height: 90,
   },
   completeButton: {
     flexDirection: "row",

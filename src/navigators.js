@@ -42,6 +42,23 @@ const drawerButton = navigation => {
   </TouchableOpacity>
   );
 };
+const drawerButton2 = navigation => {
+  console.log("navigation", navigation )
+  return (
+    <TouchableOpacity
+    activeOpacity={0.8}
+    onPress={() => {
+      navigation.dispatch(DrawerActions.toggleDrawer())
+    }}
+    style={{marginLeft: 10, color: '#fff',backgroundColor:"#e7ebee",paddingHorizontal:6,paddingVertical:6,borderRadius:6}}
+    >
+    <Image 
+    source={require('./assets/back.png')}
+    style={{width: 24, height: 18, resizeMode: 'contain',tintColor: '#192550',}}
+  />
+  </TouchableOpacity>
+  );
+};
 const drawerIcon = navigation => {
   return (
     <TouchableOpacity
@@ -136,7 +153,7 @@ function DrawerNavigator() {
           name="List" component={List} />
         <Drawer.Screen options={({navigation}) => ({
             headerShown: true,
-            headerLeft: () => drawerButton(navigation),
+            headerLeft: () => drawerButton2(navigation),
             headerTitle:"MY PROFILE",
             headerRight: () => headerRightIcon2(navigation),
           })} name="Account" component={Account} />
@@ -209,6 +226,7 @@ function HomeBeginTripStack() {
         name="EndInspection"
         component={EndInspection}
         options={({navigation}) => ({
+          headerTitle:"INSPECTION COMPLETE",
           headerLeft: () => drawerIcon(navigation),
     
         })}
