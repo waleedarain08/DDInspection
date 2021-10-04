@@ -9,7 +9,6 @@ export const getApi = async (url, data, token) => {
         'Authorization': `Bearer ${token}`, 
       }
     })
-    console.log(response, "response")
     if (response.status == 200) {
       return Promise.resolve({
         status: 'success',
@@ -22,7 +21,6 @@ export const getApi = async (url, data, token) => {
 }
 
 export const postApi = async (url, data, auth) => {
-  console.log(url, data, auth)
   try {
     let response = await axios.post(url, data, {
       headers: {
@@ -31,7 +29,6 @@ export const postApi = async (url, data, auth) => {
         'Authorization': `Bearer ${auth}`, 
       }
     })
-    console.log(response, "response")
     if (response.status == 200) {
       return Promise.resolve({
         status: 'success',
@@ -45,7 +42,6 @@ export const postApi = async (url, data, auth) => {
 
 
 export const patchApi = async (url, data, auth) => {
-  console.log(url, data, auth)
   try {
     let response = await axios.patch(url, data, {
       headers: {
@@ -54,7 +50,6 @@ export const patchApi = async (url, data, auth) => {
         'Authorization': `Bearer ${auth}`, 
       }
     })
-    console.log(response, "response")
     if (response.status == 200) {
       return Promise.resolve({
         status: 'success',
