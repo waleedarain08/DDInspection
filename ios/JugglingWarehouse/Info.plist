@@ -35,14 +35,14 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>DDinspection need Camera access to upload images</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
-  <key>NSPhotoLibraryUsageDescription</key>
-  <string>DDinspection need photos access to upload images</string>
-  <key>NSCameraUsageDescription</key>
-  <string>DDinspection need Camera access to upload images</string>
-  <key>NSMicrophoneUsageDescription</key>
-  <string>DDinspection need microphone access to record voice</string>
+	<string></string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>DDinspection need microphone access to record voice</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>DDinspection need photos access to upload images</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>

@@ -117,7 +117,7 @@ export default function ExteriorBack({navigation}) {
           itself.
         </Text>
         <View style={styles.imageCard}>
-          <Text>
+          <Text style={{paddingLeft:20}}>
             Top of deck, wide angle<Text style={{color: '#d91614'}}>*</Text>
           </Text>
           <View
@@ -241,7 +241,7 @@ export default function ExteriorBack({navigation}) {
           </View>
         </View>
         <View style={styles.imageCard}>
-          <Text >
+          <Text style={{paddingLeft:20}}>
             Top of deck, close up<Text style={{color: '#d91614'}}>*</Text>
           </Text>
           <View
@@ -409,7 +409,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Wood
@@ -430,7 +430,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Vinyl
@@ -451,7 +451,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Composite
@@ -472,7 +472,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Other enter text
@@ -506,7 +506,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Railing
@@ -529,7 +529,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               No Railing
@@ -552,7 +552,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Composite
@@ -575,7 +575,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Covered
@@ -598,7 +598,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Uncovered
@@ -621,7 +621,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               Stairs
@@ -644,7 +644,7 @@ export default function ExteriorBack({navigation}) {
               paddingHorizontal: 20,
               paddingVertical: 20,
               borderColor:"#f4f4f4",
-              borderBottomWidth:1
+              borderBottomWidth:2
             }}>
             <Text style={{color: '#6a707c', fontFamily: 'OpenSans-Regular'}}>
               No Stairs
@@ -1018,10 +1018,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fcfcfe',
     borderColor: '#f2f3f5',
     borderWidth: 1,
-    paddingHorizontal: 10,
-    paddingVertical: 10,
-    marginVertical: 10,
-    marginHorizontal: 10,
+    padding: 10,
+    margin:10
   },
   table: {
     width: 100,

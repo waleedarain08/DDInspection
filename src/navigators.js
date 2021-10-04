@@ -50,11 +50,11 @@ const drawerButton2 = navigation => {
     onPress={() => {
       navigation.dispatch(DrawerActions.toggleDrawer())
     }}
-    style={{marginLeft: 10, color: '#fff',backgroundColor:"#e7ebee",paddingHorizontal:6,paddingVertical:6,borderRadius:6}}
+    style={{marginLeft: 10, color: '#fff',backgroundColor:"#e7ebee",paddingHorizontal:8,paddingVertical:6,borderRadius:6}}
     >
     <Image 
     source={require('./assets/back.png')}
-    style={{width: 24, height: 18, resizeMode: 'contain',tintColor: '#192550',}}
+    style={{width: 16, height: 18, resizeMode: 'contain',tintColor: '#192550',}}
   />
   </TouchableOpacity>
   );

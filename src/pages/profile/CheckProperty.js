@@ -169,13 +169,11 @@ export default function CheckProperty({navigation}) {
             <View style={{marginVertical: 25}}>
               <TouchableOpacity
                 activeOpacity={0.9}
-                onPress={() => navigation.navigate('')}
                 style={styles.modalButtons}>
                 <Text style={{color: '#fff', fontFamily:"OpenSans-Regular"}}>Cannot Access Property</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 activeOpacity={0.9}
-                onPress={() => navigation.navigate('')}
                 style={styles.modalButtons}>
                 <Text style={{color: '#fff', fontFamily:"OpenSans-Regular"}}>Utilities Not Activated</Text>
               </TouchableOpacity>
@@ -187,7 +185,6 @@ export default function CheckProperty({navigation}) {
               </TouchableOpacity>
               <TouchableOpacity
                 activeOpacity={0.9}
-                onPress={() => navigation.navigate('')}
                 style={styles.modalButtons}>
                 <Text style={{color: '#fff', fontFamily:"OpenSans-Regular"}}>Pause Inspection</Text>
               </TouchableOpacity>

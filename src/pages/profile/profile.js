@@ -85,8 +85,8 @@ export  function Profile({navigation}) {
             is not accessible, please contact (in this order):
           </Text>
         </View>
-        <View>
-          <View style={{flexDirection: 'row', paddingVertical: 10,backgroundColor:"#F9F9F9",paddingLeft:15}}>
+        <View> 
+          <View style={{flexDirection: 'row', paddingVertical: 10,backgroundColor:"#F9F9F9",paddingLeft:15,paddingTop:20}}>
             <View
               style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
               <View style={styles.circle}></View>
