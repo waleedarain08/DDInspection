@@ -12,7 +12,7 @@ import { ButtonView } from '../../components';
 export default function BeginTrip({ navigation }) {
     const [reason1, setReason1] = useState([{ title: "abc", image: require('../../assets/house3.jpg') }, { title: "abc", image: require('../../assets/house1.jpg') }, { title: "abc", image: require('../../assets/house3.jpg') }, { title: "abc", image: require('../../assets/house1.jpg') }, { title: "abc", image: require('../../assets/house3.jpg') }]);
     const [modalVisible, setModalVisible] = useState(false);
-    
+
     const doubleCall = () => {
         setModalVisible(!modalVisible);
         navigation.navigate("Download");
@@ -37,7 +37,7 @@ export default function BeginTrip({ navigation }) {
                     </View>
                     <View style={{ flex: 6 }}>
                         <Text style={styles.textconfimr}>Please confirm your devices battery is sufficiently charge and you have the following tools:</Text>
-                        <Text style={{ color: "#93969d", paddingTop: 8, fontSize: 12,fontFamily:"OpenSans-Regular", }}>Rafter Square, Tape Measure, Sonic Measure</Text>
+                        <Text style={{ color: "#93969d", paddingTop: 8, fontSize: 12, fontFamily: "OpenSans-Regular", }}>Rafter Square, Tape Measure, Sonic Measure</Text>
                     </View>
                 </View>
                 <View style={styles.borderline}></View>
@@ -66,53 +66,71 @@ export default function BeginTrip({ navigation }) {
                         renderItem={({ item }) => {
                             return (
                                 <>
-                                <View style={{ flexDirection: "row", paddingHorizontal: 16, marginTop: 35 }}>
-                                    <View style={{
-                                        height: 120, width: 120,
-                                        borderRadius: 10, elevation: 25, backgroundColor: "#fff",shadowColor: "#000",
-                                        shadowOffset: {
-                                            width: 2,
-                                            height: 6
-                                        },
-                                        shadowOpacity: 0.25,
-                                        shadowRadius: 4,
-                                    }}>
-                                        <Image style={styles.housepng} source={item.image} />
+                                    <View style={{ flexDirection: "row", paddingHorizontal: 16, marginTop: 35 }}>
+                                        <View style={{
+                                            height: 120, width: 120,
+                                            borderRadius: 10, elevation: 25, backgroundColor: "#fff", shadowColor: "#000",
+                                            shadowOffset: {
+                                                width: 2,
+                                                height: 6
+                                            },
+                                            shadowOpacity: 0.25,
+                                            shadowRadius: 4,
+                                        }}>
+                                            <Image style={styles.housepng} source={item.image} />
+                                        </View>
+                                        <View style={{ flex: 1.5, marginLeft: "5%" }}>
+                                            <View
+                                                style={{
+                                                    backgroundColor: '#f26521',
+                                                    flexDirection: 'row',
+                                                    marginVertical: 5,
+                                                    marginRight: '32%',
+                                                    padding: '2.5%',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'space-evenly',
+                                                    borderRadius: 20,
+                                                }}>
+                                                <Image
+                                                    source={require('../../assets/calendar.png')}
+                                                    style={{
+                                                        height: 14,
+                                                        width: 14,
+                                                        resizeMode: 'contain',
+                                                    }}
+                                                />
+                                                <Text style={{ color: '#fff', fontFamily: "OpenSans-Regular", fontSize: 10 }}>
+                                                    Feb 16 - 11:30AM
+                                                </Text>
+                                            </View>
+                                            <View style={{ flexDirection: "row" }}>
+                                                <View>
+                                                    <Image style={styles.locationLogo} source={require("../../assets/location.png")} />
+                                                </View>
+                                                <View style={{ marginBottom: 10 }}>
+                                                    <Text style={{ color: "#adb0b9", paddingHorizontal: 10, fontSize: 10 }}>4317 Masonic Drive fort,4116 street San Diago California</Text>
+                                                </View>
+                                            </View>
+                                            <View style={{ flexDirection: "row" }}>
+                                                <View>
+                                                    <Image style={styles.locationLogo} source={require("../../assets/infoSquare.png")} />
+                                                </View>
+                                                <Text style={{ color: "#adb0b9", paddingHorizontal: 10, fontSize: 10 }}>The tenant Sue Smith (415-555-1212) was contacted on 1/22/21. She well be there from 9-11AM on 1/26/21</Text>
+                                            </View>
+                                        </View>
                                     </View>
-                                    <View style={{ flex: 1.5, marginLeft: "5%" }}>
-                                        <View
-                                            style={styles.btn}>
-                                            <Image style={styles.calendarLogo} source={require("../../assets/calendar.png")} />
-                                            <Text style={{ color: "#ffffff", fontSize: 12 }}>16 Jun - 900AM</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "row" }}>
-                                            <View>
-                                                <Image style={styles.locationLogo} source={require("../../assets/location.png")} />
-                                            </View>
-                                            <View style={{ marginBottom: 10 }}>
-                                                <Text style={{ color: "#adb0b9", paddingHorizontal: 10, fontSize: 10 }}>4317 Masonic Drive fort,4116 street San Diago California</Text>
-                                            </View>
-                                        </View>
-                                        <View style={{ flexDirection: "row" }}>
-                                            <View>
-                                                <Image style={styles.locationLogo} source={require("../../assets/infoSquare.png")} />
-                                            </View>
-                                            <Text style={{ color: "#adb0b9", paddingHorizontal: 10, fontSize: 10 }}>The tenant Sue Smith (415-555-1212) was contacted on 1/22/21. She well be there from 9-11AM on 1/26/21</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                                     <View style={{backgroundColor:"#efeff1",width:"100%",height:1,marginTop:30}}></View>
-                                     </>
+                                    <View style={{ backgroundColor: "#efeff1", width: "100%", height: 1, marginTop: 30 }}></View>
+                                </>
                             )
                         }}>
                     </FlatList>
                 </View>
                 <View
                     style={{
-                        position:"absolute", bottom: "0%",left:0,right:0, shadowColor: '#ffffff', flex: 2, justifyContent: "center",
-                        paddingHorizontal:20,
-                        paddingBottom:30,
-                        paddingTop:10,
+                        position: "absolute", bottom: "0%", left: 0, right: 0, shadowColor: '#ffffff', flex: 2, justifyContent: "center",
+                        paddingHorizontal: 20,
+                        paddingBottom: 30,
+                        paddingTop: 10,
                         alignItems: "center",
                         shadowColor: "#fff",
                         shadowOffset: {
@@ -123,16 +141,16 @@ export default function BeginTrip({ navigation }) {
                         shadowRadius: 4.65,
 
                         elevation: 5,
-                        backgroundColor:"#ffffff90"
+                        backgroundColor: "#ffffff90"
                     }}
                 >
-                    
+
                     <ButtonView
                         style={styles.tripbtn}
                         activeOpacity={0.9}
-                        onPress={() => setModalVisible(true)} 
-                        >
-                        <Text style={{ color: "#ffffff", fontWeight: "bold",paddingTop:16,fontFamily:"OpenSans-bold", }}>Begin Trip</Text>
+                        onPress={() => setModalVisible(true)}
+                    >
+                        <Text style={{ color: "#ffffff", fontWeight: "bold", paddingTop: 16, fontFamily: "OpenSans-bold", }}>Begin Trip</Text>
                     </ButtonView>
                 </View>
             </View>
@@ -174,7 +192,7 @@ export default function BeginTrip({ navigation }) {
                             borderWidth={0}
                             unfilledColor={"#c4c4c4"}
                         />
-                        <Text style={{ color: "#3c434b", fontSize: 12,paddingLeft:6 }}>75%</Text>
+                        <Text style={{ color: "#3c434b", fontSize: 12, paddingLeft: 6 }}>75%</Text>
                     </View>
                     <TouchableOpacity
                         onPress={() => doubleCall()}
@@ -216,23 +234,12 @@ const styles = StyleSheet.create({
         color: "#292a2f",
         fontWeight: "600",
         fontSize: 13,
-        fontFamily:"OpenSans-bold",
+        fontFamily: "OpenSans-bold",
     },
     borderline: {
         height: 1,
         backgroundColor: "#edeef2",
         marginTop: 20
-    },
-    btn: {
-        backgroundColor: '#f26521',
-        flexDirection: 'row',
-        marginRight: "30%",
-        alignItems: 'center',
-        justifyContent: 'space-evenly',
-        borderRadius: 20,
-        marginBottom: 10,
-        paddingVertical: 6,
-
     },
     calendarLogo: {
         width: 14,
@@ -250,8 +257,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     tripbtn: {
-        width:340,
-        height:58,
+        width: 340,
+        height: 58,
         backgroundColor: "#193250",
         alignItems: "center",
         borderRadius: 30,
@@ -284,14 +291,14 @@ const styles = StyleSheet.create({
         elevation: 5
     },
     dowm: {
-        color: "#b7b6bc", paddingLeft: 6, paddingBottom: 22,fontFamily:"OpenSans-Regular",
+        color: "#b7b6bc", paddingLeft: 6, paddingBottom: 22, fontFamily: "OpenSans-Regular",
 
     },
     textdv: {
         color: "#676570",
         textAlign: "center",
         fontWeight: "500",
-        fontFamily:"OpenSans-Regular",
+        fontFamily: "OpenSans-Regular",
     },
     upload: {
         width: 70,

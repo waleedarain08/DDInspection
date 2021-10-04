@@ -17,7 +17,7 @@ export default function CheckProperty({navigation}) {
   const [button, setButton] = useState(0);
   const goAhead = () => {
     if (button) {
-      navigation.navigate('');
+      navigation.navigate('InspectionOverview');
     } else {
       alert('Please select atleast one option.');
     }

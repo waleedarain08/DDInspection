@@ -1,4 +1,4 @@
-import React, {Component, useEffect, useState} from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -11,14 +11,52 @@ import {
 } from 'react-native';
 import { ButtonView } from '../../components';
 import * as Animatable from 'react-native-animatable';
-import {Input, Button, Card, SearchBar} from 'react-native-elements';
+import { Input, Button, Card, SearchBar } from 'react-native-elements';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import InspectionCard from '../../components/InspectionCard';
 
 
-export function List({navigation}) {
+export function List({ navigation }) {
   const [job, setJob] = useState(true);
   const [completed, setCompleted] = useState(false);
   const [rejected, setRejected] = useState(false);
+  const place = [
+    {
+      date: "Feb 16 - 11:30AM",
+      image: require('../../assets/house1.jpg'),
+      location: " 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California",
+      deciption: 'The tenant Sue Smith (415-555-1212) was contacted on 1/22/21. She will be there from 9-11AM on 1/26/21.',
+      status: 'Reject',
+    },
+    {
+      date: "Feb 16 - 11:30AM",
+      image: require('../../assets/house3.jpg'),
+      location: " 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California",
+      deciption: 'The tenant Sue Smith (415-555-1212) was contacted on 1/22/21. She will be there from 9-11AM on 1/26/21.',
+      status: 'Complete',
+    },
+    {
+      date: "Feb 16 - 11:30AM",
+      image: require('../../assets/house1.jpg'),
+      location: " 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California",
+      deciption: 'The tenant Sue Smith (415-555-1212) was contacted on 1/22/21. She will be there from 9-11AM on 1/26/21.',
+      status: 'Complete',
+    },
+    {
+      date: "Feb 16 - 11:30AM",
+      image: require('../../assets/house4.jpg'),
+      location: " 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California",
+      deciption: 'The tenant Sue Smith (415-555-1212) was contacted on 1/22/21. She will be there from 9-11AM on 1/26/21.',
+      status: 'Reject',
+    },
+    {
+      date: "Feb 16 - 11:30AM",
+      image: require('../../assets/house3.jpg'),
+      location: " 4317 Masonic Drive Fort, 4116 Pike Street San Diego, California",
+      deciption: 'The tenant Sue Smith (415-555-1212) was contacted on 1/22/21. She will be there from 9-11AM on 1/26/21.',
+      status: 'Complete',
+    },
+  ]
 
   handleJob = topBar => {
     setJob(1);
@@ -35,10 +73,10 @@ export function List({navigation}) {
     setCompleted(0);
     setRejected(1);
   };
-
+ 
   return (
     <View style={styles.container}>
-      <View style={{flexDirection: 'row', marginHorizontal: 15,}}>
+      <View style={{ flexDirection: 'row', marginHorizontal: 15, }}>
         <ButtonView
           onPress={() => handleJob()}
           activeOpacity={0.8}
@@ -67,414 +105,51 @@ export function List({navigation}) {
           </Text>
         </ButtonView>
       </View>
-      <ScrollView
+      <FlatList
+        data={place}
+        keyExtractor={(item, index) => index}
+        vartical={true}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{paddingBottom: 0}}>
-        {/* SECTION==1 */}
+        renderItem={({ item, index }) => {
+          if(job) {
+            return (
+              <>
+               <InspectionCard 
+               key={index}
+                item={item}
+                navigation={navigation}
+                />
+            </>        
+                              )
+          }else if(completed) {
+            if(item.status == "Complete") {
+              return (
+                <>
+                <InspectionCard 
+                 key={index}
+                item={item}
+                navigation={navigation}
 
-        <View style={styles.sectionContainer}>
-        <View style={styles.imageView1}>
-            <View style={styles.imageView2}>
-              <Image
-                source={require('../../assets/house3.jpg')}
-                style={styles.sectionImage}
-              />
-            </View>
-          </View>
-          <View style={{flex: 2, marginLeft: '8%'}}>
-            <View
-              style={{
-                backgroundColor: '#f26521',
-                flexDirection: 'row',
-                marginVertical:5,
-                marginRight: '32%',
-                padding: '2.5%',
-                alignItems: 'center',
-                justifyContent: 'space-evenly',
-                borderRadius: 20,
-              }}>
-              <Image
-                source={require('../../assets/calendar.png')}
-                style={{
-                  height: 14,
-                  width: 14,
-                  resizeMode: 'contain',
-                }}
-              />
-              <Text style={{color: '#fff', fontFamily:"OpenSans-Regular", fontSize: 10}}>
-                Feb 16 - 11:30AM
-              </Text>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                paddingTop: 5,
-              }}>
-              <Image
-                source={require('../../assets/location.png')}
-                style={{height: 14, width: 14, resizeMode: 'contain'}}
-              />
-              <Text style={{color: '#9ea1aa',fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
-                4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
-              </Text>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                paddingTop: 5,
-              }}>
-              <Image
-                source={require('../../assets/infoSquare.png')}
-                style={{height: 14, width: 14, resizeMode: 'contain'}}
-              />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
-                The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
-                She will be there from 9-11AM on 1/26/21.
-              </Text>
-            </View>
-          </View>
-        </View>
+                />
+              </>        
+                                )
+            }
+          }else if (rejected) {
+            if (item.status == "Reject") {
+              return (
+                <>
+                <InspectionCard 
+                 key={index}
+                item={item}
+                navigation={navigation}
 
-        <View
-          style={styles.buttonContainer}>
-         <ButtonView onPress={() => navigation.navigate('Profile')} activeOpacity={0.8} style={styles.inspectButton}>
-            <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
-              Inspect Now
-            </Text>
-          </ButtonView>
-
-          <ButtonView
-            onPress={() => navigation.navigate('DetailPage')}
-            activeOpacity={0.8}
-            style={styles.detailButton}>
-            <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
-              View Details
-            </Text>
-          </ButtonView>
-        </View>
-        <View style={styles.sectionBorder}></View>
-
-        {/* SECTION==2 */}
-
-        <View style={styles.sectionContainer}>
-        <View style={styles.imageView1}>
-            <View style={styles.imageView2}>
-              <Image
-                source={require('../../assets/house1.jpg')}
-                style={styles.sectionImage}
-              />
-            </View>
-          </View>
-          <View style={{flex: 2, marginLeft: '8%'}}>
-            <View
-              style={{
-                backgroundColor: '#bd0000',
-                flexDirection: 'row',
-                marginVertical:5,
-                marginRight: '32%',
-                padding: '2.5%',
-                alignItems: 'center',
-                justifyContent: 'space-evenly',
-                borderRadius: 20,
-              }}>
-              <Image
-                source={require('../../assets/calendar.png')}
-                style={{
-                  height: 14,
-                  width: 14,
-                  resizeMode: 'contain',
-                }}
-              />
-              <Text style={{color: '#fff', fontFamily:"OpenSans-Regular", fontSize: 10}}>Mar 16 - 2:30PM</Text>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                paddingTop: 5,
-              }}>
-              <Image
-                source={require('../../assets/location.png')}
-                style={{height: 14, width: 14, resizeMode: 'contain'}}
-              />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
-                4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
-              </Text>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                paddingTop: 5,
-              }}>
-              <Image
-                source={require('../../assets/infoSquare.png')}
-                style={{height: 14, width: 14, resizeMode: 'contain'}}
-              />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
-                The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
-                She will be there from 9-11AM on 1/26/21.
-              </Text>
-            </View>
-          </View>
-        </View>
-
-        <View
-          style={styles.buttonContainer}>
-             <ButtonView
-            activeOpacity={0.8}
-            isRound={1}
-            style={styles.resumeButton}>
-            <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
-              Resume
-            </Text>
-          </ButtonView>
-
-          <ButtonView activeOpacity={0.8} style={styles.detailButton}>
-            <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
-              View Details
-            </Text>
-          </ButtonView>
-        </View>
-        <View style={styles.sectionBorder}></View>
-
-        {/* SECTION==3 */}
-
-        <View style={styles.sectionContainer}>
-        <View style={styles.imageView1}>
-            <View style={styles.imageView2}>
-              <Image
-                source={require('../../assets/house3.jpg')}
-                style={styles.sectionImage}
-              />
-            </View>
-          </View>
-          <View style={{flex: 2, marginLeft: '8%'}}>
-            <View
-              style={{
-                backgroundColor: '#f26521',
-                flexDirection: 'row',
-                marginRight: '32%',
-                marginVertical:5,
-                padding: '2.5%',
-                alignItems: 'center',
-                justifyContent: 'space-evenly',
-                borderRadius: 20,
-              }}>
-              <Image
-                source={require('../../assets/calendar.png')}
-                style={{
-                  height: 14,
-                  width: 14,
-                  resizeMode: 'contain',
-                }}
-              />
-              <Text style={{color: '#fff', fontFamily:"OpenSans-Regular", fontSize: 10}}>Feb 17 - 9:00AM</Text>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                paddingTop: 5,
-              }}>
-              <Image
-                source={require('../../assets/location.png')}
-                style={{height: 14, width: 14, resizeMode: 'contain'}}
-              />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
-                4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
-              </Text>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                paddingTop: 5,
-              }}>
-              <Image
-                source={require('../../assets/infoSquare.png')}
-                style={{height: 14, width: 14, resizeMode: 'contain'}}
-              />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
-                The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
-                She will be there from 9-11AM on 1/26/21.
-              </Text>
-            </View>
-          </View>
-        </View>
-
-        <View
-          style={styles.buttonContainer}>
-          <ButtonView onPress={() => navigation.navigate('Profile')} activeOpacity={0.8} style={styles.inspectButton}>
-            <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 12}}>
-              Inspect Now
-            </Text>
-          </ButtonView>
-
-          <ButtonView activeOpacity={0.8} style={styles.detailButton}>
-            <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
-              View Details
-            </Text>
-          </ButtonView>
-        </View>
-        <View style={styles.sectionBorder}></View>
-
-        {/* SECTION==4 */}
-
-        <View style={styles.sectionContainer}>
-        <View style={styles.imageView1}>
-            <View style={styles.imageView2}>
-              <Image
-                source={require('../../assets/house1.jpg')}
-                style={styles.sectionImage}
-              />
-            </View>
-          </View>
-          <View style={{flex: 2, marginLeft: '8%'}}>
-            <View
-              style={{
-                backgroundColor: '#f26521',
-                flexDirection: 'row',
-                marginVertical:5,
-                marginRight: '32%',
-                padding: '2.5%',
-                alignItems: 'center',
-                justifyContent: 'space-evenly',
-                borderRadius: 20,
-              }}>
-              <Image
-                source={require('../../assets/calendar.png')}
-                style={{
-                  height: 14,
-                  width: 14,
-                  resizeMode: 'contain',
-                }}
-              />
-              <Text style={{color: '#fff', fontFamily:"OpenSans-Regular", fontSize: 10}}>
-                Feb 16 - 11:30AM
-              </Text>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                paddingTop: 5,
-              }}>
-              <Image
-                source={require('../../assets/location.png')}
-                style={{height: 14, width: 14, resizeMode: 'contain'}}
-              />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
-                4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
-              </Text>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                paddingTop: 5,
-              }}>
-              <Image
-                source={require('../../assets/infoSquare.png')}
-                style={{height: 14, width: 14, resizeMode: 'contain'}}
-              />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
-                The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
-                She will be there from 9-11AM on 1/26/21.
-              </Text>
-            </View>
-          </View>
-        </View>
-
-        <View
-          style={styles.buttonContainer}>
-          <ButtonView onPress={() => navigation.navigate('Profile')} activeOpacity={0.8} style={styles.inspectButton}>
-            <Text style={{color: '#fff', fontFamily:"OpenSans-Bold", fontSize: 11}}>
-              Inspect Now
-            </Text>
-          </ButtonView>
-
-          <ButtonView activeOpacity={0.8} style={styles.detailButton}>
-            <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
-              View Details
-            </Text>
-          </ButtonView>
-        </View>
-        <View style={styles.sectionBorder}></View>
-
-        {/* SECTION==5 */}
-
-        <View style={styles.sectionContainer}>
-        <View style={styles.imageView1}>
-            <View style={styles.imageView2}>
-              <Image
-                source={require('../../assets/house3.jpg')}
-                style={styles.sectionImage}
-              />
-            </View>
-          </View>
-          <View style={{flex: 2, marginLeft: '8%'}}>
-            <View
-              style={{
-                backgroundColor: '#f26521',
-                flexDirection: 'row',
-                marginVertical:5,
-                marginRight: '32%',
-                padding: '2.5%',
-                alignItems: 'center',
-                justifyContent: 'space-evenly',
-                borderRadius: 20,
-              }}>
-              <Image
-                source={require('../../assets/calendar.png')}
-                style={{
-                  height: 14,
-                  width: 14,
-                  resizeMode: 'contain',
-                }}
-              />
-              <Text style={{color: '#fff', fontFamily:"OpenSans-Regular", fontSize: 10}}>Mar 16 - 2:30PM</Text>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                paddingTop: 5,
-              }}>
-              <Image
-                source={require('../../assets/location.png')}
-                style={{height: 14, width: 14, resizeMode: 'contain'}}
-              />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
-                4317 Masonic Drive Fort, 4116 Pike Street San Diego, California
-              </Text>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                paddingTop: 5,
-              }}>
-              <Image
-                source={require('../../assets/infoSquare.png')}
-                style={{height: 14, width: 14, resizeMode: 'contain'}}
-              />
-              <Text style={{color: '#9ea1aa', fontFamily:"OpenSans-Regular", fontSize: 9, paddingLeft: '5%'}}>
-                The tenant Sue Smith (415-555-1212) was contacted on 1/22/21.{"\n"}
-                She will be there from 9-11AM on 1/26/21.
-              </Text>
-            </View>
-          </View>
-        </View>
-
-        <View
-          style={styles.buttonContainer}>
-          <ButtonView onPress={() => navigation.navigate('Profile')} activeOpacity={0.8} style={styles.inspectButton}>
-            <Text style={{color: '#fff', fontFamily:"OpenSans-Bold", fontSize: 11}}>
-              Inspect Now
-            </Text>
-          </ButtonView>
-
-          <ButtonView activeOpacity={0.8} style={styles.detailButton}>
-            <Text style={{color: '#193250', fontFamily:"OpenSans-Bold", fontSize: 11}}>
-              View Details
-            </Text>
-          </ButtonView>
-        </View>
-        <View style={styles.sectionBorder}></View>
-      </ScrollView>
+                />
+              </>        
+                                )
+            }
+          }
+        }}>
+      </FlatList>
     </View >
   );
 }
@@ -504,12 +179,12 @@ const styles = StyleSheet.create({
   topBarText: {
     color: '#193250',
     fontSize: 14,
-    fontFamily:"OpenSans-Bold",
+    fontFamily: "OpenSans-Bold",
   },
   topBarText2: {
     color: '#364b65',
     fontSize: 14,
-    fontFamily:"OpenSans-SemiBold",
+    fontFamily: "OpenSans-SemiBold",
   },
   sectionContainer: {
     flex: 1,
@@ -518,28 +193,28 @@ const styles = StyleSheet.create({
   },
   imageView1: {
     flex: 1.3,
-   },
+  },
   imageView2: {
-    height:"88%",
-    width:"95%",
+    height: "88%",
+    width: "95%",
     borderRadius: 4,
     shadowColor: '#000',
-        shadowOffset: { width: 0, height: 3 },
-        shadowOpacity:  0.27,
-        shadowRadius: 4.65,
-        elevation: 15,
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+    elevation: 15,
   },
   sectionImage: {
     height: 123,
     width: 135,
     borderRadius: 8,
   },
-  buttonContainer:{
+  buttonContainer: {
     flex: 1,
     flexDirection: 'row-reverse',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    paddingHorizontal:5,
+    paddingHorizontal: 5,
   },
   resumeButton: {
     paddingHorizontal: '16%',
