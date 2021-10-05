@@ -1,4 +1,4 @@
-package com.ddinspection; // make sure this is your package name
+package com.sylvanroad; // make sure this is your package name
 
 import android.content.Intent;
 import android.os.Bundle;
