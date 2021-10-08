@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, FlatList, Image, Button, Pressable, Dimensions,
 import * as Progress from 'react-native-progress';
 import Modal from 'react-native-modal';
 import { ButtonView } from '../../components';
+import { useSelector } from 'react-redux';
 
 
 
@@ -12,6 +13,9 @@ import { ButtonView } from '../../components';
 export default function BeginTrip({ navigation }) {
     const [reason1, setReason1] = useState([{ title: "abc", image: require('../../assets/house3.jpg') }, { title: "abc", image: require('../../assets/house1.jpg') }, { title: "abc", image: require('../../assets/house3.jpg') }, { title: "abc", image: require('../../assets/house1.jpg') }, { title: "abc", image: require('../../assets/house3.jpg') }]);
     const [modalVisible, setModalVisible] = useState(false);
+
+    const userData = useSelector(state => state.user.userData)
+    console.log("userData", userData)
 
     const doubleCall = () => {
         setModalVisible(!modalVisible);

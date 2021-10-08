@@ -2,6 +2,7 @@ import axios from 'axios'
 
 
 export const getApi = async (url, data, token) => {
+  console.log("url", url)
   try {
     let response = await axios.get(url + data, {
       headers: {
@@ -9,6 +10,7 @@ export const getApi = async (url, data, token) => {
         'Authorization': `Bearer ${token}`, 
       }
     })
+    console.log("url getApi", response)
     if (response.status == 200) {
       return Promise.resolve({
         status: 'success',
@@ -16,6 +18,7 @@ export const getApi = async (url, data, token) => {
       })
     }
   } catch (e) {
+    console.log("url getApi error", e)
     return Promise.reject(e)
   }
 }

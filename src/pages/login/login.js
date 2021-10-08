@@ -38,9 +38,9 @@ function Login({ navigation, userInfo, userLogin }) {
     // return auth().signInWithCredential(googleCredential);
     auth().signInWithCredential(googleCredential)
     .then((res) => {
-     console.log("google login res", res)
+      userLogin(res.user)
     }).catch(error => {
-     console.log("google login error", error)
+      console.log("google login error", error)
       //console.error(error);
     });
   }
