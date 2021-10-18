@@ -1,4 +1,4 @@
-package com.ddinspection;
+package com.sylvanroad;
 import android.os.Bundle; // here 
 import org.devio.rn.splashscreen.SplashScreen; // here \
 

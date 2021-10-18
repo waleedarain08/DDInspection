@@ -16,8 +16,8 @@ import { FloatingLabelInput } from 'react-native-floating-label-input';
 import * as Animatable from 'react-native-animatable';
 import { ButtonView } from '../../components';
 import styles from '../../assets/stylesheets/styles.js';
-
-
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth'
 
 
 function Login({ navigation, userInfo, userLogin }) {
@@ -25,6 +25,26 @@ function Login({ navigation, userInfo, userLogin }) {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [hide, setHide] = useState(false);
+
+  GoogleSignin.configure({
+    webClientId: '412045753505-c1kdvqmho4sksn91aq9ccpv7g558qfkv.apps.googleusercontent.com',
+  });
+  async function onGoogleButtonPress() {
+    // Get the users ID token
+    const { idToken } = await GoogleSignin.signIn();
+    // Create a Google credential with the token
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+    // Sign-in the user with the credential
+    // return auth().signInWithCredential(googleCredential);
+    auth().signInWithCredential(googleCredential)
+    .then((res) => {
+      userLogin(res.user)
+    }).catch(error => {
+      console.log("google login error", error)
+      //console.error(error);
+    });
+  }
+  
 
   return (
     <View style={styles2.MainContainer}>
@@ -54,7 +74,8 @@ function Login({ navigation, userInfo, userLogin }) {
 
           <View style={{ marginTop: 25 }}>
             <ButtonView
-              onPress={() => userLogin(username, password)}
+              // onPress={() => userLogin(username, password)}
+              onPress={() => onGoogleButtonPress()} activeOpacity={0.8}
               isRound={1}
               style={styles2.loginGoogleButton}>
               <Image
