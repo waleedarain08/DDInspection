@@ -206,15 +206,6 @@ function HomeBeginTripStack() {
           headerShown: false
         })}
       />
-      {/* <HomeBeginTripStackNav.Screen
-        name="List"
-        component={List}
-        options={({navigation}) => ({
-          headerLeft: () => drawerButton(navigation),
-          headerTitle:"INSPECTIONS",
-          headerRight: () => headerRightIcon(navigation),
-        })}
-      /> */}
         <HomeBeginTripStackNav.Screen
         name="DetailPage"
         component={DetailPage}
