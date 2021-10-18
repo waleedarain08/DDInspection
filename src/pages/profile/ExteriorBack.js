@@ -5,10 +5,10 @@ import {
   StyleSheet,
   FlatList,
   Image,
-  Dimensions,
-  ScrollView,
+  TextInput,  ScrollView,
   TouchableOpacity,
 } from 'react-native';
+import { imagePicker } from '../../helper/utils';
 import * as Animatable from 'react-native-animatable';
 import {Input, Button, Card, CheckBox} from 'react-native-elements';
 import {ButtonView} from '../../components';
@@ -20,8 +20,8 @@ export default function ExteriorBack({navigation}) {
   const [quality2, setQuality2] = useState(false);
   const [quality3, setQuality3] = useState(false);
   const [quality4, setQuality4] = useState(false);
+  const [reason, setReason] = useState([{ title: "abc", path: require('../../assets/table.jpg') }, { title: "abc", path: require('../../assets/table2.jpg') },])
   const [radio, setRadio] = useState(true);
-
   (handleRadio = circle => {
     setQuality1(1);
     setQuality2(0);
@@ -83,6 +83,17 @@ export default function ExteriorBack({navigation}) {
     setAdd5(0);
     setAdd6(1);
   };
+  const imageSelector = async () => {
+
+    try {
+      const url = await imagePicker(true)
+      setReason([...reason, ...url])
+      console.log("url", url)
+    } catch (error) {
+
+    }
+  }
+  const[loop, setLoop] = useState (null)
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -120,107 +131,101 @@ export default function ExteriorBack({navigation}) {
           <Text style={{paddingLeft:20}}>
             Top of deck, wide angle<Text style={{color: '#d91614'}}>*</Text>
           </Text>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-              paddingVertical: 10,
-            }}>
-            <View>
-              <Image
-                style={styles.cross}
-                source={require('../../assets/group743.png')}
-              />
-              <Image
-                style={styles.table}
-                source={require('../../assets/table.jpg')}
-              />
-              <View style={{paddingVertical: 10}}>
-                <Text
-                  style={{
-                    color: '#7b7e83',
-                    fontSize: 12,
-                    fontFamily: 'OpenSans-Regular',
-                  }}>
-                  Note:repair-specific
-                </Text>
-                <Text
-                  style={{
-                    color: '#7b7e83',
-                    fontSize: 12,
-                    fontFamily: 'OpenSans-Regular',
-                  }}>
-                  {' '}
-                  photos / video
-                </Text>
-                <TouchableOpacity activeOpacity={0.9} style={styles.editButtom}>
-                  <Image
-                    style={styles.editIcon}
-                    source={require('../../assets/edit.png')}
-                  />
-                  <Text
-                    style={{
-                      color: '#33ae46',
-                      textAlign: 'center',
-                      paddingTop: 3,
-                      fontFamily: 'OpenSans-Regular',
-                    }}>
-                    Edit
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-            <View>
-              <Image
-                style={styles.cross}
-                source={require('../../assets/group743.png')}
-              />
-              <Image
-                style={styles.table}
-                source={require('../../assets/table2.jpg')}
-              />
-              <View>
-                <View style={{paddingVertical: 10}}>
-                  <Text
-                    style={{
-                      color: '#c7c8cc',
-                      fontSize: 12,
-                      fontFamily: 'OpenSans-Regular',
-                    }}>
-                    Note:repair-specific{' '}
-                  </Text>
-                  <Text
-                    style={{
-                      color: '#c7c8cc',
-                      fontSize: 12,
-                      fontFamily: 'OpenSans-Regular',
-                    }}>
-                    {' '}
-                    photos / video
-                  </Text>
-                </View>
-                <View style={styles.line}></View>
-                <View style={styles.doneButton}>
-                  <Text
-                    style={{
-                      textAlign: 'center',
-                      color: '#5d5b66',
-                      fontFamily: 'OpenSans-Regular',
-                    }}>
-                    Done
-                  </Text>
-                </View>
-              </View>
-            </View>
-            <View>
-              <View
+          <View style={{   flexDirection: 'row',
+                justifyContent: 'space-around',
+                paddingTop: 10,}}>
+          <FlatList
+                data={reason}
+                keyExtractor={(item, index) => index}
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                renderItem={({ item, index }) => {
+                  var type = typeof item.path
+                  return (
+                    <>
+                        <View>
+                        <Image
+                          style={styles.cross}
+                          source={require('../../assets/group743.png')}
+                        />
+                        <Image
+                          style={styles.table}
+                          source={type == "string" ? { uri: item.path } : item.path}
+                        />
+                        <View style={{ flexDirection: "row" }}>
+                          <View style={{ paddingVertical: 10, flex: 1, }}>
+
+                            {index == loop  ? (
+                              <TextInput
+                                style={styles.textArea1}
+                                underlineColorAndroid="transparent"
+                                placeholder="Note:repair-specific photos / video"
+                                placeholderTextColor="#c7c8cc"
+                                numberOfLines={10}
+                                multiline={true}
+                              />
+                            ) :
+                              (
+                                <>
+                                  <Text
+                                    style={{
+                                      color: '#c7c8cc',
+                                      fontSize: 12,
+                                      fontFamily: 'OpenSans-Regular',
+                                      width: 105
+                                    }}>
+                                    Note:repair-specific photos / video
+                                  </Text>
+                                </>
+                              )}
+                            {index == loop ? (
+                              <TouchableOpacity activeOpacity={0.9} onPress={() => setLoop(null)} style={styles.doneButton}>
+                                <Text style={{ textAlign: 'center', fontFamily: "OpenSans-SemiBold", color: '#5d5b66' }}>
+                                  Done
+                                </Text>
+                              </TouchableOpacity>
+
+                            ) : (
+                              <ButtonView
+                                onPress={() => setLoop(index)}
+                                activeOpacity={0.9}
+                                style={styles.editButtom}>
+                                <Image
+                                  style={styles.editIcon}
+                                  source={require('../../assets/edit.png')}
+                                />
+                                <Text
+                                  style={{
+                                    color: '#33ae46',
+                                    fontFamily: "OpenSans-SemiBold",
+                                    textAlign: 'center',
+                                    paddingTop: 3,
+                                  }}>
+                                  Edit
+                                </Text>
+                              </ButtonView>
+                            )}
+
+                          </View>
+
+                          <View style={{ flex: 1 }}></View>
+                        </View>
+                      </View>
+                    </>
+                  )
+                }}>
+                </FlatList>
+                <TouchableOpacity
+                onPress={imageSelector}
+                activeOpacity={0.9}
                 style={{
                   borderStyle: 'dashed',
-                  borderRadius: 10,
-                  width: 100,
+                  borderRadius: 6,
+                  width: 105,
                   height: 100,
-                  borderWidth: 1,
+                  borderWidth: 1.5,
                   borderColor: '#b0aeb9',
+                  backgroundColor: '#fff',
                 }}>
                 <Image
                   style={styles.delete}
@@ -230,121 +235,114 @@ export default function ExteriorBack({navigation}) {
                   style={{
                     textAlign: 'center',
                     color: '#435971',
+                    fontFamily: "OpenSans-SemiBold",
                     fontSize: 12,
                     paddingVertical: 4,
-                    fontFamily: 'OpenSans-Regular',
                   }}>
                   Add Photo
                 </Text>
-              </View>
-            </View>
-          </View>
+              </TouchableOpacity>
+                </View>
         </View>
         <View style={styles.imageCard}>
           <Text style={{paddingLeft:20}}>
             Top of deck, close up<Text style={{color: '#d91614'}}>*</Text>
           </Text>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-              paddingVertical: 10,
-            }}>
-            <View>
-              <Image
-                style={styles.cross}
-                source={require('../../assets/group743.png')}
-              />
-              <Image
-                style={styles.table}
-                source={require('../../assets/table.jpg')}
-              />
-              <View style={{paddingVertical: 10}}>
-                <Text
-                  style={{
-                    color: '#7b7e83',
-                    fontSize: 12,
-                    fontFamily: 'OpenSans-Regular',
-                  }}>
-                  Note:repair-specific{' '}
-                </Text>
-                <Text
-                  style={{
-                    color: '#7b7e83',
-                    fontSize: 12,
-                    fontFamily: 'OpenSans-Regular',
-                  }}>
-                  {' '}
-                  photos / video
-                </Text>
-                <TouchableOpacity activeOpacity={0.9} style={styles.editButtom}>
-                  <Image
-                    style={styles.editIcon}
-                    source={require('../../assets/edit.png')}
-                  />
-                  <Text
-                    style={{
-                      color: '#33ae46',
-                      textAlign: 'center',
-                      paddingTop: 3,
-                      fontFamily: 'OpenSans-Regular',
-                    }}>
-                    Edit
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-            <View>
-              <Image
-                style={styles.cross}
-                source={require('../../assets/group743.png')}
-              />
-              <Image
-                style={styles.table}
-                source={require('../../assets/table2.jpg')}
-              />
-              <View>
-                <View style={{paddingVertical: 10}}>
-                  <Text
-                    style={{
-                      color: '#c7c8cc',
-                      fontSize: 12,
-                      fontFamily: 'OpenSans-Regular',
-                    }}>
-                    Note:repair-specific{' '}
-                  </Text>
-                  <Text
-                    style={{
-                      color: '#c7c8cc',
-                      fontSize: 12,
-                      fontFamily: 'OpenSans-Regular',
-                    }}>
-                    {' '}
-                    photos / video
-                  </Text>
-                </View>
-                <View style={styles.line}></View>
-                <View style={styles.doneButton}>
-                  <Text
-                    style={{
-                      textAlign: 'center',
-                      color: '#5d5b66',
-                      fontFamily: 'OpenSans-Regular',
-                    }}>
-                    Done
-                  </Text>
-                </View>
-              </View>
-            </View>
-            <View>
-              <View
+          <View style={{   flexDirection: 'row',
+                justifyContent: 'space-around',
+                paddingTop: 10,}}>
+          <FlatList
+                data={reason}
+                keyExtractor={(item, index) => index}
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                renderItem={({ item, index }) => {
+                  var type = typeof item.path
+                  return (
+                    <>
+                        <View>
+                        <Image
+                          style={styles.cross}
+                          source={require('../../assets/group743.png')}
+                        />
+                        <Image
+                          style={styles.table}
+                          source={type == "string" ? { uri: item.path } : item.path}
+                        />
+                        <View style={{ flexDirection: "row" }}>
+                          <View style={{ paddingVertical: 10, flex: 1, }}>
+
+                            {index == loop  ? (
+                              <TextInput
+                                style={styles.textArea1}
+                                underlineColorAndroid="transparent"
+                                placeholder="Note:repair-specific photos / video"
+                                placeholderTextColor="#c7c8cc"
+                                numberOfLines={10}
+                                multiline={true}
+                              />
+                            ) :
+                              (
+                                <>
+                                  <Text
+                                    style={{
+                                      color: '#c7c8cc',
+                                      fontSize: 12,
+                                      fontFamily: 'OpenSans-Regular',
+                                      width: 105
+                                    }}>
+                                    Note:repair-specific photos / video
+                                  </Text>
+                                </>
+                              )}
+                            {index == loop ? (
+                              <TouchableOpacity activeOpacity={0.9} onPress={() => setLoop(null)} style={styles.doneButton}>
+                                <Text style={{ textAlign: 'center', fontFamily: "OpenSans-SemiBold", color: '#5d5b66' }}>
+                                  Done
+                                </Text>
+                              </TouchableOpacity>
+
+                            ) : (
+                              <ButtonView
+                                onPress={() => setLoop(index)}
+                                activeOpacity={0.9}
+                                style={styles.editButtom}>
+                                <Image
+                                  style={styles.editIcon}
+                                  source={require('../../assets/edit.png')}
+                                />
+                                <Text
+                                  style={{
+                                    color: '#33ae46',
+                                    fontFamily: "OpenSans-SemiBold",
+                                    textAlign: 'center',
+                                    paddingTop: 3,
+                                  }}>
+                                  Edit
+                                </Text>
+                              </ButtonView>
+                            )}
+
+                          </View>
+
+                          <View style={{ flex: 1 }}></View>
+                        </View>
+                      </View>
+                    </>
+                  )
+                }}>
+                </FlatList>
+                <TouchableOpacity
+                onPress={imageSelector}
+                activeOpacity={0.9}
                 style={{
                   borderStyle: 'dashed',
-                  borderRadius: 10,
-                  width: 100,
+                  borderRadius: 6,
+                  width: 105,
                   height: 100,
-                  borderWidth: 1,
-                  borderColor: '#cdccd2',
+                  borderWidth: 1.5,
+                  borderColor: '#b0aeb9',
+                  backgroundColor: '#fff',
                 }}>
                 <Image
                   style={styles.delete}
@@ -354,15 +352,14 @@ export default function ExteriorBack({navigation}) {
                   style={{
                     textAlign: 'center',
                     color: '#435971',
+                    fontFamily: "OpenSans-SemiBold",
                     fontSize: 12,
                     paddingVertical: 4,
-                    fontFamily: 'OpenSans-Regular',
                   }}>
                   Add Photo
                 </Text>
-              </View>
-            </View>
-          </View>
+              </TouchableOpacity>
+                </View>
         </View>
         <View style={styles.uploadImage}>
           <Image
@@ -1022,10 +1019,10 @@ const styles = StyleSheet.create({
     margin:10
   },
   table: {
-    width: 100,
+    width: 105,
     height: 100,
-    borderRadius: 10,
-    marginLeft:5
+    borderRadius: 6,
+    marginHorizontal: 5.5
   },
   delete: {
     width: 12,
@@ -1040,6 +1037,11 @@ const styles = StyleSheet.create({
     zIndex: 10,
     top: 10,
     left: 70,
+  },
+  textArea1: {
+    height: 60,
+    fontSize: 12,
+    width: 105
   },
   line: {
     backgroundColor: '#c3cad4',

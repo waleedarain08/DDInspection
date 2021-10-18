@@ -361,10 +361,7 @@ export default function DoNotBuy({ navigation }) {
                   )
                 }}
               >
-
               </FlatList>
-
-
               <TouchableOpacity
                 onPress={imageSelector}
                 activeOpacity={0.9}

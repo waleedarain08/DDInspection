@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import { View, Text, StyleSheet, ImageBackground, FlatList, Image, Pressable, ScrollView, Dimensions, TouchableOpacity, Linking, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ButtonView } from '../../components';
-
+// import Home from '../../assets/home.svg'
 export default function CheckProperty({ navigation }) {
     const [reason, setReason] = useState([{ title: "abc", image: require('../../assets/house4.jpg') },
     { title: "abd", image: require('../../assets/house1.jpg') }, { title: "ghi", image: require('../../assets/house3.jpg') },
@@ -31,7 +31,6 @@ const [currentIndex, setCurrentIndex] = useState ()
                             <View>
                                 <Image style={styles.housePng} source={item.image} >
                                 </Image  >
-
                             </View>
                         )
                     }}>
@@ -53,9 +52,9 @@ const [currentIndex, setCurrentIndex] = useState ()
                 <View style={{ flexDirection: "row",justifyContent:"center"}}>
                     {reason.map((val, index ) => {
                        if(index == currentIndex) {
-                           return  <View style={{ width: 10, height: 10, backgroundColor: "#fff", borderRadius: 10, zIndex: 20,margin:4,zIndex:20,bottom:"19%" }} />
+                           return  <View key={index} style={{ width: 10, height: 10, backgroundColor: "#fff", borderRadius: 10, zIndex: 20,margin:4,zIndex:20,bottom:"19%" }} />
                        }else {
-                        return <View style={{ width: 8, height: 8, backgroundColor: "#c4c4c4", borderRadius: 10, zIndex: 20,margin:4,zIndex:20,bottom:"19%" }} />
+                        return <View  key={index}  style={{ width: 8, height: 8, backgroundColor: "#c4c4c4", borderRadius: 10, zIndex: 20,margin:4,zIndex:20,bottom:"19%" }} />
                        }
                     })}
                 </View>
@@ -124,6 +123,7 @@ const [currentIndex, setCurrentIndex] = useState ()
                         </View>
                         <View style={{ flexDirection: "row", justifyContent: "space-evenly", paddingVertical: "20%" }}>
                             <ButtonView
+                          onPress={() => Linking.openURL('google.navigation:q=24.9673935+67.1684215')}
                                 activeOpacity={0.9}
                                 style={styles.getButton}
                             >
