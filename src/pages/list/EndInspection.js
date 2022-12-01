@@ -9,8 +9,10 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
+import { ButtonView } from '../../components';
 import * as Animatable from 'react-native-animatable';
 import {Input, Button, Card, SearchBar} from 'react-native-elements';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function EndInspection({navigation}) {
   const [button, setButton] = useState(0);
@@ -18,7 +20,7 @@ export default function EndInspection({navigation}) {
   const [dataSource, setDataSource] = useState([
     {
       id: 1,
-      title: 'Turn off A/C. Set the thermostate to 55 to prevent pipes from freezing',
+      title: 'Turn off A/C. Set the thermostat to 55 to prevent pipes from freezing',
       isSelect: 0,
     },
     {
@@ -95,14 +97,14 @@ const goAhead = () =>{
   const renderItem = data => {
     return (
 
-        <TouchableOpacity  activeOpacity={0.8} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
+        <ButtonView  isRound={1} activeOpacity={0.8} onPress={() => selectItem(data)} style={styles.fieldsContainer}>
           <View style={[styles.list, data.item.selectedClass]}>
             <Image  source={require('../../assets/tick.png')} style={data.item.isSelect?styles.imageSelected:styles.imageUnSelected}></Image>
           </View>
         <View>
           <Text style={styles.textFields}>{data.item.title}</Text>
         </View>
-      </TouchableOpacity>
+      </ButtonView>
     );
   };
 
@@ -110,29 +112,29 @@ const goAhead = () =>{
 
 
   return (
-    <View style={styles.mainContainer}>
+    <SafeAreaView style={styles.mainContainer}>
       <View
         style={{
           padding: '5%',
+          flex: 1,
           shadowColor: '#000',
           shadowOffset: {
             width: 0,
             height: 3,
           },
           shadowOpacity: 0.27,
-          shadowRadius: 4.65,
-          elevation: 3,
-          paddingBottom: 20,
+          shadowRadius: 4.65,      
+          elevation: 1,
           backgroundColor: '#fff',
         }}>
         <Text style={{fontFamily:"OpenSans-Regular",color: '#7c8089', fontSize: 12, }}>
-          "Thank you for handling this inspection"
+          Thank you for handling this inspection
         </Text>       
         <Text style={{fontFamily:"OpenSans-Bold", fontSize: 25, marginVertical:10}}>
-          "Reminders as you exit:"
+          Reminders as you exit:
         </Text>
       </View>
-          <View style={{backgroundColor: '#f9f8fd', marginBottom: 5, height:"72%"}}>
+          <View style={{backgroundColor: '#f9f8fd', marginBottom: 5,flex:4}}>
               <FlatList
                 data={dataSource}
                 ItemSeparatorComponent={renderSeparator} 
@@ -143,17 +145,18 @@ const goAhead = () =>{
               />
            </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          onPress={() => goAhead()}
+        <ButtonView
+          onPress={() => navigation.navigate('List')}
+          isRound={1}
           // onPress={() => navigation.navigate('EndInspection2')}
           activeOpacity={0.8}
           style={button?styles.inspectButtonEnable:styles.inspectButtonDisable}>
           <Text style={{color: '#fff', fontFamily:"OpenSans-Bold",  fontSize: 14}}>
             End Inspection
           </Text>
-        </TouchableOpacity>
+        </ButtonView>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -166,15 +169,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#f9f8fd',
     alignItems: 'center',
-    padding: '6%',
+    padding: 15,
     marginBottom:2,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 3,
     },
-    shadowOpacity: 0.27,
-    shadowRadius: 4.65,
+    shadowOpacity: 0.17,
+    shadowRadius: 2.65,
 
     elevation: 2,
   },

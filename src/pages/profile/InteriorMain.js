@@ -11,30 +11,42 @@ import {
 } from 'react-native';
 import Modal from 'react-native-modal';
 import * as Animatable from 'react-native-animatable';
-import {Input, Button, Card, SearchBar} from 'react-native-elements';
-
+import { ButtonView } from '../../components';
 export default function InteriorMain({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
+  const [quality, setQuality] = useState(true);
+  const [quality1, setQuality1] = useState(true);
+  const [quality2, setQuality2] = useState(true);
+  const [quality3, setQuality3] = useState(true);
 
   return (
     <ScrollView
-      contentContainerStyle={{height: 900, backgroundColor: '#ffffff'}}>
+      contentContainerStyle={{height: 850, backgroundColor: '#ffffff'}}>
       <Text
-        style={{paddingHorizontal: 10, paddingVertical: 20, color: '#5a5d62'}}>
-        Please Confirm You Are Weraing Booties Before Intering The Interior.
+        style={{paddingHorizontal: 10, paddingVertical: 20,paddingLeft:20, color: '#5a5d62',fontWeight:"700",fontFamily:"OpenSans-bold"}}>
+        Please Confirm You Are Wearing Booties Before Entering The Interior.
       </Text>
 
       <View style={styles.bathroom}>
-        <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 3}}>
+      <TouchableOpacity
+            activeOpacity={0.5}
+            onPress={() => setQuality(!quality)}
+            style={quality ? styles.TabDropDown : styles.TabDropDown2}>
+            <Image
+              style={quality ? styles.transform : styles.dropdown}
+              source={require('../../assets/down-arrow.png')}
+            />
+          </TouchableOpacity>
+        <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 4,paddingTop:2,fontFamily:"OpenSans-Regular"}}>
           Bathroom 1
         </Text>
-        <View style={{flex: 1}}>
+        <View style={{flex: 0.5}}>
           <Image
-            style={styles.delete}
+            style={styles.plus}
             source={require('../../assets/group740.png')}
           />
         </View>
-        <View style={{flex: 0.5}}>
+        <View style={{flex: 0.4}}>
           <View
             style={{backgroundColor: '#e8e9eb', width: 1, height: 25}}></View>
         </View>
@@ -49,16 +61,25 @@ export default function InteriorMain({navigation}) {
         </TouchableOpacity>
       </View>
       <View style={styles.bathroom}>
-        <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 3}}>
-          Bathroom 1
+      <TouchableOpacity
+            activeOpacity={0.5}
+            onPress={() => setQuality1(!quality1)}
+            style={quality1? styles.TabDropDown : styles.TabDropDown2}>
+            <Image
+              style={quality1 ? styles.transform : styles.dropdown}
+              source={require('../../assets/down-arrow.png')}
+            />
+          </TouchableOpacity>
+        <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 4,paddingTop:2,fontFamily:"OpenSans-Regular"}}>
+          Bathroom 2
         </Text>
-        <View style={{flex: 1}}>
+        <View style={{flex: 0.5}}>
           <Image
-            style={styles.delete}
+            style={styles.plus}
             source={require('../../assets/group740.png')}
           />
         </View>
-        <View style={{flex: 0.5}}>
+        <View style={{flex: 0.4}}>
           <View
             style={{backgroundColor: '#e8e9eb', width: 1, height: 25}}></View>
         </View>
@@ -73,17 +94,26 @@ export default function InteriorMain({navigation}) {
         </TouchableOpacity>
       </View>
       <View style={styles.Kitchen}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 3}}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between',paddingHorizontal:10,paddingVertical:10,alignItems:"center"}}>
+        <TouchableOpacity
+            activeOpacity={0.5}
+            onPress={() => setQuality2(!quality2)}
+            style={quality2 ? styles.TabDropDown : styles.TabDropDown2}>
+            <Image
+              style={quality2 ? styles.transform : styles.dropdown}
+              source={require('../../assets/down-arrow.png')}
+            />
+          </TouchableOpacity>
+          <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 4,paddingTop:2,fontFamily:"OpenSans-Regular"}}>
             Kitchen
           </Text>
-          <View style={{flex: 1}}>
+          <View style={{flex: 0.5}}>
             <Image
-              style={styles.delete}
+              style={styles.plus}
               source={require('../../assets/group740.png')}
             />
           </View>
-          <View style={{flex: 0.5}}>
+          <View style={{flex: 0.4}}>
             <View
               style={{backgroundColor: '#e8e9eb', width: 1, height: 25}}></View>
           </View>
@@ -97,15 +127,17 @@ export default function InteriorMain({navigation}) {
           />
         </TouchableOpacity>
         </View>
+        {/* {&& */}
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
             paddingVertical: 10,
             backgroundColor: '#ffffff',
+            paddingHorizontal:10
           }}>
-          <Text style={{flex: 3.5, color: '#797b7f'}}>Suqure Footage</Text>
-          <Text style={{flex: 1}}>$0.00</Text>
+          <Text style={{flex: 3.5, color: '#797b7f',fontFamily:"OpenSans-Regular"}}>Square Footage</Text>
+          <Text style={{flex: 1,fontFamily:"OpenSans-Regular"}}>$0.00</Text>
           <TouchableOpacity
             activeOpacity={0.9}
             onPress={() => navigation.navigate('ExteriorBack')}
@@ -115,7 +147,7 @@ export default function InteriorMain({navigation}) {
               source={require('../../assets/edit.png')}
             />
             <Text
-              style={{color: '#33ae46', textAlign: 'center', paddingTop: 3}}>
+              style={{color: '#33ae46', textAlign: 'center', paddingTop: 3,fontSize:12,fontFamily:"OpenSans-Regular"}}>
               Edit
             </Text>
           </TouchableOpacity>
@@ -126,9 +158,10 @@ export default function InteriorMain({navigation}) {
             justifyContent: 'space-between',
             paddingVertical: 10,
             backgroundColor: '#ffffff',
+            paddingHorizontal:10
           }}>
-          <Text style={{flex: 3.5, color: '#797b7f'}}>Exhaust Fan</Text>
-          <Text style={{flex: 1}}>$0.00</Text>
+          <Text style={{flex: 3.5, color: '#797b7f',fontFamily:"OpenSans-Regular"}}>Exhaust Fan</Text>
+          <Text style={{flex: 1,fontFamily:"OpenSans-Regular"}}>$0.00</Text>
           <TouchableOpacity
             activeOpacity={0.9}
             onPress={() => navigation.navigate('ExteriorBack')}
@@ -138,7 +171,7 @@ export default function InteriorMain({navigation}) {
               source={require('../../assets/edit.png')}
             />
             <Text
-              style={{color: '#33ae46', textAlign: 'center', paddingTop: 3}}>
+              style={{color: '#33ae46', textAlign: 'center', paddingTop: 2,fontSize:12,fontFamily:"OpenSans-Regular"}}>
               Edit
             </Text>
           </TouchableOpacity>
@@ -149,12 +182,13 @@ export default function InteriorMain({navigation}) {
             justifyContent: 'space-between',
             paddingVertical: 10,
             backgroundColor: '#ffffff',
+            paddingHorizontal:10
           }}>
-          <Text style={{flex: 3.5, color: '#797b7f'}}>Garbage Disposal</Text>
-          <Text style={{flex: 1}}>$0.00</Text>
+          <Text style={{flex: 3.5, color: '#797b7f',fontFamily:"OpenSans-Regular"}}>Garbage Disposal</Text>
+          <Text style={{flex: 1,fontFamily:"OpenSans-Regular"}}>$0.00</Text>
           <View style={styles.inspectButtom}>
             <Text
-              style={{color: '#ff5454', textAlign: 'center', paddingTop: 3}}>
+              style={{color: '#ff5454', textAlign: 'center', paddingTop: 2,fontSize:12}}>
               Inspect
             </Text>
           </View>
@@ -165,28 +199,38 @@ export default function InteriorMain({navigation}) {
             justifyContent: 'space-between',
             paddingVertical: 10,
             backgroundColor: '#ffffff',
+            paddingHorizontal:10
           }}>
-          <Text style={{flex: 3.5, color: '#797b7f'}}>Sink</Text>
-          <Text style={{flex: 1}}>$0.00</Text>
+          <Text style={{flex: 3.5, color: '#797b7f',fontFamily:"OpenSans-Regular"}}>Sink</Text>
+          <Text style={{flex: 1,fontFamily:"OpenSans-Regular"}}>$0.00</Text>
           <View style={styles.inspectButtom}>
             <Text
-              style={{color: '#ff5454', textAlign: 'center', paddingTop: 3}}>
+              style={{color: '#ff5454', textAlign: 'center', paddingTop: 2,fontSize:12,fontFamily:"OpenSans-Regular"}}>
               Inspect
             </Text>
           </View>
         </View>
       </View>
       <View style={styles.bathroom}>
-        <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 3}}>
-          Bathroom 1
+      <TouchableOpacity
+            activeOpacity={0.5}
+            onPress={() => setQuality3(!quality3)}
+            style={quality3 ? styles.TabDropDown : styles.TabDropDown2}>
+            <Image
+              style={quality3 ? styles.transform : styles.dropdown}
+              source={require('../../assets/down-arrow.png')}
+            />
+          </TouchableOpacity>
+        <Text style={{color: '#2b3036', fontWeight: 'bold', flex: 4,paddingTop:2,fontFamily:"OpenSans-Regular"}}>
+          Bathroom 2
         </Text>
-        <View style={{flex: 1}}>
+        <View style={{flex: 0.5}}>
           <Image
-            style={styles.delete}
+            style={styles.plus}
             source={require('../../assets/group740.png')}
           />
         </View>
-        <View style={{flex: 0.5}}>
+        <View style={{flex: 0.4}}>
           <View
             style={{backgroundColor: '#e8e9eb', width: 1, height: 25}}></View>
         </View>
@@ -201,22 +245,22 @@ export default function InteriorMain({navigation}) {
         </TouchableOpacity>
       </View>
       <View style={styles.dotted}>
-        <Text style={{textAlign: 'center', color: '#17324f'}}>
+        <Text style={{textAlign: 'center', color: '#17324f',fontFamily:  "OpenSans-Regular"}}>
           Add New Area +
         </Text>
       </View>
       <View style={styles.total}>
-        <Text style={{color: '#ffffff', fontWeight: 'bold', fontSize: 18}}>
-          Tolat{' '}
+        <Text style={{color: '#ffffff', fontWeight: 'bold', fontSize: 18,fontFamily:"OpenSans-Regular"}}>
+          Total
         </Text>
         <View style={styles.line2}></View>
-        <Text style={{color: '#ffffff', fontWeight: 'bold', fontSize: 18}}>
+        <Text style={{color: '#ffffff', fontWeight: 'bold', fontSize: 18,fontFamily:"OpenSans-Regular"}}>
           $1,070,00
         </Text>
       </View>
-      <View style={styles.completeButton}>
-        <Text style={{textAlign: 'center', color: '#ffffff'}}>Complete</Text>
-      </View>
+      <ButtonView activeOpacity={0.9} style={styles.completeButton}>
+        <Text style={{textAlign: 'center', color: '#ffffff',fontFamily:"OpenSans-Regular",}}>Complete</Text>
+      </ButtonView>
 
       <Modal
         animationIn="zoomIn"
@@ -233,7 +277,7 @@ export default function InteriorMain({navigation}) {
             source={require('../../assets/remove1.png')}
           />
           <Text
-            style={{fontFamily:"OpenSans-Bold", fontSize: 20, marginVertical: '2%'}}>
+            style={{fontFamily:"OpenSans-Bold", fontSize: 20, marginVertical: '2%', fontFamily:"OpenSans-Regular",fontWeight:"bold"}}>
             Delete File?
           </Text>
           <Text style={{color: '#74777e', fontFamily:"OpenSans-Regular"}}>
@@ -244,7 +288,7 @@ export default function InteriorMain({navigation}) {
           </Text>
 
           <View style={styles.modalButtons}>
-            <TouchableOpacity
+            <ButtonView
               activeOpacity={0.8}
               onPress={() => setModalVisible(!modalVisible)}
               style={{
@@ -255,6 +299,7 @@ export default function InteriorMain({navigation}) {
                 paddingHorizontal: '18%',
                 margin: '3%',
                 borderRadius: 25,
+                fontFamily:"OpenSans-Regular",
                 shadowColor: '#000',
                 shadowOffset: {
                   width: 0,
@@ -265,16 +310,18 @@ export default function InteriorMain({navigation}) {
 
                 elevation: 6,
               }}>
-              <Text style={{color: '#193250',fontFamily:"OpenSans-SemiBold"}}>No</Text>
-            </TouchableOpacity>
+              <Text style={{color: '#193250',fontFamily:  "OpenSans-Regular"}}>No</Text>
+            </ButtonView>
 
-            <TouchableOpacity
+            <ButtonView
+             onPress={() => setModalVisible(!modalVisible)}
               activeOpacity={0.8}
               style={{
                 backgroundColor: '#193250',
                 paddingVertical: 10,
                 paddingHorizontal: '18%',
                 margin: '3%',
+                fontFamily:"OpenSans-Regular",
                 borderRadius: 25,
                 shadowColor: '#000',
                 shadowOffset: {
@@ -287,7 +334,7 @@ export default function InteriorMain({navigation}) {
                 elevation: 8,
               }}>
               <Text style={{color: '#fff', fontFamily:"OpenSans-SemiBold"}}>Yes</Text>
-            </TouchableOpacity>
+            </ButtonView>
           </View>
         </View>
       </Modal>
@@ -310,42 +357,82 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     borderRadius: 10,
     justifyContent: 'space-between',
+    alignItems:"center"
   },
   editButtom: {
     backgroundColor: '#ebf7ed',
-    width: 70,
-    height: 26,
+    width: 60,
+    height: 24 ,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
   Kitchen: {
     backgroundColor: '#f8f9fb',
-    paddingHorizontal: 10,
-    paddingVertical: 10,
     marginHorizontal: 20,
     marginVertical: 8,
     borderWidth: 2,
     borderColor: '#eeedfb',
     borderRadius: 10,
   },
+  TabDropDown: {
+    flex: 0,
+    alignItems: 'center',
+    backgroundColor:"#193250",
+    borderRadius:10,
+    width:20,
+    height:20,
+    marginRight:10,
+    marginTop:3,
+    justifyContent:"center"
+  },
+  TabDropDown2:{
+    flex: 0,
+    alignItems: 'center',
+    backgroundColor: '#909090',
+    borderRadius:10,
+    width:20,
+    height:20,
+    marginRight:10,
+    marginTop:4,
+    justifyContent:"center"
+  },
+  dropdown: {
+    width: 11,
+    height: 11,
+    resizeMode: 'contain',
+    tintColor: '#ffffff',
+    transform: [{rotate: '270deg'}],
+  },
+  transform: {
+    width: 11,
+    height: 11,
+    resizeMode: 'contain',
+    tintColor: '#ffffff',
+  },
   delete: {
+    width: 14,
+    height: 14,
+    marginRight:10
+  },
+  plus:{
     width: 14,
     height: 14,
   },
   inspectButtom: {
     backgroundColor: '#ffeeee',
-    width: 70,
-    height: 26,
+    width: 60,
+    height: 24,
   },
   dotted: {
-    borderWidth: 1,
+    borderWidth: 0.8,
     backgroundColor: '#ffffff',
     paddingHorizontal: 10,
     paddingVertical: 18,
     marginHorizontal: 20,
     marginVertical: 8,
-    borderStyle: 'dotted',
+    borderStyle: 'dashed',
     borderRadius: 10,
+    borderColor:"#909090"
   },
   line2: {
     width: 2,
@@ -386,12 +473,11 @@ const styles = StyleSheet.create({
   },
 
   modalView: {
-    flex: 0.6,
     backgroundColor: '#fff',
     borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 10,
+    paddingVertical:30
   },
 
   modalLogo: {
@@ -402,7 +488,6 @@ const styles = StyleSheet.create({
   },
 
   modalButtons: {
-    flex: 0.5,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',

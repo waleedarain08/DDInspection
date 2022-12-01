@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.ddinspection">
+  package="com.sylvanroad">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,16 +10,33 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
+      <meta-data
+     android:name="com.google.android.geo.API_KEY"
+     android:value="AIzaSyBTNtoDj9Z6V8d3zDdCVFz4LvEemFwG4Zw"/>
+
+   <!-- You will also only need to add this uses-library tag -->
+   <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+      <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name"
+           android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+      </activity>
+
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
         android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-        android:launchMode="singleTask"
-        android:windowSoftInputMode="adjustResize">
+        android:launchMode="singleTask">
         <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
+          <action android:name="android.intent.action.MAIN" />
+          <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
         </intent-filter>
       </activity>
     </application>
 </manifest>
+
